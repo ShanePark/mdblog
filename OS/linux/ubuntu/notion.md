@@ -86,9 +86,9 @@ chmod +x setup.sh
 
 ```zsh
 # Run (with sudo for global installation, without sudo for local installation)
-[sudo] ./setup.sh native
+sudo ./setup.sh native
 # Or for web installation
-[sudo] ./setup.sh web
+sudo ./setup.sh web
 
 ```
 
