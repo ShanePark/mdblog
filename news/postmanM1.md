@@ -18,7 +18,7 @@
 
 ## ARM 64
 
-## 		
+​	
 
 https://www.postman.com/downloads/
 
