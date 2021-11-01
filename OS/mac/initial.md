@@ -138,7 +138,7 @@ m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을
 
 ### 8. iterm2 설치
 
-![image-20211101233257878](https://raw.githubusercontent.com/Shane-Park/mdblog/OS/mac/initial.assets/image-20211101233257878.png)
+![image-20211101233257878](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101233257878.png)
 
 ```xml
 brew install iterm2
@@ -276,33 +276,33 @@ Chrome에서는 기본적으로 F12 를 누르거나 Command + Shift + C 가 먹
 
 ### 그 외 잡다하지만 필수적인 설치
 
-​	 
+​		 	
 
-\- 사파리만으로도 좋긴 하지만 가끔 크롬이 필요 할 때가 있습니다.
+- 사파리만으로도 좋긴 하지만 가끔 크롬이 필요 할 때가 있습니다.
 
 ```xml
 brew install google-chrome
 ```
 
- 	
+​			
 
--iina를 설치합니다. 필수 동영상 플레이어 라고 생각합니다.
+- iina를 설치합니다. 필수 동영상 플레이어 라고 생각합니다.
 
 ```xml
 brew install iina
 ```
 
-​	 
+​		
 
-\- keka를 설치합니다. 
+- keka를 설치합니다. 
 
-```xml
+```zsh
 brew install keka
 ```
 
-​	 
+​	
 
-\- spotify 를 설치합니다.
+-  spotify 를 설치합니다.
 
 ```xml
 brew install spotify
@@ -312,53 +312,53 @@ brew install spotify
 
 ​	
 
-\- 장르 불문 모든 프로그래머들의 메모장. vscode 를 설치합니다.
+- 장르 불문 모든 프로그래머들의 메모장. vscode 를 설치합니다.
 
-```xml
+```zsh
 brew install visual-studio-code
 ```
 
- 	
+​	
 
-\- STS (Spring Tool Suite) 를 설치합니다. Eclipse 입니다.
+- STS (Spring Tool Suite) 를 설치합니다. Eclipse 입니다.
 
 ```xml
 brew install springtoolsuite
 ```
 
- 	
+​	
 
-\- Github Desktop을 설치합니다. 사실 sourcetree 쪽이 더 좋았었는데 배터리 이슈때문에 영 아닙니다.
+-  Github Desktop을 설치합니다. 사실 sourcetree 쪽이 더 좋았었는데 배터리 이슈때문에 영 아닙니다.
 
 ```xml
 brew install github
 ```
 
- 	
+​	
 
-\- postman 을 설치합니다. 이제 Apple Silicon을 지원하네요.
+- postman 을 설치합니다. 이제 Apple Silicon을 지원하네요.
 
 ```xml
 brew install postman
 ```
 
- 	
+​	
 
-\- sequal pro를 설치합니다. 예전에 일반 버전 받았다가 m1 맥북에서 작동하지 않아서 그 후로 nightly 버전만 다운 받습니다. 정식 버전은 나중에 Apple Silicon 을 정식 지원할 때 받을 생각입니다.
+- sequal pro를 설치합니다. 예전에 일반 버전 받았다가 m1 맥북에서 작동하지 않아서 그 후로 nightly 버전만 다운 받습니다. 정식 버전은 나중에 Apple Silicon 을 정식 지원할 때 받을 생각입니다.
 
 ```xml
 brew install homebrew/cask-versions/sequel-pro-nightly
 ```
 
- 	
+​	 	
 
-\- microsoft remote desktop을 다운 받습니다. 이거 정말 좋습니다. Teamviewer 를 거들떠도 안보게 됩니다.
+- microsoft remote desktop을 다운 받습니다. 이거 정말 좋습니다. Teamviewer 를 거들떠도 안보게 됩니다.
 
 ```xml
 brew install microsoft-remote-desktop
 ```
 
-​	
+​		
 
 이상으로 초기 설정 글을 마치겠습니다.
 
