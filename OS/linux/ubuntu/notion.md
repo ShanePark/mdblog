@@ -100,8 +100,18 @@ sudo ./setup.sh web
 
 ​		
 
+![image-20211103153758235](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211103153758235.png)
+
+참고로 로그인시에는 `Continue with Google`을 눌러 하는 Google SSO login을 사용할 수 없는데요, 구글이 인가받지 않는 브라우저들에 대한 로그인 지원을 중단했기 때문입니다.
+
+간단하게 아래의 Continue with email을 사용해서 이메일 인증을 통한 로그인 한다면 문제는 간단하게 해결됩니다.
+
+​				
+
 ![image-20211027092451478](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211027092451478.png)
 
 어플리케이션을 실행 한 모습입니다. dark 모드 설정도 가능 하며 속도도 빠르고 굉장히 만족스럽게 사용 할 수 있습니다. 
 
 Ubuntu와 Notion 모두 사용하시는 분이라면 정말 추천 합니다.
+
+ 
