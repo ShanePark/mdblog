@@ -8,7 +8,7 @@ Rebase는 `manual`과 `interactive` 이렇게 두 가지 메인 모드를 가지
 
 여러가지 역할이 가능 한 rebase 지만 이번 posting에서는 이미 커밋한 몇개의 커밋을 하나로 합치고 새로운 커밋 메시지를 남기는 용도로 사용 해 보겠습니다.
 
-<br/>	
+<br/><br/>	
 
 ## 문제	
 
@@ -18,7 +18,7 @@ Rebase는 `manual`과 `interactive` 이렇게 두 가지 메인 모드를 가지
 
 19 분 전에 커밋을 하자 마자 코드가 너무 지저분 하다는 생각이 들어 조금의 수정을 했는데요, 원래대로라면 하나의 커밋으로 남길 건데, 의도치 않게 두개가 되었습니다.
 
-<br/>
+<br/><br/>
 
 ## 해결
 
@@ -26,7 +26,7 @@ Ubuntu 에서는 Ctrl + ` 를 입력하면 Github Desktop 에서 Terminal을 켤
 
 ![image-20211103115123407](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103115123407.png)
 
-<br/>
+<br/><br/>
 
 ![image-20211103115401522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103115401522.png)
 
@@ -34,7 +34,7 @@ Terminal이 커졌습니다. 작업중인 branch 이름을 확인 하고, 아래
 
 병합하고 싶은 branch가 2개 보다 많다면 `~2` 대신 그 숫자를 기입 해 주시면 됩니다. 
 
-<br/>	
+<br/><br/>	
 
 저는 2개의 미리 push까지 마친 커밋을 병합 할 예정입니다.
 
@@ -46,7 +46,7 @@ git rebase -i HEAD~2
 
 기존에 git 편집기로 지정해 둔 편집기가 뜹니다. 예상하지 못했던 nano 에디터가 켜져서 당황했습니다.
 
-<br/>	
+<br/><br/>	
 
 편집기가 뜨면 이제 합치거나 편집할 commit을 선택해줍니다.
 
@@ -56,23 +56,23 @@ git rebase -i HEAD~2
 
 평소 vi 에디터를 쓰는데 nano가 켜져 단축키를 몰라 당황했지만 ctrl+s 로 저장하고, ctrl+x 로 종료 할 수 있었습니다. vim 이라면 `wq!`를 입력 해 주면 됩니다.
 
-<br/>![image-20211103115935727](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103115935727.png)
+<br/><br/>![image-20211103115935727](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103115935727.png)
 
 이번에는 `COMMIT_EDITMSG`가 뜹니다.이제 새로운 커밋 메시지를 작성할 수 있습니다.
 
-<br/>
+<br/><br/>
 
 ![image-20211103120034441](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103120034441.png)
 
 원하는 커밋 메시지를 작성 하고, 다시 ctrl+s 로 저장하고 ctrl+x 로 나가면 됩니다. 이미 알고 계시겠지만, 주석이 달린 부분들은 커밋 메세지에 포함되지 않습니다.
 
-<br/>
+<br/><br/>
 
 ![image-20211103120111297](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103120111297.png)
 
 rebase가 완료 되었습니다.
 
-<br/>
+<br/><br/>
 
 push를 할 차례인데, 이미 push 되었던 커밋들이므로, 강제로 push 해줍니다. -f 혹은 --force 라고 옵션을 붙여줍니다.
 
@@ -80,13 +80,13 @@ push를 할 차례인데, 이미 push 되었던 커밋들이므로, 강제로 pu
 git push -f
 ```
 
-<br/>
+<br/><br/>
 
 ![image-20211103120214153](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211103120214153.png)
 
 push까지 마쳤습니다. 확인 해보니 두개의 commit이 하나로 합쳐졌습니다.
 
-<br/>
+<br/><br/>
 
 마지막으로 git 기본 편집기를 nano 에서 vim 으로 변경하고 마치겠습니다.
 
