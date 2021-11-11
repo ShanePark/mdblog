@@ -8,8 +8,6 @@
 
 ## 1. Apple TV 구매를 결정한 이유
 
-<br>
-
 ### 1) 뉴질랜드
 
 오랫동안 Apple TV와 Apple HomePod은 국내에 출시되지 않아왔습니다. 
