@@ -148,7 +148,9 @@ public class AddFileToZip {
                 if (file.getName().equals(name)) {
                     notInFiles = false;
                     System.err.println("이미 파일이 있음.");
-                    return;
+                    // 파일이 있더라도 기존에 있던 파일은 그대로 새로운 zip 파일에 가져 가야함.
+                    // 절대 return; 하지 말것. 그러면 빈 압축파일이 되며 기존 파일이 다 제거됨.
+                    break;
                 }
                 if (notInFiles) {
                     out.putNextEntry(new ZipEntry(name));
