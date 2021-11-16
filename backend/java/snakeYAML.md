@@ -18,6 +18,8 @@ XML에서 JSON으로 발전 한 것 처럼, YAML은 json 보다도 더 비교적
 
 같은 데이터를 각각 XML, JSON, YAML로 표현했을 때는 다음과 같습니다.
 
+- xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <person>
@@ -37,6 +39,8 @@ XML에서 JSON으로 발전 한 것 처럼, YAML은 json 보다도 더 비교적
 </person>
 
 ```
+
+- json
 
 ```json
 {
@@ -60,6 +64,8 @@ XML에서 JSON으로 발전 한 것 처럼, YAML은 json 보다도 더 비교적
 }
 
 ```
+
+- YAML
 
 ```yaml
 name: John Doe
