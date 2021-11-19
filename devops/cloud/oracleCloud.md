@@ -1,5 +1,18 @@
 # Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 4) 무료 데이터 베이스 만들기 및 데이터 이관하기
 
+[
+Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 1)인스턴스 만들고 접속하기.](https://shanepark.tistory.com/170)
+
+[Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 2) 톰캣 설치하기 및 배포 + 외부 접속 허용](https://shanepark.tistory.com/171)
+
+[Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 3) 타임존 문제 해결](https://shanepark.tistory.com/172)
+
+[Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 4) 무료 데이터 베이스 만들기 및 데이터 이관하기](https://shanepark.tistory.com/173)
+
+[Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 5) 톰캣 도메인 연결해 배포하기](https://shanepark.tistory.com/174)
+
+[Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 6) 오라클 전자지갑 사용해 프로젝트와 연결하기](https://shanepark.tistory.com/207)
+
 ## 시작에 앞서
 
 ### 사족
@@ -367,6 +380,8 @@ join dept on (emp.deptno = dept.deptno);
 
 ## 마치며
 
+### 마침글
+
 무료 데이터베이스라는데 정말 말도 안되게 좋은 건데, 공짜로 이렇게 쓰게 해주니 고마울 따름입니다.
 
 저는 학원 다닐때 맥북 사고, 데이터베이스를 설치하지 못하니 집에 남는 윈도우 노트북에 Oracle 서버를 설치 하고, 공유기 포트포워딩으로 1521 포트를 열어서 학원에서든 어디서든 그 데이터베이스만 사용했던 기억이 나네요. 이렇게 오라클에서 무료로 데이터베이스를 제공해 주기 때문에 사실 그럴 필요가 없었지만 그때는 할 줄을 몰랐습니다.
@@ -376,3 +391,11 @@ join dept on (emp.deptno = dept.deptno);
 비록 m1 맥북을 구매하셔서 오라클을 쉽게 사용하진 못했지만, 여기까지 오셨다면 그 위기가 기회가 되어서 남들보다 훨씬 더 좋은 데이터베이스 활용을 하고 있다는 자부심을 가져도 된다고 말씀드리고 싶습니다.
 
 수고 정말 많으셨습니다. 
+
+### 추가로
+
+DB를 실제 프로젝트와 연결 해서 사용하고 싶다면, Oracle Cloud 전자지갑을 어플리케이션과 연결하는건 기존의 방법과 꽤나 차이가 있습니다. 난이도가 높기 때문에 어느 정도 익숙해진 후에 시도 해 보시길 권장드리며, 국비 학원 기준으로는 최소 초급, 중급 프로젝트가 끝난 후에 진행해보시는게 좋습니다. 3 개월 차 까지는 어려울 가능성이 높습니다.
+
+도전할 준비가 되었다면 아래의 링크를 클릭해주세요!
+
+> [Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 6) 오라클 전자지갑 사용해 프로젝트와 연결하기](https://shanepark.tistory.com/207) 
