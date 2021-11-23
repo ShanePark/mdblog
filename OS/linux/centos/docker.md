@@ -149,4 +149,10 @@ docker-compose --version
 
 Docker Compose도 설치가 완료 되었습니다. 이상입니다.
 
+## sudo 없이 docker 명령어 실행
 
+docker 명령어를 쓸 때마다 sudo 를 입력하기 번거로워서 유저그룹을 추가하는 방법을 따로 포스팅 해 두었습니다.
+
+docker를 쓴다면 사실상 꼭 설정해야 한다고 생각하니, 아래 글을 클릭해서 따라 설정 해 주세요.
+
+> [Linux, sudo 없이 명령어 실행하기 (예:docker)](https://shanepark.tistory.com/250)
