@@ -1,16 +1,13 @@
 # Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 2) 톰캣 설치하기 및 배포 + 외부 접속 허용
 
-관련 글 목록
-
-| [Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 1)인스턴스 만들고 접속하기.](https://shanepark.tistory.com/170) |
+|관련 글 목록|
 | ------------------------------------------------------------ |
+| [Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 1)인스턴스 만들고 접속하기.](https://shanepark.tistory.com/170) |
 | [Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 2) 톰캣 설치하기 및 배포 + 외부 접속 허용](https://shanepark.tistory.com/171) |
 | [Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 3) 타임존 문제 해결](https://shanepark.tistory.com/172) |
 | [Mac) Oracle FreeTier 이용해 웹 어플리케이션 배포하기 4) 무료 데이터 베이스 만들기 및 데이터 이관하기](https://shanepark.tistory.com/173) |
 | [Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 5) 톰캣 도메인 연결해 배포하기](https://shanepark.tistory.com/174) |
-| [Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 6) 오라클 전자지갑 사용해 프로젝트와 연결하기](https://shanepark.tistory.com/207) |
-
-<br><br>
+| [Mac) Oracle Cloud FreeTier 이용해 웹 어플리케이션 배포하기 6) 오라클 전자지갑 사용해 프로젝트와 연결하기](https://shanepark.tistory.com/207) |<br><br>
 
 일단 ubuntu에 접속을 합니다. 이미 해보셨듯이 ssh ubuntu@ip 로 접속 하시면 됩니다.
 
