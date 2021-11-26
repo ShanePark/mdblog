@@ -40,7 +40,7 @@ linux의 날짜와 시간은 간단하게 date 명령어로 확인 할 수 있�
 date
 ```
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/ devops/cloud/oraclecloud3-timezone.assets/img-20211126221847459.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud3-timezone.assets/img-20211126221847459.png)
 
 네. 리눅스는 기본적으로 UTC 타임존으로 설정 되어 있습니다. 시간대를 변경 해 줘야 합니다.
 
@@ -50,7 +50,7 @@ date
 timedatectl list-timezones | grep Seoul
 ```
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/ devops/cloud/oraclecloud3-timezone.assets/img-20211126221847397.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud3-timezone.assets/img-20211126221847397.png)
 
 
 
@@ -62,7 +62,7 @@ Asia/Seoul로 하면 된다고 합니다.
 sudo timedatectl set-timezone Asia/Seoul
 ```
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/ devops/cloud/oraclecloud3-timezone.assets/img-20211126221847421.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud3-timezone.assets/img-20211126221847421.png)
 
 
 
@@ -86,7 +86,7 @@ Linux가 일반 사용자에게 wellknown port 사용 권한을 주지 않기 �
 
 서버를 켜서, 제가 배포한 어플리케이션에  로그인을 시도하니
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/ devops/cloud/oraclecloud3-timezone.assets/img-20211126221847499.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud3-timezone.assets/img-20211126221847499.png)
 
 보이는 것 처럼, 문제 없이 DB와 연동되어 로그인 처리를 해냅니다. timezone 문제를 해결하기 전에는 로그인 부터 막혔었습니다.
 
