@@ -210,11 +210,37 @@ Storage 설정을 해 줍니다. 저는 기존에 ubuntu 설치 되어 있던게
 
 ## 서버 접속
 
+### ssh 접속
+
 맥북에서 접속 해 봅니다.
 
 ![image-20211129212140767](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211129212140767.png)
 
 아주 문제 없이 잘 연결이 되었습니다. 백업 해 두었던 authorized_keys 파일을 옮기니 비밀번호 없이 로그인도 바로 되었으며, docker를 설치 해서 백업해둔 도커 이미지들을 run 하니 바로 도커들도 기존과 동일하게 실행 되었습니다.
+
+### 덮개 설정
+
+노트북 덮개를 덮으니 우분투 서버임에도 절전모드가 바로 되어버리더라고요.
+
+```zsh
+sudo vi /etc/systemd/logind.conf
+```
+
+![image-20211129234957443](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211129234957443.png)
+
+> 24번 라인을 보면 HandleLidSwitch 옵션이 있습니다.
+
+주석을 풀고 값을 ignore로 변경 해 줍니다. 
+
+![image-20211129235048924](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211129235048924.png)
+
+저장 하고 나서 시스템을 재 부팅 하거나 혹은 `systemd-logind` 서비스를 재 시작 해 주면 바로 적용됩니다.
+
+```zsh
+systemctl restart systemd-logind
+```
+
+이제 노트북 덮개를 덮어도 영향을 받지 않습니다.
 
 ## 마치며
 
