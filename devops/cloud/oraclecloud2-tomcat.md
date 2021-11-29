@@ -52,48 +52,36 @@ https://tomcat.apache.org/download-80.cgi
 그래서 설치할 버전의 tar.gz의 link를 copy 합니다.
 
 ```xml
-https://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz
+https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.73/bin/apache-tomcat-8.5.73.tar.gz
 ```
 
-위와 같은 주소가 복사 되는데요, wget 명령어를 이용해 다운 받습니다. tmp 폴더에 다운 받아 보도록 하겠습니다.
+위와 같은 주소가 복사 되는데요, wget 명령어를 이용해 다운 받습니다. opt 폴더에 다운 받아 보도록 하겠습니다.
+
+폴더가 없다면 미리 mkdir /opt를 해 주세요.
 
 ```xml
-wget https://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz -P /tmp
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.73/bin/apache-tomcat-8.5.73.tar.gz -P /opt/
 ```
 
- 
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-16378983907713.png)
-
-
+![image-20211126215544291](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126215544291.png)
 
 금방 다운이 완료 됩니다. 
 
-다운이 완료 되면  /opt/tomcat 디렉터리에 Tomcat 아카이브를 추출 합니다.
-
-저는 폴더가 없어서
+다운이 완료 되면  /opt 디렉터리에 Tomcat 아카이브를 추출 합니다.
 
 ```zsh
-sudo mkdir /opt/tomcat
+sudo tar xf /opt/apache-tomcat-8.5.73.tar.gz -C /opt/
 ```
 
-폴더를 만들고
+![image-20211126215703288](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126215703288.png)
 
-```zsh
-sudo tar xf /tmp/apache-tomcat-8.5.69.tar.gz -C /opt/tomcat
-```
-
-아카이브를 추출 했습니다.
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-16378983907714.png)
+> 아카이브를 추출 했습니다.
 
 
 
-그러면 이제
+![image-20211126215741619](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126215741619.png)
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-16378983907715.png)
-
-해당 폴더에 들어가서 보니 추출이 잘 완료된 것을 확인 할 수 있습니다.
+> 제대로 압축이 풀린것을 확인 할 수 있습니다.
 
 ####  tomcat 9 설치
 
@@ -103,21 +91,13 @@ tomcat 9를 사용하는 분은 조금 더 쉽게 설치할 수 있습니다.
 sudo apt install tomcat9
 ```
 
- 
-
-
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-16378983907716.png)
 
 
 
 위의 명령어를 입력 하고, 14.9MB의 용량이 사용된다는 안내에 y를 입력해 동의 하면
 
-
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-16378983907717.png)
-
-
 
 금방 톰캣 설치가 완료 됩니다.
 
@@ -163,8 +143,6 @@ http://132.226.232.81:8080
 
 에 접속을 하려고 하는데, 응답이 계속 펜딩 상태 입니다.
 
- 
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077111.png)
 
 
@@ -199,8 +177,6 @@ Rules updated가 됩니다. 80 port도 열겠습니다.
 sudo ufw allow 80/tcp
 ```
 
-
-
 그래도 접속이 안되길래 ping을 쏴보니 애초에 연결이 안됩니다. 서버 보안 설정을 확인 해 보겠습니다.
 
 Primary VNIC 의 subnet 설정에 들어갑니다.
@@ -221,8 +197,6 @@ Primary VNIC 의 subnet 설정에 들어갑니다.
 
 > Add ingress Rules를 눌러 수신 규칙을 추가 해 줍니다. 사실 80과 443은 이미 추가가 해두었네요.
 
-
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077217.png)
 
 
@@ -230,8 +204,6 @@ Primary VNIC 의 subnet 설정에 들어갑니다.
 모든 규칙에 대해 오픈 하겠습니다. Add Ingress Rules를 눌러 저장합니다.
 
 이후 ping을 쏴보면
-
-
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077218.png)
 
@@ -285,21 +257,15 @@ sudo iptables -F
 
 보통 여기에서 모두 해결 됩니다.
 
- 
-
 이제 server.xml 파일을 편집 합니다. 저는 vim 에디터가 아직 없어서 vim 에디터도 설치를 먼저 합니다.
 
 ```xml
 sudo apt-get install vim
 ```
 
-
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077222.png)
 
 
-
- 
 
 server.xml 을 편집 해 보겠습니다.. tomcat 을 sudo 권한으로만 접근하려니 너무 귀찮네요. 
 
@@ -363,13 +329,13 @@ sudo systemctl stop tomcat9
 $ sudo apt-get remove tomcat9
 ```
 
- 
+### Tomcat8 실행
 
 tomcat 8.5 버전을 실행하기 위해 bin 폴더로 들어가려는데 권한이 없습니다.
 
--bash: cd: bin: Permission denied 에러가 발생합니다.
+`-bash: cd: bin: Permission denied `에러가 발생합니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077327.png)
+![image-20211126220242125](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126220242125.png)
 
 
 
@@ -392,8 +358,6 @@ sudo -i 명령어로 쉽게 root 권한을 얻을 수 있습니다.
 그대로 톰캣을 실행 합니다.
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077331.png)
-
-
 
 귀여운 고양이가 반겨 줍니다! 일단 위에서 했던 대로 서버를 종료 하고 port 를 80으로 변경합니다.
 
@@ -439,11 +403,11 @@ tomcat 8.5 버전에서 80port 로의 배포 준비가 완료 되었습니다.
 
 ## SSH로 파일 전송 후 war 파일 배포
 
+### scp
+
 이제 war파일을 한번 배포 해 보겠습니다.
 
-ssh로 간단하게 파일을 전송 할 수 있습니다.scp 명령어를 사용 하면 되며 기본적인 사용법은 아래와 같습니다.
-
- 
+ssh로 간단하게 파일을 전송 할 수 있습니다.scp 명령어를 사용 하면 되며 기본적인 사용법은 아래와 같습니다. 
 
 1) 원격 서버에서 로컬로 파일 받아오기 명령
 
@@ -463,29 +427,23 @@ scp [옵션] [계정명@ip주소]:[원본 경로 혹은 파일] [저장할 경�
 
 -p (원본 파일 수정/삭제 권한 유지),
 
--r ( 하위 폴더 및 파일 모두 복사) 가 있습니다.
+-r ( 하위 폴더 및 파일 모두 복사) 가 있습니다. 
 
- 
-
-제 mac의 바탕화면에 있는 /Users/shane/Desktop/playddit.war 파일을 원격서버의 /opt/tomcat/apache-tomcat-8.5.69/webapps
+제 mac의 바탕화면에 있는 /Users/shane/Desktop/gaia.war 파일을 원격서버의 /opt/apache-tomcat-8.5.73/webapps
 
 로 전송하겠습니다.
 
-```xml
-scp /Users/shane/Desktop/playddit.war ubuntu@193.122.107.229:/opt/tomcat/apache-tomcat-8.5.69/webapps
+```zsh
+scp /Users/shane/Desktop/gaia.war ubuntu@146.56.191.188:/opt/apache-tomcat-8.5.73/webapps/ROOT.war
 ```
 
-
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077435.png)
-
-
+![image-20211126220808352](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126220808352.png)
 
 뭐하나 쉽게 되는게 없군요.. 이번엔 Permission denied (publickey). 에러가 뜹니다.
 
 해당 폴더에 접근 할 수 있는 권한이 없기 때문입니다.
 
- 
+### 권한설정
 
 root 권한으로 /opt 폴더의 권한을 777로 변경하겠습니다.
 
@@ -512,56 +470,22 @@ chmod 777 /opt
 이제 로컬에서 scp 명령어를 다시 입력하면
 
 ```xml
-scp /Users/shane/Desktop/playddit.war ubuntu@193.122.107.229:/opt
+scp /Users/shane/Desktop/gaia.war ubuntu@146.56.191.188:/opt/apache-tomcat-8.5.73/webapps/ROOT.war
 ```
 
+![image-20211126221211606](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126221211606.png)
 
+전송이 시작됩니다! 
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077437.png)
+![image-20211126221235521](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126221235521.png)
 
+의도한 폴더에 ROOT.war 파일을 집어 넣었습니다.
 
-
-전송이 시작됩니다! 테스트 하다 얼떨결에 전송해서 원했던 폴더는 아니지만 그래도 근처 폴더에 전송이 됩니다.
-
-
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077438.png)
-
-
-
-opt 폴더에 playddit.war 파일이 전송이 된 것도 확인 할 수 있습니다. 이제 webapp 폴더로 파일을 옮겨야 합니다.
-
-리눅스에서 파일 이동은 mv 명령어를 이용 합니다.
-
-```xml
-mv /opt/playddit.war /opt/tomcat/apache-tomcat-8.5.69/webapps
-```
-
-
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077439.png)
-
-
-
-명령어를 입력 하고, 해당 폴더로 가 보면
-
-
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077440.png)
-
-
-
-playddit.war 파일이 잘 옮겨져 있고 심지어 그새 배포 까지 되어있는 것을 확인 할 수 있습니다.
-
-서버를 굳이 껐다 켤 필요가 없네요.
+서버가 켜 있다면 톰캣을 새로 실행 하지 않아도 자동으로 재시작 됩니다.
 
 이제 해당 ip에 잘 배포가 되었는지 주소를 입력해서 접속 해 보겠습니다.
 
-
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077441.png)
-
-
 
 길고긴 여정의 끝 입니다... 
 
@@ -576,8 +500,6 @@ tail -f catalina.out
 명령어를 입력하면 실시간으로 톰캣 에러를 점검 하실 수 있습니다.
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077442.png)
-
-
 
 이상입니다. 정말 수고하셨습니다! 위에 보이는 DB 문제는 길이 글어져 바로 다음글에서 해결합니다.
 
