@@ -86,7 +86,17 @@ git push -f
 
 push까지 마쳤습니다. 확인 해보니 두개의 commit이 하나로 합쳐졌습니다.
 
-<br/><br/>
+### 주의
+
+![image-20211129142609379](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/rebase.assets/image-20211129142609379.png)
+
+참고로, Remote Repository 의 해당 Branch 가 보호되어 있으면 Push할 때 -f 옵션이 불가능 할 수 있습니다.
+
+위의 스크린샷은  Gitlab의 예인데, Allowed to force push 를 허용하지 않은 상태 입니다. 이 경우에는 강제 Push가 불가능합니다.
+
+해당 옵션을 잠깐 켜고 강제 푸쉬하는 방법이 있지만, 이 경우에는 브랜치를 보호하려는 목적에 위배 될 수 있으니, Remote Branch에 Push 하기 전에 최대한 신중하게 확인 하는 것이 좋겠습니다.
+
+### Git 기본 편집기 변경
 
 마지막으로 git 기본 편집기를 nano 에서 vim 으로 변경하고 마치겠습니다.
 
