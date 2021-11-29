@@ -1,0 +1,47 @@
+# Ubuntu) Gnome 바탕화면 아이콘 활성화
+
+## Intro
+
+Gnome Shell 은 desktop icon을 가져 왔지만, 3.28 버전부터 개발자들은 바탕화면의 아이콘 기능들을 비활성화 시키기로 결정 하였습니다.
+
+`Documents` 혹은 `Downloads`라는 훌륭한 대안이 있기는 하지만 바탕화면이 주는 임시 파일 저장소로서의 매력은 또 다른 이야기라서, 저처럼 필요로 하는 사람들도 분명 있을 거라 생각합니다.
+
+지금 부터 간단하게 Ubuntu의 Gnome에서 바탕화면 아이콘이 비 활성화 된 경우 다시 활성화 시키는 방법을 알아보겠습니다.
+
+## 첫번째 방법 Desktop Icons extention
+
+Gnome Extentions 사이트를 통해 해당 플러그인을 ON 해 주면 됩니다. Chrome이나 Firefox에서 GNOME EXTENTIONS 플러그인을 또 설치 해 줘야 하는 번거로움이 있기는 합니다.
+
+![image-20211129092858853](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129092858853.png)
+
+> https://extensions.gnome.org/extension/1465/desktop-icons/
+
+## 두번째 방법 desktopfolder
+
+저는 개인적으로 이 방법을 더 선호해서 아래의 방법으로 해결 했습니다.
+
+일단 `desktopfolder` 를 설치 해 줘야 합니다. 
+
+터미널을 켜고
+
+```zsh
+sudo apt install desktopfolder gnome-tweak-tool
+```
+
+![image-20211129092505875](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129092505875.png)
+
+설치가 완료 되고 난 후에는 desktop folder 어플리케이션을 실행 해 줍니다.
+
+![image-20211129093039375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129093039375.png)
+
+> Desktop Folder 검색
+
+이제 바탕화면에 아이콘들이 표시되면 바탕화면을 사용 할 수 있습니다. 
+
+![image-20211129093117535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129093117535.png)
+
+## 세번째 방법 Gnome classic mode
+
+로그인 화면에서 톱니바퀴 버튼을 눌러 설정 화면에서 GNOME을 클래식 모드로 변경 해 주는 방법이 있습니다.
+
+이상입니다.
