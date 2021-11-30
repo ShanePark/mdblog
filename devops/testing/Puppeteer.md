@@ -1,10 +1,14 @@
-# Puppeteer 활용 브라우저 자동 테스트
+# Puppeteer 활용 브라우저 테스트 자동화
 
 ![Puppeteer Logo](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/puppeteer.png)
 
 > https://developers.google.com/web/tools/puppeteer
 
 ## 소개
+
+Headless 브라우저에 대한 이해가 필요 합니다. 
+
+> 해당 내용은 https://shanepark.tistory.com/290 에서 확인 하실 수 있습니다.
 
 ### Puppeteer
 
