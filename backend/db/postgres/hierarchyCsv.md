@@ -34,11 +34,11 @@ select * from search_product;
 
 저는 데이터베이스가 docker에서 실행 중 이기 때문에 적당할 경로를 찾기 위해 `ls -al`를 입력 해 보았습니다. 그 전에 mkdir로 새 폴더를 만들려고 시도 해 보았지만 컨테이너 내부에서 폴더 만들기가 안되었습니다.
 
-![image-20211201150200838](/home/shane/Documents/git/mdblog/backend/db/postgres/hierarchyCsv.assets/image-20211201150200838.png)
+![image-20211201150200838](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/hierarchyCsv.assets/image-20211201150200838.png)
 
 `tmp` 폴더가 유일하게 모든 권한이 열려 있네요. 저 폴더에 저장하면 될 듯 합니다.
 
-### cvs 파일 생성
+### csv 파일 생성
 
 COPY 명령어를 사용해 쿼리 결과를 csv 파일로 만들 수 있습니다. CSV답게, Delimiter는 `Comma`로 하겠습니다.
 
@@ -61,7 +61,7 @@ select * from search_product
 
 ```
 
-![image-20211201150059655](/home/shane/Documents/git/mdblog/backend/db/postgres/hierarchyCsv.assets/image-20211201150059655.png)
+![image-20211201150059655](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/hierarchyCsv.assets/image-20211201150059655.png)
 
 >  COPY 3303 이라며, 3303개의 쿼리 결과를 csv로 저장했다고 나옵니다.
 
@@ -71,7 +71,7 @@ select * from search_product
 cat /tmp/dump.csv
 ```
 
-![image-20211201150434700](/home/shane/Documents/git/mdblog/backend/db/postgres/hierarchyCsv.assets/image-20211201150434700.png)
+![image-20211201150434700](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/hierarchyCsv.assets/image-20211201150434700.png)
 
 > 쿼리결과가 제대로 저장 된 것이 확인 됩니다.
 
