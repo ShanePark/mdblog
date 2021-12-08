@@ -2,7 +2,9 @@
 
 > 보다 현실적인 제목 : `Typora 유료화`
 
-### 새소식
+## 새소식
+
+### 정식 버전 오픈
 
 아침에 출근해서, Typora를 켜니 아래와 같은 이미지가 등장했습니다.
 
@@ -28,7 +30,7 @@ Linux와 MacOS를 모두 지원하는 마크다운 에디터는 흔하지 않기
 
 ![image-20211129090734219](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211129090734219.png)
 
-Tweetter에 유료화 소식을 알린 후에도 워낙 많은 유저들이 만족하며 사용해 왔던 소프트웨어였다보니, 모두 반기는 분위기 입니다. 
+Twitter에 유료화 소식을 알린 후에도 워낙 많은 유저들이 만족하며 사용해 왔던 소프트웨어였다보니, 모두 반기는 분위기 입니다. 
 
 혹시 비용을 지불하고 사용 할 준비가 아직 되어 있지 않은 분들은 MacOS 에서의 `bear` 사용을 고려 해 보실 수 있겠습니다. 무료로도 사용 할 수 있지만, Bear Pro 라고 모든 기능을 사용 하려면 월 $1.49 혹은 연 $14.99의 비용으로 오히려 더 비쌀 수 있기는 합니다.
 
@@ -38,7 +40,9 @@ Tweetter에 유료화 소식을 알린 후에도 워낙 많은 유저들이 만�
 
 ![image-20211129091444527](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211129091444527.png)
 
-### Ubuntu) Beta 지속 방법
+## Beta 지속 방법
+
+### Ubuntu
 
 아직 Typora를 충분히 사용하지 않아서 비용을 지불할지 결정 하지 못한 분들을 위해 Typora에서는 무료 평가를 제공 하고 있지만, 그래도 베타버전을 조금 더 오래 써보고 싶은 분들은 아래와 같이 최신 beta 버전을 설치 하고, hold 시키는 방법이 있습니다.
 
@@ -51,9 +55,21 @@ sudo apt-mark hold typora
 # typora set on hold.
 ```
 
+### MacOS
 
+맥북에서는 마지막 Beta버전의 dmg 파일을 받아 설치 한 후에 
 
-### 동시접속
+![image-20211208214912647](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211208214912647.png)
+
+- [ ] Check updates automatically 체크 박스를 해지하고
+
+![image-20211208215037282](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211208215037282.png)
+
+Software Upgrade 에서도 Automatically download and install updates in the future 체크를 해지하면 됩니다.
+
+물론 비싼 가격이 아니니 계속 사용 할 예정이라면 구매하는게 맞습니다. 페이팔을 비롯해 다양한 신용카드 옵션이 있기 때문에 지불에도 문제가 없습니다.
+
+## 동시접속
 
 동시에 3개의 device에서도 사용 할 수 있으며, `one-time purchase`기 때문에 오히려 기쁘게 지불 할 수 있겠습니다.
 
