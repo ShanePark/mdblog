@@ -6,7 +6,7 @@
 
 제가 맥북을 사용하며 여러 번의 시행 착오를 거쳐 얻은 나름의 노하우이며, 새로운 정보가 있을 때마다 최소 한달에 두어번씩은 본 포스팅을 업데이트 하고 있습니다. 특히 `필수` 라고 언급한 목록들은 다른 대부분의 개발자 분들도 이미 사용하고 계시며, 거기에 제가 불편함을 해결하며 깨달은 유용한 팁들을 얹었으니 꼭 한번씩 체크 해보시면 좋겠습니다.
 
-<br><br>
+
 
 ## 필수 설치
 
@@ -18,7 +18,7 @@
 
 위의 글을 쭉 따라가면 어렵지 않게 설치할 수 있습니다. 저도 간만에 해보는데 처음 상태에서 글만 쭉 따라가니 어려움 없이 설치 할 수 있었습니다. 사실상 brew만 설치하면 맥북 모든 설치는 정말 간편하게 할 수 있습니다. 설치 못하는 프로그램이 별로 없습니다.
 
-<br><br>
+
 
 ### Alfred
 
@@ -30,7 +30,7 @@ https://shanepark.tistory.com/164
 
 이왕 brew 설치 포스팅에 alfred 설치 하는 방법까지 같이 이어서 하니, alfred 까지 설치하시길 추천합니다. 
 
-<br><br>
+
 
 ### Karabiner
 
@@ -46,7 +46,7 @@ https://shanepark.tistory.com/165
 
 어쩌다보니 Alfred에 밀렸지만 사실 brew 설치하자 마자 바로 설치해야 할 친구입니다.
 
-<br><br>
+
 
 ###  java
 
@@ -98,7 +98,7 @@ brew install adoptopenjdk14
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-16390941970761.png)
 
-<br><br>
+
 
 ### Rosetta 2
 
@@ -120,7 +120,7 @@ m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을
 
 그닥 오래 걸리지 않습니다.	
 
-<br><br>
+
 
 ### iterm & zsh
 
@@ -144,8 +144,6 @@ https://shanepark.tistory.com/60?category=1182535
 
 > 위의 글을 보고 따라하시면 어렵지 않게 설치 하실 수 있습니다.
 
-<br><br>
-
 ## 필수 설정
 
 ### 배터리 표시 변경
@@ -156,8 +154,6 @@ https://shanepark.tistory.com/166
 
 > 배터리 표시를 % 숫자로 나오게 변경하는 건데, 수치로 확인 되는게 아무래도 좋습니다.
 
-<br><br>
-
 ### Dock & Menu bar 숨기기
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056834.png)
@@ -167,10 +163,6 @@ Dock & Menu Bar 설정에 가면 맨 아래 체크박스로 메뉴바를 숨길 
 저는 개인적으로 둘 다 숨겨서 사용하는게 모니터 활용 범위가 넓어져서 꼭 설정합니다.
 
 >  Dock 체크박스중 맨 아래 있는 Show recent applications in Dock에 체크 되어있는것도 체크 해지 하는것을 강력 추천합니다. 자주 사용하는 앱은 어차피 바로가기를 등록하고 사용하니, 최근 사용 어플에 뜨는건 아이러니하게도 잘 안쓰는 앱 입니다.
-
-<br>
-
-<br>
 
 ### 손가락 3개 드래그
 
@@ -188,7 +180,7 @@ Enable dragging 을 클릭 하고 세 손가락으로 드래그 하기를 선택
 
 이제  세손가락으로 뭐든 드래그 할 수 있습니다.
 
-<br><br>
+
 
 ### 키보드 백틱 설정
 
@@ -224,7 +216,7 @@ vi ~/Library/KeyBindings/DefaultkeyBinding.dict
 
 이제 사용중이던 프로그램을 재시작 한번 해주면, 한글 상태에서 ₩ 를 입력 해도 정상적으로 ` 가 입력 됩니다.
 
-<br><br>
+
 
 ### Apple Watch
 
@@ -234,7 +226,7 @@ vi ~/Library/KeyBindings/DefaultkeyBinding.dict
 
 Preference - Security & Privacy 에서 Use your Apple Watch to unlock 체크를 설정 해 두면 됩니다. Require password 설정도 기본 5분으로 되어있지만 보안을 위해서는 immediately 로 하는게 좋습니다. 애플 워치가 있으니 번거로울 일도 없어 즉시로 변경 해 두었습니다.
 
-<br><br>
+
 
 ### Finder 설정
 
@@ -254,7 +246,7 @@ Finder 설정도 순정 상태에서 사용하기에는 조금 불편함이 있�
 
 개인적으로 키보드 설정에서 New Terminal at Folder도 켜두는걸 추천합니다. 저는 New iTerm2 를 대신 사용해서 체크가 해제 되어 있습니다.
 
-<br><br>
+
 
 ### Safari 개발자 모드 표시
 
@@ -276,7 +268,7 @@ Chrome에서는 기본적으로 F12 를 누르거나 Command + Shift + C 가 먹
 
 설정을 켠 후에는 개발자 모드를 켜려면 Option + Command + i 키를 입력하면 됩니다. Chrome에서와 같이 Command + Shift + C 키입력도 작동 합니다. 개발자 모드는 크롬에서의 그것과 거의 같습니다.
 
-<br><br>
+
 
 ### 마우스 관련 설정
 
@@ -318,7 +310,7 @@ docker에 대한 설명은 크게 필요 없을 것 같습니다. 한참동안 r
 brew install github
 ```
 
-<br>
+
 
 ### Google Chrome
 
@@ -328,7 +320,7 @@ brew install github
 brew install google-chrome
 ```
 
-<br>
+
 
 ### IINA
 
@@ -338,7 +330,7 @@ brew install google-chrome
 brew install iina
 ```
 
-<br>
+
 
 ### KEKA
 
@@ -348,7 +340,7 @@ brew install iina
 brew install keka
 ```
 
-<br>
+
 
 ### Microsoft remote desktop
 
@@ -360,7 +352,7 @@ windows 컴퓨터를 원격 조정 할 일이 있으면 다운 받아주세요.
 brew install microsoft-remote-desktop
 ```
 
-<br>
+
 
 ### Oracle Database
 
@@ -374,7 +366,7 @@ m1 맥북에서 오라클 데이터베이스를 사용하려면 꽤나 골치가
 
 >  <a href="https://shanepark.tistory.com/87" target="_blank">MacOS) m1 맥북 Oracle SQL Developer 사용하기</a>
 
-<br>
+
 
 ### Postman
 
@@ -384,7 +376,7 @@ m1 맥북에서 오라클 데이터베이스를 사용하려면 꽤나 골치가
 brew install postman
 ```
 
-<br>
+
 
 ### Sequal Pro
 
@@ -396,7 +388,7 @@ brew install postman
 brew install homebrew/cask-versions/sequel-pro-nightly
 ```
 
-<br>
+
 
 ### Spotify
 
@@ -410,7 +402,7 @@ brew install spotify
 >
 > 기존에 Rosetta로 실행되던 Spotify가 커널패닉 현상이 심했기 때문에 베타라도 더 안정적입니다. 아마 금방 정식버전이 배포될 듯 합니다.
 
-<br>
+
 
 ### Spring Tool Suite
 
@@ -428,7 +420,7 @@ brew install springtoolsuite
 brew install visual-studio-code
 ```
 
-<br>
+
 
 ## 개발 외
 
