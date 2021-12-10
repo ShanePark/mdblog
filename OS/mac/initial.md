@@ -10,6 +10,8 @@
 
 ## 필수 설치
 
+> 필수 설치에 있는 목록들은 그 순서가 유의미 합니다. 위에서 부터 설치하시길 권장합니다.
+
 ### Homebrew
 
 [![Stainless Steel Beer Dispenser](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/beer-machine-alcohol-brewery-159291-20211101231216301.jpeg)](https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?cs=srgb&dl=pexels-pixabay-159291.jpg&fm=jpg)
@@ -128,21 +130,65 @@ m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을
 
 ![image-20211101233257878](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101233257878.png)
 
-아래의 명령어를 입력하면 설치는 손쉽게 됩니다.
+아래의 명령어만 입력하면 설치는 손쉽게 됩니다.
 
 ```xml
-brew install iterm2
+brew install iterm2	
 ```
-
-​	
 
 사실 iterm2 설치 자체는 굉장히 간단한데요.  oh-my-zsh 설치 하는게 조금 까다롭습니다. 
 
-zsh 설치는 아래의 링크를 참고해주세요.
+oh-my-zsh 설치는 아래의 링크를 참고해주세요. MacOS는 Catalina 부터 기본 shell이 zsh으로 변경되었습니다.
 
 https://shanepark.tistory.com/60?category=1182535 
 
 > 위의 글을 보고 따라하시면 어렵지 않게 설치 하실 수 있습니다.
+
+### JetBrains ToolBox 설치
+
+![image-20211210212629372](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212629372.png)
+
+IntelliJ IDEA등 JetBrains사의 제품을 사용한다면, ToolBox를 사용해서 설치하는 것이 좋습니다. 간편하게 개발 툴들을 설치 할 수 있을 뿐만 아니라, 자동으로 업데이트 해주며 IDE와 함께 플러그인도 업데이트 할 수 있습니다. 심지어 롤백 및 다운그레이드도 지원해주기 때문에 단독으로 소프트웨어를 설치하는 것 보다 좋습니다.
+
+![image-20211210212332631](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212332631.png)
+
+> brew로 검색 해보니 jetbrains-toolbox라는 이름으로 있습니다.
+
+아래의 명령어를 입력해 설치합니다.
+
+```zsh
+brew install jetbrains-toolbox
+```
+
+혹은 brew에 익숙하지 않다면 https://www.jetbrains.com/ko-kr/toolbox-app/ 에서 다운받으실 수 있습니다.
+
+m1을 비롯한 Apple Silicon 맥북 사용자라면, mac OS Apple Sillicon 을 선택해서 다운 받으세요.
+
+![image-20211210213104689](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210213104689.png)
+
+![image-20211210212532158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212532158.png)
+
+금방 설치가 되었습니다. 실행해줍니다.
+
+![image-20211210212811081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212811081.png)
+
+> 다양한 JetBrains 사의 제품들이 나옵니다. 
+
+![image-20211210212829153](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212829153.png)
+
+> 저는 IntelliJ IDEA Ultimate을 설치 합니다.
+
+![image-20211210212933262](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212933262.png)
+
+> 원한다면 여러가지 이전 버전중 골라서 설치 할 수도 있습니다.
+
+그닥 어려울게 없습니다. 다만 툴박스는 창이 아니고 팝업이기 때문에 리사이즈나 이동이 안되어 정말 불편합니다. 
+
+![image-20211210214449797](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210214449797.png)
+
+> https://toolbox-support.jetbrains.com/hc/en-us/community/posts/360000094690-Why-is-the-Toolbox-not-a-real-window-
+
+저는 처음에 버그인줄 알고 재설치도 해봤었는데, 원래그런 거더라고요. 다른사람들도 불많이 많은데 몇년째 바뀌진 않고 있습니다.
 
 ## 필수 설정
 
