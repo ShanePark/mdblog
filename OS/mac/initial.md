@@ -4,7 +4,7 @@
 
 드디어 저의 m1 맥북에어가 수리를 마치고 집으로 돌아왔습니다. 구매한지 5개월밖에 안됐는데 얼마나 혹사를 했는지 배터리에 이상이 생겼었습니다. 다행히도 무상으로 교체를 받게 되어 지금부터 처음부터 다시 셋팅을 해 보려고 합니다. TimeMachine 백업을 해 두긴 했었는데, 주변에 맥북을 새로 산 친구들 셋팅을 몇번 해주다 보니 한번 아에 처음부터 끝까지 글로 정리를 쉽게 해두는게 좋겠다 싶어 글을 작성합니다.
 
-제가 맥북을 사용하며 여러 번의 시행 착오를 거쳐 얻은 나름의 노하우이며, 맥북을 사용하다가도 새로운 정보가 있을 때는 최소 한달에 두어번씩 해당 글을 업데이트 하고 있습니다. `필수` 라고 언급한건 다른 개발자 분들도 많이들 사용하거나 혹은 제가 불편함을 해결하며 깨달은 깨알같은 유용한 팁이니 꼭 한번씩 체크 해보시길 권장합니다.
+제가 맥북을 사용하며 여러 번의 시행 착오를 거쳐 얻은 나름의 노하우이며, 새로운 정보가 있을 때마다 최소 한달에 두어번씩은 본 포스팅을 업데이트 하고 있습니다. 특히 `필수` 라고 언급한 목록들은 다른 대부분의 개발자 분들도 이미 사용하고 계시며, 거기에 제가 불편함을 해결하며 깨달은 유용한 팁들을 얹었으니 꼭 한번씩 체크 해보시면 좋겠습니다.
 
 <br><br>
 
@@ -14,9 +14,9 @@
 
 [![Stainless Steel Beer Dispenser](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/beer-machine-alcohol-brewery-159291-20211101231216301.jpeg)](https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?cs=srgb&dl=pexels-pixabay-159291.jpg&fm=jpg)
 
-[Mac 에 brew 설치하기(https://shanepark.tistory.com/45?category=1182535)](https://shanepark.tistory.com/45?category=1182535)
+<a href="https://shanepark.tistory.com/45" target="_blank">Mac 에 brew 설치하기</a>
 
-위의 글을 쭉 따라가면 어렵지 않게 설치할 수 있습니다. 저도 간만에 해보는건데 처음 상태에서 글만 쭉 따라가니 이상 없이 설치 할 수 있었습니다. 사실상 brew만 설치하면 맥북 모든 설치는 정말 간편하게 할 수 있습니다. 설치 못하는 프로그램이 거의 없습니다.
+위의 글을 쭉 따라가면 어렵지 않게 설치할 수 있습니다. 저도 간만에 해보는데 처음 상태에서 글만 쭉 따라가니 어려움 없이 설치 할 수 있었습니다. 사실상 brew만 설치하면 맥북 모든 설치는 정말 간편하게 할 수 있습니다. 설치 못하는 프로그램이 별로 없습니다.
 
 <br><br>
 
@@ -87,6 +87,16 @@ brew install adoptopenjdk14
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img.png)
 
 자바도 간단하게 설치 완료했습니다.
+
+설치된 모든 자바 버전을 확인 할려면 Terminal을 켜고
+
+```zsh
+/usr/libexec/java_home -V
+```
+
+를 입력 하면 설치된 모든 자바의 버전과 경로가 표시됩니다.
+
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-16390941970761.png)
 
 <br><br>
 
@@ -268,7 +278,15 @@ Chrome에서는 기본적으로 F12 를 누르거나 Command + Shift + C 가 먹
 
 <br><br>
 
-### 마우스 가속 끄기
+### 마우스 관련 설정
+
+1. 마우스 뒤로가기& 앞으로 가기 버튼 활성화
+
+마우스를 사용한다면 웹 브라우징을 할 때 뒤로가기, 앞으로가기 버튼을 이용하는게 편한데 기본 세팅이 되어 있지가 않습니다. 일반적인 마우스를 사용하시는 분들은 Karabiner 를 먼저 설치 한 후에 아래 링크를 참고해 뒤로가기와 앞으로가기 버튼을 활성화 시킬 수 있습니다.
+
+> https://shanepark.tistory.com/264
+
+2. 마우스 가속 끄기
 
 ![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211206211559027.png)
 
@@ -282,13 +300,23 @@ Chrome에서는 기본적으로 F12 를 누르거나 Command + Shift + C 가 먹
 
 > https://shanepark.tistory.com/297
 
-## 기타 개발 툴
+## 개발 관련 소프트웨어
 
-### SQL Developer
+> 알파벳 오름차순 순서로 나열 하였습니다.
 
-> 혹시 Oracle 서버를 운용한다면 SQL Developer를 설치해야 합니다. 아래의 링크를 참고해 설치해주세요.
+### Docker
 
-https://shanepark.tistory.com/87
+docker에 대한 설명은 크게 필요 없을 것 같습니다. 한참동안 rosetta에서 조차 구동이 불가능 했는데 어느 순간 그걸 건너 뛰고 바로 native로 지원을 해 주더라고요. 간단한 예제와 함께 설치 방법을 작성 해 보았습니다. 아래 링크로 따로 준비했습니다.
+
+> <a href="https://shanepark.tistory.com/194" target="_blank">MacOS ) m1 맥북 docker 설치하기 + 가상환경에 postgreSQL 띄워 보기</a>
+
+### Github Desktop
+
+-  Github Desktop을 설치합니다. 사실 sourcetree 쪽이 더 좋았었는데 배터리 이슈때문에 영 아닙니다.
+
+```zsh
+brew install github
+```
 
 <br>
 
@@ -322,45 +350,29 @@ brew install keka
 
 <br>
 
-### Spotify
+### Microsoft remote desktop
 
--  spotify 구독하신다면 설치하세요.
+windows 컴퓨터를 원격 조정 할 일이 있으면 다운 받아주세요.
 
-```zsh
-brew install spotify
-```
-
-> 혹은 저는 개인적으로 https://download.scdn.co/SpotifyBetaARM64.dmg 에서 Apple Silicon용 arm 64로 나온 베타 버전을 다운 받아 봤는데요. 
->
-> 기존에 Rosetta로 실행되던 Spotify가 커널패닉 현상이 심했기 때문에 베타라도 더 안정적입니다. 아마 금방 정식버전이 배포될 듯 합니다.
-
-<br>
-
-### Visual Studio Code
-
-- 장르 불문 모든 프로그래머들의 메모장. vscode 를 설치합니다.
+- microsoft remote desktop을 다운 받습니다. 이거 정말 좋습니다. Teamviewer 를 거들떠도 안보게 됩니다.
 
 ```zsh
-brew install visual-studio-code
+brew install microsoft-remote-desktop
 ```
 
 <br>
 
-### Spring Tool Suite
+### Oracle Database
 
-- STS (Spring Tool Suite) 를 설치합니다. Eclipse 입니다.
+m1 맥북에서 오라클 데이터베이스를 사용하려면 꽤나 골치가 아픕니다. 아마 가장 큰 골칫덩이 였던 것 같은데요, 특히나 많은 국비학원에서 오라클 데이터베이스를 위주로 수업을 진행 하다 보니, 처음에 컴퓨터에 익숙하지 않은 분들은 많이 좌절을 하게 됩니다. 그래도 해결방법은 다 있으니 차근 차근 따라하시면 될 거에요.
 
-```bash
-brew install springtoolsuite
-```
+애플 실리콘 환경에서 오라클 데이터 베이스 사용에 대한 전반적인 내용은 아래의 글을 확인 해주세요.
 
-### Github Desktop
+> <a href="https://shanepark.tistory.com/208?category=1182535" target="_blank">Apple Silicon m1 맥북에서 Oracle Database 사용하기</a>
 
--  Github Desktop을 설치합니다. 사실 sourcetree 쪽이 더 좋았었는데 배터리 이슈때문에 영 아닙니다.
+아니면 서버는 필요 없고 SQL Developer만 있으면 된다는 분들은 아래의 글을 참고 해 주세요.
 
-```zsh
-brew install github
-```
+>  <a href="https://shanepark.tistory.com/87" target="_blank">MacOS) m1 맥북 Oracle SQL Developer 사용하기</a>
 
 <br>
 
@@ -386,15 +398,47 @@ brew install homebrew/cask-versions/sequel-pro-nightly
 
 <br>
 
-### Microsoft remote desktop	 	
+### Spotify
 
-- microsoft remote desktop을 다운 받습니다. 이거 정말 좋습니다. Teamviewer 를 거들떠도 안보게 됩니다.
+-  spotify 구독하신다면 설치하세요.
 
 ```zsh
-brew install microsoft-remote-desktop
+brew install spotify
 ```
 
-<br><br>
+> 혹은 저는 개인적으로 https://download.scdn.co/SpotifyBetaARM64.dmg 에서 Apple Silicon용 arm 64로 나온 베타 버전을 다운 받아 봤는데요. 
+>
+> 기존에 Rosetta로 실행되던 Spotify가 커널패닉 현상이 심했기 때문에 베타라도 더 안정적입니다. 아마 금방 정식버전이 배포될 듯 합니다.
+
+<br>
+
+### Spring Tool Suite
+
+- STS (Spring Tool Suite) 를 설치합니다. Eclipse 입니다.
+
+```bash
+brew install springtoolsuite
+```
+
+### Visual Studio Code
+
+- 장르 불문 모든 프로그래머들의 메모장. vscode 를 설치합니다.
+
+```zsh
+brew install visual-studio-code
+```
+
+<br>
+
+## 개발 외
+
+### 프린터
+
+가끔 맥북을 지원하지 않는 프린터들이 있어서 곤란한 경우가 있는데요, 컴퓨터를 바꿨다는 이유로 프린터기를 새로 구입하기엔 아깝습니다. 그럴 때에는 호환되는 드라이버를 이용하면 문제를 해결 할 수도 있는데요..
+
+그 예로 저는 삼성 sl-j1660 프린터가 집에 있는데, MacOS를 정식으로 지원하지 않습니다. 그래서 여러가지 해결책을 찾아 본 끝에 결국 사용 할 수 있었는데요, 다른 프린터들도 아마 아마 비슷하게 사용 할 수 있을테니 한번 참고 해 보세요.
+
+> <a href="https://shanepark.tistory.com/116" target="_blank">삼성 sl-j1660 프린터 m1 맥북에서 사용하기</a>
 
 ## 마치며
 
@@ -406,6 +450,6 @@ brew install microsoft-remote-desktop
 
 여러분도 맥북으로 즐거운 개발 하세요!
 
-​		
+## 		
 
 이상으로 초기 설정 글을 마치겠습니다. 추가적으로 필요한게 있다면 계속해서 해당 포스팅에 추가하겠습니다.
