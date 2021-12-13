@@ -208,7 +208,7 @@ Storage 설정을 해 줍니다. 저는 기존에 ubuntu 설치 되어 있던게
 
 > 설치가 완료되었습니다. 로그인도 잘 되네요!
 
-## 서버 접속
+## 서버 접속 및 초기설정
 
 ### ssh 접속
 
@@ -241,6 +241,32 @@ systemctl restart systemd-logind
 ```
 
 이제 노트북 덮개를 덮어도 영향을 받지 않습니다.
+
+### 시간대 설정
+
+`date` 명령어로 서버에 설정된 시간을 확인 할 수 있습니다.
+
+![image-20211213085421769](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211213085421769.png)
+
+UTC로 시간대가 설정 되어 있다보니, 스케줄등을 돌리면 실제 시간과 맞지 않을 수 있습니다. 시간대를 맞춰 주겠습니다.
+
+아래의 명령어를 입력 합니다.
+
+```zsh
+sudo dpkg-reconfigure tzdata
+```
+
+![image-20211213085555782](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211213085555782.png)
+
+> Asia를 선택 합니다.
+
+![image-20211213085614886](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211213085614886.png)
+
+> Seoul을 선택 해 줍니다.
+
+![image-20211213085645910](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211213085645910.png)\
+
+정상적으로 KST 시간대로 변경되었습니다.
 
 ## 마치며
 
