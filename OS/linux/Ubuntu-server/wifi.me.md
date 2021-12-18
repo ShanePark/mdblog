@@ -30,7 +30,7 @@ sudo apt install wireless-tools
 iwconfig
 ```
 
-![IMG_4142 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4142 Large.jpeg)
+![IMG_4142Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4142Large.jpeg)
 
 >  `wlp2s0` 네트워크에서 kkobuk이라는 ESSID에 접속 중인게 확인 됩니다.
 >
@@ -42,7 +42,7 @@ iwconfig
 ls /sys/class/net
 ```
 
-![IMG_4146 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4146 Large.jpeg)
+![IMG_4146Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4146Large.jpeg)
 
 혹은 아래의 명령어로 모든 네트워크 정보를 확인 할 수 있습니다.
 
@@ -50,7 +50,7 @@ ls /sys/class/net
 sudo lshw -C Network
 ```
 
-![IMG_4145 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4145 Large.jpeg)
+![IMG_4145Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4145Large.jpeg)
 
 > Wireless interface 라고 써있는 무선 네트워크를 확인 합니다.
 >
@@ -70,7 +70,7 @@ sudo ifconfig wlp2s0 up
 sudo iwlist wlp2s0 scan|more
 ```
 
-![IMG_4144 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4144 Large.jpeg)
+![IMG_4144Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4144Large.jpeg)
 
 > 여러가지 와이파이가 나오는데 저는 여기 나온 ESSID: "kkobuk"에 연결 할 것 입니다.
 
@@ -82,7 +82,7 @@ sudo iwlist wlp2s0 scan|more
 ls /etc/netplan
 ```
 
-![IMG_4147 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4147 Large.jpeg)
+![IMG_4147Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4147Large.jpeg)
 
 여기에 보이는두 파일중 00-installer-config-wifi.yaml 에 설정 정보가 있습니다. 수정해줍니다.
 
@@ -90,7 +90,7 @@ ls /etc/netplan
 sudo vi /etc/netplan/00-installer-config-wifi.yaml
 ```
 
-![IMG_4148 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4148 Large.jpeg)
+![IMG_4148Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4148Large.jpeg)
 
 파일을 열었더니 저는 이전에 사용하던 와이파이 정보가 기록 되어 있는데요,  전에 사용하던게 있으면 좀 더 쉽게 변경 할 수 있겠죠. access-points 하위의 kkobuk 자리가 와이파이 SSID 이름입니다.  yaml 파일이니 주석에 반드시 신경 써서 해주셔야 합니다. 와이파이 ssid를 작성 하고 그 다음줄에 비밀번호 작성할 때에는 들여쓰기가 한개 필요 합니다. 이름, 비밀번호가 같은 depth가 아닙니다.
 
@@ -125,6 +125,6 @@ generate 만 하면 안되고 apply 까지 해줘야 되더라고요.
 
 저는 `ping`을 보내서 확인 했습니다.
 
-![IMG_4149 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4149 Large.jpeg)
+![IMG_4149Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/wifi.me.assets/IMG_4149Large.jpeg)
 
 이상으로 Ubuntu Server 와이파이 설정법에 대해 알아보았습니다. 겨우 변경된 와이파이 비밀번호 하나 입력하는 건데 과정이 꽤나 복잡해서 당황스러웠습니다.
