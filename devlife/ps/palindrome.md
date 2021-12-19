@@ -1,12 +1,12 @@
 # 문제풀이: 가장 긴 팬린드롬(palindrome)
 
-![image-20211218160705282](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/panlindrome.assets/image-20211218160705282.png)
+![image-20211218160705282](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218160705282.png)
 
 ## Intro
 
 프로그래머스 3단계에 해당하는 가장 긴 팬린드롬 문제를 풀어보았습니다. 
 
-팰린드롬은 앞으로 읽어도, 반대로 읽어도 똑같은 단어를 말하는데요, `기러기`, `스위스`등이 있습니다. 2020년에 개봉한 크리스토퍼 놀란 감독의 영화 `TENET`에서도 영화 전반에 걸쳐 palindrome의 이미가 녹아들었으며, 그 제목 자체도 팬린드롬 이였습니다.
+팰린드롬은 앞으로 읽어도, 반대로 읽어도 똑같은 단어를 말하는데요, `기러기`, `스위스`등이 있습니다. 2020년에 개봉한 크리스토퍼 놀란 감독의 영화 `TENET`에서도 영화 전반에 걸쳐 palindrome의 의미가 녹아들었으며, 그 제목 자체도 팬린드롬 이였습니다.
 
 문제가 워낙에 간단하기 때문에 금방 풀 거라고 생각 했는데, 몇가지 간과했던 점들이 있기 때문에 총 4번의 시도 끝에 풀이 하였습니다.
 
@@ -14,7 +14,7 @@
 
 ## 문제
 
-문제의 조건 자체는 굉장히 간단합니다. `leetcode.com` 에서는 공개된 2107개의 테스트 중 무려 5번째에 위치한 문제로 굉장히 오래되어 전세계의 많은 분들이 이미 풀이 하였습니다.
+문제의 조건 자체는 굉장히 간단합니다. `leetcode.com` 에서는 공개된 2107개의 테스트 중 무려 5번째에 위치한 문제로 굉장히 오래되어 전세계의 많은 개발자들이 이미 여러가지 방법으로 풀이했을 것 같네요.
 
 프로그래머스 문제
 
@@ -223,7 +223,7 @@ public static int solution(String s) {
     }
 ```
 
-![image-20211218163722366](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/panlindrome.assets/image-20211218163722366.png)
+![image-20211218163722366](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218163722366.png)
 
 드디어 4차 시도만에 통과 했습니다.
 
@@ -231,13 +231,13 @@ public static int solution(String s) {
 
 내친김에 바로 `leetcode.com` 에 들어가서 같은 알고리즘으로 문제 풀이를 해 보았습니다.
 
-![image-20211218161257293](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/panlindrome.assets/image-20211218161257293.png)
+![image-20211218161257293](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218161257293.png)
 
 통과를 하긴 했지만..
 
-![image-20211218164011470](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/panlindrome.assets/image-20211218164011470.png)
+![image-20211218164011470](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218164011470.png)
 
-![image-20211218164132227](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/panlindrome.assets/image-20211218164132227.png)
+![image-20211218164132227](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218164132227.png)
 
 메모리 사용은 상위 5% 안에 들만큼 적게 사용 했지만 효율성이 한참 떨어집니다. 442ms가 나왔는데, 25ms대에 대부분의 사용자가 모여있는 걸 보면  `O(n^3)` 으로 풀지 말고  `O(n^2)`로 풀이 했어야 하는 듯 합니다.
 
@@ -269,7 +269,7 @@ public static int solution(String s) {
     }
 ```
 
-![image-20211218170318495](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/panlindrome.assets/image-20211218170318495.png)
+![image-20211218170318495](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218170318495.png)
 
 > Runtime이 확연 하게 줄어들었습니다.
 
