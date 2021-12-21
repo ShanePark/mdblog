@@ -211,7 +211,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 ## 회원 데이터 등록
 
-LDAP 서버는 LDIF(LDAP Data Interchange Format)  파일을 사용해 유저 데이터를 교환 할 수 있습니다. `application.properties` 내에 있는 `spring.ldap.embedded.ldif` 속성을 통해 Spring Boot에 LDIF 데이터 파일을 등록 할 수 있습니다.
+LDAP 서버는 LDIF(LDAP Data Interchange Format)  파일을 사용해 유저 데이터를 교환 할 수 있습니다. 
+
+또한, LDIF 파일은 `application.properties` 내에 있는 `spring.ldap.embedded.ldif` 속성을 통해 Spring Boot에 데이터 파일을 등록 할 수 있습니다.
 
 **src/main/resources/test-server.ldif**
 
@@ -383,4 +385,10 @@ spring.ldap.embedded.port=8389
 
 이제 정상적으로 로그인 처리를 하고 숨겨운 페이지를 보여 줍니다!
 
-수고하셨습니다. Spring Security로 보안을 높인 웹 어플리케이션을 작성 하셨습니다.
+<br><br>
+
+수고하셨습니다. Spring Security로 보안을 높인 웹 어플리케이션을 작성 하셨습니다. 
+
+위의 전체 프로젝트 코드는 아래 링크에서 확인 하실 수 있습니다.
+
+> https://github.com/Shane-Park/mdblog/tree/main/projects/ldap
