@@ -92,3 +92,26 @@ docker cp gaia-0.0.1-SNAPSHOT.war tomcat:/usr/local/tomcat/webapps
 
 해당 톰캣에서 등록한 어플리케이션이 잘 실행 되는것을 확인 할 수 있습니다.
 
+## 도커 타임존 변경
+
+Docker 컨테이너의 시간대는 기본적으로 UTC로 되어 있습니다.
+
+이게 Oracle Database와 연결을 할라고 하면 시간존 문제가 있기 때문에 맞춰줘야 합니다. 
+
+run 할 때 부터 `-e TZ=Asia/Seoul` 옵션으로 환경 변수를 주는 방법도 있지만,
+
+tzdata를 이용해 쉽게 변경 할 수 있습니다.
+
+```zsh
+apt-get install tzdata
+```
+
+배포판을 확인해보니 Debian Linux 입니다. apt를 이용해서 설치하는데, 이미 설치가 되어 있었습니다.
+
+```zsh
+ export TZ=Asia/Seoul
+```
+
+로 쉽게 변경하고 `date` 명령어를 쳐 보면 시간대가 변경된 것을 확인 할 수 있습니다.
+
+![image-20211223231744856](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/docker/tomcat.assets/image-20211223231744856.png)
