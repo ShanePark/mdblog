@@ -115,3 +115,31 @@ apt-get install tzdata
 로 쉽게 변경하고 `date` 명령어를 쳐 보면 시간대가 변경된 것을 확인 할 수 있습니다.
 
 ![image-20211223231744856](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/docker/tomcat.assets/image-20211223231744856.png)
+
+하지만 해당 방법으로 변경해보니, 도커를 재 시작 할 때 마다 바로 다시 UTC 타임존으로 돌아왔습니다.
+
+어쩔 수 없이 컨테이너를 다시 생성해 줍니다. 삭제를 먼저 하고..
+
+```zsh
+docker stop tomcat
+docker rm tocat
+
+```
+
+새로 생성 해 줍니다.
+
+```zsh
+docker run --name tomcat -p 8080:8080 -e TZ=Asia/Seoul tomcat:9.0
+```
+
+![image-20211223232738294](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/docker/tomcat.assets/image-20211223232738294.png)
+
+새로 생성한 컨테이너에 들어가보니 시간대가 정상적으로 잘 설정 되어 있습니다. war파일만 다시 `docker cp`로 복사해주면 끝 입니다.
+
+시간대 변경 후에는 오라클 DB와 연결이 안되던 문제도 정상적으로 해결 되었습니다.
+
+![image-20211223232915796](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/docker/tomcat.assets/image-20211223232915796.png)
+
+이상입니다.
+
+ 
