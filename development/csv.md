@@ -25,7 +25,7 @@ Ann, 30, Queenstown
 
 데이터베이스 클라이언트인 DBeaver에서 Import Data를 누르면 아래와 같은 창을 볼 수 있습니다.
 
-![image-20211117153328375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117153328375.png)
+![image-20211117153328375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117153328375.png)
 
 > 데이터를 CSV 파일이나 특정 Database table에서 추출 할 수 있습니다.
 
@@ -35,7 +35,7 @@ CSV 는 오래전부터 스프레드시트나 데이터베이스에서 많이 �
 
 ###  RFC 4180
 
-그러다 2015년 10월에 기술표준 RFC 4180을 통해 CVS 파일 형식을 공식화 하고, 처리를 위한 MIME 타입인 "text/csv"가 정의 되었습니다. 하지만 여전히 그 해석은 응용프로그램에 따라 다릅니다. 아래는 RFC 4180 Standard의 일부 내용입니다.
+그러다 2015년 10월에 기술표준 RFC 4180을 통해 CSV 파일 형식을 공식화 하고, 처리를 위한 MIME 타입인 "text/csv"가 정의 되었습니다. 하지만 여전히 그 해석은 응용프로그램에 따라 다릅니다. 아래는 RFC 4180 Standard의 일부 내용입니다.
 
 - MS-DOS-style lines that end with (CR/LF) characters (optional for the last line).
 - An optional header record (there is no sure way to detect whether it is present, so care is required when importing).
@@ -46,7 +46,7 @@ CSV 는 오래전부터 스프레드시트나 데이터베이스에서 많이 �
 
 보다 자세한 RFC 4180은 아래의 링크를 통해 확인 할 수 있습니다.
 
-![image-20211117153947745](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117153947745.png)
+![image-20211117153947745](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117153947745.png)
 
 > https://datatracker.ietf.org/doc/html/rfc4180
 
@@ -70,7 +70,7 @@ implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.1
 
 일단 먼저 Dependency를 추가 해 주고..
 
-![image-20211117160657306](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117160657306.png)
+![image-20211117160657306](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117160657306.png)
 
 StringEscapeUtils의 escapeCsv 메서드를 사용 하려고 하니 `@Deprecated` 되었다고 나오네요.
 
@@ -98,7 +98,7 @@ implementation 'org.apache.commons:commons-text:1.9'
 
 의존성을 추가 하고 다시 코드 어시스트를 받아 보면,
 
-![image-20211117161122400](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117161122400.png)
+![image-20211117161122400](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117161122400.png)
 
 이제 `org.apache.commons.text`에 있는 StringEscapeUtils를 사용 하면 될 것 같습니다.
 
@@ -122,7 +122,7 @@ public class CsvEscape {
 
 ```
 
-![image-20211117161453623](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117161453623.png)
+![image-20211117161453623](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117161453623.png)
 
 > 실행 결과
 
@@ -130,7 +130,7 @@ public class CsvEscape {
 
 <br><br>
 
-![image-20211117161726400](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117161726400.png)
+![image-20211117161726400](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117161726400.png)
 
 온라인에서 CSV String을 Escape / Unescape 해주는 툴을 확인 하니 같은 결과가 보입니다.
 
@@ -203,11 +203,11 @@ public class CsvFileWrite {
 
 그리고는 String 배열을 바로 `writeNext()`에 전달해서 작성 하면 파일에 바로 작성이 되는데요, 
 
-![image-20211117163704893](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117163704893.png)
+![image-20211117163704893](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117163704893.png)
 
 보이는 것 처럼 CSVWriter는 String 배열(배열 하나가 하나의 row) 하나 하나를 한 라인으로 추가 할 수도 있지만, writeAll 메서드를 이용해서 String배열의 List, Iterable 등을 한번에 작성 할 수도 있습니다. 심지어 ResultSet을 바로 기록 할 수도 있네요.
 
-![image-20211117165431005](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117165431005.png)
+![image-20211117165431005](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117165431005.png)
 
 두번째 파라미터로 받는 boolean은 무엇인지 확인 해 보니, 항상 모든 value에 쌍 따옴표를 붙일지, 아니면 필요할 때만 붙일지에 대한 옵션 입니다. 장단점이 있겠지만 저는 경량화 보다 무결성에 힘을 주기 위해 true로 하려고 합니다.
 
@@ -258,7 +258,7 @@ public class CsvFileWrite {
 
 ```
 
-![image-20211117164126930](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117164126930.png)
+![image-20211117164126930](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117164126930.png)
 
 > 의도한 대로 test.csv 파일이 잘 작성 되었습니다.
 
@@ -268,7 +268,7 @@ public class CsvFileWrite {
 
 이때는, FileWriter를 활용하면 파일의 끝에서 부터 작성 할 수 있습니다.
 
-![image-20211117165704619](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117165704619.png)
+![image-20211117165704619](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117165704619.png)
 
 FileWriter를 생성 할 때, 두번째 파라미터를 확인 해 보니 append 여부 인데요, 여기에 꼭 true 로 해 두어야 파일의 끝에 새로운 내용을 추가 하며 작성 하게 됩니다. 바로 코드를 작성 해서 테스트 해 보겠습니다.
 
@@ -322,13 +322,55 @@ public class CsvAddToFile {
 
 이제 실행을 해 보면
 
-![image-20211117165833202](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117165833202.png)
+![image-20211117165833202](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117165833202.png)
 
 의도한 대로 기존의 내용에 Michael과 Kohei가 새로 추가 되었습니다.
 
-![image-20211117170308956](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/cvs.assets/image-20211117170308956.png)
+![image-20211117170308956](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20211117170308956.png)
 
 > 일반 Text Editor에서 파일을 열어 보면 이와 같습니다.
+
+## 객체 리스트로부터 CSV 파일 작성
+
+String 배열 뿐만 아니라, 객체 리스트로부터 csv 파일을 바로 작성 할 수도 있습니다.
+
+### StatefulBeanToCsv
+
+StatefulBeanToCsv 객체를 활용 하면 되는데요.
+
+바로 예제 코드로 시작하겠습니다.
+
+```java
+List<CsvDto> list = ...
+File file = new File(folder, "test.csv");
+try (
+    FileOutputStream fos = new FileOutputStream(file);
+    Writer writer = new OutputStreamWriter(fos, "UTF-8");
+) {
+    StatefulBeanToCsv<CsvDto> csvWriter = new StatefulBeanToCsvBuilder<CsvDto>(writer)
+        .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
+        .withQuotechar(CSVWriter.DEFAULT_QUOTE_CHARACTER)
+        .withEscapechar(CSVWriter.DEFAULT_ESCAPE_CHARACTER)
+        .withLineEnd(CSVWriter.DEFAULT_LINE_END)
+        .withOrderedResults(false)
+        .build();
+
+    csvWriter.write(list);
+
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
+
+writer를 매개변수로 받아 StatefulBeanToCsv 객체를 생성 해 주는 방법인데요, 미리 DTO 객체를 생성 해 두어야 합니다.
+
+![image-20220105162532682](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/csv.assets/image-20220105162532682.png)
+
+List 뿐만 아니라, Iterator나 Stream, 혹은 그냥 단독 객체만을 사용 할 수도 있습니다.
+
+이 경우에는 알아서 객체의 프로퍼티 이름들이 csv 첫 라인에 header로 들어가게 되며 순서에 맞춰 csv 파일을 작성 해 주기 때문에 정말 간편합니다.
+
+
 
 ## 글 마침
 
