@@ -14,7 +14,7 @@ https://docs.docker.com/engine/install/ubuntu/
 
 ## Docker 설치
 
-#### 오래된 버전 삭제하기
+### 오래된 버전 삭제하기
 
 혹시나 기존의 오래된 버전이 있는지 확실히 할 수 있으며, 있다면 최신 버전 설치를 위해 삭제 해줍니다.
 
@@ -22,7 +22,7 @@ https://docs.docker.com/engine/install/ubuntu/
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
-#### repository 설정하기
+### repository 설정하기
 
 apt package index를 업데이트 하고 HTTPS를 통해 repository 를 이용하기 위해 pakcage 들을 설치 해줍니다.
 
@@ -51,7 +51,7 @@ stable repository 를 등록해줍니다.
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-#### Docker Engine 설치하기
+### Docker Engine 설치하기
 
 아래 명령어를 입력하면 자동으로 최신 버전이 설치 됩니다.
 
@@ -61,7 +61,7 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-#### 설치 완료
+### 설치 완료
 
 설치가 완료된 후에는
 
