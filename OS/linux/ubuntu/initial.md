@@ -215,6 +215,22 @@ set showmatch "짝이 되는 괄호 하이라이트
 
 >  간단하게 이정도 설정만 저장 해 두고 쓰면서 필요할 때 더 추가합니다.
 
+### Terminator
+
+처음에 설치되어 있는 Ubuntu Terminal도 사용하는데는 충분히 훌륭하지만 편의 기능면에서 많이 떨어지는게 사실 입니다.
+
+특히 창 분할에 있어서 터미네이터는 정말 비교할 수 없을 정도로 높은 생산성을 보여줍니다. 여러 창을 띄워놓고 작업하기에 기본 터미널은 너무나도 부족합니다. 설치가 어렵지도 않기 때문에 이왕 설치 하면서 미리 설치 해 두는걸 추천 드립니다.
+
+기본 터미널과 비교해 디자인도 다를 바 없으며 그냥 편의 기능만 추가 되기 때문에 단점은 전혀 없다고 봐도 무방합니다.
+
+```zsh
+sudo apt install terminator
+```
+
+위의 명령어로 설치 할 수 있으며, 자세한 설정법과 단축키는 아래의 링크를 통해 확인 해 주세요.
+
+> [Ubuntu) Terminator 설치 및 사용법](https://shanepark.tistory.com/313)
+
 ### JDK 설치 
 
 ![black and silver laptop computer on table](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1517694712202-14dd9538aa97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
