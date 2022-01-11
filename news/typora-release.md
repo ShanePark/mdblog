@@ -59,6 +59,12 @@ sudo apt-mark hold typora
 
 맥북에서는 마지막 Beta버전의 dmg 파일을 받아 설치 한 후에 
 
+> ![image-20220111150018623](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20220111150018623.png)
+>
+> mac: https://typora.io/dev_release.html
+>
+> windows/Linux: https://typora.io/windows/dev_release.html
+
 ![image-20211208214912647](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211208214912647.png)
 
 - [ ] Check updates automatically 체크 박스를 해지하고
