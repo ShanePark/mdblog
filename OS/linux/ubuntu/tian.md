@@ -1,6 +1,30 @@
 # Ubuntu) 끝판왕 한글 입력기 Tian (nimf)
 
-> 우분투 IntelliJ IDEA 한글 입력 문제 해결하기
+## 2022년 1월 14일 수정
+
+Tian 을 개발해주신 호동님이 개발 중단을 선언 하셨습니다.
+
+개발중단된 한글 입력기를 추천 할 수는 없기에 Tian대신 KIME를 추천드립니다. Tian 에 못지 않게 한글 입력기 특유의 문제를 모두 해결 하였으며, 심지어 빠른 속도와 적은 메모리 사용량 등 장점이 많습니다. 아래의 링크를 참고해 설치 해 주세요.
+
+> [Linux) KIME 한글 입력기](https://shanepark.tistory.com/318)
+
+### Tian 삭제방법
+
+아래의 명령으로 삭제 후
+
+```zsh
+sudo apt purge tian
+```
+
+`.profile` `.xinitrc` `.xinputrc` `.xprofile` `.xsessionrc` 파일에서 `[ -f /usr/local/etc/input.d/tian.conf ] && . /usr/local/etc/input.d/tian.conf` 내용을 삭제 해 줍니다. purge만 하면 부팅 할 때 .profile 에서 tian.conf 파일을 읽지 못해 오류가 발생합니다.
+
+### 그럼에도 Tian을 계속 쓰고싶다면
+
+사실 KIME로 넘어가길 권장 드리지만, 지금 상태만으로도 완벽에 가까운 입력기라고 생각 되어 한동안은 그냥 사용하는 것도 크게 나쁘지는 않습니다. https://github.com/Shane-Park/markdownBlog/files/7859813/tian_2021.11.14.zip 에서 마지막에 올려 주신 버전을 다운 받으실 수 있습니다. Github엔 `.deb`파일이 업로드 되지 않아 `zip`파일로 압축 해 두었습니다. 
+
+`sudo apt update` 시 저장소를 찾지 못해 에러가 발생하니 `sudo rm /etc/apt/sources.list.d/tian.list` 명령어로 tian 저장소를 삭제 하면 계속 사용 할 수 있습니다.
+
+<br><br>
 
 ## Intro
 
@@ -14,11 +38,11 @@ iBus로 솔직히 왠만한 입력 문제는 모두 해결이 되지만, snap의
 
 ## 다운로드
 
->  https://www.nimfsoft.com/
+>  ~~더이상유효하지않은링크입니다nimfsoft.com/~~
 
 ![image-20211202113721913](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/tian.assets/image-20211202114209166.png)
 
-> https://www.nimfsoft.com/downloads/
+> ~~더이상유효하지않은링크입니다nimfsoft.com/downloads/~~
 
 위의 우분투 20.04 용 버전을 다운로드 했습니다.
 
@@ -62,7 +86,7 @@ Tian Settings 를 켜고는 한/영 전환 키를 Hangul로 변경 해주고, �
 
 한컴오피스를 실행 했더니 한글이 입력되지 않았습니다. nimfsoft 홈페이지에 해당 정보가 있습니다.
 
-> https://www.nimfsoft.com/support/how-to-use-tian-in-hoffice/
+> ~~더이상유효하지않은링크입니다nimfsoft.com/support/how-to-use-tian-in-hoffice/~~
 
 우분투에 한컴오피스를 설치한 후에 tian 을 사용하기 위해서는 입력 모듈(플러그인)에 대한 링크를 만들어 주어야 한다고 합니다. 다음 명령으로 링크를 만들어줍니다.
 
@@ -73,7 +97,7 @@ sudo ln -sf /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libqt5im
 
 그 외 카카오톡 등에서 사용하는 방법도 모두 기술지원에 안내되어 있습니다. 저는 카카오를 사용하지 않아 생략합니다.
 
-> https://www.nimfsoft.com/support/
+> ~~더이상유효하지않은링크입니다nimfsoft.com/support/~~
 
 이상입니다.
 

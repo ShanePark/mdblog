@@ -26,7 +26,7 @@
 
 보통 한글 입력 때문에 키보드 설정을 제일 먼저 하는게 편합니다. 맥북을 설정할때도 Karabiner를 제일 먼저 설치하는 것 과 같은 맥락 입니다. iBus에 한계가 분명 있긴 하지만 기본적으로 iBus 설정은 무조건 하는게 낫다고 생각합니다. 
 
-Ubuntu를 처음 설치한다면 iBus 키보드 설정만 하시면 되지만, 최종적으로는 Tian 입력기를 설치하는게 좋습니다. 일단 iBus를 쓰다가 불편함이 있을 때 Tian을 설치 하시면 됩니다.
+Ubuntu를 처음 설치한다면 iBus 키보드 설정만 하시면 되지만, 최종적으로는 KIME 입력기를 설치하는게 좋습니다. 일단 iBus를 쓰다가 불편함이 있을 때 KIME를 설치 하시면 됩니다.
 
 - iBus 키보드 설정
 
@@ -36,13 +36,13 @@ Ubuntu를 처음 설치한다면 iBus 키보드 설정만 하시면 되지만, �
 
 >  [fctix입력기 설치해 intelliJ 한글입력 해결하기](https://shanepark.tistory.com/262?category=1222202)
 >
->  iBus보다는 낫지만 Tian을 사용하는걸 추천합니다.
+>  iBus보다는 낫지만 Kime을 사용하는걸 추천합니다.
 
-- Tian(nimf) 입력기 설치
+- KIME입력기 설치
 
-> [Ubuntu) 끝판왕 한글 입력기 Tian (nimf)](https://shanepark.tistory.com/293)
+> [Linux) KIME 한글 입력기](https://shanepark.tistory.com/318)
 >
-> 말그대로 한글 입력 끝판왕입니다. 이것 저것 다 써봤는데 Tian이 최고 입니다.
+> 호동님이 수개월 진행하시던 Tian 프로젝트를 중단한 이상 현재로서는 KIME가 가장 완벽에 가까운 한글 입력기라고 생각합니다.
 
 ### 비프음 끄기
 
