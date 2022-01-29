@@ -231,6 +231,24 @@ sudo apt install terminator
 
 > [Ubuntu) Terminator 설치 및 사용법](https://shanepark.tistory.com/313)
 
+### KAKAO TALK
+
+![image-20220129171723784](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220129171723784.png)
+
+사실 카카오톡이 필수 설치인지에 대해서는 이견이 갈릴 수 있겠습니다.
+
+저도 카카오톡이 굳이 필요 없다고 생각하여 한동안 시도를 하지 않다가, 그래도 종종 필요할 때가 있어서 설치를 시도 했었습니다.
+
+그런데 인터넷에 나와 있는 많은 방법을 써도 설치에 실패했었고, 여러가지 정보를 확인 해 보아도 막히는 부분이 있었는데
+
+이번에 작정하고 설치에 도전 한 끝에 성공 할 수 있었습니다. 과정은 제법 복잡하지만, 여타 카카오톡을 우분투에 설치해서 사용해 보았다는 분들이 사진첨부가 안된다거나 한글이 깨진다거나 이모티콘이 안보인다거나 하는 문제가 있었다는 후기가 많았는데 제가 설치한 방법대로 하면 거의 100% Windows나 Mac에서의 사용과 일치했기 때문에 이정도면 설치를 권장 드립니다.
+
+다만 과정이 꽤나 복잡하기 때문에 Tweak 이나 Font, 그리고 한글 입력기에 대한 이해가 먼저 선행 되어야 합니다.
+
+아래 링크를 참고 해 주세요.
+
+> [Ubuntu) 우분투에서 카카오톡 실행 (100% 정상작동 방법)](https://shanepark.tistory.com/328)
+
 ### JDK 설치 
 
 ![black and silver laptop computer on table](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1517694712202-14dd9538aa97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
