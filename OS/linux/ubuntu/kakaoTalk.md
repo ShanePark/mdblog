@@ -1,5 +1,7 @@
 # Ubuntu) 우분투에서 카카오톡 실행 (100% 정상작동 방법)
 
+![image-20220129171723784](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129171723784.png)
+
 ## Intro
 
 Windows나 Mac에서 되는데 Linux에서는 할 수 없는거야 셀수 없이 많지만 왠만한거는 다 괜찮습니다. 어딘가에 대체할 만한 소프트웨어가 다 있기 마련이며 크리티컬 한 소프트웨어 일수록 사용 가능 할 확률이 높습니다. 심지어 Third Party 소프트웨어들이 정말 많기 때문에 저는 Notion, Apple music, iCloud Drive, Github Desktop 등 공식 지원 하지 않는 소프트웨어들을 사용 하고 있으며 심지어 intelliJ IDEA, Visual Studio Code, Postman, Dropbox, Typora, Slack 등은 제조사에서 Linux를 공식적으로 지원을 해 줍니다.
@@ -146,7 +148,7 @@ Manage Wine versions를 클릭 합니다.
 
 여러가지 버전이 나오는데 7.0은 아직 출시되기 직전이라고 해도 배포 전이기 때문에 선택하지 않았습니다. 7.0 버전을 사용 하셔도 되지만 제가 사용을 해보지 않았기 때문에 어떤 문제가 있는지는 모릅니다.
 
-저는 처음에 6.18-staging으로 시도 했다가 실패해서 6.14-staging 으로 다시 했습니다.
+저는 처음에 6.18-staging으로 시도 했다가 실패해서 6.14-staging 으로 다시 했습니다. 스샷이 처음 찍었던거라 6.18인게 몇개 포함 되어 있을 수 있지만, 6.18을 하면 나중에 로그인이 되지 않기 때문에 꼭 **6.14-staging**을 선택해주세요. 선택 하고 오른쪽 화살표를 클릭 하면 설치 합니다.
 
 ![image-20220129162339315](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129162339315.png)
 
@@ -162,7 +164,7 @@ Manage Wine versions를 클릭 합니다.
 
 ![image-20220129170905659](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129170905659.png)
 
-> 정말 오래걸려 설치 되었습니다.
+> 정말 오래걸려 설치 되었습니다. 다시 한번 말씀드리지만, **6.14-staging** 버전을 선택하셔야 합니다.
 
 ### KakaoTalk 설치
 
@@ -216,7 +218,7 @@ Manage Wine versions를 클릭 합니다.
 
 이제 OK를 누르고 다음에 나오는 화면에서 아래의 총 4개를 선택 해줍니다.
 
-> d3dx11, gdiplus, gecko, mono28
+> POL_install_로 시작하는 d3dx11, gdiplus, gecko, mono28
 
 ![image-20220129164443640](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129164443640.png)
 
@@ -228,15 +230,19 @@ Manage Wine versions를 클릭 합니다.
 
 ![image-20220129164748534](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129164748534.png)
 
-> Gecko 파일이 네트워크에서 missing 이라 설치를 못했습니다. 일단 Next를 클릭 해 진행합니다. 실행 에 문제가 생긴다면 Gecko를 의심 해야 하겠습니다.
+> Gecko 파일이 네트워크에서 missing 이라 설치를 못했습니다. 일단 Next를 클릭 해 진행합니다. 
+>
+> 이후 실행 에 문제가 생긴다면 Gecko를 의심 하려고 했는데, 이렇게 에러가 떠도 아무 문제 없이 실행이 됩니다.
 
 ![image-20220129164859086](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129164859086.png)
 
-이제 위의 화면이 나오면, 아까 다운받아놓은 PC버전 카카오톡 설치파일을 실행 합니다.
+이제 위의 화면이 나오면, Browse 를 클릭하고 아까 다운받아놓은 PC버전 카카오톡 설치파일을 실행 합니다.
 
 ![image-20220129165009348](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129165009348.png)
 
-> 원하는 언어를 선택 하고 계속 진행 해 줍니다.
+> 원하는 언어를 선택 하고 계속 진행 해 줍니다. 
+>
+> 저는 개발환경에서는 항상 언어는 영어로 해두는데요, 이렇게 해도 한글로 채팅하고, 한글 사용자명이 나오거나 하는데 아무런 문제가 없습니다.
 
 ![image-20220129165054592](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129165054592.png)
 
@@ -254,31 +260,31 @@ Manage Wine versions를 클릭 합니다.
 
 ![image-20220129165341380](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129165341380.png)
 
-> 50151 에러가 뜬다면 Wine 버전을 변경 하고, 위의 wine 버전 설치 부분 부터 다시 해줍니다. 저는 6.18 버전으로 시도 했다가 실패해서 6.14 staging 버전으로 다시 했습니다.
+> 로그인시 50151 에러가 뜬다면 Wine 버전을 변경 하고, 위의 wine 버전 설치 부분 부터 다시 해줍니다. 저는 처음에 6.18 버전으로 시도 했다가 실패해서 6.14 staging 버전으로 다시 했습니다. 50151 에러는 wine 버전을 변경하지 않으면 고쳐지지 않습니다.
 >
-> 또한 50114 에러가 뜬다면 `RECV_SOCKET_ERROR(err_code=336130329) (Error Code: 50114) FriendList. or LOCO protoco` 그때는 로그인 될 때 까지 재시도 해주시면 됩니다.
+> 로그인시 50114 에러가 뜬다면 `RECV_SOCKET_ERROR(err_code=336130329) (Error Code: 50114) FriendList. or LOCO protoco` 그때는 로그인 될 때 까지 다시 로그인 해주시면 됩니다. 재부팅 하거나 프로그램을 새로 실행해서 해결했다는 분들이 있는데 그냥 운 같습니다. 한번 로그인 하면서 Keep me logged in 을 해두면 그다음 부터는 따로 로그인 할 필요가 없습니다. 저는 50114 에러는 한번도 뜨지 않았는데 워낙 흔하다고 해서 함께 올려두었습니다.
 
-이제 버전을 잘 맞췄다면
+이제 버전을 잘 맞췄다면 로그인이 잘 됩니다.
 
 ![image-20220129171723784](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129171723784.png)
 
 > 정상적으로 로그인 됩니다! 
 
-그런데 한글 폰트가 깨져서 입력할 때 잘 보이지가 않습니다. 
+그런데 한글 폰트가 깨져서 채팅을 입력할 때 제가 입력한 메시지가 잘 보이지가 않습니다. 
 
 ![image-20220129172035762](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129172035762.png)
 
 ![image-20220129172047646](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129172047646.png)
 
-> 입력 할 때 한글이 깨져 보이지만 Send를 누르면 정상적으로 보내지긴 하더라고요.
+> 입력 할 때는 한글이 깨져 보이지만 Send를 누르면 정상적으로 보내지긴 하더라고요.
 
 ### Font 변경
 
-이때는 해당 폰트가 없기 때문인데요, 폰트를 변경하면 해결 됩니다.
+이때는 해당 폰트가 없기 때문인데요, 폰트를 변경하면 해결 됩니다. Settings -> Display -> Font에 있습니다.
 
 ![image-20220129172349753](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129172349753.png)
 
-일단 제가 자주 사용하는 D2 Coding 포트로 변경 해 보았습니다. 코딩 전용 폰트기 때문에 일반적인 사용을 하기에는 적합하지 않지만 한글이 잘 나오는지 일단 확인해 보기 위해 선택 했습니다.
+일단 제가 자주 사용하는 D2 Coding 포트로 변경 해 보았습니다. 코딩 전용 폰트기 때문에 일반적인 사용을 하기에는 딱히 가독성이 좋지는 않지만 한글이 잘 나오는지 일단 확인해 보기 위해 선택 했습니다.
 
 ![image-20220129172512596](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129172512596.png)
 
@@ -296,15 +302,13 @@ Manage Wine versions를 클릭 합니다.
 
 > 보이스톡 / 영상통화도 가능한데, wine에서 카메라나 마이크 리소스를 접근하지 못해서 상대방의 영상, 음성만 보고 들을 수 있었습니다. 필요하면 몇가지 설정을 추가로 하면 이것도 가능 할 거 같긴 했지만 사용하지 않아 시도하지 않았습니다.
 
-
-
 이정도면 보통의 카카오톡 사용에 필요한건 100% 동일하게 사용 가능하다고 판단됩니다.
 
 ### 바로가기 이동
 
 ![image-20220129180515432](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129180515432.png)
 
-바로가기 파일이 떡하니 Desktop에 추가 되어 있는데, 저는 Desktop을 따로 사용하지 않기 때문에 파일을 이동 시키겠습니다.
+바로가기 파일이 떡하니 Desktop에 추가 되어 있는데, 저는 Desktop에 아이콘을 두고 사용하지 않기 때문에 파일을 이동 시키겠습니다.
 
 어플리케이션 바로가기들은 `~/.local/share/applications/` 에 추가해주면 됩니다.
 
