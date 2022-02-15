@@ -496,9 +496,8 @@ sudo apt install gnome-shell-extension-autohidetopbar
 지극히 개인적인 취향 이지만, 저는 바탕화면에 홈과 휴지통이 있는걸 좋아하지 않습니다. 휴지통은 dock에 달아서 사용합니다.
 
 ```zsh
-gsettingsset org.gnome.shell.extensions.desktop-icons show-trashfalse
-gsettingsset org.gnome.shell.extensions.desktop-icons show-homefalse
-
+gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 ```
 
 ### Fusuma 설치
