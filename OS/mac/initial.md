@@ -144,7 +144,27 @@ https://shanepark.tistory.com/60?category=1182535
 
 > 위의 글을 보고 따라하시면 어렵지 않게 설치 하실 수 있습니다.
 
-### JetBrains ToolBox 설치
+### Rectangle
+
+### ![mac512pts1x](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/mac512pts1x.png)
+
+윈도우에서는 기본으로 지원하는 창 분할 기능을 MacOS에서는 왜 안해주는지는 정말 의문입니다.
+
+이때문에 Magnet이라는 훌륭한 소프트웨어가 나와있기는 하지만, 약 10,000원의 비용을 창분할에 선뜻 사용하기에는 망설여지는게 사실입니다. 그 대용으로 오랫동안 많은 분들이 Spectacle을 써왔지만 유지보수가 이루어지지 않고 있다는 단점이 있었는데요.
+
+Spectacle을 베이스로한 Rectangle이라는 훌륭한 오픈소스 소프트웨어가 나왔고, 꾸준히 개선되고 있습니다. 저도 사용해보니 Spectacle을 사용했을 때의 부족함이 모두 메워져서 아주 만족하며 사용 하고 있습니다.
+
+아래의 명령으로 설치 할 수 있습니다.
+
+```zsh
+brew install --cask rectangle
+```
+
+Rectangle에 대한 자세한 내용을 확인 하고 싶다면 아래의 포스팅을 읽어주세요.
+
+> [Mac) 화면 분할을 위한 Rectangle](https://shanepark.tistory.com/333)
+
+### JetBrains ToolBox 
 
 ![image-20211210212629372](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212629372.png)
 
