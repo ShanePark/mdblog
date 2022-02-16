@@ -483,6 +483,31 @@ sudo apt install gnome-shell-extension-autohidetopbar
 
 가장 위에 있는 Show Panel when mouse approaches edge of the screen 옵션을 켜주고 가장 아래의 Intellihide 에 있는 두개의 옵션을 꺼주면 됩니다.
 
+### 창 분할 - ShellTile
+
+Gnome의 기본 창 분할도 사용하는데 꽤나 만족스러웠습니다만, 피벗 모니터에서 상/하로 창을 분할하지 못하는게 가장 큰 약점이었습니다. ShellTile Extention을 설치 하면 창분할을 굉장히 직관적이고 편하게 할 수 있습니다.
+
+필수에 넣을까 고민 할 정도로 꼭 설치해야 한다고 생각하지만, 필요성을 먼저 느낀 후 설치하는것도 괜찮다고 봅니다.
+
+![tiling windows](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/window_tiling.gif)
+
+> https://github.com/emasab/shelltile
+
+설치 방법은 간단합니다. 아래의 링크에 들어가서 ON으로 사용 여부를 토글 해 주면 설치가 금방 끝납니다.
+
+![image-20220216153315020](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220216153315020.png)
+
+>  https://extensions.gnome.org/extension/657/shelltile/
+
+설치 후에는 재부팅 없이 바로 기능을 사용 할 수 있습니다. Ctrl 키를 누른 상태로 창을 드래그 하면 창을 내려 둘 때 어디에 붙을지 블럭으로 표시되며 아래의 키보드 단축키를 이용해서도 창을 분할 할 수 있습니다.
+
+- `Ctrl` `Super` `Left` : Tile to the left border
+- `Ctrl` `Super` `Right` : Tile to the right border
+- `Ctrl` `Super` `Up` : Tile to the top border
+- `Ctrl` `Super` `Down` : Tile to the bottom border
+
+방향키 두개를 동시에 눌러서 코너에 창을 위치 시키는 것도 가능 합니다.
+
 ### 노트북 지문인식 등록
 
 ![round black and white light](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1585079374502-415f8516dcc3ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80)
@@ -496,9 +521,8 @@ sudo apt install gnome-shell-extension-autohidetopbar
 지극히 개인적인 취향 이지만, 저는 바탕화면에 홈과 휴지통이 있는걸 좋아하지 않습니다. 휴지통은 dock에 달아서 사용합니다.
 
 ```zsh
-gsettingsset org.gnome.shell.extensions.desktop-icons show-trashfalse
-gsettingsset org.gnome.shell.extensions.desktop-icons show-homefalse
-
+gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 ```
 
 ### Fusuma 설치
