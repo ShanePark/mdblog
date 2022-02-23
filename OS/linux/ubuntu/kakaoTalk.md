@@ -326,6 +326,36 @@ mv ~/Desktop/KakaoTalk.desktop ~/.local/share/applications/
 
 ![image-20220129181738675](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129181738675.png)
 
+#### * 주의사항
+
+![image-20220223112542261](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220223112542261.png)
+
+다만, 무작정 `KakaoTalk.desktop` 파일을 옮겼다가는 위와같은 불상사가 일어 날 수도 있습니다.
+
+StartupWMClass 를 잘 맞춰 줘야 하는데요. WMClass를 확인하는 방법은 두가지가 있습니다.
+
+1. Terminal 을 켜고
+
+```zsh
+xprop WM_CLASS
+```
+
+를 입력 후, 마우스가 십자 표시가 되면 실행중인 어플리케이션을 클릭해 해당 프로그램의 WM_CLASS를 확인한다.
+
+![image-20220223112735972](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220223112735972.png)
+
+> 그러면 위에서 보이는 것 처럼 WM_CLASS 를 확인 할 수 있습니다.
+
+2. 또 다른 방법으로는 `Alt + F2` 키 입력 후, lg 라고 입력해 엔터키를 칩니다. 그 후에 윈도우가 뜰때 우측 상단의 Windows를 클릭 하면
+
+   ![image-20220223112822629](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220223112822629.png)
+
+실행중인 어플리케이션들의 wmclass를 한번에 확인 할 수 있습니다.
+
+![image-20220223112906300](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220223112906300.png)
+
+확인 후에는 KakaoTalk.desktop 파일의 StartupWMClass 변수를 거기 맞춰 변경해 줍니다. 저는 기존에 WMClass가 `Kakaotalk.exe`로 작성되어 있어서 문제가 있었습니다. 사용자마다 다를 수 있기 때문에 확인해주세요.
+
 ## TopIcon Plugin
 
 마지막으로 하나의 플러그인을 추가하겠습니다.
