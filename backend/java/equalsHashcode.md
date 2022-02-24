@@ -58,6 +58,8 @@ public class EqualsHashcode {
 
         @Override
         public boolean equals(Object o) {
+            if (!(o instanceof MyPair)) return false;
+            
             MyPair p = (MyPair) o;
             if (p.num1 == num1 && p.num2 == num2) {
                 return true;
@@ -95,6 +97,8 @@ private class MyPair {
 
   @Override
   public boolean equals(Object o) {
+    if (!(o instanceof MyPair)) return false;
+      
     MyPair p = (MyPair) o;
     if (p.num1 == num1 && p.num2 == num2) {
       return true;
@@ -213,7 +217,7 @@ num1과 num2의 순서가 달라진다고 해도 둘 사이의 연산이 같은,
         }
 ```
 
-그래서 num1과 num2의 값이 순서에 상관없이 같다면 어느 상황에서도 같은 hash 를 반환하는 연산을 하나 만들어 보았습니다. 
+그래서 num1과 num2의 값이 순서에 상관없이 같다면 어느 상황에서도 같은 hash 를 반환하는 연산을 하나 만들어 보았습니다. 사실  `Objects.hash(num1+num2)` 만 해도 의도대로 작동합니다.
 
 해시코드를 생성하는 비용에 있어서 이정도 연산이 얼마나 큰 부담을 주는지는 잘 모르겠지만 그게 부담스럽다면 매번 새로 계산하기 보다는 캐싱을 해두는게 좋겠습니다.
 
@@ -232,6 +236,7 @@ num1과 num2의 순서가 달라진다고 해도 둘 사이의 연산이 같은,
 
         @Override
         public boolean equals(Object o) {
+            if (!(o instanceof MyPair)) return false;
             MyPair p = (MyPair) o;
             if (p.num1 == num1 && p.num2 == num2) {
                 return true;
