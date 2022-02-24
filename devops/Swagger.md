@@ -2,11 +2,13 @@
 
 ## Intro
 
-프론트엔드와 백엔드를 구분하고, MSA가 보편화되고 있는 지금의 추세에서 RESTAPI는 상당한 강점을 가지고 있습니다. 하지만 아무리 내부적으로만 사용한다고 해도 API의 양이 많아질수록 개발자의 기억력에만 의존하기에는 점점 버거워집니다.
+프론트엔드와 백엔드의 업무가 점점 더 구분되어가고, MSA가 보편화되고 있는 지금의 추세에서 RESTAPI의 쓰임이 점점 더 많아지고 있습니다. 외부에 공개하는 API 뿐만 아니라 소프트웨어 내부적으로만 사용하는 API라고 해도 어플리케이션이 점점 커질수록 개발자의 기억력에만 의존하기에는 그 규모가 점점 버거워지기 마련입니다.
 
-특히나 API를 공개하거나 협력에 사용한다면 체계화된 보기 좋은 API Document 작성의 필요성이 대두되는데요, 마침 회사에서도 API Document 정리를 해야할 때가 왔습니다.
+특히나 API를 공개하거나 개발자간의 협력에서 필요한 상황이 오면 체계화된 읽기 좋은 API Document의 작성은 선택이 아닌 필수입니다. 마침 회사에서 진행중인 프로젝트에도 조금의 여유가 생겨 API Document 정리를 해야할 때가 왔습니다.
 
-여러가지 공개 소프트웨어가 있습니다만 Swagger를 선택해서 진행 해 보았으며 꽤나 만족스러웠습니다.
+여러가지 오픈소스 선택지가 있습니다만 이번에는 Swagger를 선택해서 테스트를 진행 해 보았으며 꽤나 만족스러웠습니다.
+
+간단한 스프링 부트 프로젝트 예제를 통해 적용 해 보겠습니다. RestAPI를 사용하는 아무 스프링 부트 프로젝트 하나 준비하시면 됩니다.
 
 ## Spring Boot 프로젝트에 적용
 
@@ -57,21 +59,25 @@ public class SwaggerConfig {
 
 RestController만 있는 프로젝트라면 paths에 `.paths(PathSelectors.any())` 를 쓰면 됩니다. 
 
-제가 최종적으로 적용시킬 프로젝트에서는 뷰와 RESTAPI가 혼재되어 있기 때문에 api 경로를 특정 할 필요가 있습니다만 테스트용 프로젝트에서는 .any()로 진행합니다.
+제가 최종적으로 적용시킬 프로젝트에서는 뷰와 RESTAPI가 혼재되어 있기 때문에 api 경로를 특정 할 필요가 있습니다만 테스트용 프로젝트에서는 .any()로 진행하겠습니다.
 
 ## 실행
 
-이제 모든 설정이 완료 되었으니 프로젝트를 실행 해 줍니다. Swagger는 API 에 대한 정보를 JSON response로 주는데요, 데이터의 양이 방대하기 때문에 가독성이 현저히 떨어집니다. 위에서 저희는 swagger-ui 를 미리 추가 해 두었기 때문에, 깔끔하게 정리된 문서를 확인 할 수 있습니다.  브라우저를 띄워 contextPath 하위에 swagger-ui 를 넣어 요청해봅니다.
+이제 모든 설정이 완료 되었으니 프로젝트를 실행 해 줍니다. Swagger는 API 에 대한 정보를 JSON response로 주는데요, 데이터의 양이 방대하기 때문에 가독성이 현저히 떨어집니다. 위에서 저희는 swagger-ui 를 미리 추가 해 두었기 때문에 이를 이용해 깔끔하게 정리된 문서를 확인 할 수 있습니다. 브라우저를 띄워 `(contextPath)/swagger-ui` 주소로 요청을 보내봅니다.
 
 http://localhost:8080/swagger-ui
 
 ![image-20220223160947956](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223160947956.png)
 
-보기에 아주 깔끔하게 API 컨트롤러들이 정리 되어 있습니다. 이중 member-controller를 클릭해서 확인 해 보겠습니다.
+> 보기에 아주 깔끔하게 API 컨트롤러들이 정리 되어 있습니다. 
+
+member-controller를 클릭해서 확인 해 보겠습니다.
 
 ![image-20220223161038096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223161038096.png)
 
-사용 가능한 API 목록을 아주 깔끔하게 보여줍니다. 이중 하나를 클릭해 확인 해 보겠습니다.
+> 사용 가능한 API 목록을 아주 깔끔하게 보여줍니다. 
+
+이중 하나를 클릭해 확인 해 보겠습니다.
 
 ![image-20220223161145844](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223161145844.png)
 
@@ -135,7 +141,7 @@ Swagger가 적용될 Model에 상세한 정보를 작성할 수 있습니다.
 
 ![image-20220223164930769](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223164930769.png)
 
-숨겨야 할 API가 있다면 Controller나 Method 위에 @ApiIgnore 를 달아 줍니다.
+숨겨야 할 API가 있다면 Controller나 Method 위에 @ApiIgnore 를 달아 주면 됩니다.
 
 ![image-20220223164954218](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223164954218.png)
 
@@ -153,7 +159,7 @@ io.swagger.annotations 패키지를 확인해보면 그 외에도 더 많은 어
 
 실무에서 진행중인 프로젝트에 적용을 하려다 보니 Spring Boot 버전이 낮아서 그대로 작동하지 않았습니다.
 
-WebFluxConfigurer 를 사용하는데, SpringBoot 2.0에서 추가 된 class 이기 때문입니다. 해당 프로젝트는 Spring boot 1.5 버전을 사용하고 있습니다.
+Swagger가 WebFluxConfigurer 를 필요로 하는데, SpringBoot 2.0에서 추가 된 class 이기 때문입니다. 제가 적용을 시도하고 있는 프로젝트는 Spring boot 1.5 버전을 사용하고 있습니다.
 
 ![image-20220223150145939](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223150145939.png)
 
@@ -177,6 +183,8 @@ java.lang.NoClassDefFoundError: org/springframework/web/reactive/config/WebFluxC
 ```
 
 이때는 springfox-boot-starter 대신 필요한 의존성들을 다 가지고 있는 springfox-swagger2 를 추가하면 됩니다.
+
+이상입니다.
 
 Ref
 
