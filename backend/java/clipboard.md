@@ -125,12 +125,28 @@ public class ClassNameFactory {
 
 실행 즉시 새로 만든 클래스 이름을 보여 주었고, 클립보드에 해당 내용이 복사 되었습니다.
 
+> java 11 부터는 컴파일을 하지 않고도 `.java` 파일을 바로 실행할 수 있는데요 JEP 330 에서 소개된 기능 입니다. https://openjdk.java.net/jeps/330
+>
+> `java HelloWorld.java` 는  `javac -d HelloWorld.java java -cp helloWorld` 명령과 같다고 합니다. 
+>
+> JDK8을 사용하고 있다면, javac 로 컴파일을 먼저 한 뒤에 classPath를 명시해서 실행 해주세요.
+>
+> `java -cp ~/Documents/dev ClassNameFactory` 
+
 ### alias 설정
 
 `~/.zshrc` 파일에 leet 이라는 이름으로 alias를 설정 하였습니다.
 
+JDK11
+
 ```zsh
 alias leet='java ~/Documents/dev/ClassNameFactory.java'
+```
+
+JDK8
+
+```zsh
+alias leet="java -cp ~/Documents/dev ClassNameFactory"
 ```
 
 이제는 `leet {문제타이틀}` 명령을 하면
