@@ -1,0 +1,518 @@
+# Spring Boot 1.5 -> 2.x Migration
+
+> https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide
+
+## Before You Start
+
+### 최신의 1.5.x 버전으로 업그레이드
+
+Before you start the upgrade, make sure to upgrade to the latest `1.5.x` available version. This will make sure that you are building against the most recent dependencies of that line.
+
+![image-20220224135625618](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224135625618.png)
+
+> 마지막 1.5.x 버전은 v1.5.22.RELEASE 입니다.
+
+## Upgrade to Spring Boot2
+
+dependency 들에 대한 검토를 마쳤다면 2.0.x  중 최신 버전으로 업그레이드 합니다. `2.0.0.RELEASE`는 많은 문제가 있었기 때문에 처음 버전으로 변경하지는 않는 것이 좋습니다.
+
+> 2.0.x 의 마지막 버전은 2.0.9 입니다.
+
+![image-20220224154821314](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224154821314.png)
+
+###  Configuration properties migration
+
+Spring Boot 2.0으로 넘어오며 많은 설정 property들의 이름이 변경되거나 삭제 되었습니다. 따라서 그에 맞춰 application.properties 혹은 application.yml 파일을 알맞게 변경 해야 합니다.
+
+Spring-boot-properties-migrator 모듈을 추가하면, 환경설정을 읽고 분석해 줄 뿐만 아니라, 런타임때 적절한 properties로 migrate 해주기도 합니다.
+
+**maven**
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-properties-migrator</artifactId>
+	<scope>runtime</scope>
+</dependency>
+```
+
+**gradle**
+
+```groovy
+runtime("org.springframework.boot:spring-boot-properties-migrator")
+```
+
+### Next Steps
+
+If you wish to look into specifics, here’s a curated list of resources - otherwise, proceed to the next sections:
+
+- [Spring Boot 2.0.0 Release Notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0.0-Release-Notes)
+- [Running Spring Boot on Java 9](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-with-Java-9)
+- [Upgrading to Spring Framework 5.0](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-5.x#upgrading-to-version-50)
+
+### Building Your Spring Boot Application
+
+The plugin configuration attributes that are exposed as properties now all start with a `spring-boot` prefix for consistency and to avoid clashes with other plugins.
+
+예를 덜어, 아래의 커맨드는 prod 프로필을 활성화 시킵니다.
+
+```properties
+mvn spring-boot:run -Dspring-boot.run.profiles=prod
+```
+
+## Bean 순환 참조
+
+![image-20220225100014868](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220225100014868.png)
+
+이전에 찾지 못했던 순환 참조 구조를 찾아서 알려줍니다. 알려주는데 그치지 않고 순환 고리를 끊지 않으면 빌드가 되지 않습니다. 순환이 약하다면 어렵지 않게 끊을 수 있었는데 지독하게 얽혀있는 몇몇 서비스들은 서로 떼내는게 쉽지 않았습니다. Setter 주입을 한다면 어떻게 넘어갈 수 있겠지만 추후 메모리 문제가 발생할 수 있으니 생성자 주입을 유지하며 고리를 끊어내는 것이 권장됩니다.
+
+생성자 주입 방식으로 DI 했을때는 위와 같이 스프링부트가 찾아내어 알려 주지만, Field Injection 방식에서는 그러지 못합니다. 
+
+![image-20220225103245100](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220225103245100.png)
+
+> Bean을 생성하다가 실패 했는데, Spring Boot에서 순환 참조를 의심 하고 있습니다.
+
+그 이유를 간략하게 알아보면 SpringFramework 구동 시점에서
+
+- DispatcherServlet 및 ContextLoader가 생성 되고, 설정들을 읽습니다.
+- 설정을 바탕으로 Bean 객체들을 하나씩 생성 합니다.
+
+이 Bean 객체 생성 단계에서 순환참조 오류를 방지 할 수 있을지 없을지가 결정되는데 Field Injection을 통한 의존성 주입을 했다면 참조하느 객체를 선언하지 않았기 때문에 정상적으로 초기화가 완료 되는 것 처럼 보입니다. 하지만 후에 해당 객체를 로드 할 시점이 되어서야 순환 참조 에러가 발생하는 거죠.
+
+하지만, 생성자 주입 방식이라면 빈 객체 생성 시점에 순환 참조 오류가 발생하기때문에 바로 알아 챌 수 있습니다. 테스트의 용이함을 비롯해 생성자 주입방식이 절대적 이점을 가지고 있기 때문에 이번 기회에 모두 생성자 주입으로 변경 하였습니다. 다만 Google Guava의 EventBus는 생성자주입시 오히려 순환참조가 되어 버려서 필드 인젝션을 해야 했습니다.
+
+![image-20220225114928666](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220225114928666.png)
+
+> 수많은 필드 인젝션을 생성자 주입으로 변경하고 나니 숨겨져 있던 순환 참조를 찾을 수 있었습니다.
+
+그동안 미뤄 두었었다면 이번 기회를 통해 순환 참조 고리를 모두 끊어내는 것이 좋지만, 너무 급한 상황이라면 일단 applcation.yml 파일에 아래의 설정으로 bean 선언 오버라이딩을 허용 해 주면 순환참조가 있어도 어플리케이션을 구동 할 수 있다고 합니다. 2.6.x 버전이 2.5.x 버전보다 훨씬 타이트하게 순환 참조를 잡습니다.
+
+```yaml
+spring:
+  main:
+    allow-bean-definition-overriding=true
+```
+
+## 프로젝트 적용중 문제 해결
+
+### spring-security-oauth2
+
+> Cannot resolve org.springframework.security.oauth:spring-security-oauth2:unknown 
+
+문제가 되는 dependency는 아래와 같습니다.
+
+```xml
+<dependency>
+    <groupId>org.springframework.security.oauth</groupId>
+    <artifactId>spring-security-oauth2</artifactId>
+</dependency>
+```
+
+spring-security-oauth2를 찾지 못합니다.
+
+![image-20220224162042089](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224162042089.png)
+
+> https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0.0-M5-Release-Notes
+
+Spring Boot 릴리즈 노트에서 OAuth 2.0에 대한 내용을 찾아보니 Spring Security OAuth 프로젝트가 Spring Security 코어로 마이그레이션 되었다고 합니다. 
+
+![image-20220224163113723](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224163113723.png)
+
+> https://docs.spring.io/spring-security-oauth2-boot/docs/2.2.6.BUILD-SNAPSHOT/reference/htmlsingle/
+
+다행히도 Spring Boot 1.x 버전에서 사용하다가 Spring Boot 2.x 버전에서 삭제된 OAuth2 를 사용 할 수 있도록 지원해주는 프로젝트가 존재합니다. 아래의 의존성을 추가해 주면 해결 됩니다.
+
+```xml
+<dependency>
+    <groupId>org.springframework.security.oauth.boot</groupId>
+    <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+    <version>2.0.0.RELEASE</version>
+</dependency>
+```
+
+### spring-session
+
+> Unresolved dependency: 'org.springframework.session:spring-session:jar:unknown'
+
+문제가 되는 dependency는 아래와 같습니다.
+
+```xml
+<dependency>
+    <groupId>org.springframework.session</groupId>
+    <artifactId>spring-session</artifactId>
+</dependency>
+```
+
+![image-20220224163705396](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224163705396.png)
+
+> https://docs.spring.io/spring-session/docs/2.2.x/reference/html/upgrading-2.0.html
+
+이번에는 spring-session이 문제입니다. spring-session-core 모듈로 replace 되었다고 안내 되네요.
+
+그냥 pom.xml 에서 해당 의존성을 삭제 하면 되겠습니다.
+
+### PageRequest
+
+> java: constructor PageRequest in class org.springframework.data.domain.PageRequest cannot be applied to given types;
+>   required: int,int,org.springframework.data.domain.Sort
+>   found: int,java.lang.Integer
+>   reason: actual and formal argument lists differ in length
+
+사용중인 PageRequest 생성자의 접근제어자가 protected로 변경 되어 사용하지 못하는 오류가 발생했습니다.
+
+![image-20220224164716685](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224164716685.png)
+
+그래서 PageRequest 클래스를 확인 해보니, 그 대신 static 팩터리 메서드가 보입니다. 그걸 사용하도록 변경 해 줍니다.
+
+```java
+PageRequest.of(page, size, sort);
+```
+
+![image-20220224174230405](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224174230405.png)
+
+한개씩 바꾸려면 끝도 없으니 `Cmd + Shift + R` 모두 찾아 바꾸기 기능을 이용해 한번에 캐스팅을 해 주세요.
+
+> new Sort() 생성자도 마찬가지로 변경되었습니다. Sort.by() 로 생성합니다.
+
+### Page.getOffset()
+
+![image-20220224165048613](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224165048613.png)
+
+Pageable의 getOffset이 int에서 long으로 변경되었습니다. 
+
+이건 간단히  Integer로 형 변환을 하면 해결할 수 있습니다. 역시 찾아바꾸기로 한번에 바꿔주도록 합니다.
+
+### junit
+
+> java: package org.junit does not exist
+
+unit 패키지의 위치가 이동되었기 때문에 기존의 import는 에러가 납니다.
+
+![image-20220224165351189](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224165351189.png)
+
+`org.unit.jupiter.api` 로 이동되었네요. 기존의 import를 삭제하고 새로 import 하여 해결 했습니다.
+
+마찬가지로 `org.junit.Assert` 또한 제거되었습니다. `org.junit.jupiter.api.Assertions` 를 대신 사용하면 됩니다.
+
+### Specifications
+
+> Cannot resolve symbol 'Specifications'
+
+`org.springframework.data.jpa.domain.Specifications` 의 행방도 찾을 수 없네요.
+
+일단 Hibernate를 어떻게 사용하고 있었는지 확인 해 봅니다.
+
+```xml
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>${hibernate.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-ehcache</artifactId>
+    <version>${hibernate.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <!-- This artifact doesn't track the main Hibernate version. -->
+    <version>${hibernate-validator.version}</version>
+</dependency>
+```
+
+Hibernate를 따로 추가해 사용 하고 있었습니다. 
+
+```xml
+<hibernate.version>5.2.17.Final</hibernate.version>
+<hibernate-validator.version>6.0.10.Final</hibernate-validator.version>
+```
+
+사용중인 Hibernate의 버전은 각각 이렇게 되었었습니다.
+
+일단 버전을 싹 지우고 Spring boot가 알아서 지정해주도록 했습니다.
+
+그런데 변경 후에도 여전히 문제가 에러가 고쳐지지 않는데
+
+![image-20220224172921535](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224172921535.png)
+
+equals의 리턴타입을 확인해보니 Specitication 으로 되어 있습니다.
+
+![image-20220224171609017](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224171609017.png)
+
+Specifications 에서 Specification으로 바뀐줄도 모르고 빌드도 새로 하고 캐시 초기화까지 했었네요.
+
+전부 `Specification` 으로 변경 해 줍니다.
+
+### findOne
+
+![image-20220224171305178](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224171305178.png)
+
+findOne이 Optional 객체를 반환하기 때문에 모두 변경 해 주어야 합니다. .get() 을 모두 붙여줍니다.
+
+또한,  기존의 findOne은 findById() 로 변경되었으며, delete는 deleteById 로 변경되었습니다. 
+
+모두 변경해줘야 합니다.
+
+### SpringBootServletInitializer
+
+> Cannot resolve symbol 'SpringBootServletInitializer'
+
+SpringBootServletInitializer는 또 어디로 갔을까요..
+
+![image-20220224173328245](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224173328245.png)
+
+패키지 경로가 변경되었네요.
+
+- 변경 전 `org.springframework.boot.web.support.SpringBootServletInitializer` 
+- 변경 후 `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`
+
+#### EntityManager
+
+> Could not autowire. No beans of 'EntityManager' type found. 
+
+Autowire로 사용중이던 EntityManager를 받아오질 못합니다.
+
+SpringBoot 2.x 에서는 EntityManager를 불러 오려면 `@Autowire` 대신에  `@PersistenceContext` 어노테이션을 대신 달아야합니다.
+
+### RelaxedPropertyResolver
+
+> java.lang.ClassNotFoundException: org.springframework.boot.bind.RelaxedPropertyResolver
+>
+> Could not evaluate condition on org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration due to org/springframework/boot/bind/RelaxedPropertyResolver not found. Make sure your own configuration does not rely on that class. This can also happen if you are @ComponentScanning a springframework package (e.g. if you put a @ComponentScan in the default package by mistake)
+
+이번에는 에러메시지가 굉장히 친절합니다. SpringBoot 1.5에 있던 RelaxedPropertyResolver 를 불러오다가 실패 했다고 하며, 컴포넌트 스캔이 잘못 되었는지 확인 하라고 합니다.
+
+![image-20220224180111127](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224180111127.png)
+
+Congiguration을 확인 하러 가니 일단 deprecated가 눈에 띕니다. WebMvcConfigurerAdapter 상속하던걸 빼고, 인터페이스인 WebMvcConfigurer 를 구현 하도록 변경 해 줍니다.
+
+```java
+public class AdminApplication implements ServletContextAware, WebMvcConfigurer
+```
+
+하지만 그래도 여전히 해결되지 않는데요. stackoverflow를 찾아 보았습니다.
+
+![image-20220224180714556](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224180714556.png)
+
+> https://stackoverflow.com/questions/62497326/org-springframework-boot-bind-relaxedpropertyresolver-not-found
+
+버전이 혼재되어 있을거고 해서  pom.xml을 열심히 훑어봤는데, Spring 관련 의존성 버전에는 문제가 없습니다. 딱히 `RelaxedPropertyResolver` 를 사용하는 코드도 없기 때문에, 다른 패키지중에 누군가가 해당 클래스에 의존하는 것으로 보입니다.
+
+pom.xml 에서 버전을 명시적으로 사용하던 패키지들을 찾아, SpringBoot 가 알아서 지정해주도록 변경하니 (버전 명시 삭제) 어느 순간 해결되었습니다.
+
+### Liquibase
+
+liquibase 설정법도 달라졌습니다.
+
+application.yml에서의 설정을 아래와 같이 변경했습니다.
+
+변경전
+
+```yml
+liquibase.change-log: classpath:liquibase/changelog.xml
+```
+
+변경후
+
+```
+spring.liquibase:
+  change-log: classpath:liquibase/changelog.xml
+  database-change-log-table: dbchangelog
+  database-change-log-lock-table: dbchangeloglock
+```
+
+여기에서 각각의 테이블명을 정확히 잘 입력해줘야 합니다. 오타를 냈더니 제멋대로 테이블을 만들고는 liquibase 를 처음부터 다시 다 DB에 넣으려고 시도 하더라고요.
+
+### PasswordEncoder
+
+PasswordEncoder를 주입 하던 중 에러가 발생합니다.
+
+```
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure(InitializeUserDetailsBeanManagerConfigurer.java:73)
+
+The following method did not exist:
+
+    org.springframework.security.authentication.dao.DaoAuthenticationProvider.setPasswordEncoder(Ljava/lang/Object;)V
+
+The method's class, org.springframework.security.authentication.dao.DaoAuthenticationProvider, is available from the following locations:
+
+    jar:file:/home/shane/.m2/repository/org/springframework/security/spring-security-core/5.5.0/spring-security-core-5.5.0.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.springframework.security.authentication.dao.DaoAuthenticationProvider: file:/home/shane/.m2/repository/org/springframework/security/spring-security-core/5.5.0/spring-security-core-5.5.0.jar
+    org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider: file:/home/shane/.m2/repository/org/springframework/security/spring-security-core/5.5.0/spring-security-core-5.5.0.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.springframework.security.authentication.dao.DaoAuthenticationProvider
+
+
+Process finished with exit code 1
+
+```
+
+스프링 시큐리티의 버전이 달라지며 일어난 문제로 보입니다.
+
+```xml
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-config</artifactId>
+    <!-- <version>4.2.7.RELEASE</version> -->
+</dependency>
+```
+
+기존에는 spring-security-config 에서 버전을 명시 하고 있었는데요, 버전 부분을 제거해줍니다.
+
+### Redis
+
+Redis 에서도 문제가 있습니다.
+
+```
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.session.data.redis.config.ConfigureNotifyKeyspaceEventsAction.getNotifyOptions(ConfigureNotifyKeyspaceEventsAction.java:74)
+
+The following method did not exist:
+
+    org.springframework.data.redis.connection.RedisConnection.getConfig(Ljava/lang/String;)Ljava/util/List;
+
+The method's class, org.springframework.data.redis.connection.RedisConnection, is available from the following locations:
+
+    jar:file:/home/shane/.m2/repository/org/springframework/data/spring-data-redis/2.5.1/spring-data-redis-2.5.1.jar!/org/springframework/data/redis/connection/RedisConnection.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.springframework.data.redis.connection.RedisConnection: file:/home/shane/.m2/repository/org/springframework/data/spring-data-redis/2.5.1/spring-data-redis-2.5.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.springframework.data.redis.connection.RedisConnection
+
+
+Process finished with exit code 1
+
+```
+
+SpringSession 의존성을 변경해서 해결 했습니다.
+
+변경 전
+
+```
+<dependency>
+    <groupId>org.springframework.session</groupId>
+    <artifactId>spring-session</artifactId>
+    <version>1.3.5.RELEASE</version>
+</dependency>
+```
+
+변경 후
+
+```
+<!-- spring session -->
+<dependency>
+    <groupId>org.springframework.session</groupId>
+    <artifactId>spring-session-core</artifactId>
+    </dependency>
+<dependency>
+    <groupId>org.springframework.session</groupId>
+    <artifactId>spring-session-data-redis</artifactId>
+    </dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+```
+
+여기에서 끝나는게 아니고 `org.springframework.session.web.http.HttpSessionStrategy`가 제거되었기 때문에 HttpSessionIdResolver를 대신 구현 해 주며 많은 부분의 코드를 뜯어 고쳐야 합니다. HttpSessionStrategy 등도 사라졌기 때문에 변경해야할 부분이 제법 있었습니다.
+
+### HandlerInterceptorAdapter
+
+> Deprecated
+
+HandlerInterceptorAdapter 가 deprecated 되었습니다. 대신 HandlerInterceptor를 구현해줍니다.
+
+### ContextPath
+
+ContextPath 지정 방법이 변경되었습니다. application.yml 파일을 변경해줘야 합니다.
+
+변경 전
+
+```yml
+server:
+  context-path: /adm
+  port: 8080
+```
+
+변경 후
+
+```yml
+server:
+  servlet.context-path: /adm
+  port: 8080
+```
+
+### Lombok @Slf4j
+
+Lombok 플러그인에서 `Slf4j` 어노테이션을 이용해 로그를 찍고 있었는데 아래와 같은 에러가 발생 합니다.
+
+```
+java: Can't get the delegate of the gradle IncrementalProcessingEnvironment.
+
+java: cannot find symbol
+  symbol:   variable log
+  location: class openapi.OpenApiController
+```
+
+pom.xml 파일에서 
+
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.2</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+위와 같이 lombok 버전을 명시 해서 사용 하고 있었는데, 해당 버전이 새로운 스프링부트 버전과 맞지 않던 것으로 보입니다. version 명시를 제거 하니 문제가 해결되었습니다. 
+
+![image-20220302113845614](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220302113845614.png)
+
+> `1.18.20` 버전이 추가되었습니다. 18.2와 18.20은 수학적으로는 같은 값으로 보이지만 버전 표시에서는 마이너 버전 18개의 갭이 있는 꽤 큰 차이 입니다.
+
+### No property UNSORTED found for type
+
+```
+SEVERE: Servlet.service() for servlet [dispatcherServlet] in context with path [/adm] threw exception [Request processing failed; nested exception is org.springframework.data.mapping.PropertyReferenceException: No property UNSORTED found for type OpenApiRequest!] with root cause
+org.springframework.data.mapping.PropertyReferenceException: No property UNSORTED found for type OpenApiRequest!
+```
+
+`@PageableDefault` 사용에 대해서도 조금 달라졌는지, 정렬 방법을 명시해주지 않았을 때 UNSORTED 프로퍼티를 찾으려고 시도하며 에러를 발생했습니다. 생성되는 Pageable 객체를 확인 해 보니, UNSORTED 를 기준으로 오름차순 정렬 하려고 시도 하고 있었습니다. 정렬 기준을 정해주면 문제가 해결됩니다.
+
+변경 전
+
+```
+public String findOpenapiRequest(@PageableDefault Pageable pageable, Model model) {
+	...
+}
+```
+
+변경 후
+
+```
+public String findOpenapiRequest(
+@PageableDefault(sort = "requestTime", direction = Sort.Direction.DESC)Pageable pageable, Model model) {
+	...
+}
+```
+
