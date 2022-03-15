@@ -1,26 +1,38 @@
 # Spring Boot 1.5 -> 2.x Migration
 
-> https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide
+## Intro
+
+최근 스프링 부트 1.5 버전으로 작성된 프로젝트를 Spring Boot: 2.5.10 버전으로 올리는 작업을 진행 하였습니다. 스프링부트 앞자리 버전 차이가 굉장히 큰데, 온라인 게임에 비유한다면 메이플스토리에서의 빅뱅 혹은 와우의 대격변 전후를 생각하면 이해가 빠르겠습니다.
+
+단순히 pom.xml에서 버전 명시를 변경한다고 뿅 하고 바뀌는게 아니고, 여러가지 클래스가 사라지고 새로 생겨났으며 각종 메서드들의 변화도 상당합니다. 스프링 설정 하는 방법도 달라지고, 구석구석 영향이 가지 않는 곳이 거의 없기 때문에 프로젝트가 크면 클수록 그 여파가 상당합니다. 제가 이번에 마이그레이션을 진행한 프로젝트도 몇년간 진행되며 꾸준히 고도화 된 프로젝트이다 보니 규모가 제법 되는데 모듈프로젝트를 하나씩 떼어놓고 보면 10개가량 됩니다.
+
+마이그레이션을 진행 하며 바꿔도 바꿔도 끝이 없다는 것에 먼저 한번 놀랐는데, 차라리 눈에 보이는건 찾아 고치기라도 쉽지만.. 특히 사이드이펙트들은 그 원인을 바로바로 찾아내기가 쉽지 않기 때문에 중간중간 정말 절망도 많이 했습니다. 그래도 꾸준히 하다보니 어플리케이션들이 하나 둘 씩 올라오기 시작했고 이제 작업은 마무리 단계에 다다랐습니다. 뭔가 인터넷에서 검색 했을때는 뚝딱 하고 변경 한 것 처럼 작성된 글이 많았는데 무턱대고 시작하기에는 그 작업량이 상당하니 충분히 여력을 쏟아 부을 수 있을 때 진행하시길 추천합니다.
+
+마이그레이션 작업 중에도 한번씩 요구사항이나 고객사 요청에 따른 유지보수를 위해 기존 버전으로 돌아와 작업을 할 필요가 있었는데 Git으로 버전관리를 한다고 그 외에도 버전 전환에 따른 시간적 정신적 비용이 꽤나 크기 때문에 생각보다 마음을 단단히 먹어야 합니다.
 
 ## Before You Start
+
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide 의 스프링 공식 마이그레이션 가이드를 참고 했습니다.
 
 ### 최신의 1.5.x 버전으로 업그레이드
 
 Before you start the upgrade, make sure to upgrade to the latest `1.5.x` available version. This will make sure that you are building against the most recent dependencies of that line.
 
-![image-20220224135625618](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224135625618.png)
+> 스프링 공식 문서에서는 업그레이드를 시작 하기 전에 최신의 1.5.x 버전으로 업그레이드를 먼저 해보라고 권합니다. 
+
+![image-20220224135625618](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224135625618.png)
 
 > 마지막 1.5.x 버전은 v1.5.22.RELEASE 입니다.
 
-## Upgrade to Spring Boot2
+## 스프링 부트2 버전으로 업그레이드
 
 dependency 들에 대한 검토를 마쳤다면 2.0.x  중 최신 버전으로 업그레이드 합니다. `2.0.0.RELEASE`는 많은 문제가 있었기 때문에 처음 버전으로 변경하지는 않는 것이 좋습니다.
 
 > 2.0.x 의 마지막 버전은 2.0.9 입니다.
 
-![image-20220224154821314](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224154821314.png)
+![image-20220224154821314](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224154821314.png)
 
-###  Configuration properties migration
+###  환경 설정 마이그레이션
 
 Spring Boot 2.0으로 넘어오며 많은 설정 property들의 이름이 변경되거나 삭제 되었습니다. 따라서 그에 맞춰 application.properties 혹은 application.yml 파일을 알맞게 변경 해야 합니다.
 
@@ -44,6 +56,8 @@ runtime("org.springframework.boot:spring-boot-properties-migrator")
 
 ### Next Steps
 
+추가로 세부 사항을 확인 하고 싶다면 아래의 링크를 참고 해 주세요. 해당사항이 있다면 읽고 진행해도 좋지만 변경하면서 필요할 때마다 읽어도 괜찮습니다.
+
 If you wish to look into specifics, here’s a curated list of resources - otherwise, proceed to the next sections:
 
 - [Spring Boot 2.0.0 Release Notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0.0-Release-Notes)
@@ -54,21 +68,36 @@ If you wish to look into specifics, here’s a curated list of resources - other
 
 The plugin configuration attributes that are exposed as properties now all start with a `spring-boot` prefix for consistency and to avoid clashes with other plugins.
 
-예를 덜어, 아래의 커맨드는 prod 프로필을 활성화 시킵니다.
+플러그인 구성 속성은 이제 `Spring-Boot` 접두사로 시작합니다. 일관적인 이름으로 인해 다른 플러그인과의 충돌도 피할 수 있습니다.
+
+예를 들어, 아래의 커맨드는 prod 프로필을 활성화 시킵니다.
 
 ```properties
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
 ```
 
-## Bean 순환 참조
+pom.xml 에서 
 
-![image-20220225100014868](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220225100014868.png)
+```xml
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.10</version>
+    <relativePath/> <!-- lookup parent from repository -->
+</parent>
+```
+
+기입한 스프링 부트 버전을 변경하는것으로 긴 여정이  시작됩니다. 지금부터는 제가 마이그레이션을 진행 하며 겪었던 문제들을 공유하겠습니다.
+
+## Bean 순환 참조 해결
+
+![image-20220225100014868](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220225100014868.png)
 
 이전에 찾지 못했던 순환 참조 구조를 찾아서 알려줍니다. 알려주는데 그치지 않고 순환 고리를 끊지 않으면 빌드가 되지 않습니다. 순환이 약하다면 어렵지 않게 끊을 수 있었는데 지독하게 얽혀있는 몇몇 서비스들은 서로 떼내는게 쉽지 않았습니다. Setter 주입을 한다면 어떻게 넘어갈 수 있겠지만 추후 메모리 문제가 발생할 수 있으니 생성자 주입을 유지하며 고리를 끊어내는 것이 권장됩니다.
 
 생성자 주입 방식으로 DI 했을때는 위와 같이 스프링부트가 찾아내어 알려 주지만, Field Injection 방식에서는 그러지 못합니다. 
 
-![image-20220225103245100](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220225103245100.png)
+![image-20220225103245100](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220225103245100.png)
 
 > Bean을 생성하다가 실패 했는데, Spring Boot에서 순환 참조를 의심 하고 있습니다.
 
@@ -81,17 +110,19 @@ mvn spring-boot:run -Dspring-boot.run.profiles=prod
 
 하지만, 생성자 주입 방식이라면 빈 객체 생성 시점에 순환 참조 오류가 발생하기때문에 바로 알아 챌 수 있습니다. 테스트의 용이함을 비롯해 생성자 주입방식이 절대적 이점을 가지고 있기 때문에 이번 기회에 모두 생성자 주입으로 변경 하였습니다. 다만 Google Guava의 EventBus는 생성자주입시 오히려 순환참조가 되어 버려서 필드 인젝션을 해야 했습니다.
 
-![image-20220225114928666](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220225114928666.png)
+![image-20220225114928666](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220225114928666.png)
 
 > 수많은 필드 인젝션을 생성자 주입으로 변경하고 나니 숨겨져 있던 순환 참조를 찾을 수 있었습니다.
 
-그동안 미뤄 두었었다면 이번 기회를 통해 순환 참조 고리를 모두 끊어내는 것이 좋지만, 너무 급한 상황이라면 일단 applcation.yml 파일에 아래의 설정으로 bean 선언 오버라이딩을 허용 해 주면 순환참조가 있어도 어플리케이션을 구동 할 수 있다고 합니다. 2.6.x 버전이 2.5.x 버전보다 훨씬 타이트하게 순환 참조를 잡습니다.
+너무 급한 상황이라면 일단 applcation.yml 파일에 아래의 설정으로 bean 선언 오버라이딩을 허용 해 주면 순환참조가 있어도 어플리케이션을 구동 할 수 있다고 합니다. 2.6.x 버전이 2.5.x 버전보다 훨씬 타이트하게 순환 참조를 잡습니다.
 
 ```yaml
 spring:
   main:
     allow-bean-definition-overriding=true
 ```
+
+하지만 어찌됐건 그동안 미뤄 두었었다면 이번 기회를 통해 순환 참조 고리를 가능한 끊어내는걸 추천합니다. 저도 적당히 끊어내고 하려고 했지만 BeanType에서 Bean을 찾아오지 못해 Solr에서 원하는대로 인덱싱을 하지 못하는 등 문제가 있었습니다. 그 원인이 전혀 예상치 못했던 빈의 순환참조라는걸 알았을때는 정말 아찔했습니다. 버그를 찾아내기도 쉽지 않거든요.
 
 ## 프로젝트 적용중 문제 해결
 
@@ -110,13 +141,13 @@ spring:
 
 spring-security-oauth2를 찾지 못합니다.
 
-![image-20220224162042089](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224162042089.png)
+![image-20220224162042089](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224162042089.png)
 
 > https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0.0-M5-Release-Notes
 
 Spring Boot 릴리즈 노트에서 OAuth 2.0에 대한 내용을 찾아보니 Spring Security OAuth 프로젝트가 Spring Security 코어로 마이그레이션 되었다고 합니다. 
 
-![image-20220224163113723](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224163113723.png)
+![image-20220224163113723](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224163113723.png)
 
 > https://docs.spring.io/spring-security-oauth2-boot/docs/2.2.6.BUILD-SNAPSHOT/reference/htmlsingle/
 
@@ -143,7 +174,7 @@ Spring Boot 릴리즈 노트에서 OAuth 2.0에 대한 내용을 찾아보니 Sp
 </dependency>
 ```
 
-![image-20220224163705396](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224163705396.png)
+![image-20220224163705396](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224163705396.png)
 
 > https://docs.spring.io/spring-session/docs/2.2.x/reference/html/upgrading-2.0.html
 
@@ -160,7 +191,7 @@ Spring Boot 릴리즈 노트에서 OAuth 2.0에 대한 내용을 찾아보니 Sp
 
 사용중인 PageRequest 생성자의 접근제어자가 protected로 변경 되어 사용하지 못하는 오류가 발생했습니다.
 
-![image-20220224164716685](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224164716685.png)
+![image-20220224164716685](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224164716685.png)
 
 그래서 PageRequest 클래스를 확인 해보니, 그 대신 static 팩터리 메서드가 보입니다. 그걸 사용하도록 변경 해 줍니다.
 
@@ -168,7 +199,7 @@ Spring Boot 릴리즈 노트에서 OAuth 2.0에 대한 내용을 찾아보니 Sp
 PageRequest.of(page, size, sort);
 ```
 
-![image-20220224174230405](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224174230405.png)
+![image-20220224174230405](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224174230405.png)
 
 한개씩 바꾸려면 끝도 없으니 `Cmd + Shift + R` 모두 찾아 바꾸기 기능을 이용해 한번에 캐스팅을 해 주세요.
 
@@ -176,7 +207,7 @@ PageRequest.of(page, size, sort);
 
 ### Page.getOffset()
 
-![image-20220224165048613](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224165048613.png)
+![image-20220224165048613](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224165048613.png)
 
 Pageable의 getOffset이 int에서 long으로 변경되었습니다. 
 
@@ -188,7 +219,7 @@ Pageable의 getOffset이 int에서 long으로 변경되었습니다.
 
 unit 패키지의 위치가 이동되었기 때문에 기존의 import는 에러가 납니다.
 
-![image-20220224165351189](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224165351189.png)
+![image-20220224165351189](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224165351189.png)
 
 `org.unit.jupiter.api` 로 이동되었네요. 기존의 import를 삭제하고 새로 import 하여 해결 했습니다.
 
@@ -234,11 +265,11 @@ Hibernate를 따로 추가해 사용 하고 있었습니다.
 
 그런데 변경 후에도 여전히 문제가 에러가 고쳐지지 않는데
 
-![image-20220224172921535](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224172921535.png)
+![image-20220224172921535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224172921535.png)
 
 equals의 리턴타입을 확인해보니 Specitication 으로 되어 있습니다.
 
-![image-20220224171609017](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224171609017.png)
+![image-20220224171609017](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224171609017.png)
 
 Specifications 에서 Specification으로 바뀐줄도 모르고 빌드도 새로 하고 캐시 초기화까지 했었네요.
 
@@ -246,7 +277,7 @@ Specifications 에서 Specification으로 바뀐줄도 모르고 빌드도 새�
 
 ### findOne
 
-![image-20220224171305178](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224171305178.png)
+![image-20220224171305178](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224171305178.png)
 
 findOne이 Optional 객체를 반환하기 때문에 모두 변경 해 주어야 합니다. .get() 을 모두 붙여줍니다.
 
@@ -260,7 +291,7 @@ findOne이 Optional 객체를 반환하기 때문에 모두 변경 해 주어야
 
 SpringBootServletInitializer는 또 어디로 갔을까요..
 
-![image-20220224173328245](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224173328245.png)
+![image-20220224173328245](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224173328245.png)
 
 패키지 경로가 변경되었네요.
 
@@ -283,7 +314,7 @@ SpringBoot 2.x 에서는 EntityManager를 불러 오려면 `@Autowire` 대신에
 
 이번에는 에러메시지가 굉장히 친절합니다. SpringBoot 1.5에 있던 RelaxedPropertyResolver 를 불러오다가 실패 했다고 하며, 컴포넌트 스캔이 잘못 되었는지 확인 하라고 합니다.
 
-![image-20220224180111127](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224180111127.png)
+![image-20220224180111127](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224180111127.png)
 
 Congiguration을 확인 하러 가니 일단 deprecated가 눈에 띕니다. WebMvcConfigurerAdapter 상속하던걸 빼고, 인터페이스인 WebMvcConfigurer 를 구현 하도록 변경 해 줍니다.
 
@@ -293,7 +324,7 @@ public class AdminApplication implements ServletContextAware, WebMvcConfigurer
 
 하지만 그래도 여전히 해결되지 않는데요. stackoverflow를 찾아 보았습니다.
 
-![image-20220224180714556](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220224180714556.png)
+![image-20220224180714556](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224180714556.png)
 
 > https://stackoverflow.com/questions/62497326/org-springframework-boot-bind-relaxedpropertyresolver-not-found
 
@@ -486,7 +517,7 @@ pom.xml 파일에서
 
 위와 같이 lombok 버전을 명시 해서 사용 하고 있었는데, 해당 버전이 새로운 스프링부트 버전과 맞지 않던 것으로 보입니다. version 명시를 제거 하니 문제가 해결되었습니다. 
 
-![image-20220302113845614](/home/shane/Documents/git/mdblog/backend/spring/spring-boot-migration.assets/image-20220302113845614.png)
+![image-20220302113845614](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220302113845614.png)
 
 > `1.18.20` 버전이 추가되었습니다. 18.2와 18.20은 수학적으로는 같은 값으로 보이지만 버전 표시에서는 마이너 버전 18개의 갭이 있는 꽤 큰 차이 입니다.
 
@@ -516,3 +547,32 @@ public String findOpenapiRequest(
 }
 ```
 
+### multipart 설정
+
+SpringBoot 2.x 버전으로 올라가면서 multipart 설정 방법이 변경되었습니다.  application.yml 파일에서 `http` 를 `servlet`으로 변경해줍니다.
+
+변경 전
+
+```yaml
+spring.http.multipart:
+  enabled: true
+  max-file-size: ${MULTIPART_MAX_FILE_SIZE:10000MB}
+  max-request-size: ${MULTIPART_MAX_REQUEST_SIZE:10000MB}
+  file-size-threshold: 10KB
+```
+
+변경 후
+
+```yaml
+spring.servlet.multipart:
+  enabled: true # default true. 생략 가능.
+  max-file-size: ${MULTIPART_MAX_FILE_SIZE:10000MB}
+  max-request-size: ${MULTIPART_MAX_REQUEST_SIZE:10000MB}
+  file-size-threshold: 10KB
+```
+
+## 마치며
+
+마침 글 이후 추가
+
+ref: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide
