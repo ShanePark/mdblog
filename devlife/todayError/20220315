@@ -1,0 +1,102 @@
+# 일간에러 2022-03-15 WARN No appenders could be found for logger
+
+## Intro
+
+```
+log4j:WARN No appenders could be found for logger (io.github.makbn.thumbnailer.util.mime.MimeTypeDetector).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+```
+
+Spring Project 실행 시 위와 같은 에러가 발생했다.
+
+일단 log4j 1.2 라는 에러 문구에서 쉽게 느낌이 왔기 때문에 어렵지 않게 해결 할 수 있겠다.
+
+## 원인
+
+일단 위에서 안내 해 주는 링크로 이동하면
+
+![image-20220315113009834](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315113009834.png)
+
+> https://logging.apache.org/log4j/1.2/faq.html#noconfig
+
+log4.properties 혹은 log4.xml로 된 log4j 기본 설정 파일을 찾지 못했기 때문이라고 안내해준다. log4는 환경에 따라 콘솔 출력이 금지되었을 수가 있기 때문에 기본 설정을 제공하지 않는다고 한다. 그렇기에 적절한 설정파일을 만들어서 적당한 위치에 넣어달라는 친절한 설명을 해준다.
+
+스프링부트를 사용한다면 application.yml 에서 설정 하기도 하고, 보기 좋게 외부 파일로 log4j2.xml 등으로 빼기도 하는데, 여기서 내가 이 문제구나 하면 설정파일을 만들어 주면 되겠다.
+
+하지만 나를 포함해 대부분의 경우는 아마 이 문제가 아닐 것이다.
+
+## 실제원인
+
+한동안 뜨거웠던 log4j 이슈로 인해 log4j 라이브러리를 싹 걷어내고 slf4j 최신 버전을 사용 하고 있었는데
+
+```xml
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.36</version>
+</dependency>
+```
+
+![image-20220315113915869](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315113915869.png)
+
+dependency를 펼쳐가며 확인 해 보니 log4j에 의존중인 라이브러리가 남아 있었다.
+
+실제 사용중인 로깅 라이브러리가 아닌 의도하지 않은 log4j1.2.17 버전이 들어오며 경고가 뜨던 것.
+
+## 해결
+
+해당 패키지에서 log4j 를 더이상 의존하지 않도록 exclusion을 추가해 준다.
+
+```xml
+<exclusions>                
+	<exclusion>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+    </exclusion>
+</exclusions>
+```
+
+![image-20220315114457464](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315114457464.png)
+
+>  maven update 이후 log4j가 사라진 모습.
+
+![image-20220315114629910](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315114629910.png)
+
+그랬더니 패키지가 Log4j 구현체에 직접 의존하고 있었는지 에러가 발생한다.  아무래도 해당 패키지를 직접 뜯어 고쳐야 할 것 같다.
+
+해당 패키지는 JThumbnail 이라는 패키지인데 일단 fork 한 후
+
+![image-20220315120306563](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315120306563.png)
+
+> log4j 의존성을 제거하고 최신의 slf4j 에 의존하도록 수정 하고 Reload 해준 뒤에
+
+![image-20220315120441976](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315120441976.png)
+
+> 이제 에러가 나는 부분을 고쳐 준다. log4나 logback에 직접 의존하지 않도록 한다.
+
+![image-20220315120727898](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315120727898.png)
+
+> 전부 고쳤는데 생각보다 많지 않음.
+
+![image-20220315120801139](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/todayError/20220315.assets/image-20220315120801139.png)
+
+> Build 가 잘 되는 것 까지 확인 을 한 후에
+
+이제 새로운 버전을 커밋 하고 배포를 한다.
+
+jar파일 배포해 maven / gradle에서 사용하는 방법은 아래의 링크를 참고
+
+> [나만의 라이브러리 만들어 jitPack으로 배포하고 Maven/Gradle 에서 사용하기](https://shanepark.tistory.com/227)
+
+```xml
+<dependency>
+    <groupId>com.github.Shane-Park</groupId>
+    <artifactId>JThumbnail</artifactId>
+    <version>984b91c3b7</version>
+</dependency>
+```
+
+ 이제 새로 수정한 라이브러리로 기존 라이브러리를 갈아끼워주면 끝.
+
+이후 다시 프로젝트를 실행 해 보니 더이상 경고가 발생하지 않음. 해결 끝.
