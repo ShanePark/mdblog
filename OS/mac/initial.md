@@ -136,9 +136,17 @@ m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을
 brew install iterm2	
 ```
 
+몇가지 설정을 하겠지만, 저는 개인적으로 창 분할 설정을 제일 먼저 합니다. Linux를 쓸 때 Terminator 에서 창분할을 해서 사용했기 때문에 같은 단축키로 설정해서 사용합니다.
+
+Preferences -> Keys -> Key Bindings에 `Split Vertically`와 `Split Horizontally ` 를 설정 해 주시면 되는데요 안타깝게도 한/영 전환이 된상태에서는 단축키를 인식하지 못하기 때문에 한/영 상태 둘 다 등록 해 주어야 불편함 없이 사용 할 수 있습니다.
+
+![image-20220319101034561](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220319101034561.png)
+
+> 위와 같이 설정 해 주시면 Terminator와 동일한 키로 창 분할을 하실 수 있습니다.
+
 사실 iterm2 설치 자체는 굉장히 간단한데요.  oh-my-zsh 설치 하는게 조금 까다롭습니다. 
 
-oh-my-zsh 설치는 아래의 링크를 참고해주세요. MacOS는 Catalina 부터 기본 shell이 zsh으로 변경되었습니다.
+oh-my-zsh 설치는 아래의 링크를 참고해주세요. MacOS는 Catalina 부터 기본 shell이 zsh으로 변경되었습니다 
 
 https://shanepark.tistory.com/60?category=1182535 
 
@@ -489,6 +497,30 @@ brew install visual-studio-code
 
 
 ## 개발 외
+
+### Typora
+
+![image-20220319095900973](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220319095900973.png)
+
+수많은 markdown editor들이 있지만 제가 개인적으로 가장 좋아하는건 Typora 입니다. 2021년 말에 정식 버전을 릴리즈 하며 $14.99 의 비용이 책정되기는 했지만 여전히 매력적인 소프트웨어 입니다. 제가 작성하는 모든 블로그의 글들도 Typora로 작성하고 있습니다.
+
+혹시 비용이 부담스러우신 분들은 지난 베타 버전을 사용하면 무료로 사용 할 수 있기 때문에 아래의 링크에서 `Beta 지속 방법` 부분을 확인 해서 설치하시면 됩니다. Typora 공식 사이트에서 제공해주는 Beta버전이기 때문에 문제될건 전혀 없지만 그래도 사용해보고 마음에 든다면 비용을 지불하고 사용하면 됩니다. 정식 버전에서도 15일간의 Free Trial 기간을 충분히 제공합니다.
+
+> [Typora 정식 버전 오픈 소식](https://shanepark.tistory.com/287)
+
+Typora를 Shell 이나 Cmd에서 바로 사용 하고 싶다면
+
+```zsh
+alias typora="open -a typora"
+```
+
+위의 alias를 `~/.zshrc`에 추가 해 주시면 됩니다. 혹은 md 파일이 없을 때 즉시 생성하고 싶다면
+
+```zsh
+alias typora="/Applications/Typora.app/Contents/MacOS/Typora"
+```
+
+위와 같이 등록 해 주시면 됩니다.
 
 ### 프린터
 
