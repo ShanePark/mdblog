@@ -376,9 +376,22 @@ docker에 대한 설명은 크게 필요 없을 것 같습니다. 한참동안 r
 
 > <a href="https://shanepark.tistory.com/194" target="_blank">MacOS ) m1 맥북 docker 설치하기 + 가상환경에 postgreSQL 띄워 보기</a>
 
+### SourceTree
+
+- 근 1년동안 배터리 문제로 쓸 수 없는 프로그램 이었는데 Apple Silicon Native 지원과 함께 화려하게 부활 했습니다.
+- 새로운 버전은 4.1.6 이며 Apple Native 지원에 관한 글은 [SourceTree Apple Silicon 지원 소식](https://shanepark.tistory.com/343) 를 참고해주세요.
+- brew로 설치합니다. `brew info sourcetree` 해보니 최신 버전이 잘 등록 되어 있습니다. 
+
+```zsh
+brew install sourcetree
+```
+
+
+
 ### Github Desktop
 
--  Github Desktop을 설치합니다. 사실 sourcetree 쪽이 더 좋았었는데 배터리 이슈때문에 영 아닙니다.
+-  SourceTree가 좀 더 파워풀 하긴 하지만 대안으로 Github Desktop도 있습니다.
+-  SourceTree 의 배터리 문제 때문에 대안으로 어쩔 수 없이 선택했던 소프트웨어지만, 1년동안 정말 많은 업데이트와 기능추가를 거쳐 지금은 굉장히 쓸만한 Git GUI가 되었습니다.  둘다 설치해도 좋고 둘중 하나를 선택해도 좋습니다.
 
 ```zsh
 brew install github
