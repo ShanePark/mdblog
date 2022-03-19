@@ -1,4 +1,4 @@
-# Eclipse Apple Sillicon 지원소식 
+# Eclipse Apple Silicon 지원소식 
 
 ![image-20211224220326989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220326989.png)
 
@@ -54,7 +54,7 @@
 
 ### 한글 마지막 글자 잘림 해결여부
 
-새로운 이클립스 버전이 나올때마다 항상 궁금했던 내용입니다. 특히 Apple Sillicon을 지원한다고 하니 더욱 기대가 되는데요.
+새로운 이클립스 버전이 나올때마다 항상 궁금했던 내용입니다. 특히 Apple Silicon을 지원한다고 하니 더욱 기대가 되는데요.
 
 이클립스를 포기하게 만든 트리거 였는데, 과연 해결 되었을까요?
 
