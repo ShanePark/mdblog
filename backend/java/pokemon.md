@@ -93,13 +93,15 @@ void testBuyPokemon() {
 
 151번 이후로는 모듈러 연산으로 처리하도록 했습니다.
 
+포케몬 번호가 1번~159번 이기 때문에, 모듈러 연산을 할 때 -1을 해주긴 했지만 사실 굳이 빼지 않아도 이론상 같은 계산 입니다.
+
 ```java
 @Test
 void test151() {
   Set<Integer> pokeDex = new HashSet<>();
   int cnt = 0;
   while (pokeDex.size() < 151) {
-    pokeDex.add(buyPokemon() % 151);
+    pokeDex.add((buyPokemon()-1) % 151);
     cnt++;
   }
 
@@ -123,7 +125,7 @@ void test151() {
             Set<Integer> pokeDex = new HashSet<>();
             int cnt = 0;
             while (pokeDex.size() < 151) {
-                pokeDex.add(buyPokemon() % 151);
+                pokeDex.add((buyPokemon()-1) % 151);
                 cnt++;
             }
             result.add(cnt);
@@ -160,7 +162,7 @@ void test151() {
     Set<Integer> pokeDex = new HashSet<>();
     int cnt = 0;
     while (pokeDex.size() < 151) {
-      pokeDex.add(buyPokemon() % 151);
+     pokeDex.add((buyPokemon()-1) % 151);
       cnt++;
     }
     result.add(cnt);
@@ -321,7 +323,7 @@ public void testSpecial() {
 
 ![image-20220320193311271](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320193311271.png)
 
-몇번을 해봤는데 보통 400 번대 후반에서 빵이 다 팔려서 스티커 모으는데 실패합니다. 
+몇번을 실행 해 보았는데 보통 400 번대 후반에서 빵이 다 팔려서 스티커 모으는데 실패했습니다. 실제로는 도전자 뿐만 아니라 재미로 사모으는 사람이 훨씬 많은데다가 빵을 구입하기가 쉽지 않기 때문에 훨씬 힘들겠죠.
 
 이번에는 예외처리를 해서 빵이 다 팔리고 나면 그때까지의 결과를 출력 하도록 변경합니다.
 
@@ -380,3 +382,7 @@ public void testSpecial() {
 500만원은 둘째 치고 3천개의 빵을 먹으려면 하루 3개씩 먹어도 3년이 걸리겠네요. 
 
 이상입니다. 
+
+마지막으로 위에서 작성한 코드 전문을 참고 하고 싶은 분은 아래의 링크를 확인 해 주세요.
+
+> https://github.com/Shane-Park/markdownBlog/blob/master/projects/java/src/test/java/com/tistory/shanepark/experiment/probability/PokemonStickerTest.java
