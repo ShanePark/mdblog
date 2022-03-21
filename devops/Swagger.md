@@ -58,7 +58,7 @@ public class SwaggerConfig {
 
 RestController만 있는 프로젝트라면 paths에 `.paths(PathSelectors.any())` 를 쓰면 됩니다. 
 
-제가 최종적으로 적용시킬 프로젝트에서는 뷰와 RESTAPI가 혼재되어 있기 때문에 api 경로를 특정 할 필요가 있습니다
+제가 최종적으로 적용시킬 프로젝트에서는 뷰와 RESTAPI가 혼재되어 있기 때문에 api 경로를 특정 할 필요가 있었습니다
 
 ```java
 @Bean
@@ -71,9 +71,31 @@ public Docket api() {
 }
 ```
 
-> 처음에는 `/api/**`로 했었는데, contextPath가 영향을 주는 것을 확인하고는 위와 같이 변경 하였습니다.  ContextPath를 명시적으로 넣기에는, 어플리케이션을 실행하는 환경에 따라 달라질 수 있기 때문에 유연하게 기입하는게 좋습니다. contextPath를 설정값에서 받아와서 ant에 넣는 방법도 가능하겠네요.
+> 처음에는 `/api/**`로 했었는데, contextPath가 영향을 주는 것을 확인하고는 위와 같이 변경 하였습니다.  ContextPath를 명시적으로 넣기에는, 어플리케이션을 실행하는 환경에 따라 달라질 수 있기 때문에 유연하게 기입하는게 좋습니다. 
 
-테스트용 프로젝트에서는 .any()로 진행하겠습니다.
+이렇게 할 경우에는 단점이 있는데, 요청 URL중 중간에 /api/가 들어가면 의도치 않게 포함될 수도 있습니다. 그런경우까지 커버하려면 ContextPath를 servletContext 빈에서 받아와서 ant에 넣어 주면 됩니다.
+
+```java
+private ServletContext context;
+
+public void setServletContext(ServletContext servletContext) {
+    this.context = servletContext;
+}
+
+@Bean
+public Docket api() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .ignoredParameterTypes(Context.class, Pageable.class, RepositoryCommand.class)
+        .select()
+        .apis(RequestHandlerSelectors.any())
+        .paths(PathSelectors.ant(servletContext.getContextPath() + "/api/**"))
+        .build();
+}
+```
+
+> 프로젝트에서 사용하고 있는 Docket 등록 코드입니다.
+
+아래의 예제에서는 `.paths(PathSelectors.any())` 로 진행하였습니다.
 
 ## 실행
 
@@ -184,6 +206,22 @@ Swagger가 적용될 Model에 상세한 정보를 작성할 수 있습니다.
 
 그러면 더이상 API 문서에 나타나지 않습니다.
 
+### @Operation
+
+메서드 단위로 문서 편집을 할 때에는 @Operation 메서드를 활용합니다.
+
+```java
+@GetMapping("/api/my/")
+@Operation(summary = "제출 통계",
+           description = "로그인 한 유저가 제출 중, 혹은 제출 완료한 데이터들의 현황을 반환합니다.<br>br로 줄 바꿀수도 있고\n\\n으로도 줄바꿈이 가능합니다.")
+```
+
+특정 메서드에 위와 같이 어노테이션을 달아 준다면
+
+![image-20220321115142473](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220321115142473.png)
+
+> 해당 메서드에 summary 와 description을 추가 해 주기 때문에 보다 자세한 설명을 달 수 있습니다.
+
 ### 파라미터에서 특정 클래스 무시
 
 내부적으로 이용하는 대부분의 API 에서 편의를 위해 요청을 보낸 사용자의 회원 정보나 로케일 등을 받아오도록 해 두었는데요, 이 파라미터가 API 문서에 들어가면 굉장히 문서가 복잡해 집니다.
@@ -216,7 +254,11 @@ public Docket api() {
 
 ![image-20220223164408538](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220223164408538.png)
 
-io.swagger.annotations 패키지를 확인해보면 그 외에도 많은 어노테이션들이 있습니다.
+io.swagger.annotations 패키지를 확인해보면 그 외에도 많은 어노테이션들이 있습니다. 
+
+![image-20220321114524535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220321114524535.png)
+
+뿐만 아니라 io.swagger.v3.oas.annotations 에도 추가로 사용 가능한 어노테이션이 있습니다.
 
 ## SpringBoot 2.0이하 혹은 스프링부트 없이 설정
 
