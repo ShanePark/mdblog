@@ -1,4 +1,4 @@
-# Swagger 활용 API Document 자동 생성
+# `Swagger 활용 API Document 자동 생성
 
 ## Intro
 
@@ -6,7 +6,7 @@
 
 특히나 API를 공개하거나 개발자간의 협력에서 필요한 상황이 오면 체계화된 읽기 좋은 API Document의 작성은 선택이 아닌 필수입니다. 마침 회사에서 진행중인 프로젝트에도 조금의 여유가 생겨 API Document 정리를 해야할 때가 왔습니다.
 
-여러가지 오픈소스 선택지가 있습니다만 이번에는 Swagger를 선택해서 테스트를 진행 해 보았으며 꽤나 만족스러웠습니다.
+여러가지 오픈소스 선택지가 있습니다만 이번에는 Swagger를 선택해서 테스트를 진행 해 보았으며 꽤나 만족스러웠습니다. 심지어 마크다운 문법을 지원합니다.
 
 간단한 스프링 부트 프로젝트 예제를 통해 적용 해 보겠습니다. RestAPI를 사용하는 아무 스프링 부트 프로젝트 하나 준비하시면 됩니다.
 
@@ -221,6 +221,19 @@ Swagger가 적용될 Model에 상세한 정보를 작성할 수 있습니다.
 ![image-20220321115142473](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220321115142473.png)
 
 > 해당 메서드에 summary 와 description을 추가 해 주기 때문에 보다 자세한 설명을 달 수 있습니다.
+
+심지어는 마크다운 문법을 지원합니다.
+
+```java
+@Operation(summary = "내 저장소 현황",
+           description = "로그인 유저의 내 저장소 사용 현황을 조회합니다." +
+           "\n### 조회 결과" +
+           "\n- count: 저장된 총 파일 수" +
+           "\n- quota: 사용가능 저장공간" +
+           "\n- size: 사용중 저장공간")
+```
+
+![image-20220322135704390](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/Swagger.assets/image-20220322135704390.png)
 
 ### 파라미터에서 특정 클래스 무시
 

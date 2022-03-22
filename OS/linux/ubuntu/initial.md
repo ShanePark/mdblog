@@ -295,27 +295,62 @@ bash 보다는 zsh가 많이 쓰이는 추세입니다.
 
 > [Ubuntu에 oh-my-zsh 설치](https://shanepark.tistory.com/248)
 
-### Git~~Kraken~~hub Desktop 설치
+### Github Desktop 설치
 
 ~~SourceTree의 경우 Linux 버전이 없어 GitKraken 이 대안으로는 가장 괜찮아 보였습니다. 물론 CUI 를 사용하는게 기능이 훨씬 강력하기는 하지만 Git의 진입 장벽을 생각할 때 GUI 를 거치지 않기는 쉽지 않습니다.~~
 
-> GitKraken이 사실상 유료기 때문에 더이상 추천하지 않습니다.  SSH 방식으로 저장소를 클론 하고 Github Desktop을 사용하시는 것을 권장합니다. Github Desktop의 설치는 아래 링크를 확인 해 주세요.
+> 원래는 GitKraken을 추천했었는데 사실상 유료가 되어 더이상 추천하지 않습니다.  
+>
+> OAuth 대신 SSH 방식으로 저장소를 클론 하고 Github Desktop을 사용하시는 것을 권장합니다. 
+>
+> Github Desktop의 설치는 아래 링크를 확인 해 주세요.
 
 [Ubuntu 20.04 우분투 Github Desktop 설치하기](https://shanepark.tistory.com/252)	
 
-그래도 GitKraken을 설치하고 싶다면?
+그래도 GitKraken을 설치하고 싶다면 아래 명령어로 설치할 수 있습니다.
 
 ```bash
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
-
 ```
+
+### JetBrains Toolbox
+
+저는 IntelliJ IDEA 만 사용 하는데도, 종종 버전 문제로 번거로울 때가 있어 Mac에서도 Linux에서도 Toolbox를 설치해두고 사용합니다.
+
+새로운 버전이 나왔다고 신나서 새 버전 깔았다가 기존의 플러그인들이 전부 죽어버리는 사태를 몇번 겪었는데 아마 다들 공감하실거에요.
+
+![image-20220321165133106](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220321165133106.png)
+
+> https://www.jetbrains.com/toolbox-app/
+
+위의 링크에서 tar.gz 파일을 다운로드 합니다.
+
+그 다음에는 압축을 풀어 줍니다.
+
+```zsh
+tar -xf jetbrains-toolbox-*
+```
+
+압축을 푼 뒤에는 그냥 압축이 풀린 파일을 실행 하면 설치가 됩니다.
+
+압축이 풀린 폴더로 이동 후 `./jetbrains-toolbox`를 입력해 줍니다.
+
+![image-20220321165428244](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220321165428244.png)
+
+반응이 꽤나 오래 없어서 설치가 안되는 건가 했는데
+
+![image-20220321165628401](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220321165628401.png)
+
+잠시 기다리니 잘 뜹니다. Toolbox를 한번 사용 해 보면 계속 사용하게 되니 안써보셨다면 한번 써보는걸 권장합니다.
 
 ### IntelliJ IDEA 
 
 ![IntelliJ IDEA 2021.2 Release Candidate Is Out! | The IntelliJ IDEA Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/BlogFeatured_IntelliJ-IDEA-2x-2400x1350.png)
 
-IntelliJ IDEA를 사용한다면 저는 처음에는 snap 으로 설치 했었습니다.
+위의  ToolBox를 설치하는걸 권장하지만, IntelliJ IDEA만 설치를 원하는 경우도 있으니 함께 올려둡니다.
+
+저는 처음에는 snap 으로 설치 했었습니다.
 
 ```shell
 sudo snap install intellij-idea-ultimate --classic
