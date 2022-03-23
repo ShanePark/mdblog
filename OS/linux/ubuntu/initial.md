@@ -320,7 +320,7 @@ sudo dpkg -i gitkraken-amd64.deb
 
 새로운 버전이 나왔다고 신나서 새 버전 깔았다가 기존의 플러그인들이 전부 죽어버리는 사태를 몇번 겪었는데 아마 다들 공감하실거에요.
 
-![image-20220321165133106](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220321165133106.png)
+![image-20220321165133106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165133106.png) 
 
 > https://www.jetbrains.com/toolbox-app/
 
@@ -336,11 +336,11 @@ tar -xf jetbrains-toolbox-*
 
 압축이 풀린 폴더로 이동 후 `./jetbrains-toolbox`를 입력해 줍니다.
 
-![image-20220321165428244](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220321165428244.png)
+![image-20220321165428244](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165428244.png)
 
 반응이 꽤나 오래 없어서 설치가 안되는 건가 했는데
 
-![image-20220321165628401](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220321165628401.png)
+![image-20220321165628401](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165628401.png)
 
 잠시 기다리니 잘 뜹니다. Toolbox를 한번 사용 해 보면 계속 사용하게 되니 안써보셨다면 한번 써보는걸 권장합니다.
 
@@ -551,19 +551,19 @@ Gnome을 사용하며 불편했던 것 중 하나가 한가운데에 푸시 알�
 
 GNOME EXTENTION에서 스위치를 ON으로 돌리는 것으로 간단하게 설치 합니다.
 
-![image-20220323155051437](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155051437.png)
+![image-20220323155051437](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155051437.png)
 
 > https://extensions.gnome.org/extension/4105/notification-banner-position/
 
-![image-20220323155142403](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155142403.png)
+![image-20220323155142403](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155142403.png)
 
 Install 을 눌러주면 설치는 바로 끝납니다.
 
-![image-20220323155228357](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155228357.png)
+![image-20220323155228357](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155228357.png)
 
 설치 후 Tweaks 를 켜서 Extensions에 보면 Notification banner position이 설치 되어 활성화 되어 있는게 확인 됩니다. 이제 Notification 이 오면
 
-![image-20220323155409439](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155409439.png)
+![image-20220323155409439](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155409439.png)
 
 > 우측 상단에 알림이 뜹니다. 
 
@@ -601,6 +601,16 @@ gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 직접 버튼들을 하나하나 맵핑해서 사용해 줘야 하는데요, 제 마우스는 단순하게 버튼 5개 짜리지만 그래도 버튼들을 모두 사용하기 위해 설정을 해 두었습니다. 내용이 길어져 아래 링크에 따로 정리 해 두었습니다.
 
 > [Ubuntu) 마우스 버튼 커스터마이징](https://shanepark.tistory.com/301)
+
+### Airpod 연결
+
+에어팟을 비롯한 Bluetooth 장비를 연결 할 때 도움이 되었으면 합니다.
+
+처음에 블루투스가 기본 딸려 오길래 연결이 될 줄 알았는데 그냥은 연결이 안되더라고요.
+
+아래 링크를 참고해서 연결 해 주세요.
+
+> [Ubuntu) Airpod 연결 설정 하기](https://shanepark.tistory.com/346)
 
 ## 선택 설치
 
@@ -726,20 +736,16 @@ Notion에서 공식 우분투용 프로그램을 지원하지는 않지만, 감�
 
 > [Ubuntu) notion App 설치](https://shanepark.tistory.com/265)
 
-### Apple Music  & Spotify
+### Spotify
 
 ![green and white logo illustration](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1611339555312-e607c8352fd7ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
 
-음악을 좋아하시면 설치하세요
+Spotify를 구독 중이라면 설치해주세요. Linux를 공식 지원하기 때문에 굉장히 좋습니다.
 
 **snap**
 
 ```bash
-# Apple Music
-$ sudo snap install apple-music-for-linux
-# Spotify
 $ sudo snap install spotify
-
 ```
 
 **.deb**
@@ -750,6 +756,18 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt-get update && sudo apt-get install spotify-client
 
 ```
+
+### Apple Music(Cider)
+
+![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323153954522-20220323213045396.png) 
+
+Apple Music은 Linux를 정식 지원하지는 않지만, Cider라는 오픈 소스가 정말 훌륭한 UI/UX로 MacOS에서나 iOS에서의 애플 뮤직 경험 그대로 혹은 그 이상으로 사용 하실 수 있습니다. 
+
+애플 뮤직이 6인 가족 플랜 사용시 1인당 2천원대 금액으로 가성비도 훌륭하기 때문에 iPhone을 사용하시는 분들은 고려해보세요.
+
+관련 포스팅은 아래 링크를 확인 해 주세요.
+
+> [Linux) 리눅스에서 Apple Music 듣기 Cider App](https://shanepark.tistory.com/347)
 
 ## The end
 

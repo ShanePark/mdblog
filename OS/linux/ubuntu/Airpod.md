@@ -1,12 +1,14 @@
-# Ubuntu)  Airpod 연결 설정 하기.
+# Ubuntu)  Airpod 연결 설정 하기
 
-> 우분투 20.04 에어팟 연결 설정 하기.
+> 우분투 20.04 에어팟 연결 설정 하는 방법
 
 ## Intro
 
-우분투에 에어팟을 연결 해 보려 하니 Bluetooth 장비 추가로는 가능하지가 않았습니다. 일단 장비들이 무지막지하게 뜨는데 그 중 어떤게 에어팟인지도 모르겠고, 연결도 되지 않았습니다.
+우분투에 에어팟을 연결 해 보려 하니 일반적인 Bluetooth 장비 메뉴로는 가능하지가 않았습니다. 
 
-![image-20220323142544239](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/Airpod.assets/image-20220323142544239.png)
+일단 Unknown 장비들이 무지막지하게 뜨는데 그 중 어떤게 에어팟인지도 모르겠고, 연결도 되지 않았습니다.
+
+![image-20220323142544239](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323142544239.png) 
 
 ## Bluetooth 설정
 
@@ -18,7 +20,7 @@ ControllerMode를 bredr로 변경 해 줘야 합니다.
 sudo vi /etc/bluetooth/main.conf
 ```
 
-![image-20220323143010680](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/Airpod.assets/image-20220323143010680.png)
+![image-20220323143010680](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143010680.png)
 
 > 51 번 라인에 주석 처리된 걸 풀고 bredr를 입력 해 줍니다.
 
@@ -30,7 +32,7 @@ sudo /etc/init.d/bluetooth restart
 
 블루투스 서비스를 재 시작 해 줍니다.
 
-![image-20220323143128303](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/Airpod.assets/image-20220323143128303.png)
+![image-20220323143128303](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143128303.png)
 
 ## Airpod 연결
 
@@ -38,19 +40,25 @@ sudo /etc/init.d/bluetooth restart
 
 에어팟의 가운데 버튼을 2~3초간 꾹 눌러서 페어링 모드에 진입 하면 디바이스를 인식 합니다.
 
-> 너무 오래 누르고 있으면 에어팟의 모든 설정을 reset 합니다.
+> 너무 오래 누르고 있으면 에어팟의 모든 설정을 reset 합니다. 적당히 누르다 떼면 불이 잠깐동안 깜빡 거립니다.
+>
+> 그러면 Bluetooth Devices 목록에 에어팟이 뜨는데, 바로 클릭해서 연결 해 주면 됩니다.
 
-![image-20220323143210423](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/Airpod.assets/image-20220323143210423.png)
+![image-20220323143210423](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143210423.png)
 
-연결이 끝났습니다! 이제 에어팟으로 리눅스의 모든 사운드를 잘 즐길 수 있습니다.
+> 연결이 끝났습니다! 이제 에어팟으로 리눅스의 모든 사운드를 잘 즐길 수 있습니다.
+
+이제 신나게 음악을 들을 수 있습니다!  
+
+> 혹시 Apple Music을 구독하신다면 Cider 라는 정말 훌륭한 Apple Music Client가 있으니 다운 받아서 사용 해 보시길 추천 드립니다. 관련글을 링크 달아두겠습니다. [Linux) 리눅스에서 Apple Music 듣기 Cider App](https://shanepark.tistory.com/347)
+>
+> ![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323153954522.png)
 
 ## 마이크 설정
 
-![image-20220323143941208](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/Airpod.assets/image-20220323143941208.png)
+![image-20220323143941208](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143941208.png)
 
-에어팟을 연결 해도 Output만 사용이 가능하고 Input은 사용이 불가능합니다. 혹시 Zoom 회의 등을 할 때 에어팟을 사용하고 싶다면 마이크도 연결을 해 주어야 합니다.
-
-연결 방법에는 Pipewire를 이용하는 방법과 HSP/HFP 를 이용하는 방법이 있습니다.
+에어팟을 연결 해도 Output만 사용이 가능하고 Input은 사용이 불가능합니다.  Zoom 회의 등을 할 때 에어팟을 사용하고 싶다면 마이크도 연결을 해 주어야 하는데, 연결 방법에는 Pipewire를 이용하는 방법과 HSP/HFP 를 이용하는 방법이 있습니다.
 
 무작정 처음의 설치부터 진행 하지 말고, 어떤 어떤 작업들을 하는지 끝까지 먼저 쭉 읽어보고나서 아.! 내가 이렇게까지 해서라도 에어팟 마이크 기능을 사용해야 겠다는 분들만 시작하시는게 좋습니다. 굉장히 복잡하고 어렵고 우회하는 방법을 사용하거든요.
 
@@ -58,7 +66,7 @@ sudo /etc/init.d/bluetooth restart
 
 > ref: https://reckoning.dev/blog/airpods-pro-ubuntu/
 
-Airpod을 마이크로 사용하고 싶다면 `HSP/HFP` 프로필을 활성화 시켜줘야 합니다.
+Airpod을 마이크로 사용하고 싶다면 `HSP/HFP` 프로필을 활성화 시켜 진행하는 방법이 있습니다.
 
 Pulseaudio는 기본값으로 HSP만을 지원하고 있는데요, `HSP/HFP`를 모두 사용하기 위해 pulseaudio에 있는 HFP를 활성화 시키기 위해서는 `ofono`가 필요 합니다.
 
@@ -76,7 +84,7 @@ sudo apt install ofono
 sudo vi /etc/pulse/default.pa
 ```
 
-![image-20220323144855065](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/Airpod.assets/image-20220323144855065.png)
+![image-20220323144855065](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323144855065.png)
 
 71 번 라인의 `load-module module-bluetooth-discover` 를 `load-module module-bluetooth-discover headset=ofono` 로 변경해줍니다.
 
@@ -193,10 +201,12 @@ pulseaudio -k
 
 ### Pipewire
 
-Pipewire를 사용해 Airpod 마이크 연결을 하면 16k 의 음질을 이용할 수 있다고 합니다.
+HSP/HFP 를 말고 Pipewire를 사용해 Airpod 마이크 연결을 하면 훨씬 나은 16k 의 음질을 이용할 수 있다고 합니다.
 
 설명이 잘 되어있는 링크가 있어 아래에 링크를 첨부합니다.
 
 > https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset/1350854#1350854
 
-사실 저도 내용이 너무 복잡해서 마이크 연결까지는 진행하지 않았습니다. 이상입니다.
+사실 저도 내용이 너무 복잡해서 마이크 연결까지는 진행하지 않았습니다. 들을 수만 있으면 되죠.. 노트북에 마이크도 보통 달렸구요.
+
+이상입니다.
