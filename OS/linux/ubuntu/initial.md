@@ -543,6 +543,30 @@ Gnome의 기본 창 분할도 사용하는데 꽤나 만족스러웠습니다만
 
 방향키 두개를 동시에 눌러서 코너에 창을 위치 시키는 것도 가능 합니다.
 
+### Notification Banner Position
+
+알림 배너 위치를 커스터마이징 해주는 Extention 입니다.
+
+Gnome을 사용하며 불편했던 것 중 하나가 한가운데에 푸시 알림이 오는 거였는데 한창 작업중일땐 꽤나 성가시기도 합니다. MacOS에서 처럼 우측 상단에 뜨도록 변경하기 위해 필요합니다.
+
+GNOME EXTENTION에서 스위치를 ON으로 돌리는 것으로 간단하게 설치 합니다.
+
+![image-20220323155051437](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155051437.png)
+
+> https://extensions.gnome.org/extension/4105/notification-banner-position/
+
+![image-20220323155142403](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155142403.png)
+
+Install 을 눌러주면 설치는 바로 끝납니다.
+
+![image-20220323155228357](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155228357.png)
+
+설치 후 Tweaks 를 켜서 Extensions에 보면 Notification banner position이 설치 되어 활성화 되어 있는게 확인 됩니다. 이제 Notification 이 오면
+
+![image-20220323155409439](/home/shane/Documents/git/mdblog/OS/linux/ubuntu/initial.assets/image-20220323155409439.png)
+
+> 우측 상단에 알림이 뜹니다. 
+
 ### 노트북 지문인식 등록
 
 ![round black and white light](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1585079374502-415f8516dcc3ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80)
