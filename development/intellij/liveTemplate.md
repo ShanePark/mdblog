@@ -46,7 +46,7 @@ Preferences > Editor > Live Templates에 해당 기능이 있습니다.
 우측에 있는 `+` 버튼을 누르고 `Live Template`을 선택 해 템플릿을 생성 합니다.
 
 ```java
-@org.junit.Test
+@org.junit.jupiter.api.Test
 public void $EXPR$() {
     org.assertj.core.api.Assertions.assertThat($END$)
 }
@@ -75,5 +75,3 @@ Abbreviation은 `test`라고 이름 지었습니다. assert와 test 중에 고�
 매우 만족스러워서 자주 반복해 입력하는 코드들을 모두 템플릿으로 등록 해 두려고 합니다.
 
 이상입니다.
-
- 

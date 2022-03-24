@@ -1,4 +1,4 @@
-# 개발자를 위한 Ubuntu 필수 설치와 설정	
+# 개발자를 위한 Ubuntu 필수 설치와 설정
 
 ![How To Install Ubuntu Linux inside Windows - Techi Signals](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Install-Ubuntu-Linux.jpg)	
 
@@ -249,15 +249,129 @@ sudo apt install terminator
 
 > [Ubuntu) 우분투에서 카카오톡 실행 (100% 정상작동 방법)](https://shanepark.tistory.com/328)
 
+### SDKMAN
+
+> The Software Development Kit Manager
+
+SDKMAN은 대부분의 Unix 기반 시스템에서 Soft Development Kits들을 병렬적으로 관리할 수 있게 해주는 프로그램 입니다. 간편한 CLI 환경과 API를 통해 각종 SDK들을 설치, 전환, 삭제 할 수 있으며 설치 가능한 SDK들을 한눈에 확인 할 수도 있습니다.  OpenJDK, ant, Gradle, Maven 등등 자바 기반 개발 도구를 간편하게 관리 하기 위해 설치합니다. SDK 를 여러가지 버전을 설치 해 두고 전환하며 사용 할 필요성을 느끼는 분들은 당연히 설치하시겠지만 필요성을 느끼지 못한다면 꼭 지금 시점에서 설치하실 필요는 없습니다.
+
+다만 추후에 분명 필요성을 느낄 때가 있을테니, 이왕 하는거 지금 설치하는 것도 나쁘진 않겠죠.
+
+![image-20220324144040544](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144040544.png)
+
+> https://sdkman.io/
+
+아래의 명령어로 간편하게 설치 합니다.
+
+```zsh
+curl -s "https://get.sdkman.io" | bash
+```
+
+![image-20220324144152738](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144152738.png)
+
+설치 후에는 시키는대로 아래의 명령어를 한번 실행 해 줍니다.
+
+```zsh
+source "/home/shane/.sdkman/bin/sdkman-init.sh"
+```
+
+이제 잘 설치 되었는지 확인 해 봅니다.
+
+```zsh
+sdk version
+```
+
+![image-20220324144503252](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144503252.png)
+
+> 5.14.1 버전이 설치 되었네요.
+
 ### JDK 설치 
 
 ![black and silver laptop computer on table](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1517694712202-14dd9538aa97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
+
+#### SDKMAN 미설치의 경우
+
+SDKMAN이 없어도 JDK 단일 버전만 사용할 계획이라면 apt로 간단하게 설치 할 수 있습니다.
 
 > 각자 필요한 버전에 맞춰 8 대신 넣으면 됩니다. 해당 명령어로 설치가 끝납니다.
 
 ```bash
 $ sudo apt-get install openjdk-8-jdk
 ```
+
+#### SDKMAN을 설치 한 경우
+
+바로 위에서 SDKMAN을 설치 한 경우의 설치 방법입니다.
+
+```zsh
+sdk list java
+```
+
+ 위의 명령어를 입력해 설치 가능한 자바 목록을 확인 합니다.
+
+![image-20220324145930354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324145930354.png)
+
+Corretto(아마존), Dragonwell(알리바바), Microsoft, Oracle, Temurin(이클립스) 등등등 수많은 Vendor의 자바목록이 보입니다. 우측의 Identifier를 입력해 원하는 버전을 설치 할 수 있습니다.
+
+이전의 AdoptOpenJDK가 Termurin 으로 리브랜딩을 하였는데요 저는 해당 버전을 설치 해 보겠습니다.
+
+```zsh
+sdk install java 17.0.2-tem
+```
+
+![image-20220324150041725](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150041725.png)
+
+설치 후에 자바 버전을 확인 해 보면
+
+```zsh
+java --version
+```
+
+![image-20220324150133845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150133845.png)
+
+openjdk 17 버전으로 자바 설치가 잘 된 것이 확인 됩니다.
+
+이어서 JDK8 버전도 설치 해 보겠습니다.
+
+```zsh
+sdk install java 8.0.322-tem
+```
+
+![image-20220324150335093](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150335093.png)
+
+![image-20220324150358592](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150358592.png)
+
+> 설치가 완료 되면 JDK 8.0.322 버전을 기본 자바로 설정할건지 물어보는데요, Y를 눌러줬습니다.
+
+이제 자바 목록을 확인 해 보겠습니다.
+
+```zsh
+sdk list java
+```
+
+![image-20220324150607944](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150607944.png)
+
+> Temurin 8.0.322와 17.0.2가 설치 되어 있으며, 8 버전이 Default로 표시 되어 있습니다.
+
+자바 버전 변경은 간단하게 아래의 명령어로 가능합니다.
+
+```zsh
+sdk use java 17.0.2-tem
+```
+
+![image-20220324150731317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150731317.png)
+
+> 자바 버전이 손쉽게 변경됩니다. 하지만 Using java version 17.0.2-tem in this shell 에 나오는 것 처럼 지금의 shell 에서만 버전이 변경되었고, 새로 shell을 띄운다면 여전히 JDK 1.8을 사용 중입니다.
+
+모든 Shell에서 동일하게 변경 하고 싶다면, default 명령을 사용 해야 합니다.
+
+```zsh
+sdk default java 17.0.2-tem
+```
+
+![image-20220324153033532](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324153033532.png)
+
+> 기본 자바 버전이 변경되었습니다.
 
 ### LibreOffice
 
@@ -672,6 +786,34 @@ sudo apt install albert
 
 General 설정에서 단축키로도 `Alt + Space`를 설정 해서 MacOS에서 Spotlight나 Alfred 쓰듯 사용 하면 됩니다. `Autostart on log`을 반드시 체크 해주세요. 그렇지 않으면 컴퓨터를 새로 켤 때 마다 일일히 Albert를 실행 해 주어야 합니다.
 
+Extentions > WebSearch 에 등록을 해 두면 간편하게 네이버 검색, 카카오 지도 검색등도 가능합니다.
+
+![image-20220324101106703](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101106703.png)
+
+카카오 지도 검색
+
+```
+https://map.kakao.com/?q=%s
+```
+
+네이버 검색
+
+```
+https://search.naver.com/search.naver?query=%s
+```
+
+한번 이렇게 등록 해 두고 이후 호출할 때는 
+
+![image-20220324101225404](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101225404.png)
+
+등록해둔 Trigger 와 함께 검색어를 입력 하면 해당 명령이 호출 됩니다.
+
+![image-20220324101304632](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101304632.png)
+
+> `kmap 대전맛집` 결과 대전 맛집을 카카오 지도에서 검색 합니다.
+
+굉장히 편하기 때문에 몇개 등록하고 사용하시길 추천합니다.
+
 ### Typora
 
 ![image-20211105163432374](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105163432374.png)
@@ -727,6 +869,10 @@ vi ~/.local/share/applications/Typora.desktop
   8 Categories=Development;
 
 ```
+
+유료화가 되긴 하였지만, 여전히 베타버전을 사용 할 수 있고 돈을 내고 쓰기에도 충분히 값어치를 하기 때문에 보다 자세한 정보를 확인하고 싶으면 아래 링크로 이동해주세요.
+
+> [Typora 정식 버전 오픈 소식](https://shanepark.tistory.com/287)
 
 ### Notion 설치
 
