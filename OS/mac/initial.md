@@ -1,4 +1,4 @@
-# 개발자를 위한 Mac 초기 설정 하기	
+#### 개발자를 위한 Mac 초기 설정 하기	
 
 ## 서론
 
@@ -20,8 +20,6 @@
 
 위의 글을 쭉 따라가면 어렵지 않게 설치할 수 있습니다. 저도 간만에 해보는데 처음 상태에서 글만 쭉 따라가니 어려움 없이 설치 할 수 있었습니다. 사실상 brew만 설치하면 맥북 모든 설치는 정말 간편하게 할 수 있습니다. 설치 못하는 프로그램이 별로 없습니다.
 
-
-
 ### Alfred
 
 > Spotlight 를 대신해 여러가지 편의 기능을 제공합니다. 익숙해지면 정말 유용한 기능이 많습니다.
@@ -31,8 +29,6 @@
 https://shanepark.tistory.com/164
 
 이왕 brew 설치 포스팅에 alfred 설치 하는 방법까지 같이 이어서 하니, alfred 까지 설치하시길 추천합니다. 
-
-
 
 ### Karabiner
 
@@ -48,13 +44,41 @@ https://shanepark.tistory.com/165
 
 어쩌다보니 Alfred에 밀렸지만 사실 brew 설치하자 마자 바로 설치해야 할 친구입니다.
 
+### SDKMAN
 
+SDKMAN은 MacOS나 Linux 같은 Unix 기반 시스템에서 SDK들을 관리 해주는 프로그램 입니다. 손쉬운 CLI 환경과 API를 통해 여러가지 SDK들을 설치, 전환, 삭제 할 수 있으며 가용 가능한 SDK들을 한눈에 확인 할 수도 있습니다. 
+
+JDK, ant, Gradle, Maven 등등 자바 기반의 개발 도구를 간편하게 관리 하기 위해 설치하는데요, 여러가지 자바 버전을 설치 해 두고 전환하며 사용 할 필요성을 느끼는 분들은 당연히 설치하시겠지만 필요성을 느끼지 못한다면 꼭 지금 시점에서 설치하실 필요는 없습니다.
+
+다만 추후에 분명 필요성을 느낄 때가 있을테니, 이왕 하는거 지금 설치하는 것도 나쁘진 않겠죠.
+
+설치는 아래 명령어로 끝납니다.
+
+```zsh
+curl -s "https://get.sdkman.io" | bash
+```
+
+![image-20220324232846059](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232846059.png)
+
+```zsh
+source "/Users/shane/.sdkman/bin/sdkman-init.sh"
+```
+
+위의 커맨드를 입력 하라고 하니까 시키는 대로 합니다.
+
+그리고 설치가 잘 되었는지 확인을 위해 `sdk version`을 입력 해 봅니다.
+
+![image-20220324232923619](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232923619.png)
+
+설치가 잘 되었네요.
 
 ###  java
 
 > java 개발자뿐만 아니라, 대부분의 개발자에게 필요 할 거에요.
 
 [![Text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/pexels-photo-6190327.jpeg)](https://www.pexels.com/photo/creative-dark-internet-designer-6190327/)
+
+#### SDKMAN 를 이용하지 않는 경우
 
 저는 openjdk를 설치하겠습니다. oracle java를 설치 하고 싶은 분은 oracle 공식 홈페이지에서 다운 받아서 하시면 됩니다. 
 
@@ -64,15 +88,11 @@ brew tap AdoptOpenJDK/openjdk
 
 일단 brew해서 tap 을 먼저 해줘야 합니다.
 
-​	
-
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056849.png)
 
 이제 `brew search openjdk` 를 입력 하면 , 많은 버전의 openjdk를 보여줍니다. 
 
-​	
-
-8, 11, 14 버전이 많이 쓰이는데. 개인적으로는 11 버전이나 14 버전을 추천합니다. 특히 8 버전은 SQL Developer 등을 사용할 때 문제가 많습니다. 저는 14를 설치하겠습니다. 
+8, 11, 14 버전이 많이 쓰이는데. 개인적으로는 11 버전이나 14 버전을 추천합니다.  왠지 8 버전은 SQL Developer 등을 사용할 때 문제가 많았습니다. 저는 14를 설치하겠습니다. 
 
 ```zsh
 brew install adoptopenjdk14
@@ -100,7 +120,41 @@ brew install adoptopenjdk14
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-16390941970761.png)
 
+> 11버전을 설치한 경우
 
+#### SDKMAN 이용
+
+위에서  SDKMAN을 설치했다면 여러가지 버전을 설치 하고 변경하며 사용 할 수도 있습니다.
+
+아래의 명령어를 입력 하면
+
+```zsh
+sdk list java
+```
+
+![image-20220324233217175](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233217175.png)
+
+> Corretto(AWS), Dragonwell(Alibaba), Microsoft, Oracle, Temurin(Eclipse) 등 많은 Vendor들의 자바목록이 보입니다. 맨 우측의 Identifier가 중요한데요, 설치하고자 하는 버전의 Identifider를 복사 해 둡니다.
+
+q를 눌러 나온 뒤, 
+
+```zsh
+sdk install java 17.0.2-tem
+```
+
+으로 저는 Temurin JDK 17을 설치하겠습니다. 이전에는 AdoptOpenJDK 였는데 Temurin으로 리 브랜딩 되었습니다 
+
+![image-20220324233424318](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233424318.png)
+
+> 자바 설치도 완료 되었고, 17 버전이 기본 버전으로 설정 되었습니다.
+
+여러 가지 버전을 설치했다면 자바 버전을 변경할때는 간단하게 use(이번 shell에서만 변경) 혹은 default(기본값 변경)을 통해 자바 버전을 변경 할 수 있습니다.
+
+기본 자바 버전을 17.0.2-tem 으로 변경하려면 아래의 명령어를 입력 하면 됩니다.
+
+```zsh
+sdk default java 17.0.2-tem
+```
 
 ### Rosetta 2
 
@@ -121,8 +175,6 @@ m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056803.png)
 
 그닥 오래 걸리지 않습니다.	
-
-
 
 ### iterm & zsh
 
