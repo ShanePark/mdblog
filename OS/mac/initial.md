@@ -394,7 +394,35 @@ Chrome에서는 기본적으로 F12 를 누르거나 Command + Shift + C 가 먹
 
 설정을 켠 후에는 개발자 모드를 켜려면 Option + Command + i 키를 입력하면 됩니다. Chrome에서와 같이 Command + Shift + C 키입력도 작동 합니다. 개발자 모드는 크롬에서의 그것과 거의 같습니다.
 
+### Minimize 단축키 비활성화
 
+`Cmd + N `키를 누르려다 실수로 `Cmd+M`을 입력한다면 바로 창이 최소화 됩니다.
+
+이게 한두번정도 이러면 그냥 창을 다시 띄우고 말겠는데, 너무 자주 창을 내려버리면 스트레스를 받게 되고 일의 효율성도 떨어지게 되죠. 
+
+사실 `Cmd + H` 키도 창을 숨기는 단축키인데, 그 차이점이 조금 있거든요. 다시 창을 복원 할 때 `Cmd+M` 쪽이 좀 더 번거로워요.
+
+사실 비활성화 하는 방법은 없고, Minimize 단축키를 다른 키로 변경 해 두고 사용합니다.
+
+System Preferences > Keyboard > Shortcuts 메뉴에 들어가면 맨 아래에 App Shortcuts 가 있거든요.
+
+그걸 누르고 `+` 버튼을 눌러서,  
+
+![image-20220402184640432](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402184640432.png)
+
+>  Minimize를 추가 해 주고 누르기 어려운 단축 키로 변경해 줍니다.
+
+Minimize만 하면, Chrome 이나 인텔리제이 등에서는 여전히 커맨드 M 키가 먹히거든요. 몇몇 어플리케이션들을 위해 Minmise를 입력하고 같은 작업을 반복 해 줍니다. 스펠링 맨 끝에서 2번째가 z 와 s 로 달라요.
+
+![image-20220402184538909](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402184538909.png)
+
+> Minimize 와 Minimise가 모두 등록된 상태
+
+이렇게 하면 이제 실수로 커맨드 M 키를 눌러도 창이 내려갈 걱정이 없습니다.
+
+![image-20220402185325955](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402185325955.png)
+
+> 참고로 인텔리제이 사용자라면 KeyMap에도 Minimize가 설정 되어 있기 때문에 이 단축키도 비활성화 해주셔야 합니다.
 
 ### 마우스 관련 설정
 
