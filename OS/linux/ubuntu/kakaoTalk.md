@@ -289,8 +289,46 @@ Manage Wine versions를 클릭 합니다.
 ![image-20220129172512596](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129172512596.png)
 
 > 이제 한글 입력을 할 때 잘 보입니다. 다른 Font들도 테스트를 해 보았는데 JetBrains 나 Apple의 샌프란시스코 폰트 등을 사용 해 보았을때는 한글이 깨졌습니다.
->
-> 그리고 iBus나 fcitx 등에서는 입력기 문제가 아마 있을 것으로 추정 되는데 그 경우에는 KIME나 tian 혹은 nimf 입력기를 설치하시기를 권장합니다. 제가 사용중인 KIME 에서는 한글자 한글자가 완성 되어야 보이기는 했지만 그래도 사용하는데 불편함은 없었습니다. KIME 입력기 설치는 아래의 링크를 참고해주세요.
+
+### Wine 기본 폰트 변경
+
+D2 Coding Font가 없거나 근본적인 해결을 원하시는 분들을 위해
+
+일단 첫번째로 ~/.wine/drive_c/windows/Fonts 폴더에 원하는 한글 폰트를 넣습니다. 저는 맑은고딕 폰트를 다운받아 넣어 뒀습니다.
+
+폴더에 넣는것 뿐만 아니라 Ubuntu 자체에서도 해당 폰트를 Install 해주셔야 합니다. 우측 상단 버튼을 눌러 설치합니다.
+
+![image-20220404100747297](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404100747297.png)
+
+> 해당 폰트를 다운 받았습니다. 위에 보이는 Malgun Gothic 이라고 표시되는 폰트 명이 나중에 필요합니다.
+
+![image-20220404100045028](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404100045028.png)
+
+> ~/.wine/drive_c/windows/Fonts 경로에 폰트 파일을 넣어두었습니다.
+
+후에는 레지스트를 변경 해 줍니다. `~/.wine/system.reg` 파일 입니다.
+
+![image-20220404100148531](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404100148531.png)
+
+> 변경 전
+
+65911 라인과 65912 라인에 보이는 `MS Shell Dlg`를 변경 해 주어야 합니다. 둘다 Tahoma로 되어 있는데 위에서 확인했던 `Malgun Gothic` 으로 변경 하였습니다.
+
+![image-20220404100258814](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404100258814.png)
+
+> 변경 후
+
+적용 후에는 저는 재부팅을 한번 했었는데, wine 재시작 등이 필요하기 때문에 최소 로그오프는 해야 할 것 같습니다.
+
+이렇게 하고 나서 카카오톡을 다시 켜면 더이상 한글이 깨지는 곳이 없습니다.
+
+![image-20220404101622502](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404101622502.png)
+
+> 기본 폰트를 Malgun Gothic으로 설정한 모습
+
+### 입력기
+
+> iBus나 fcitx 등에서는 입력기 문제가 아마 있을 것으로 추정 되는데 그 경우에는 KIME나 tian 혹은 nimf 입력기를 설치하시기를 권장합니다. 제가 사용중인 KIME 에서는 한글자 한글자가 완성 되어야 보이기는 했지만 그래도 사용하는데 불편함은 없었습니다. KIME 입력기 설치는 아래의 링크를 참고해주세요.
 >
 > [Linux) KIME 한글 입력기](https://shanepark.tistory.com/318)
 
