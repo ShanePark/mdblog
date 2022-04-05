@@ -589,6 +589,16 @@ spring.servlet.multipart:
   file-size-threshold: 10KB
 ```
 
+### spring.config.location
+
+Spring Boot 1.X 버전에서는 `spring.config.location` 환경변수를 설정하면 해당 설정값이 추가로 등록 되었지만, 2.0 버전부터는 기존의 설정값을 무시하도록 변경되었습니다.
+
+릴리즈 노트에서 눈에 띄게 안내했던 내용도 아니기 때문에 해당 상황에서 버그를 찾기가 굉장히 어려웠습니다.
+
+제가 겪은 상황을 정리한 포스팅을 아래에 링크로 남겨 두겠습니다
+
+> [일간에러) application.yml 파일을 못읽을때 spring.config.location](https://shanepark.tistory.com/351)
+
 ## 마치며
 
 도무지 끝이 안보여 중간에 엎어지는거 아닌가. 회사의 숙원사업 중 하나였던 최신 스프링부트로 버전업하는 일이 이대로 엎어지는건 아닌가 걱정이 많았지만 하다보니 거의 마무리가 지어졌습니다.
