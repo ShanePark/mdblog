@@ -1,4 +1,4 @@
-# 가볍게 알아보는 Kotlin) 2. 함수와 연산자
+# 가볍게 읽어보는 Kotlin) 2. 함수와 연산자
 
 ## Function
 
@@ -6,7 +6,7 @@
 
 자바에서는 메서드를 사용하지만, 코틀린에서는 다른 프로그래밍 언어에서 처럼 `함수` 개념이 존재합니다.
 
-일반적인 함수 사용법은 `fun 함수명(파라미터){내용}` 이며, 자바 코드로 변환될때는 클래스 내의 메서드로 바뀌게 됩니다.
+일반적인 함수 사용법은 `fun 함수명(파라미터){내용}` 이며, 자바 코드로 변환될때는 클래스 내의 메서드로 바뀌게 됩니다. 
 
 ```kotlin
 fun main() {
@@ -18,7 +18,7 @@ fun printHello() {
 }
 ```
 
-![image-20220329213033256](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329213033256.png)
+![image-20220329213033256](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329213033256.png)
 
 > 실행 결과
 
@@ -38,13 +38,13 @@ fun plus(a: Int, b: Int): Int {
 }
 ```
 
-![image-20220329220834732](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329220834732.png)
+![image-20220329220834732](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329220834732.png)
 
 > 실행 결과
 
 #### 변수 이름에 할당
 
-그런데 재밌게도, 자바에서는 파라미터의 순서만으로 각 파라미터를 할당 하지만, 코틀린에서는 파라미터 이름에 변수를 직접 할당 할 수 있습니다.
+그런데 재밌게도, 자바에서는 파라미터의 순서만으로 각 파라미터를 구분해 할당 하지만, 코틀린에서는 파라미터 이름에 변수를 직접 할당 할 수 있습니다.
 
 ```kotlin
 fun main() {
@@ -59,7 +59,7 @@ fun divide(num1: Int, num2: Int): Double {
 }
 ```
 
-![image-20220329220957754](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329220957754.png)
+![image-20220329220957754](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329220957754.png)
 
 > 실행 결과
 
@@ -77,7 +77,7 @@ fun sum(a:Int=0, b:Int=1, c:Int=2):Int {
 }
 ```
 
-![image-20220329221415751](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329221415751.png)
+![image-20220329221415751](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329221415751.png)
 
 > 실행 결과
 
@@ -87,11 +87,11 @@ fun sum(a:Int=0, b:Int=1, c:Int=2):Int {
 
 Unit은 자바에서의 void 처럼 반환값이 없을 때 사용합니다.
 
-![image-20220329221848646](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329221848646.png)
+![image-20220329221848646](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329221848646.png)
 
 return 타입을 따로 명시해주지 않으면 자동으로 반환타입이 Unit 이 되며
 
-![image-20220329222035701](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329222035701.png)
+![image-20220329222035701](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329222035701.png)
 
  `:Unit`은 굳이 명시 해 주지 않아도 됩니다.
 
@@ -119,7 +119,7 @@ fun overloading() {
 }
 ```
 
-![image-20220329224654286](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329224654286.png)
+![image-20220329224654286](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329224654286.png)
 
 > 실행 결과
 
@@ -145,9 +145,119 @@ fun func1() {
 }
 ```
 
-![image-20220329225313794](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/02Function.assets/image-20220329225313794.png)
+![image-20220329225313794](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220329225313794.png)
 
 당연하게도, 지역 함수들은 그 외부에서는 호출이 불가능 합니다.
 
 ## Operator
 
+### UnaryOperator
+
+- java 에서 처럼 변수 앞에 `+`나 `-`를 붙일 수 있습니다. + 연산자는 아무 변화가 없지만, - 연산자는 부호를 반대로 만듭니다.
+- `.UnaryMinus()` 메서드를 사용해 부호를 반대로 할 수도 있습니다.
+
+```kotlin
+var a = 1;
+var b = -1;
+
+println("+ 연산자는 아무런 변화를 주지 않는다.")
+var a1 = +a;
+var b1 = +b;
+println("a: $a, +a: $a1")
+println("b: $b, -b: $b1")
+
+println("\n- 연산자는 부호를 반대로 바꾼다.")
+var minusA = -a;
+var minusB = -b;
+println("a: $a, -a: $minusA")
+println("b: $b, -b: $minusB")
+println(".unanryMinus() 메서드와 동일한 기능을 한다.")
+println("a.unaryMinus() = ${a.unaryMinus()}")
+println("b.unaryMinus() = ${b.unaryMinus()}")
+```
+
+![image-20220407225226297](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220407225226297.png)
+
+> 실행 결과
+
+- not 연산자는 논리 값을 반대로 변경 해 줍니다.
+
+```kotlin
+var trueValue = true;
+var falseValue = false;
+println("\n! 연산자는 불리언 값을 반대로 바꾼다.")
+println("!trueValue: ${!trueValue}")
+println("!falseValue: ${!falseValue}")
+println(".not() 메서드와 동일한 기능을 한다.")
+println("trueValue.not() = ${trueValue.not()}")
+println("falseValue.not() = ${falseValue.not()}")
+```
+
+![image-20220407225439674](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220407225439674.png)
+
+> 실행 결과
+
+- java에서와 마찬가지로 증감 연산자도 활용 할 수 있습니다.
+- `.inc()` 메서드를 대신 호출 할 수도 있습니다.
+
+```kotlin
+println("\n증감 연산자는 java에서와 활용 방법이 동일하다. .inc() 메서드를 호출한다.")
+println("a: $a")
+println("a++: ${a++}")
+println("a: $a")
+println("++a: ${++a}")
+```
+
+![image-20220407225528585](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220407225528585.png)
+
+> 실행 결과
+
+### ArithmeticOperator
+
+- 기본적인 사칙 연산은 java와 동일합니다.
+
+```kotlin
+val a = 123
+val b = 4
+
+println("기본적인 사칙 연산은 java와 동일")
+println("a + b = ${a+b}")
+println("a - b = ${a-b}")
+println("a * b = ${a*b}")
+println("a / b = ${a/b}")
+println("a % b = ${a%b}")
+```
+
+![image-20220407225624180](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220407225624180.png)
+
+> 실행 결과
+
+- java에서는 없는 IntRange가 존재합니다. 반복문을 돌리거나 할 때 유용하게 사용됩니다.
+
+```kotlin
+val range:IntRange = 10..20
+println("\nIntRange")
+println("10..20: $range")
+println("range.first = ${range.first}")
+println("range.last = ${range.last}")
+```
+
+![image-20220407225733115](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220407225733115.png)
+
+> 실행 결과
+
+- 비교 연산도 다른 프로그래밍 언어들과 같은 방법으로 사용합니다.
+
+```kotlin
+println("\na:$a, b:$b 일때 비교 연산")
+println("a==b = ${a==b}")
+println("a!=b = ${a!=b}")
+println("a>=b = ${a>=b}")
+println("a<=b = ${a<=b}")
+```
+
+![image-20220407225830724](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/02Function.assets/image-20220407225830724.png)
+
+> 실행 결과
+
+다음 글에서는 제어문에 대해 알아보겠습니다.
