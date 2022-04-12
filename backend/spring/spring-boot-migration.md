@@ -599,6 +599,44 @@ Spring Boot 1.X 버전에서는 `spring.config.location` 환경변수를 설정�
 
 > [일간에러) application.yml 파일을 못읽을때 spring.config.location](https://shanepark.tistory.com/351)
 
+### SecurityAutoConfiguration
+
+SecurityAutoConfiguration 클래스의 패키지가 변경되었습니다. 그렇기 때문에 기존에 applcation.yml 에서
+
+```yml
+spring.autoconfigure.exclude: 
+  - org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+```
+
+로 작성 해 두었던 설정을 계속 쓴다면 아래의 오류가 발생합니다.
+
+```java
+Cannot resolve 'org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration' for key 'org.springframework.boot.autoconfigure.EnableAutoConfiguration' 
+```
+
+![image-20220412135347191](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220412135347191.png)
+
+또한 무시하고 그냥 프로젝트를 실행 하면, 스프링 시큐리티 자동 설정을 하기 때문에 실행시 아래와 같은 경고가 발생합니다.
+
+```
+Using generated security password: 8e9635b2-da71-49f5-9811-63eba7eb451c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+```
+
+![image-20220412135542918](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220412135542918.png)
+
+해결 방법은 그렇게 어렵지 않은데, 변경된 패키지를 입력 해 주면 됩니다.
+
+security 패키지 하위에 servlet 라는 중간 패키지가 추가 되었습니다. 아래와 같이 변경 해 줍니다.
+
+```yaml
+spring.autoconfigure.exclude: 
+  - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+```
+
+
+
 ## 마치며
 
 도무지 끝이 안보여 중간에 엎어지는거 아닌가. 회사의 숙원사업 중 하나였던 최신 스프링부트로 버전업하는 일이 이대로 엎어지는건 아닌가 걱정이 많았지만 하다보니 거의 마무리가 지어졌습니다.
