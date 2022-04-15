@@ -20,6 +20,8 @@
 
 최대한 초기 세팅 순서에 맞춰 배열을 해 두었지만, 우분투를 이미 몇번 설치 해 본 경험이 있는 분이라면 컨텐츠 테이블을 확인 하며 각자 필요하신 내용을 먼저 진행 하셔도 좋습니다.
 
+선택 설정/ 선택 설치로 내려둔 것 들도, 필수가 너무 많으면 처음부터 너무 버겁게 느낄 수 있으니 나누어 둔 항목들이지만 사실 대부분이 필수에 가깝습니다.
+
 ## 필수 설정
 
 ### 한글 키보드 입력 설정
@@ -73,30 +75,6 @@ cat ~/.ssh/id_rsa.pub
 를 입력해서 public 키를 읽을 수 있구요, 원격 접속 할 컴퓨터에 등록해서 사용 하시면 편합니다.
 
 > [SSH key 생성하고, 서버에 등록해서 비밀번호 없이 접속하기](https://shanepark.tistory.com/195?category=1222202) 
-
-### SSH 접속 허용
-
-![text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1629654297299-c8506221ca97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
-
-다른 컴퓨터에서도 접속 하고 싶다면 SSH 접속을 허용 해줍니다. 아래의 링크를 참고해주세요.
-
-> [Ubuntu 20.04 LTS ) SSH 접속 허용하기](https://shanepark.tistory.com/239)
-
-### open 명령어로 nautilus 실행
-
-아래의 명령어로 터미널에서 현재 작업중인 폴더를 탐색 할 수 있는데요
-
-```zsh
-nautilus .
-```
-
-nautilus 를 항상 입력하는건 귀찮으니 open 명령어로 alias를 지정 해 줍니다.
-
-아래의 내용을 zsh 사용중이라면 `~/.zshrc`에 bash라면 `~/.bashrc`에 등록 해 줍니다.
-
-```zsh
-alias open="nautilus"
-```
 
 ### 자동 잠금 방지
 
@@ -152,6 +130,44 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 ```zsh
 gnome-session-quit --power-off
 ```
+
+### Apt 저장소 미러 변경
+
+기본 APT 저장소 미러 주소는 `kr.archive.ubuntu.com/ubuntu` 인데요.
+
+![image-20220415162010647](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162010647.png)
+
+>  ping을 날려 보았을 때 응답 시간이 200ms 에 육박할 정도로 느리기 때문에 꽤나 답답합니다.
+
+한국의 카카오 미러 서버로 변경을 해주면 훨씬 빨라지기 때문에 시간을 절약 할 수 있습니다.
+
+```zsh
+sudo vi /etc/apt/sources.list
+```
+
+sources.list 파일을 sudo 권한으로 열어서
+
+```
+:%s/kr.archive.ubuntu.com/mirror.kakao.com
+```
+
+찾아 바꾸기 명령을 이용해 카카오 미러로 변경 해 줍니다.
+
+![image-20220415162415447](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162415447.png)
+
+> 변경 후에 위에 보이는 것 처럼 모든 미러가 카카오로 변경 되었으면 OK 입니다.
+
+이어서 security.ubuntu.com 도 변경해줍니다.
+
+```
+%s/security.ubuntu.com/mirror.kakao.com/
+```
+
+![image-20220415162301748](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162301748.png)
+
+이후에는 이제 `sudo apt update` 등의 명령어를 날려보면 이전과는 비교할 수 없을 정도로 속도가 빨라진 것을 바로 체감 할 수 있습니다. 
+
+아쉽게도 카카오 미러는 ping 응답을 막아두었기 때문에 확인은 할 수 없었지만 제 생각에는 5ms 정도 되지 않을까 싶습니다. Apt 저장소는 꼭 변경하시는게 좋습니다.
 
 ## 필수설치
 
@@ -409,157 +425,6 @@ bash 보다는 zsh가 많이 쓰이는 추세입니다.
 
 > [Ubuntu에 oh-my-zsh 설치](https://shanepark.tistory.com/248)
 
-### Github Desktop 설치
-
-~~SourceTree의 경우 Linux 버전이 없어 GitKraken 이 대안으로는 가장 괜찮아 보였습니다. 물론 CUI 를 사용하는게 기능이 훨씬 강력하기는 하지만 Git의 진입 장벽을 생각할 때 GUI 를 거치지 않기는 쉽지 않습니다.~~
-
-> 원래는 GitKraken을 추천했었는데 사실상 유료가 되어 더이상 추천하지 않습니다.  
->
-> OAuth 대신 SSH 방식으로 저장소를 클론 하고 Github Desktop을 사용하시는 것을 권장합니다. 
->
-> Github Desktop의 설치는 아래 링크를 확인 해 주세요.
-
-[Ubuntu 20.04 우분투 Github Desktop 설치하기](https://shanepark.tistory.com/252)	
-
-그래도 GitKraken을 설치하고 싶다면 아래 명령어로 설치할 수 있습니다.
-
-```bash
-wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-sudo dpkg -i gitkraken-amd64.deb
-```
-
-### JetBrains Toolbox
-
-저는 IntelliJ IDEA 만 사용 하는데도, 종종 버전 문제로 번거로울 때가 있어 Mac에서도 Linux에서도 Toolbox를 설치해두고 사용합니다.
-
-새로운 버전이 나왔다고 신나서 새 버전 깔았다가 기존의 플러그인들이 전부 죽어버리는 사태를 몇번 겪었는데 아마 다들 공감하실거에요.
-
-![image-20220321165133106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165133106.png) 
-
-> https://www.jetbrains.com/toolbox-app/
-
-위의 링크에서 tar.gz 파일을 다운로드 합니다.
-
-그 다음에는 압축을 풀어 줍니다.
-
-```zsh
-tar -xf jetbrains-toolbox-*
-```
-
-압축을 푼 뒤에는 그냥 압축이 풀린 파일을 실행 하면 설치가 됩니다.
-
-압축이 풀린 폴더로 이동 후 `./jetbrains-toolbox`를 입력해 줍니다.
-
-![image-20220321165428244](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165428244.png)
-
-반응이 꽤나 오래 없어서 설치가 안되는 건가 했는데
-
-![image-20220321165628401](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165628401.png)
-
-잠시 기다리니 잘 뜹니다. Toolbox를 한번 사용 해 보면 계속 사용하게 되니 안써보셨다면 한번 써보는걸 권장합니다.
-
-### IntelliJ IDEA 
-
-![IntelliJ IDEA 2021.2 Release Candidate Is Out! | The IntelliJ IDEA Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/BlogFeatured_IntelliJ-IDEA-2x-2400x1350.png)
-
-위의  ToolBox를 설치하는걸 권장하지만, IntelliJ IDEA만 설치를 원하는 경우도 있으니 함께 올려둡니다.
-
-저는 처음에는 snap 으로 설치 했었습니다.
-
-```shell
-sudo snap install intellij-idea-ultimate --classic
-```
-
-그런데 snap으로 설치하면 사용할때 이상하게도 로딩도 너무 느리고 사용하기가 불편 하더라고요.
-
-![image-20211021084558418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084558418.png)
-
-그래서 삭제 뒤 위에 안내된 것 처럼 공식 홈페이지에 나온 방법 대로 설치 해서 사용해보니, MacOS에서 경험했던 훌륭한 속도 그대로  잘 사용 하고 있습니다.
-
-IntelliJ IDEA 다운로드 링크도 첨부 해 둡니다.
-
-![image-20211021084925005](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084925005.png)
-
-> https://www.jetbrains.com/idea/download/#section=linux
-
-### Eclipse
-
-STS 4 를 설치할 경우 아래의 글을 참고해주세요.
-
->  [Ubuntu) STS4 (Spring Tools Suite 4 for Elipse) 설치하고 바로 가기 만들기](https://shanepark.tistory.com/236)
-
-### Docker
-
-![Empowering App Development for Developers | Docker](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/docker_facebook_share.png)
-
-Windows 에서 Ubuntu 로 넘어오게 된 가장 큰 계기입니다. Docker를 사용하면 정말 편하게 격리된 컨테이너들을 구성해 가상화의 장점을 살릴 수 있습니다. 사실상 업계 표준인 만큼 접근성이 높으며 사용에 굉장히 편리합니다. 관련 레퍼런스도 어렵지 않게 찾아 볼 수 있으며 사용자들이 작성해 둔 패키지/이미지들이 넘쳐나기 때문에 뭔가를 정말 간단하게 할 수 있습니다. 윈도우즈에서도 WSL2(Windows Subsystem for Linux)를 이용해 사용은 가능 했지만 메모리나 안정성 문제로 불편함이 있었습니다.
-
-글이 길어져 링크를 나누었습니다. 아래 글을 확인해주세요.
-
-> [Ubuntu 20.04 LTS ) Docker 설치하기](https://shanepark.tistory.com/237)
-
-### DBeaver
-
-![GitHub - dbeaver/dbeaver: Free universal database tool and SQL client](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/f3f5c080-808b-11ea-9713-2bea65875d95.png)
-
-모든 데이터베이스를 한가지 클라이언트 만으로 관리 할 수 있으니 정말 편리합니다.
-
-![image-20211123221145003](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123221145003.png)
-
-> https://dbeaver.io/download/
-
-Linux Debian package를 다운 받아서 설치 하면 됩니다.
-
-dpkg 로 설치해 주시면 됩니다. 개인적인 취향 차이일 수 있지만 저는 snap은 최대한 지양합니다.
-
-```zsh
-dpkg -i ~/Downloads/dbeaver-ce_21.2.5_amd64.deb
-```
-
-### Postman
-
-![Using Variables and Chaining Requests in Postman - Vonage Developer Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Blog_Postman2_1200x600.png)
-
-API 테스트를 편하게 할 수 있습니다.
-
-**snap**(비추천)
-
-```bash
-sudo snap install postman
-```
-
- 사실 snap으로 설치하는게 쉽기는 하지만, 개인적으로 어떤 어플이든 작동이 굉장히 느려져서 현재는 snap으로 설치된 모든 어플들을 다 수동으로 설치해 사용하고 있습니다. 수동으로 설치하신다면..
-
-1. 일단 먼저 https://www.postman.com/downloads/ 에서 다운받습니다. Linux 64-bit를 받으면 되겠네요.
-
-   ![image-20211105155753299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105155753299.png)
-
-2. 다운받은 파일을 opt 폴더에 압축 해제합니다.
-
-   ```zsh
-   sudo tar -zxvf  ./Postman-linux-x86_64-8.12.5.tar.gz -C /opt/
-   ```
-
-3. 바로 가기 파일을 생성 해 줍니다.
-
-   ```zsh
-   vi ~/.local/share/applications/Postman.desktop
-   ```
-
-4. Postman.desktop 에는 아래의 내용을 넣습니다.
-
-   ```properties
-   [Desktop Entry]
-   Encoding=UTF-8
-   Name=Postman
-   Exec=/opt/Postman/app/Postman %U
-   Icon=/opt/Postman/app/resources/app/assets/icon.png
-   Terminal=false
-   Type=Application
-   Categories=Development;
-   
-   ```
-
 ### VLC Media Player
 
 ![image-20210920114245540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920114245540.png)
@@ -583,6 +448,30 @@ Linux 에서의  Microsoft Paint (그림판) 입니다. 간단한 이미지 편�
 ```
 
 ## 선택 설정
+
+### open 명령어로 nautilus 실행
+
+아래의 명령어로 터미널에서 현재 작업중인 폴더를 탐색 할 수 있는데요
+
+```zsh
+nautilus .
+```
+
+nautilus 를 항상 입력하는건 귀찮으니 open 명령어로 alias를 지정 해 줍니다.
+
+아래의 내용을 zsh 사용중이라면 `~/.zshrc`에 bash라면 `~/.bashrc`에 등록 해 줍니다.
+
+```zsh
+alias open="nautilus"
+```
+
+### SSH 접속 허용
+
+![text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1629654297299-c8506221ca97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
+
+다른 컴퓨터에서도 접속 하고 싶다면 SSH 접속을 허용 해줍니다. 아래의 링크를 참고해주세요.
+
+> [Ubuntu 20.04 LTS ) SSH 접속 허용하기](https://shanepark.tistory.com/239)
 
 ### Dock 커스터마이징
 
@@ -734,6 +623,62 @@ FireFox가 정말 좋긴 하지만, 개발할때 Chrome이 없으면 곤란합�
 
 > https://www.google.com/intl/ko/chrome/
 
+### Github Desktop
+
+한동안 Linux에서는 쓸만한 Git GUI 클라이언트가 없다고 생각했었습니다. 원래는 GitKraken을 추천했었는데 사실상 유료가 되어 더이상 추천하지 않고, 그 외에 SmartGit이나 GitCola 등도 사용 해 보았었는데요.
+
+그러다가 오픈소스인 기존의 Github Desktop을 포크 해서 만든 리눅스용 버전을 사용 해 보았는데 굉장히 만족 스러워서 계속 사용하고 있습니다. 개발자인 ShiftKey(Brendan Forster)도 Github의 엔지니어기 때문에 충분히 신뢰 할 수 있습니다. 다만 공식적으로 지원하는 버전은 아닙니다.
+
+OAuth로 로그인 하는 대신 SSH 방식으로 저장소를 클론 하고 사용하면 회사에서 사용중인 저장소들도 무리없이 좋은 보안으로 사용 할 수 있기 때문에 추천합니다. 
+
+Github Desktop의 설치는 아래 링크를 확인 해 주세요.
+
+> [Ubuntu 20.04 우분투 Github Desktop 설치하기](https://shanepark.tistory.com/252)	
+
+### Postman
+
+![Using Variables and Chaining Requests in Postman - Vonage Developer Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Blog_Postman2_1200x600.png)
+
+API 테스트를 편하게 할 수 있습니다.
+
+**snap**(비추천)
+
+```bash
+sudo snap install postman
+```
+
+ 사실 snap으로 설치하는게 쉽기는 하지만, 개인적으로 어떤 어플이든 작동이 굉장히 느려져서 현재는 snap으로 설치된 모든 어플들을 다 수동으로 설치해 사용하고 있습니다. 수동으로 설치하신다면..
+
+1. 일단 먼저 https://www.postman.com/downloads/ 에서 다운받습니다. Linux 64-bit를 받으면 되겠네요.
+
+   ![image-20211105155753299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105155753299.png)
+
+2. 다운받은 파일을 opt 폴더에 압축 해제합니다.
+
+   ```zsh
+   sudo tar -zxvf  ./Postman-linux-x86_64-8.12.5.tar.gz -C /opt/
+   ```
+
+3. 바로 가기 파일을 생성 해 줍니다.
+
+   ```zsh
+   vi ~/.local/share/applications/Postman.desktop
+   ```
+
+4. Postman.desktop 에는 아래의 내용을 넣습니다.
+
+   ```properties
+   [Desktop Entry]
+   Encoding=UTF-8
+   Name=Postman
+   Exec=/opt/Postman/app/Postman %U
+   Icon=/opt/Postman/app/resources/app/assets/icon.png
+   Terminal=false
+   Type=Application
+   Categories=Development;
+   
+   ```
+
 ### Visual Studio Code
 
 ![image-20211123223857894](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123223857894.png)
@@ -813,6 +758,94 @@ https://search.naver.com/search.naver?query=%s
 > `kmap 대전맛집` 결과 대전 맛집을 카카오 지도에서 검색 합니다.
 
 굉장히 편하기 때문에 몇개 등록하고 사용하시길 추천합니다.
+
+### Docker
+
+![Empowering App Development for Developers | Docker](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/docker_facebook_share.png)
+
+Windows 에서 Ubuntu 로 넘어오게 된 가장 큰 계기입니다. Docker를 사용하면 정말 편하게 격리된 컨테이너들을 구성해 가상화의 장점을 살릴 수 있습니다. 사실상 업계 표준인 만큼 접근성이 높으며 사용에 굉장히 편리합니다. 관련 레퍼런스도 어렵지 않게 찾아 볼 수 있으며 사용자들이 작성해 둔 패키지/이미지들이 넘쳐나기 때문에 뭔가를 정말 간단하게 할 수 있습니다. 윈도우즈에서도 WSL2(Windows Subsystem for Linux)를 이용해 사용은 가능 했지만 메모리나 안정성 문제로 불편함이 있었습니다.
+
+글이 길어져 링크를 나누었습니다. 아래 글을 확인해주세요.
+
+> [Ubuntu 20.04 LTS ) Docker 설치하기](https://shanepark.tistory.com/237)
+
+### JetBrains Toolbox
+
+저는 IntelliJ IDEA 만 사용 하는데도, 종종 버전 문제로 번거로울 때가 있어 Mac에서도 Linux에서도 Toolbox를 설치해두고 사용합니다.
+
+새로운 버전이 나왔다고 신나서 새 버전 깔았다가 기존의 플러그인들이 전부 죽어버리는 사태를 몇번 겪었는데 아마 다들 공감하실거에요.
+
+![image-20220321165133106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165133106.png) 
+
+> https://www.jetbrains.com/toolbox-app/
+
+위의 링크에서 tar.gz 파일을 다운로드 합니다.
+
+그 다음에는 압축을 풀어 줍니다.
+
+```zsh
+tar -xf jetbrains-toolbox-*
+```
+
+압축을 푼 뒤에는 그냥 압축이 풀린 파일을 실행 하면 설치가 됩니다.
+
+압축이 풀린 폴더로 이동 후 `./jetbrains-toolbox`를 입력해 줍니다.
+
+![image-20220321165428244](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165428244.png)
+
+반응이 꽤나 오래 없어서 설치가 안되는 건가 했는데
+
+![image-20220321165628401](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165628401.png)
+
+잠시 기다리니 잘 뜹니다. Toolbox를 한번 사용 해 보면 계속 사용하게 되니 안써보셨다면 한번 써보는걸 권장합니다.
+
+### IntelliJ IDEA 
+
+![IntelliJ IDEA 2021.2 Release Candidate Is Out! | The IntelliJ IDEA Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/BlogFeatured_IntelliJ-IDEA-2x-2400x1350.png)
+
+위의  ToolBox를 설치하는걸 권장하지만, IntelliJ IDEA만 설치를 원하는 경우도 있으니 함께 올려둡니다.
+
+저는 처음에는 snap 으로 설치 했었습니다.
+
+```shell
+sudo snap install intellij-idea-ultimate --classic
+```
+
+그런데 snap으로 설치하면 사용할때 이상하게도 로딩도 너무 느리고 사용하기가 불편 하더라고요.
+
+![image-20211021084558418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084558418.png)
+
+그래서 삭제 뒤 위에 안내된 것 처럼 공식 홈페이지에 나온 방법 대로 설치 해서 사용해보니, MacOS에서 경험했던 훌륭한 속도 그대로  잘 사용 하고 있습니다.
+
+IntelliJ IDEA 다운로드 링크도 첨부 해 둡니다.
+
+![image-20211021084925005](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084925005.png)
+
+> https://www.jetbrains.com/idea/download/#section=linux
+
+### Eclipse
+
+STS 4 를 설치할 경우 아래의 글을 참고해주세요.
+
+>  [Ubuntu) STS4 (Spring Tools Suite 4 for Elipse) 설치하고 바로 가기 만들기](https://shanepark.tistory.com/236)
+
+### DBeaver
+
+![GitHub - dbeaver/dbeaver: Free universal database tool and SQL client](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/f3f5c080-808b-11ea-9713-2bea65875d95.png)
+
+모든 데이터베이스를 한가지 클라이언트 만으로 관리 할 수 있으니 정말 편리합니다.
+
+![image-20211123221145003](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123221145003.png)
+
+> https://dbeaver.io/download/
+
+Linux Debian package를 다운 받아서 설치 하면 됩니다.
+
+dpkg 로 설치해 주시면 됩니다. 개인적인 취향 차이일 수 있지만 저는 snap은 최대한 지양합니다.
+
+```zsh
+dpkg -i ~/Downloads/dbeaver-ce_21.2.5_amd64.deb
+```
 
 ### Typora
 
