@@ -114,6 +114,8 @@ sudo mv jmeter-plugins-manager-1.7.jar /usr/share/jmeter/lib/ext
 
 ## 테스트 진행
 
+### 부하테스트
+
 이번에는 Thread Group에 Listner -> Add -> jp@gc Transaction Per Second를 추가 한 뒤 부하 테스트를 진행 해 그래프를 확인 해 보겠습니다.
 
 ![image-20220426140504089](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/jmeter.assets/image-20220426140504089.png)
@@ -132,5 +134,23 @@ sudo mv jmeter-plugins-manager-1.7.jar /usr/share/jmeter/lib/ext
 | 톰캣이 비즈니스 로직 처리 | 28 t/s  | 26 t/s  | 25 t/s | FAIL |
 
 Thread는 400개 까지도 큰 문제 없었지만 500이 되면 성공하는 트랜잭션 보다 실패하는 트랙잭션이 더 많았습니다.
+
+### 쿠키설정
+
+테스트에 로그인 정보를 입력 해야 하기 때문에 Cookie 정보가 필요 할 수 있습니다.
+
+그땐 Thread Group을 우클릭 하고, Add -> Config Element -> HTTP Cookie Manager를 추가 한 뒤에
+
+![image-20220427172734020](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/jmeter.assets/image-20220427172734020.png)
+
+> Add
+
+추가된 Http Cookie Manager를 클릭 하고
+
+![image-20220427172859498](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/jmeter.assets/image-20220427172859498.png)
+
+Add 를 눌러 필요한 쿠키에 대한 정보를 입력 하고 Save 하면 테스트에 쿠키를 사용 할 수 있습니다.
+
+
 
 지금까지 jMeter를 활용해 부하 테스트를 진행 해 보았습니다. 이상입니다.
