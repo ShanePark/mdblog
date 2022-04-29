@@ -297,7 +297,13 @@ Specifications 에서 Specification으로 바뀐줄도 모르고 빌드도 새�
 
 ![image-20220224171305178](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-boot-migration.assets/image-20220224171305178.png)
 
-findOne이 Optional 객체를 반환하기 때문에 모두 변경 해 주어야 합니다. .get() 을 모두 붙여줍니다.
+findOne이 Optional 객체를 반환하기 때문에 모두 변경 해 주어야 합니다. 단순하게 생각하면 `.get()` 을 모두 붙이려 할 수 있는데요, Optional 객체의 특성 상 null일 때에는 .get()을 호출 하면 
+
+```java
+java.util.NoSuchElementException: No value present
+```
+
+예외가 발생 하게 됩니다. 기존에 Optional이 아니라서 값을 받아오고 null 체크를 따로 하던 때의 로직을 그대로 사용하고 싶다면 `.orElse(null)`을 사용 해 주셔야 합니다. Optional의 `.get()`은 확실할 때만 사용 해야 합니다.
 
 또한,  기존의 findOne은 findById() 로 변경되었으며, delete는 deleteById 로 변경되었습니다. 
 
