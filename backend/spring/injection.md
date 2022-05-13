@@ -72,7 +72,7 @@ public class InjectionController {
 
 필드 인젝션입니다. 단순하게 주입받을 객체에 `@Autowired` 어노테이션만을 붙이면 끝 납니다.
 
-자바의 장황한 문법을 비웃기라도 하듯 더없이 아름다운 이 코드는 수많은 사람을 매혹 시켰고, 그 달콤함으로 한동안 의존성 주입은 이 세계관을 완전히 장악 해내었습니다.
+자바의 장황한 문법을 비웃기라도 하듯 더없이 아름다운 이 코드는 수많은 사람을 매혹 시켰고, 그 달콤함으로 한동안 의존성 주입 세계관을 완전히 장악해내었습니다.
 
 ## 필드 인젝션의 문제
 
@@ -129,7 +129,15 @@ public class InjectionController {
     private final InjectionService7 service7;
     private final InjectionService8 service8;
 
-    public InjectionController(InjectionService service, InjectionService2 service2, InjectionService3 service3, InjectionService4 service4, InjectionService5 service5, InjectionService6 service6, InjectionService7 service7, InjectionService8 service8) {
+    public InjectionController(
+        InjectionService service, 
+        InjectionService2 service2, 
+        InjectionService3 service3,
+        InjectionService4 service4, 
+        InjectionService5 service5, 
+        InjectionService6 service6, 
+        InjectionService7 service7,
+        InjectionService8 service8) {
         this.service = service;
         this.service2 = service2;
         this.service3 = service3;
@@ -288,11 +296,28 @@ setter로 주입 된 의존성은 해당 클래스가 초기화 된 이후에 �
 
 ![gif](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/injection.assets/gif.gif)
 
-IntelliJ IDEA를 사용한다면, 파일내의 모든 field injection을 아주 간단하게 생성자 주입으로 변경 할 수 있는 기능을 제공 하고 있습니다. 
+IntelliJ IDEA에서는 파일내의 모든 field injection을 아주 간단하게 생성자 주입으로 변경 할 수 있는 기능을 제공 하고 있습니다. 
 
-해당 기능의 도움을 받아 지금부터 의존성 주입 방법을 변경해보는건 어떨까요?
+또한 롬복 플러그인을 사용하고 있다면
 
-references
+```java
+@Controller
+@RequiredArgsConstructor
+public class InjectionController {
+    private final InjectionService service;
+    private final InjectionService2 service2;
+    private final InjectionService3 service3;
+    private final InjectionService4 service4;
+    private final InjectionService5 service5;
+    private final InjectionService6 service6;
+}
+```
+
+`@RequiredArgsConstructor` 어노테이션을 이용하면 생성자 주입을 사용하면서도 오히려 필드 인젝션 때보다 더 깔끔한 코드를 작성할 수 있게됩니다.
+
+IntelliJ 와 Lombok의 도움을 받아 지금부터 의존성 주입 방법을 변경해보는건 어떨까요?
+
+**references**
 
 - https://www.vojtechruzicka.com/field-dependency-injection-considered-harmful/
 - https://www.codecleaner.org/autowired-is-evil/
