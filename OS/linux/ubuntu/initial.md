@@ -570,6 +570,32 @@ Install 을 눌러주면 설치는 바로 끝납니다.
 
 > 우측 상단에 알림이 뜹니다. 
 
+### OpenWeather
+
+![image-20220526102044457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102044457.png)
+
+간단히 날씨를 확인 할 수 있는 Extention 입니다.
+
+종종 날씨가 춥거나 덥거나 혹은 비가 올 것 같거나.. MacOS에서는 기본 날씨 위젯이 있기 때문에 간편하게 확인이 가능 한데, 우분투를 사용 할 때도 비슷한 경험을 하고 싶었습니다.
+
+![image-20220526102243898](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102243898.png)
+
+> https://extensions.gnome.org/extension/750/openweather/
+
+다행히도 이를 위해 OpenWeather라는 Extention이 있기 때문에 위의 링크에서 간단하게 활성화 시켜 사용 할 수 있습니다.
+
+![image-20220526102347243](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102347243.png)
+
+> 설치 후에는 우측 하단의 톱니 바퀴를 클릭 해서 설정 창으로 들어가고
+
+![image-20220526102405819](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102405819.png)
+
+> 좌측 하단의 + 버튼을 클릭 해서 원하는 지역을 추가 할 수 있습니다.
+
+![image-20220526102457786](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102457786.png)
+
+> 한국어로 검색 해도 지역이 뜨기 때문에 해당하는 지역을 등록 해서 사용하면 됩니다.
+
 ### 노트북 지문인식 등록
 
 ![round black and white light](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1585079374502-415f8516dcc3ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80)
