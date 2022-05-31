@@ -52,9 +52,14 @@ sudo fallocate -l 8G /swapfile
 
 ![image-20220531153431540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531153431540.png)
 
-여기에서 스왑 파일을 제거 하거나 이미 있는 ` sudo dd if=/dev/zero of=/swapfile bs=1G count=8 oflag=append conv=notrunc` 명령으로 스왑파일의 끝에 zero bytes를 붙여 크기를 늘리는 방법이 있습니다.
+여기에서 스왑 메모리를 늘리는 방법은 크게 두가지가 있는데요
 
-이번 글에서는 깔끔하게 제거 후 새로 생성하는 방법으로 진행 하겠습니다. 기존의 스왑공간이 없는 분은 건너띄고 다음 내용인 Swap File 생성 쪽으로 넘어 가 주시면 됩니다.
+- 스왑 파일을 제거 하거나 
+- 이미 있는 `/swapfile`을  ` sudo dd if=/dev/zero of=/swapfile bs=1G count=8 oflag=append conv=notrunc` 명령으로 스왑파일의 끝에 zero bytes를 붙여 크기를 늘리는 방법
+
+중 편한 방법을 사용 하면 됩니다.
+
+이번 글에서는 Swap File이 없는 분이 있거나, 추후에 제거를 원하는 분도 있을 수 있으니 제거 후 새로 생성하는 방법으로 깔끔하게 진행 하겠습니다. 기존에 스왑공간이 없는 분은 제거 부분을 건너띄고 다음 내용인 Swap File 생성 쪽으로 넘어 가 주시면 됩니다.
 
 1. 먼저, 사용하고 있는 Swap File을 비 활성화 해 줍니다.
 
@@ -64,11 +69,11 @@ sudo swapoff -v /swapfile
 
 ![image-20220531155152469](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155152469.png)
 
-> Swap 공간이 꺼진 상태
+> Swap 공간이 비활성화 된 상태
 
 2. `/etc/fstab` 파일에서 스왑 파일 entry를 제거 해 줍니다.
 
-이 과정은 나중에 Swap File 생성에서 다시 그대로 살리기 때문에 지금 스왑 파일 용량 변경만을 진행하시는 중이라면 굳이 12번 라인을 제거 하지 않으셔도 됩니다. 스왑 공간 제거가 목적이라면 지워주시면 됩니다.
+이 과정은 나중에 Swap File 생성에서 다시 그대로 살리기 때문에 지금 스왑 파일 용량 변경만을 진행하시는 중이라면 굳이 12번 라인을 제거 하지 않으셔도 됩니다. 스왑 공간 제거가 목적이라면 지워주시면 됩니다. (주석처리만 해 두어도 됨)
 
 ```zsh
 sudo vi fstab
@@ -76,7 +81,7 @@ sudo vi fstab
 
 ![image-20220531155749473](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155749473.png)
 
-> 12번 라인의 `/swapfile swap swap defaults 0 0` 부분을 제거 해 줍니다.
+> 12번 라인의 `/swapfile swap swap defaults 0 0` 부분을 제거하거나 주석 해 줍니다.
 
 3. 이제 마지막으로 rm 커맨드로 실제 swapfile을 제거 해 줍니다.
 
@@ -88,7 +93,7 @@ sudo rm /swapfile
 
 ### Swap File 생성
 
-이제 새로운 Swap File을 생성 해 보도록 하겠습니다. 저는 8GB의 용량을 할당 하지만, 필요에 맞춰 8로 작성된 숫자를 변경 해 주시면 됩니다.
+이제 새로운 Swap File을 생성 해 보도록 하겠습니다. 저는 8GB의 용량을 할당 하지만, 각자의 필요에 맞춰 8로 작성된 숫자를 변경 해 주시면 됩니다.
 
 1. 파일 생성
 
@@ -96,19 +101,19 @@ sudo rm /swapfile
 sudo fallocate -l 8G /swapfile
 ```
 
-> 만약 `fallocate`가 설치 되지 않아 `fallocate failed: Operation not supported` 메시지가 나온다면 아래의 명령으로 대신 스왑 파일을 생성하실 수 있습니다.
+> 만약 `fallocate`가 설치 되지 않아 `fallocate failed: Operation not supported` 메시지가 나온다면 아래의 dd 명령으로 대신 스왑 파일을 생성하실 수 있습니다.
 >
 > ```
 > sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
 > ```
 
-2. root 사용자만이 swap file을 작성 할 수 있도록 권한 설정을 변경 해 줍니다.
+2. root 사용자만이 swap file을 쓸 수(write) 있도록 권한 설정을 변경 해 줍니다.
 
 ```zsh
 sudo chmod 600 /swapfile
 ```
 
-3. `mkswap` 유틸리티를 이용해 해당 파일로 Linux 스왑공간을 설정 합니다.
+3. `mkswap` 유틸리티를 이용해 해당 파일을 Linux 스왑공간으로 설정 합니다.
 
 ```zsh
 sudo mkswap /swapfile
@@ -126,7 +131,7 @@ sudo swapon /swapfile
 
 ![image-20220531160310424](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160310424.png)
 
-> Swap: 8.0Gi
+> Swap: total 8.0Gi
 
 이제 재부팅 후에도 메모리 스왑이 자동으로 설정 되도록 `/etc/fstab` 파일을 수정 해 줍니다.
 
@@ -134,7 +139,7 @@ sudo swapon /swapfile
 sudo vi fstab
 ```
 
-제일 아래에 아래의 내용을 작성 해 줍니다. 아까 Swap File 제거 부분에서 해당 내용을 제거 하지 않으셨다면 그대로 두시면 됩니다.
+제일 아래에 아래의 내용을 작성 해 줍니다. 아까 Swap File 제거 부분에서 해당 내용을 제거 하지 않으셨다면 그대로 두거나 주석만 풀어주시면 됩니다.
 
 ```
 /swapfile swap swap defaults 0 0
@@ -168,13 +173,13 @@ sudo sysctl vm.swappiness=10
 vm.swappiness=10
 ```
 
-## 변경 결과
+## Swap 메모리 크기 변경 결과
 
 ### 테스트
 
 이제 스왑 메모리를 변경 했으니 그 효과가 있는지 확인을 해보려 합니다.
 
-부하 테스트를 위해 도커컨테이너 및 스프링 부트 프로젝트를 20개가량 띄운 후 IntelliJ IDEA와 그 외 크롬 브라우저 윈도우도 40개 가량 띄워 보았습니다. 
+부하 테스트를 위해 도커컨테이너 및 스프링 부트 프로젝트를 20개가량 띄운 후 IntelliJ IDEA와 그 외 크롬 브라우저도 40개 가량 띄워 보았습니다. 
 
 ![image-20220531161638048](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531161638048.png)
 
@@ -186,9 +191,9 @@ vm.swappiness=10
 
 ### 마치며
 
-Swap Memory는 실제 메모리는 아니고 저장장치의 공간을 끌어다 쓰는 것 이기 때문에 속도가 약간 떨어 질 수 있습니다. 그렇기 때문에 메모리 공간이 넉넉하다면 굳이 Swap Memory 공간을 할당하지 않는게 속도측면이나 디스크 수명 측면에서 유리합니다.
+Swap Memory는 실제 메모리는 아니고 저장장치의 공간을 끌어다 쓰는 것 이기 때문에 순수 RAM만 사용 할 때에 비해서는 속도가 약간 떨어 질 수 있습니다. 그렇기 때문에 메모리 공간이 넉넉하다면 굳이 Swap Memory 공간을 할당하지 않는게 속도측면이나 디스크 수명 측면에서 유리합니다.
 
-하지만 절대적인 메모리 공간이 수요에 비해 부족한 경우에는 저처럼 그 공간을 적극적으로 사용해서 컴퓨터 환경을 보다 쾌적하게 만들어 보시길 추천합니다.
+반면 절대적인 메모리 공간이 수요에 비해 부족한 경우에는 저처럼 그 공간을 적극적으로 사용해서 컴퓨터 환경을 보다 쾌적하게 만들어 보시길 추천합니다.
 
 이상입니다.
 
