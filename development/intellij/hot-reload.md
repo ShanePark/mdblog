@@ -46,13 +46,9 @@ Preferences 에서 Compirer에 Build Project automatically 를 체크해줍니�
 
 그다음에 해당 Application을 선택 하고, Running Application Update Policies를 변경해줍니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/markdownBlog/master/backend/spring/devtools.assets/image-20210825222201154.png)
-
-> 과거에는 위와 같은 위치에 있었는데요,
-
 ![image-20220101104828624](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101104828624.png)
 
->  지금은 위치가 변경되었습니다. 우측의 Modify options를 클릭 해 줍니다.
+>  언제부턴가 위치가 변경되었습니다. 우측의 Modify options를 클릭 해 줍니다.
 
 ![image-20220101105014494](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105014494.png)
 
