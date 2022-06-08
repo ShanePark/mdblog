@@ -42,13 +42,13 @@ Linux에서 Notion 어플리케이션을 쓰고싶은 사용자들의 많은 노
 
 설치 자체는 간단합니다.
 
-```zsh
+```bash
 sudo add-apt-repository universe
 sudo apt update
 
 ```
 
-```zsh
+```bash
 sudo apt install p7zip-full p7zip-rar
 ```
 
@@ -64,7 +64,7 @@ sudo apt install p7zip-full p7zip-rar
 
 curl 혹은 wget으로 setup.sh 파일을 다운 받습니다.
 
-```zsh
+```bash
 curl https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh > setup.sh
 ```
 
@@ -72,7 +72,7 @@ curl https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh > setup.s
 
 실행 가능하게 권한 설정을 해 주고요
 
-```zsh
+```bash
 # Make the script executable
 chmod +x setup.sh
 
@@ -84,7 +84,7 @@ chmod +x setup.sh
 
  native와 web중 골아야 하는데 저는 native로 설치 했습니다.
 
-```zsh
+```bash
 # Run (with sudo for global installation, without sudo for local installation)
 sudo ./setup.sh native
 # Or for web installation

@@ -22,7 +22,7 @@
 
 tweaks가 없다면 먼저 설치가 필요합니다.
 
-```zsh
+```bash
 sudo apt install gnome-tweaks
 ```
 

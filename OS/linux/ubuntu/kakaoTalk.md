@@ -26,7 +26,7 @@ wine 패키지는 기본 우분투 리포지터리에 포함되어 있기 때문
 
 많은 윈도우 어플리케이션이 32비트 아키텍처로 개발되어있기 때문에 제일 먼저 64 bit Ubuntu 에서 32비트 아키텍처를 사용 할 수 있도록 설정 해 주어야 합니다.
 
-```zsh
+```bash
 sudo dpkg --add-architecture i386
 sudo apt update
 ```
@@ -35,7 +35,7 @@ sudo apt update
 
 이제 와인을 설치를 위해 key 파일을 추가 합니다.
 
-```zsh
+```bash
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 ```
@@ -66,13 +66,13 @@ Ubuntu를 사용하지 않으셔도, 다른 배포판에 해당하는 wine 버�
 
 저는 Ubuntu 20.04를 사용 하고 있기 때문에
 
-```zsh
+```bash
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 ```
 
 를 입력해서 wine 저장소를 추가 해 주고
 
-```zsh
+```bash
 sudo apt update
 sudo apt install --install-recommends winehq-stable
 sudo apt install playonlinux
@@ -100,13 +100,13 @@ Ubuntu 20.04에 맞는 focal main 저장소를 추가 했어야 하는데, 실�
 
 이럴때는 focal 저장소를 제대로 추가 한 후에
 
-```zsh
+```bash
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 ```
 
 저장소 목록 파일을 열어서
 
-```zsh
+```bash
 sudo vi /etc/apt/sources.list
 ```
 
@@ -116,7 +116,7 @@ sudo vi /etc/apt/sources.list
 
 설정을 바꾼 후에는 update 해 줍니다.
 
-```zsh
+```bash
 sudo apt update && sudo apt upgrade
 ```
 
@@ -350,7 +350,7 @@ D2 Coding Font가 없거나 근본적인 해결을 원하시는 분들을 위해
 
 어플리케이션 바로가기들은 `~/.local/share/applications/` 에 추가해주면 됩니다.
 
-```zsh
+```bash
 mv ~/Desktop/KakaoTalk.desktop ~/.local/share/applications/
 ```
 
@@ -374,7 +374,7 @@ StartupWMClass 를 잘 맞춰 줘야 하는데요. WMClass를 확인하는 방�
 
 1. Terminal 을 켜고
 
-```zsh
+```bash
 xprop WM_CLASS
 ```
 

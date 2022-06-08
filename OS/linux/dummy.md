@@ -22,7 +22,7 @@
 
 아래는 현재 경로에 1GB 짜리 파일을 생성하는 명령어 입니다.
 
-```zsh
+```bash
 dd if=/dev/zero of=1g_file bs=1 count=0 seek=1G
 ```
 
@@ -34,7 +34,7 @@ dd if=/dev/zero of=1g_file bs=1 count=0 seek=1G
 
 **1GB 크기의 더미 파일을 만드는 또 다른 예**
 
-```zsh
+```bash
 dd if=/dev/zero of=1g_file bs=100M count=10
 ```
 
@@ -46,7 +46,7 @@ dd if=/dev/zero of=1g_file bs=100M count=10
 
 아래의 예시는 10GB 파일을 만드는 예시 입니다.
 
-```zsh
+```bash
 fallocate -l 10GB 10G.file
 ```
 
@@ -60,7 +60,7 @@ fallocate -l 10GB 10G.file
 
 그 외에 truncate 명령어도 사용 할 수 있습니다. 사용법은 거의 동일합니다.
 
-```zsh
+```bash
 truncate -s 500MB half-giga.file
 ```
 
@@ -76,7 +76,7 @@ truncate -s 500MB half-giga.file
 
 아래의 예제는 1GB 짜리 더미 파일을 1GB.file 이라는 이름으로 생성합니다.
 
-```zsh
+```bash
 fsutil file createnew 1GB.file 1048576000
 ```
 
@@ -86,7 +86,7 @@ fsutil file createnew 1GB.file 1048576000
 
 **10GB 파일 생성 예시**
 
-```zsh
+```bash
 mkfile -n 10g 10GB_file
 ```
 

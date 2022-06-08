@@ -12,7 +12,7 @@ Tian 을 개발해주신 호동님이 개발 중단을 선언 하셨습니다.
 
 아래의 명령으로 삭제 후
 
-```zsh
+```bash
 sudo apt purge tian
 ```
 
@@ -48,7 +48,7 @@ iBus로 솔직히 왠만한 입력 문제는 모두 해결이 되지만, snap의
 
 안내해주는 대로 apt로 설치를 해 주었습니다.
 
-```zsh
+```bash
 sudp apt install ./tian*
 ```
 

@@ -32,7 +32,7 @@ Redhat 에서는 8~64GB 사이의 메모리르 사용 하고 있으면 최소 4G
 
 설정에 앞서 현재 사용하고 있는 스왑 파티션을 확인 해 봅니다.
 
-```zsh
+```bash
 sudo swapon --show
 ```
 
@@ -46,7 +46,7 @@ sudo swapon --show
 
 스왑 파일이 이미 있기 때문에 아래와 같이 Text file busy 에러가 발생합니다.
 
-```zsh
+```bash
 sudo fallocate -l 8G /swapfile
 ```
 
@@ -63,7 +63,7 @@ sudo fallocate -l 8G /swapfile
 
 1. 먼저, 사용하고 있는 Swap File을 비 활성화 해 줍니다.
 
-```zsh
+```bash
 sudo swapoff -v /swapfile
 ```
 
@@ -75,7 +75,7 @@ sudo swapoff -v /swapfile
 
 이 과정은 나중에 Swap File 생성에서 다시 그대로 살리기 때문에 지금 스왑 파일 용량 변경만을 진행하시는 중이라면 굳이 12번 라인을 제거 하지 않으셔도 됩니다. 스왑 공간 제거가 목적이라면 지워주시면 됩니다. (주석처리만 해 두어도 됨)
 
-```zsh
+```bash
 sudo vi fstab
 ```
 
@@ -85,7 +85,7 @@ sudo vi fstab
 
 3. 이제 마지막으로 rm 커맨드로 실제 swapfile을 제거 해 줍니다.
 
-```zsh
+```bash
 sudo rm /swapfile
 ```
 
@@ -97,7 +97,7 @@ sudo rm /swapfile
 
 1. 파일 생성
 
-```zsh
+```bash
 sudo fallocate -l 8G /swapfile
 ```
 
@@ -109,13 +109,13 @@ sudo fallocate -l 8G /swapfile
 
 2. root 사용자만이 swap file을 쓸 수(write) 있도록 권한 설정을 변경 해 줍니다.
 
-```zsh
+```bash
 sudo chmod 600 /swapfile
 ```
 
 3. `mkswap` 유틸리티를 이용해 해당 파일을 Linux 스왑공간으로 설정 합니다.
 
-```zsh
+```bash
 sudo mkswap /swapfile
 ```
 
@@ -123,7 +123,7 @@ sudo mkswap /swapfile
 
 4. 이제 아래의 명령어로 Swap file을 활성화 해 줍니다.
 
-```zsh
+```bash
 sudo swapon /swapfile
 ```
 
@@ -135,7 +135,7 @@ sudo swapon /swapfile
 
 이제 재부팅 후에도 메모리 스왑이 자동으로 설정 되도록 `/etc/fstab` 파일을 수정 해 줍니다.
 
-```zsh
+```bash
 sudo vi fstab
 ```
 
@@ -153,7 +153,7 @@ sudo vi fstab
 
 Swappiness는 시스템이 얼마나 자주 스왑 공간을 사용할 지 설정하는 리눅스 커널 속성 입니다. 0 ~ 100 사이의 값을 지정 할 수 있으며 값이 낮을수록 커널은 가능한 스왑공간을 사용하지 않으려 하며 값이 클수록 커널은 더 적극적으로 스왑 공간을 사용 합니다.
 
-```zsh
+```bash
 cat /proc/sys/vm/swappiness
 ```
 
@@ -161,7 +161,7 @@ cat /proc/sys/vm/swappiness
 
 만약 해당 값을 10으로 변경 하고 싶다면 
 
-```zsh
+```bash
 sudo sysctl vm.swappiness=10
 ```
 

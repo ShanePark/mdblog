@@ -22,7 +22,7 @@
 
 일단 기본적으로 현 디렉터리에 존재하는 모든 `.git`을 찾아 pull 하는 코드 입니다.
 
-```shell
+```bash
 find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --work-tree=$PWD/{}/.. pull \;
 ```
 
@@ -40,7 +40,7 @@ find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --work-tree=
 
 `vi ~/.zshrc` 후 적당한 위치에 작성 해 줍니다.
 
-```shell
+```bash
 function pull {
   find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --wo    rk-tree=$PWD/{}/.. pull \;
  }
@@ -58,7 +58,7 @@ function pull {
 
 이번에는 경로를 파라미터로 받아서, 어느 경로에서 호출하든 상관 없이 지정한 폴더내의 깃 저장소들을 모두 pull 하도록 function을 변경 해 보았습니다.
 
-```shell
+```bash
 function pull {
     cd $1;
     find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --work-tree=$PWD/{}/.. pull \; 
@@ -77,7 +77,7 @@ function pull {
 
 마찬가지로 `~/.zshrc` 파일을 수정 해 주면 됩니다.
 
-```shell
+```bash
 export shane="/home/shane/Documents/git/shane"
 export repos="/home/shane/Documents/git"
 
@@ -99,7 +99,7 @@ function pull {
 
 마지막으로.. 모든 git 저장소가 한 폴더 내에 있고 저장소가 꽤 많다면 아래의 alias 를 참고해 병렬 처리를 고려해보세요. 훨씬 빠르게 처리 해 냅니다.
 
-```shell
+```bash
 alias pull-shane="cd $shane; ls| xargs -P10 -I{} git -C {} pull"
 ```
 

@@ -38,7 +38,7 @@ Terminal이 커졌습니다. 작업중인 branch 이름을 확인 하고, 아래
 
 저는 2개의 미리 push까지 마친 커밋을 병합 할 예정입니다.
 
-```zsh
+```bash
 git rebase -i HEAD~2
 ```
 
@@ -100,7 +100,7 @@ push까지 마쳤습니다. 확인 해보니 두개의 commit이 하나로 합�
 
 마지막으로 git 기본 편집기를 nano 에서 vim 으로 변경하고 마치겠습니다.
 
-```zsh
+```bash
 git config --global core.editor "vim"
 ```
 

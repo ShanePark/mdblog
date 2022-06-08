@@ -14,7 +14,7 @@ Chrome 명령어를 쉽게 사용하기 위해 alias를 선언 해 줍니다.
 
 저는 MacOS나 Linux에서 모두 zsh를 사용하다 보니 `.zshrc` 파일을 수정합니다.
 
-```zsh
+```bash
 vi ~/.zshrc
 ```
 
@@ -32,7 +32,7 @@ Chrome의 headless 모드는 `-- headless` 옵션으로 실행 할 수 있습니
 
 현재 작업중인 위치에 지정한 주소를 Headless Chrome으로 방문해 `output.pdf` 파일을 생성 합니다.
 
-```zsh
+```bash
 chrome --headless --disable-gpu --dump-dom https://shanepark.tistory.com
 ```
 
@@ -46,7 +46,7 @@ chrome --headless --disable-gpu --dump-dom https://shanepark.tistory.com
 
 `--window-size` 옵션으로 윈도우 크기도 설정 할 수 있습니다.
 
-```zsh
+```bash
 chrome --headless --disable-gpu --screenshot --window-size=1920,1280 https://shanepark.tistory.com
 ```
 
@@ -58,7 +58,7 @@ chrome --headless --disable-gpu --screenshot --window-size=1920,1280 https://sha
 
 ### PDF로 저장
 
-```zsh
+```bash
 chrome --headless --disable-gpu --print-to-pdf https://shanepark.tistory.com
 ```
 
@@ -70,7 +70,7 @@ chrome --headless --disable-gpu --print-to-pdf https://shanepark.tistory.com
 
 ### 리모트 디버깅
 
-```zsh
+```bash
 chrome --headless --remote-debugging-port=9222 --disable-gpu \--window-size=1920,1280 https://shanepark.tistory.com
 ```
 

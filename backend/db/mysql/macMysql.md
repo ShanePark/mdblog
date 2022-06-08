@@ -18,7 +18,7 @@
 
 자 이제 Homebrew가 이미 설치 되었다는 가정 하에 진행하겠습니다. 터미널을 켜고..
 
-```zsh
+```bash
 brew install mysql
 ```
 
@@ -28,7 +28,7 @@ brew install mysql
 
 설치가  완료되었으면, 설치된 mysql 의 버전을 확인해봅니다.
 
-```zsh
+```bash
 mysql -V
 ```
 
@@ -50,7 +50,7 @@ mysql.server start
 
 MYSQL 서버가 정상적으로 시작되었다면, 이제 초기 설정을 해줘야 합니다. 아래 명령어를 입력해 설정할 수 있습니다.
 
-```zsh
+```bash
 mysql_secure_installation
 ```
 

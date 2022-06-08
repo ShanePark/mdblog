@@ -56,7 +56,7 @@ Cider는 Windows, Linux, macOS, 등등 거의 모든 OS에서 사용 할 수 있
 
 > https://github.com/ciderapp/Cider
 
-```zsh
+```bash
 git clone https://github.com/ciderapp/Cider.git
 cd Cider
 yarn install

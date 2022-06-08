@@ -10,7 +10,7 @@ Terminator는 자바로 작성된 오픈소스 터미널 에뮬레이터 입니�
 
 apt install로 간단하게 설치 할 수 있습니다.
 
-```zsh
+```bash
 sudo apt install terminator
 ```
 
@@ -54,7 +54,7 @@ sudo apt install terminator
 
 `.config/terminator/config` 에 있는 설정파일을 수정할 수도 있습니다.
 
-```zsh
+```bash
 vi ~/.config/terminator/config
 ```
 

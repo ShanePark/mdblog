@@ -30,7 +30,7 @@ Gitlab에서는 저장소를 생성 했을 때, readme 를 추가 하지 않고 
 
 ### 원격 저장소 추가 방법
 
-```zsh\
+```bash
 git remote add origin [추가할 원격 git 저장소 주소]
 # 아래의 두 예시는 각각 https 와 ssh 입니다.
 git remote add origin https://github.com/Shane-Park/playddit.git
@@ -39,7 +39,7 @@ git remote add origin git@github.com:Shane-Park/playddit.git
 
 이후 기존의 원격 저장소가 없어서 원격 저장소가 추가가 되었다면 아래와 같이 commit 및 push를 진행 해 주면 됩니다.
 
-```zsh
+```bash
 git add .
 git commit -m "커밋메시지"
 git push origin master
@@ -58,7 +58,7 @@ git push origin master
 
 아래의 명령어를 입력해 (-v 혹은 -verbose) 원격 저장소 목록을 확인 합니다.
 
-```zsh
+```bash
 git remote -v
 ```
 
@@ -70,13 +70,13 @@ git remote -v
 
 > 또 다른 이름으로 remote를 추가 해 줍니다. second 라는 이름으로 추가 한다고 가정하면 아래 명령어 처럼 입력합니다.
 
-```zsh
+```bash
 git remote add second git@github.com:Shane-Park/playddit.git
 ```
 
 2. 기존 원격 저장소 이름을 old-origin으로 변경하고 origin으로 추가하는 방법
 
-```zsh
+```bash
 cd existing_repo
 git remote rename origin old-origin
 git remote add origin git@github.com:Shane-Park/playddit.git
@@ -87,7 +87,7 @@ git push -u origin --tags
 
 3. 기존 원격저장소를 삭제하고 새로 추가하는 방법
 
-```zsh
+```bash
 git remote remove origin
 git remote add origin git@github.com:Shane-Park/playddit.git
 
@@ -101,7 +101,7 @@ git remote add origin git@github.com:Shane-Park/playddit.git
 
 그냥 git push를 했더니 upstream branch가 설정되어있지 않기 때문에 에러가 발생했습니다.
 
-```zsh
+```bash
 git push
 ```
 
@@ -113,7 +113,7 @@ git push
 >
 > For every branch that is up to date or successfully pushed, add upstream (tracking) reference, used by argument-less [git-pull[1\]](https://git-scm.com/docs/git-pull) and other commands.
 
-```zsh
+```bash
 git push -u origin master
 ```
 
@@ -127,7 +127,7 @@ git push -u origin master
 
 > 이때는 이전 remote를 다시 추가 한 뒤에 `fetch --unshallow` 를 해 줘야 합니다. fetch 후엔 push가 가능합니다.
 
-```zsh
+```bash
 git remote add old <path-to-old-remote>
 git fetch --unshallow old
 

@@ -48,7 +48,7 @@ Broswer에서 여러분이 수동으로 하는 대부분의 일들을 Puppeteer�
 
 - npm 혹은 yarn으로 puppeteer를 설치 해 줍니다.
 
-```zsh
+```bash
 npm i puppeteer
 # or "yarn add puppeteer"
 ```
@@ -59,7 +59,7 @@ npm i puppeteer
 
 > 위에서 `npm i puppeteer` 를 했다면 무시하세요
 
-```zsh
+```bash
 npm i puppeteer-core
 # or "yarn add puppeteer-core"
 ```
@@ -92,7 +92,7 @@ const puppeteer = require('puppeteer');
 
 이후 해당 파일을 node로 실행 해 줍니다.
 
-```zsh
+```bash
 node example.js
 ```
 
@@ -110,7 +110,7 @@ node example.js
 
 hn.js 파일을 생성 합니다.
 
-```zsh
+```bash
 const puppeteer = require('puppeteer');
 
 (async () => {
@@ -128,7 +128,7 @@ const puppeteer = require('puppeteer');
 
 이후 마찬가지로 node로 실행 해 줍니다.
 
-```zsh
+```bash
 node hn.js
 ```
 
@@ -144,7 +144,7 @@ node hn.js
 
 get-dimensions.js 파일을 생성 합니다.
 
-```zsh
+```bash
 const puppeteer = require('puppeteer');
 
 (async () => {
@@ -178,7 +178,7 @@ Puppeteer는 Chromoum을 Headless mode로 실행 합니다. 헤드리스가 아�
 
 > default is true
 
-```zsh
+```bash
 const browser = await puppeteer.launch({ headless: false });
 ```
 
@@ -186,7 +186,7 @@ const browser = await puppeteer.launch({ headless: false });
 
 기본 설정으로, Puppeteer는 특정 버전의 Chromium을 다운 받아 사용 합니다. 특정 버전의 Chromium을 사용하기 위해서는 executablePath를 전달 해 주어야 합니다.
 
-```zsh
+```bash
 const browser = await puppeteer.launch({ executablePath: '/path/to/Chrome' });
 ```
 

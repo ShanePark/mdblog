@@ -43,7 +43,7 @@ try (InputStream is = urlConn.getInputStream();
 
 대충 설명을 하자면 URL커넥션을 열고, 그 커넥션의 inputStream 으로 출력을 받아와서 버퍼로 읽어와 출력 해 주는 과정 인데요,
 
-```zsh
+```bash
 curl https://www.ifconfig.me
 ```
 

@@ -36,7 +36,7 @@ ORA-01882: timezone region not found
 
 linux의 날짜와 시간은 간단하게 date 명령어로 확인 할 수 있습니다.
 
-```zsh
+```bash
 date
 ```
 

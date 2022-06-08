@@ -67,13 +67,13 @@ console.log(`Running on http://${HOST}:${PORT}`);
 
 이를 위해서 제일 먼저 Dockerfile을 생성 하도록 하겠습니다.
 
-```sh
+```bash
 vi Dockerfile
 ```
 
 Docker 파일을 생성하기 위해 vim 에디터를 이용 하도록 하겠습니다.
 
-```zsh
+```bash
 FROM node:16
 ```
 
@@ -81,14 +81,14 @@ FROM node:16
 
 다음으로는 이미지 내부에서 어플리케이션 코드들을 저장 해 둘 경로를 설정 해 줍니다.
 
-```shell
+```bash
 # Create app directory
 WORKDIR /usr/src/app
 ```
 
 node:16 이미지는 Node.js 와 NPM이 이미 설치 되어 오기 때문에 `npm` binary를 이용해 의존성을 설치 해 주면 됩니다. 참고로 npm 버전이 4보다 낮다면 `package-lock.json` 파일을 생성되지 않습니다.
 
-```shell
+```bash
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
@@ -101,20 +101,20 @@ RUN npm install
 
 이제 COPY 명령을 통해 어플리케이션의 소스코드를 Docker 이미지 내부에 복사 합니다.
 
-```shell
+```bash
 # Bundle app source
 COPY . .
 ```
 
 위에서 8080 포트를 bind 해 두었기 때문에, EXPOSE를 이용해 docker daemon과 매핑 해 줍니다.
 
-```shell
+```bash
 EXPOSE 8080
 ```
 
 마지막으로, CMD로 app을 실행 할 명령어를 설정 해 줍니다.
 
-```shell
+```bash
 CMD [ "node", "server.js" ]
 ```
 
@@ -137,7 +137,7 @@ CMD [ "node", "server.js" ]
 
 `.dockerignore` 파일을 생성 해 줍니다. 
 
-```shell
+```bash
 vi .dockerignore
 ```
 
@@ -168,7 +168,7 @@ docker build . -t shane/node-web-app
 
 이제 도커 이미지 목록을 확인 해 보면
 
-```sh
+```bash
 docker images
 ```
 
@@ -180,7 +180,7 @@ docker images
 
 이제 이미지가 준비 되었으니 컨테이너로 실행 해 보도록 하겠습니다.
 
-```zsh
+```bash
 docker run -p 49160:8080 --name shane-node-app -d shane/node-web-app
 ```
 
@@ -188,7 +188,7 @@ docker run -p 49160:8080 --name shane-node-app -d shane/node-web-app
 
 잘 돌아가고 있고, 로그도 확인이 됩니다.
 
-```zsh
+```bash
 curl -i localhost:49160
 ```
 
@@ -202,7 +202,7 @@ curl -i localhost:49160
 
 https://hub.docker.com/ 에 회원 가입을 하고 로그인을 해 줍니다.
 
-```zsh
+```bash
 docker login
 ```
 
@@ -216,7 +216,7 @@ docker login
 
 `docker images ` 명령어를 쳤을때 push할 이미지가 목록에 나와야 합니다.
 
-```zsh
+```bash
 docker push kkobuk/url-to-pdf
 ```
 
@@ -230,13 +230,13 @@ docker push kkobuk/url-to-pdf
 
 이제 rmi 명령어로 기존의 도커 이미지를 삭제 한 후에
 
-```zsh
+```bash
 docker rmi kkobuk/url-to-pdf
 ```
 
 Docker Hub에서 이미지를 내려 받아 사용해보면 정상적으로 받아와지는게 확인 됩니다.
 
-```zsh
+```bash
 docker run -p 8030:8080 --name url-to-pdf -d kkobuk/url-to-pdf
 ```
 

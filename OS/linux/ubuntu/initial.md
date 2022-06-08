@@ -112,7 +112,7 @@ Use default value를 해제 한 후에, `, '<Control><Alt>Down'` 를 통째로 �
 
 위에서 처럼 눈으로 보며 삭제 할 수 있지만, 사실 아래의 명령어로 간단하게 없앨 수 있습니다.
 
-```zsh
+```bash
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 ```
@@ -127,7 +127,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 
 그래서 Super+F4 를 종료 단축키로 만들어서 사용하고 있습니다. 키보드 shortcut 설정에서 아래의 커맨드를 원하시는 Shortcut으로 설정 해서 사용하면 됩니다. `Super+F4`를 입력한다고 바로 꺼지는건 아니고, 입력하고 60초 후에 자동으로 종료되거나 혹은 Super+F4 를 누르고 지금 종료 버튼 한번 눌러주면 됩니다.
 
-```zsh
+```bash
 gnome-session-quit --power-off
 ```
 
@@ -141,7 +141,7 @@ gnome-session-quit --power-off
 
 한국의 카카오 미러 서버로 변경을 해주면 훨씬 빨라지기 때문에 시간을 절약 할 수 있습니다.
 
-```zsh
+```bash
 sudo vi /etc/apt/sources.list
 ```
 
@@ -239,7 +239,7 @@ set showmatch "짝이 되는 괄호 하이라이트
 
 기본 터미널과 비교해 디자인도 다를 바 없으며 그냥 편의 기능만 추가 되기 때문에 단점은 전혀 없다고 봐도 무방합니다.
 
-```zsh
+```bash
 sudo apt install terminator
 ```
 
@@ -279,7 +279,7 @@ SDKMAN은 대부분의 Unix 기반 시스템에서 Soft Development Kits들을 �
 
 아래의 명령어로 간편하게 설치 합니다.
 
-```zsh
+```bash
 curl -s "https://get.sdkman.io" | bash
 ```
 
@@ -287,13 +287,13 @@ curl -s "https://get.sdkman.io" | bash
 
 설치 후에는 시키는대로 아래의 명령어를 한번 실행 해 줍니다.
 
-```zsh
+```bash
 source "/home/shane/.sdkman/bin/sdkman-init.sh"
 ```
 
 이제 잘 설치 되었는지 확인 해 봅니다.
 
-```zsh
+```bash
 sdk version
 ```
 
@@ -319,7 +319,7 @@ $ sudo apt-get install openjdk-8-jdk
 
 바로 위에서 SDKMAN을 설치 한 경우의 설치 방법입니다.
 
-```zsh
+```bash
 sdk list java
 ```
 
@@ -331,7 +331,7 @@ Corretto(아마존), Dragonwell(알리바바), Microsoft, Oracle, Temurin(이클
 
 이전의 AdoptOpenJDK가 Termurin 으로 리브랜딩을 하였는데요 저는 해당 버전을 설치 해 보겠습니다.
 
-```zsh
+```bash
 sdk install java 17.0.2-tem
 ```
 
@@ -339,7 +339,7 @@ sdk install java 17.0.2-tem
 
 설치 후에 자바 버전을 확인 해 보면
 
-```zsh
+```bash
 java --version
 ```
 
@@ -349,7 +349,7 @@ openjdk 17 버전으로 자바 설치가 잘 된 것이 확인 됩니다.
 
 이어서 JDK8 버전도 설치 해 보겠습니다.
 
-```zsh
+```bash
 sdk install java 8.0.322-tem
 ```
 
@@ -361,7 +361,7 @@ sdk install java 8.0.322-tem
 
 이제 자바 목록을 확인 해 보겠습니다.
 
-```zsh
+```bash
 sdk list java
 ```
 
@@ -371,7 +371,7 @@ sdk list java
 
 자바 버전 변경은 간단하게 아래의 명령어로 가능합니다.
 
-```zsh
+```bash
 sdk use java 17.0.2-tem
 ```
 
@@ -381,7 +381,7 @@ sdk use java 17.0.2-tem
 
 모든 Shell에서 동일하게 변경 하고 싶다면, default 명령을 사용 해야 합니다.
 
-```zsh
+```bash
 sdk default java 17.0.2-tem
 ```
 
@@ -401,7 +401,7 @@ Linux의 Microsoft Office 입니다. 무료로 사용 할 수 있습니다.
 
 다운을 받은 후에는 압축을 풀어 줍니다.
 
-```zsh
+```bash
 tar -xvf LibreOffice_7.2.2_Linux_x86-64_deb.tar.gz
 ```
 
@@ -409,7 +409,7 @@ tar -xvf LibreOffice_7.2.2_Linux_x86-64_deb.tar.gz
 
 압축이 풀렸으면 DEBS 내의 모든 `.deb`파일을 설치 해 줍니다.
 
-```zsh
+```bash
 sudo dpkg -i *.deb
 ```
 
@@ -453,7 +453,7 @@ Linux 에서의  Microsoft Paint (그림판) 입니다. 간단한 이미지 편�
 
 아래의 명령어로 터미널에서 현재 작업중인 폴더를 탐색 할 수 있는데요
 
-```zsh
+```bash
 nautilus .
 ```
 
@@ -461,7 +461,7 @@ nautilus 를 항상 입력하는건 귀찮으니 open 명령어로 alias를 지�
 
 아래의 내용을 zsh 사용중이라면 `~/.zshrc`에 bash라면 `~/.bashrc`에 등록 해 줍니다.
 
-```zsh
+```bash
 alias open="nautilus"
 ```
 
@@ -608,7 +608,7 @@ Install 을 눌러주면 설치는 바로 끝납니다.
 
 지극히 개인적인 취향 이지만, 저는 바탕화면에 홈과 휴지통이 있는걸 좋아하지 않습니다. 휴지통은 dock에 달아서 사용합니다.
 
-```zsh
+```bash
 gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
 gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 ```
@@ -681,13 +681,13 @@ sudo snap install postman
 
 2. 다운받은 파일을 opt 폴더에 압축 해제합니다.
 
-   ```zsh
+   ```bash
    sudo tar -zxvf  ./Postman-linux-x86_64-8.12.5.tar.gz -C /opt/
    ```
 
 3. 바로 가기 파일을 생성 해 줍니다.
 
-   ```zsh
+   ```bash
    vi ~/.local/share/applications/Postman.desktop
    ```
 
@@ -713,7 +713,7 @@ sudo snap install postman
 
 > https://code.visualstudio.com/download
 
-```zsh
+```bash
 sudo dpkg -i 파일명.deb
 ```
 
@@ -729,7 +729,7 @@ MacOS에서의 Alfred를 정확히 따라하는 Albert 입니다. 이름부터�
 
 위의 링크에 나온 순서대로 설치를 진행 하겠습니다.
 
-```zsh
+```bash
 curl "https://build.opensuse.org/projects/home:manuelschneid3r/public_key" | sudo apt-key add -
 ```
 
@@ -737,7 +737,7 @@ curl "https://build.opensuse.org/projects/home:manuelschneid3r/public_key" | sud
 
 아래는 Ubuntu 20.04 기준의 설치 방법 입니다.
 
-```zsh
+```bash
 echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
 curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
 sudo apt update
@@ -809,7 +809,7 @@ Windows 에서 Ubuntu 로 넘어오게 된 가장 큰 계기입니다. Docker를
 
 그 다음에는 압축을 풀어 줍니다.
 
-```zsh
+```bash
 tar -xf jetbrains-toolbox-*
 ```
 
@@ -833,7 +833,7 @@ tar -xf jetbrains-toolbox-*
 
 저는 처음에는 snap 으로 설치 했었습니다.
 
-```shell
+```bash
 sudo snap install intellij-idea-ultimate --classic
 ```
 
@@ -869,7 +869,7 @@ Linux Debian package를 다운 받아서 설치 하면 됩니다.
 
 dpkg 로 설치해 주시면 됩니다. 개인적인 취향 차이일 수 있지만 저는 snap은 최대한 지양합니다.
 
-```zsh
+```bash
 dpkg -i ~/Downloads/dbeaver-ce_21.2.5_amd64.deb
 ```
 
@@ -883,7 +883,7 @@ dpkg -i ~/Downloads/dbeaver-ce_21.2.5_amd64.deb
 
 일단 공식 사이트에서 안내하는 방법은 아래와 같습니다.
 
-```zsh
+```bash
 # or use
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
@@ -913,7 +913,7 @@ sudo apt-get install typora
 
 그러고는 아래와 같이 바로가기를 생성 해 주었습니다.
 
-```zsh
+```bash
 vi ~/.local/share/applications/Typora.desktop
 ```
 

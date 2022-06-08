@@ -62,7 +62,7 @@ Windows 에서는 Rufus 를 이용해서 쉽게 만들었었습니다. 지금은
 
 저희는 모두 brew가 있기 때문에 brew를 통해 설치하겠습니다.
 
-```zsh
+```bash
 brew install balenaetcher
 ```
 
@@ -156,7 +156,7 @@ brew install balenaetcher
 
 > Ubuntu Mirror를 변경하려면 변경 해 줍니다. kakao 미러가 있긴 한데, 원한다면 조금 더 빨라지긴 하니 바꿔줍니다.
 
-```zsh
+```bash
 kr.archive.ubuntu.com/mirror.kakao.com
 ```
 
@@ -222,7 +222,7 @@ Storage 설정을 해 줍니다. 저는 기존에 ubuntu 설치 되어 있던게
 
 노트북 덮개를 덮으니 우분투 서버임에도 절전모드가 바로 되어버리더라고요.
 
-```zsh
+```bash
 sudo vi /etc/systemd/logind.conf
 ```
 
@@ -236,7 +236,7 @@ sudo vi /etc/systemd/logind.conf
 
 저장 하고 나서 시스템을 재 부팅 하거나 혹은 `systemd-logind` 서비스를 재 시작 해 주면 바로 적용됩니다.
 
-```zsh
+```bash
 systemctl restart systemd-logind
 ```
 
@@ -252,7 +252,7 @@ UTC로 시간대가 설정 되어 있다보니, 스케줄등을 돌리면 실제
 
 아래의 명령어를 입력 합니다.
 
-```zsh
+```bash
 sudo dpkg-reconfigure tzdata
 ```
 

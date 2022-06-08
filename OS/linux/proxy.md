@@ -10,7 +10,7 @@ Dynamic Port Forwarding 을 이용하면 ssh client의 로컬에 SOCKS 프록시
 
 Linux, macOS 등 Unix 시스템에서는 아래와 같은 방법으로 dynamic port forwarding(SOCKS)을 생성 할 수 있습니다.
 
-```zsh
+```bash
 ssh -D [로컬아이피:]로컬포트 [USER아이디@]SSH서버
 ```
 
@@ -18,7 +18,7 @@ ssh -D [로컬아이피:]로컬포트 [USER아이디@]SSH서버
 
 바로 실습 해 보겠습니다. 아래의 주소의 curl을 보내면 외부 아이피 주소를 알아 낼 수 있는데요
 
-```zsh
+```bash
 curl ifconfig.me
 ```
 
@@ -41,7 +41,7 @@ Host gaia
 
 ​	
 
-```zsh
+```bash
 ssh -D localhost:9999 gaia
 ```
 
@@ -55,7 +55,7 @@ ssh -D localhost:9999 gaia
 
 아까 지정한 포트를 이용해서 socks5 프록시를 사용해 접속 합니다.
 
-```zsh
+```bash
 curl --socks5-hostname localhost:9999 ifconfig.me
 ```
 

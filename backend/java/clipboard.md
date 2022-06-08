@@ -117,7 +117,7 @@ public class ClassNameFactory {
 
 이제 한번 작성한 파일을 실행 해 보겠습니다.
 
-```zsh
+```bash
  java /Users/shane/Documents/dev/ClassNameFactory.java 1315. Sum of Nodes with Even-Valued Grandparent
 ```
 
@@ -139,13 +139,13 @@ public class ClassNameFactory {
 
 JDK11
 
-```zsh
+```bash
 alias leet='java ~/Documents/dev/ClassNameFactory.java'
 ```
 
 JDK8
 
-```zsh
+```bash
 alias leet="java -cp ~/Documents/dev ClassNameFactory"
 ```
 

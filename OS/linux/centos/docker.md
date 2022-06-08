@@ -28,7 +28,7 @@ sudo yum install -y yum-utils
 
 이번에는 `yum-config-manager` 를 설치 해 줍니다.
 
-```zsh
+```bash
 sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
@@ -43,7 +43,7 @@ sudo yum-config-manager \
 
 > 특정 버전을 설치 하고 싶다면 조금 아래로 스크롤을 내려주세요.
 
-```zsh
+```bash
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
@@ -81,13 +81,13 @@ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> conta
 
 설치가 완료되었으니 docker를 실행 해 줍니다.
 
-```zsh
+```bash
 sudo systemctl start docker
 ```
 
 설치가 잘 되었는지 확인 하기 위해 ps 명령어를 써 보았습니다.
 
-```zsh
+```bash
 docker ps
 ```
 
@@ -103,7 +103,7 @@ docker명령어는 처음에는 sudo 권한이 있어야 실행이 됩니다. �
 
 설치가 잘 진행 되었다면, 버전도 확인 해 봅니다. 저는 현재 최신 버전인 20.10.11 버전이 설치 되었습니다.
 
-```zsh
+```bash
 docker --version
 ```
 
@@ -121,7 +121,7 @@ Docker를 설치 했으면, 필요에 따라 Compose도 설치 해 줍니다. Co
 
 Docker Compose 안정화 버전을 다운 받기 위해 아래의 명령어를 입력합니다:
 
-```zsh
+```bash
  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
@@ -133,7 +133,7 @@ Docker Compose 안정화 버전을 다운 받기 위해 아래의 명령어를 �
 
 아래 명령어로 binary에 실행 권한을 부여 합니다
 
-```zsh
+```bash
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
@@ -141,7 +141,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 아래의 명령어를 입력 해 잘 설치가 되었는지 확인 해 봅니다
 
-```zsh
+```bash
 docker-compose --version
 ```
 

@@ -54,13 +54,13 @@ JDK, ant, Gradle, Maven 등등 자바 기반의 개발 도구를 간편하게 �
 
 설치는 아래 명령어로 끝납니다.
 
-```zsh
+```bash
 curl -s "https://get.sdkman.io" | bash
 ```
 
 ![image-20220324232846059](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232846059.png)
 
-```zsh
+```bash
 source "/Users/shane/.sdkman/bin/sdkman-init.sh"
 ```
 
@@ -94,7 +94,7 @@ brew tap AdoptOpenJDK/openjdk
 
 8, 11, 14 버전이 많이 쓰이는데. 개인적으로는 11 버전이나 14 버전을 추천합니다.  왠지 8 버전은 SQL Developer 등을 사용할 때 문제가 많았습니다. 저는 14를 설치하겠습니다. 
 
-```zsh
+```bash
 brew install adoptopenjdk14
 ```
 
@@ -112,7 +112,7 @@ brew install adoptopenjdk14
 
 설치된 모든 자바 버전을 확인 할려면 Terminal을 켜고
 
-```zsh
+```bash
 /usr/libexec/java_home -V
 ```
 
@@ -128,7 +128,7 @@ brew install adoptopenjdk14
 
 아래의 명령어를 입력 하면
 
-```zsh
+```bash
 sdk list java
 ```
 
@@ -138,7 +138,7 @@ sdk list java
 
 q를 눌러 나온 뒤, 
 
-```zsh
+```bash
 sdk install java 17.0.2-tem
 ```
 
@@ -152,7 +152,7 @@ sdk install java 17.0.2-tem
 
 기본 자바 버전을 17.0.2-tem 으로 변경하려면 아래의 명령어를 입력 하면 됩니다.
 
-```zsh
+```bash
 sdk default java 17.0.2-tem
 ```
 
@@ -216,7 +216,7 @@ Spectacle을 베이스로한 Rectangle이라는 훌륭한 오픈소스 소프트
 
 아래의 명령으로 설치 할 수 있습니다.
 
-```zsh
+```bash
 brew install --cask rectangle
 ```
 
@@ -236,7 +236,7 @@ IntelliJ IDEA등 JetBrains사의 제품을 사용한다면, ToolBox를 사용해
 
 아래의 명령어를 입력해 설치합니다.
 
-```zsh
+```bash
 brew install jetbrains-toolbox
 ```
 
@@ -462,7 +462,7 @@ docker에 대한 설명은 크게 필요 없을 것 같습니다. 한참동안 r
 - 새로운 버전은 4.1.6 이며 Apple Native 지원에 관한 글은 [SourceTree Apple Silicon 지원 소식](https://shanepark.tistory.com/343) 를 참고해주세요.
 - brew로 설치합니다. `brew info sourcetree` 해보니 최신 버전이 잘 등록 되어 있습니다. 
 
-```zsh
+```bash
 brew install sourcetree
 ```
 
@@ -473,7 +473,7 @@ brew install sourcetree
 -  SourceTree가 좀 더 파워풀 하긴 하지만 대안으로 Github Desktop도 있습니다.
 -  SourceTree 의 배터리 문제 때문에 대안으로 어쩔 수 없이 선택했던 소프트웨어지만, 1년동안 정말 많은 업데이트와 기능추가를 거쳐 지금은 굉장히 쓸만한 Git GUI가 되었습니다.  둘다 설치해도 좋고 둘중 하나를 선택해도 좋습니다.
 
-```zsh
+```bash
 brew install github
 ```
 
@@ -483,7 +483,7 @@ brew install github
 
 - 사파리만으로도 좋긴 하지만 가끔 크롬이 필요 할 때가 있습니다.
 
-```zsh
+```bash
 brew install google-chrome
 ```
 
@@ -493,7 +493,7 @@ brew install google-chrome
 
 - iina를 설치합니다. 필수 동영상 플레이어 라고 생각합니다.
 
-```zsh
+```bash
 brew install iina
 ```
 
@@ -503,7 +503,7 @@ brew install iina
 
 - keka는 MacOS에서 가장 많이 쓰이는 압축 & 압축 해제 프로그램 입니다.
 
-```zsh
+```bash
 brew install keka
 ```
 
@@ -515,7 +515,7 @@ windows 컴퓨터를 원격 조정 할 일이 있으면 다운 받아주세요.
 
 - microsoft remote desktop을 다운 받습니다. 이거 정말 좋습니다. Teamviewer 를 거들떠도 안보게 됩니다.
 
-```zsh
+```bash
 brew install microsoft-remote-desktop
 ```
 
@@ -539,7 +539,7 @@ m1 맥북에서 오라클 데이터베이스를 사용하려면 꽤나 골치가
 
 - postman 을 설치합니다. 이제 Apple Silicon을 지원하네요.
 
-```zsh
+```bash
 brew install postman
 ```
 
@@ -551,7 +551,7 @@ brew install postman
 
 - sequal pro를 설치합니다. 예전에 일반 버전 받았다가 m1 맥북에서 작동하지 않아서 그 후로 nightly 버전만 다운 받습니다. 정식 버전은 나중에 Apple Silicon 을 정식 지원할 때 받을 생각입니다.
 
-```zsh
+```bash
 brew install homebrew/cask-versions/sequel-pro-nightly
 ```
 
@@ -561,7 +561,7 @@ brew install homebrew/cask-versions/sequel-pro-nightly
 
 -  spotify 구독하신다면 설치하세요.
 
-```zsh
+```bash
 brew install spotify
 ```
 
@@ -583,7 +583,7 @@ brew install springtoolsuite
 
 - 장르 불문 모든 프로그래머들의 메모장. vscode 를 설치합니다.
 
-```zsh
+```bash
 brew install visual-studio-code
 ```
 
@@ -603,13 +603,13 @@ brew install visual-studio-code
 
 Typora를 Shell 이나 Cmd에서 바로 사용 하고 싶다면
 
-```zsh
+```bash
 alias typora="open -a typora"
 ```
 
 위의 alias를 `~/.zshrc`에 추가 해 주시면 됩니다. 혹은 md 파일이 없을 때 즉시 생성하고 싶다면
 
-```zsh
+```bash
 alias typora="/Applications/Typora.app/Contents/MacOS/Typora"
 ```
 

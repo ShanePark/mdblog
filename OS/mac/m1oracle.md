@@ -128,7 +128,7 @@ Applications 폴더에 넣어줍니다.
 
 > 자바가 있어도 저런 에러가 뜬다거나, 혹은  SQL developer가 너무 많이 튕긴다면 사용 해 볼수 있는 방법입니다.
 
-```zsh
+```bash
 cd /Applications/SQLDeveloper.app/Contents/resources/sqldeveloper
 zsh sqldeveloper.sh 
 ```
@@ -155,7 +155,7 @@ zsh sqldeveloper.sh
 
 저의 경우에는
 
-```zsh
+```bash
 SetJavaHome /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home
 ```
 
@@ -167,7 +167,7 @@ SetJavaHome /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home
 
 혹시 본인의 자바 경로를 모르신다면,
 
-```zsh
+```bash
 /usr/libexec/java_home -V
 ```
 

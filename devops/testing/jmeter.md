@@ -12,7 +12,7 @@
 
 Apt-cache로 검색을 해 봤더니 이미 apt 저장소에 있길래 apt를 이용해 설치 해 보았습니다.
 
-```zsh
+```bash
 sudo apt install jmeter
 ```
 
@@ -98,7 +98,7 @@ Download 우측의 링크를 클릭해 `plugins-manager.jar` 파일을 다운 �
 
 > 저의 경우에는 /usr/share/jmeter 폴더에 jmeter가 설치 되어 있어서 아래의 명령어로 옮겼습니다.
 
-```zsh
+```bash
 sudo mv jmeter-plugins-manager-1.7.jar /usr/share/jmeter/lib/ext
 ```
 

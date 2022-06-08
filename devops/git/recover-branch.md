@@ -22,7 +22,7 @@ Pull Request를 기다리다가, merge가 되었다고 착각하고 커밋 했�
 
 삭제를 위해 master 브랜치를 체크아웃 한 뒤에 dev 브랜치를 삭제 합니다.
 
-```zsh 
+```bash 
 git branch -d dev
 ```
 
@@ -36,7 +36,7 @@ git branch -d dev
 
 ### remote branch 삭제
 
-```zsh
+```bash
 # git push -d <remote이름> <branch이름>
 git push -d origin dev
 ```
@@ -55,7 +55,7 @@ git push -d origin dev
 
 `git reflog` 명령어를 입력 합니다.
 
-```zsh
+```bash
 git reflog
 ```
 
@@ -67,7 +67,7 @@ git reflog
 
 그러고는 아래의 명령어로 branch를 다시 살릴 수 있습니다. `HEAD@{}` 에 들어갈 숫자를 위에서 확인 한 숫자로 정확히 입력 해 주세요.
 
-```zsh
+```bash
 # git checkout -b <branch이름> <HEAD@{숫자}> 
 git checkout -b 'dev' HEAD@{1}
 ```
@@ -78,7 +78,7 @@ git checkout -b 'dev' HEAD@{1}
 
 한번 commit 이 다시 돌아 왔는지 확인 해 봅니다.
 
-```zsh
+```bash
 git log
 ```
 
@@ -88,7 +88,7 @@ git log
 
 다시 날려 먹기 전에 push를 해줍니다.
 
-```zsh
+```bash
 git push --set-upstream origin dev
 ```
 

@@ -66,7 +66,7 @@
 
 그러면 이제 정말 프록시가 잘 설정 되는지 확인 해 보겠습니다. Terminal을 열고
 
-```zsh
+```bash
 ssh -D localhost:9999 프록시접속할ip주소
 ```
 

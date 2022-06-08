@@ -24,7 +24,7 @@ Gnome Extentions 사이트를 통해 해당 플러그인을 ON 해 주면 됩니
 
 터미널을 켜고
 
-```zsh
+```bash
 sudo apt install desktopfolder gnome-tweak-tool
 ```
 

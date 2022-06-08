@@ -18,7 +18,7 @@ log4j 취약점 테스트 진행 중 로컬에서 테스트하기에는 부담�
 
 딱히 복잡할 건 없고
 
-```zsh
+```bash
 docker run tomcat:9.0
 ```
 
@@ -28,7 +28,7 @@ docker run tomcat:9.0
 
 이왕 하는거 컨테이너에 이름도 붙여서 생성 하겠습니다. 아래의 명령어를 입력 합니다.
 
-```zsh
+```bash
 docker run --name tomcat -p 8080:8080 tomcat:9.0
 ```
 
@@ -52,7 +52,7 @@ docker run --name tomcat -p 8080:8080 tomcat:9.0
 
 ### 컨테이너에 접속
 
-```zsh
+```bash
 docker exec -it tomcat /bin/bash
 ```
 
@@ -72,7 +72,7 @@ docker exec -it tomcat /bin/bash
 
 `docker cp 로컬파일위치 컨테이너명:컨테이너내부주소` 형식으로 명령어를 입력 해 주면 됩니다.
 
-```zsh
+```bash
 docker cp gaia-0.0.1-SNAPSHOT.war tomcat:/usr/local/tomcat/webapps
 ```
 
@@ -102,13 +102,13 @@ run 할 때 부터 `-e TZ=Asia/Seoul` 옵션으로 환경 변수를 주는 방�
 
 tzdata를 이용해 쉽게 변경 할 수 있습니다.
 
-```zsh
+```bash
 apt-get install tzdata
 ```
 
 배포판을 확인해보니 Debian Linux 입니다. apt를 이용해서 설치하는데, 이미 설치가 되어 있었습니다.
 
-```zsh
+```bash
  export TZ=Asia/Seoul
 ```
 
@@ -120,7 +120,7 @@ apt-get install tzdata
 
 어쩔 수 없이 컨테이너를 다시 생성해 줍니다. 삭제를 먼저 하고..
 
-```zsh
+```bash
 docker stop tomcat
 docker rm tocat
 
@@ -128,7 +128,7 @@ docker rm tocat
 
 새로 생성 해 줍니다.
 
-```zsh
+```bash
 docker run --name tomcat -p 8080:8080 -e TZ=Asia/Seoul tomcat:9.0
 ```
 

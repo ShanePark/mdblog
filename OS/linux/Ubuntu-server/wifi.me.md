@@ -16,7 +16,7 @@
 
 인터넷이 안되면 프로그램 설치도 불가능 하기 때문에 일단 와이파이 비밀번호를 이전으로 돌리고 wireless-tools를 설치 해 줬습니다. 와이파이 연결이 불가능한 환경이라면 유선으로라도 연결을 해서 먼저 설치를 해야 할 듯 합니다.
 
-```zsh
+```bash
 sudo apt install wireless-tools
 ```
 
@@ -26,7 +26,7 @@ sudo apt install wireless-tools
 
 `wireless-tools` 설치 후에는 iwconfig 명령어를 입력해 와이파이 상태를 확인 할 수 있습니다.
 
-```zsh
+```bash
 iwconfig
 ```
 
@@ -38,7 +38,7 @@ iwconfig
 
 파일로 확인 할 수도 있습니다. 
 
-```zsh
+```bash
 ls /sys/class/net
 ```
 
@@ -46,7 +46,7 @@ ls /sys/class/net
 
 혹은 아래의 명령어로 모든 네트워크 정보를 확인 할 수 있습니다.
 
-```zsh
+```bash
 sudo lshw -C Network
 ```
 
@@ -60,13 +60,13 @@ sudo lshw -C Network
 
 본인의 wifi 네트워크가 DISABLED 상태라면 아래의 명령어로 활성화 시켜 줍니다. `wlp2s0` 자리에는 본인의 와이파이 네트워크 이름을 써 주셔야 합니다.
 
-```zsh
+```bash
 sudo ifconfig wlp2s0 up
 ```
 
 이제 와이파이를 이용해 주변의 wifi 정보를 검색 해 줍니다.
 
-```zsh
+```bash
 sudo iwlist wlp2s0 scan|more
 ```
 
@@ -78,7 +78,7 @@ sudo iwlist wlp2s0 scan|more
 
 `/etc/netplan` 경로에 필요한 설정 파일이 있습니다.
 
-```zsh
+```bash
 ls /etc/netplan
 ```
 
@@ -86,7 +86,7 @@ ls /etc/netplan
 
 여기에 보이는두 파일중 00-installer-config-wifi.yaml 에 설정 정보가 있습니다. 수정해줍니다.
 
-```zsh
+```bash
 sudo vi /etc/netplan/00-installer-config-wifi.yaml
 ```
 
@@ -114,7 +114,7 @@ wifis:
 
 재시작 해줍니다.
 
-```zsh
+```bash
 sudo netplan generate
 sudo netplan apply
 ```

@@ -14,7 +14,7 @@
 
 도커 상태보기
 
-```zsh 
+```bash 
 docker ps
 ```
 
@@ -30,13 +30,13 @@ docker commit -p [컨테이너 ID] [저장할 이름]
 
 두개의 컨테이너 중 하나 남은 elasticsearch 컨테이너도 마저 이미지로 만들겠습니다.
 
-```zsh
+```bash
 docker commit -p 01c2df64c1d0 elastic-container
 ```
 
 이제 이미지가 잘 만들어 졌는지 확인 해 보겠습니다.
 
-```zsh
+```bash
 docker images
 ```
 
@@ -52,7 +52,7 @@ docker images
 
 1. 하나는 도커 호스트 시스템에 이미지를 배포 하는 건데요, 
 
-```zsh
+```bash
 docker push elastic-container
 ```
 
@@ -62,11 +62,11 @@ docker push elastic-container
 
 용량이 20기가가 넘는 이미지를 백업하려니 이게 뭐 하는 짓인가 싶긴 하지만.. 이왕 시작한거 하던건 마쳐야겠죠..
 
-```zsh
+```bash
 docker save -o ~/elastic-container.tar elastic-container
 ```
 
-```zsh
+```bash
 docker save -o ~/oracle-container.tar oracle-container
 ```
 
@@ -82,7 +82,7 @@ docker save -o ~/oracle-container.tar oracle-container
 
 하지만 저는 tar로 묶어서 백업 했기 때문에, 먼저 load 명령어를 이용해 이미지로 불러와야 합니다. load 명령어를 사용하기에 앞서 혼동을 피하기 위해 방금 만들었던 이미지를 먼저 삭제 하게습니다.
 
-```zsh
+```bash
  docker rmi elastic-container
  docker rmi oracle-container:latest
 ```
@@ -93,7 +93,7 @@ docker save -o ~/oracle-container.tar oracle-container
 
 이제 방금 저장했던 tar 파일들을 이미지로 불러 오겠습니다.
 
-```zsh
+```bash
 docker load -i ~/elastic-container.tar
 ```
 
@@ -105,13 +105,13 @@ docker load -i ~/elastic-container.tar
 
 컨테이너에 접속 할 때는 아래의 명령어를 사용 하면 됩니다. elastic 자리에는 접속할 컨테이너 아이디나 이름을 입력합니다.
 
-```zsh
+```bash
 docker exec -it elastic /bin/bash
 ```
 
 이미지  load가 완료 되면, 이제 이미지가 잘 불러 와 졌는지 확인 해봅니다.
 
-```zsh
+```bash
 docker images
 ```
 

@@ -41,7 +41,7 @@ hub.docker의 mariaDB Official Image를 확인 합니다.
 
 위의 내용을 바탕으로 mariaDB 서버 컨테이너를 띄워보겠습니다.
 
-```zsh
+```bash
 docker run \
 	--detach \
 	--name mariadb \
@@ -82,7 +82,7 @@ docker run \
 
 일단 DB 및 유저 생성을 하기 위해 컨테이너에 접속 해야 합니다.
 
-```zsh
+```bash
 docker exec -it mariadb /bin/bash
 ```
 
@@ -92,7 +92,7 @@ docker exec -it mariadb /bin/bash
 
 Root 권한으로 MYSQL 데이터베이스에 접속해 설정 DB 및 유저를 추가하고 권한을 설정 해 줍니다.
 
-```zsh
+```bash
 mysql -u root -p
 ```
 

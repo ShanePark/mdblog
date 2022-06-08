@@ -63,7 +63,7 @@ C.2  Changes in 5.4.1 release
 
 기능적인 추가 보다는 새로운 커널 버전에 대응을 하는 패치 입니다. 
 
-```zsh
+```bash
 uname -a
 ```
 
@@ -87,7 +87,7 @@ uname -a
 
 아래 명령어를 해당 파일이 있는 곳에서 실행 해 줍니다. sudo 권한이 필요하더라고요.
 
-```zsh
+```bash
 sudo sh ./displaylink-driver-5.4.1-55.174.run
 ```
 

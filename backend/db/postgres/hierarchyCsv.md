@@ -67,7 +67,7 @@ select * from search_product
 
 잘 저장 되었는지 확인 해 보겠습니다.
 
-```zsh
+```bash
 cat /tmp/dump.csv
 ```
 
@@ -85,7 +85,7 @@ cat /tmp/dump.csv
 
 > 컨테이너 id는 `docker ps` 명령어를 통해 찾을 수 있습니다.
 
-```zsh
+```bash
 docker cp b5528453216b:/tmp/dump.csv .
 ```
 

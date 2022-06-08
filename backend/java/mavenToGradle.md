@@ -53,7 +53,7 @@ Windows
 
 Debian
 
-```zsh
+```bash
 sudo apt-get install gradle
 ```
 
@@ -83,7 +83,7 @@ brew install gradle
 
 해당 경로에서 gradle init을 명령을 실행 해 줍니다.
 
-```zsh
+```bash
 gradle init
 ```
 

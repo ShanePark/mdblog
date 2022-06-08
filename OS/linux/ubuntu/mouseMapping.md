@@ -16,7 +16,7 @@ xbindkeys 와 xdotool 등이 필요합니다.
 
 아래의 명령어를 입력해 한번에 설치 해 줍니다. 저는 `xdotool`이 이미 있기때문에 앞의 두가지만 설치 했습니다.
 
-```zsh
+```bash
 sudo apt install xautomation xbindkeys xdotool
 ```
 
@@ -28,7 +28,7 @@ sudo apt install xautomation xbindkeys xdotool
 
 혹시 모르니 시작에 앞서 입력장치들을 한번 확인 해 줍니다.
 
-```zsh
+```bash
 xinput --list
 ```
 
@@ -40,7 +40,7 @@ xinput --list
 
 `xev`를 실행 해서 맵핑할 마우스 버튼의 키 입력 값을 확인 해 줍니다. 터미널에 xev를 입력해 실행하면 이벤트 테스터가 동작합니다.
 
-```zsh
+```bash
 xev
 ```
 
@@ -58,7 +58,7 @@ xev
 
 일단 `xbindkeys` 를 실행 해보니 설정파일이 없다는 에러가 나옵니다.
 
-```zsh
+```bash
 xbindkeys
 ```
 
@@ -68,13 +68,13 @@ xbindkeys
 
 안내해준 대로 기본 xbindkeys 설정 파일을 생성 해 줍니다.
 
-```zsh
+```bash
 xbindkeys --defaults > ~/.xbindkeysrc
 ```
 
 생성이 되었으면 파일을 열어 수정 합니다.
 
-```zsh
+```bash
 vi ~/.xbindkeysrc
 ```
 
@@ -84,7 +84,7 @@ vi ~/.xbindkeysrc
 
 `xdotoll` 외에도 `xte` 혹은 `xvkbd` 등을 이용 할 수 있습니다. 편한 방법으로 매핑 해 주시면 됩니다.
 
-```zsh
+```bash
 # Mouse middle button
 "xdotool key super"
 b:2 + Release
@@ -98,7 +98,7 @@ b:2 + Release
 
 이제 `wq!`로 저장하고 나와서 xbindkeys를 재 시작 해 줍니다.
 
-```zsh
+```bash
 killall xbindkeys
 xbindkeys -f ~/.xbindkeysrc 
 

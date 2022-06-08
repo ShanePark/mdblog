@@ -18,7 +18,7 @@ stage된 환경과 가장 최근의 커밋을 병합해 하나의 커밋으로 �
 
 일단 Git log를 확인 해 보겠습니다.
 
-```zsh
+```bash
 git log
 ```
 
@@ -30,7 +30,7 @@ git log
 
 ### git diff
 
-```zsh
+```bash
 git diff
 ```
 
@@ -48,13 +48,13 @@ git diff
 
 먼저 add 명령어로 스테이지에 원하는 파일을 올린 후에
 
-```zsh
+```bash
 git add
 ```
 
 amend 옵션을 붙여 커밋 해 줍니다.
 
-```zsh
+```bash
 git commit --amend
 ```
 
@@ -80,7 +80,7 @@ git commit --amend
 
 지금 해야 할 일은 원격 저장소의 커밋 내역도 로컬의 커밋 내역과 맞추는 것 입니다. 이때는 강제 update 를 해줘야 합니다.
 
-```zsh
+```bash
 git push -f
 ```
 

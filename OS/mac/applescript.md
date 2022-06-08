@@ -131,7 +131,7 @@ pip3 install pyobjc
 
 ![image-20220604125746504](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/applescript.assets/image-20220604125746504.png)
 
-```shell
+```bash
 osascript ~/Downloads/Untitled.scpt
 ```
 
@@ -141,7 +141,7 @@ osascript ~/Downloads/Untitled.scpt
 
 이제 해당 명령을 정해진 시간에 실행 해 주기만 하면 되는데요, UNIX에서는 crontab이라는 작업 스케쥴러가 있기 때문에 쉽게 설정 할 수 있습니다.
 
-```shell
+```bash
 crontab -e
 ```
 

@@ -30,7 +30,7 @@ Github repository는 아래에 남기도록 하겠습니다.
 
 설치는 brew를 통해 매우 간단하게 할 수 있습니다.
 
-```zsh
+```bash
 brew install rectangle
 # 혹은
 brew install --cask rectangle

@@ -69,7 +69,7 @@ sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.73/bin/apache-tomcat-8.5
 
 다운이 완료 되면  /opt 디렉터리에 Tomcat 아카이브를 추출 합니다.
 
-```zsh
+```bash
 sudo tar xf /opt/apache-tomcat-8.5.73.tar.gz -C /opt/
 ```
 
@@ -411,13 +411,13 @@ ssh로 간단하게 파일을 전송 할 수 있습니다.scp 명령어를 사�
 
 1) 원격 서버에서 로컬로 파일 받아오기 명령
 
-```zsh
+```bash
 scp [옵션] [계정명@ip주소]:[원본 경로 혹은 파일] [저장할 경로]
 ```
 
 2) 로컬에서 원격 서버로 파일 전송 명령
 
-```zsh
+```bash
  scp [옵션] [원본 경로 혹은 파일] [계정명@ip주소]:[전송할 경로]
 ```
 
@@ -433,7 +433,7 @@ scp [옵션] [계정명@ip주소]:[원본 경로 혹은 파일] [저장할 경�
 
 로 전송하겠습니다.
 
-```zsh
+```bash
 scp /Users/shane/Desktop/gaia.war ubuntu@146.56.191.188:/opt/apache-tomcat-8.5.73/webapps/ROOT.war
 ```
 

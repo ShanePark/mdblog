@@ -16,7 +16,7 @@
 
 ControllerMode를 bredr로 변경 해 줍니다.
 
-```zsh
+```bash
 sudo vi /etc/bluetooth/main.conf
 ```
 
@@ -34,7 +34,7 @@ sudo vi /etc/bluetooth/main.conf
 
 ### Bluetooth 서비스 재시작
 
-```zsh
+```bash
 sudo /etc/init.d/bluetooth restart
 ```
 
@@ -82,13 +82,13 @@ Pulseaudio는 기본값으로 HSP만을 지원하고 있는데요, `HSP/HFP`를 
 
 1. ofono 설치
 
-```zsh
+```bash
 sudo apt install ofono
 ```
 
 2. pulseaudio가 ofono를 사용하도록 설정
 
-```zsh
+```bash
 sudo vi /etc/pulse/default.pa
 ```
 
@@ -98,7 +98,7 @@ sudo vi /etc/pulse/default.pa
 
 유저 `pulse` 를 bluetooth 그룹에 추가해 권한을 부여합니다.
 
-```zsh
+```bash
 sudo usermod -aG bluetooth pulse
 ```
 
@@ -112,7 +112,7 @@ sudo usermod -aG bluetooth pulse
 
 3. ofono의 작동을 위해 modem을 제공해줘야 합니다. phonesim 라는 이름의 모뎀 에뮬레이터를 추가 합니다. 
 
-```zsh
+```bash
 sudo add-apt-repository ppa:smoser/bluetooth
 sudo apt-get update
 sudo apt-get install ofono-phonesim
@@ -120,7 +120,7 @@ sudo apt-get install ofono-phonesim
 
 아래 라인을 `/etc/ofono/phonesim.conf`에 추가해 `phonesim`을 설정해줍니다.
 
-```zsh
+```bash
 [phonesim]
 Driver=phonesim
 Address=127.0.0.1
@@ -129,7 +129,7 @@ Port=12345
 
 이제 ofono 서비스를 재 시작 해 줍니다.
 
-```zsh
+```bash
 sudo systemctl restart ofono.service
 ```
 
@@ -186,7 +186,7 @@ WantedBy=multi-user.target
 
 이제 daemon 들을 둘다 실행하기 위해 아래의 명령어를 실행해줍니다.
 
-```zsh
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable ofono-phonesim.service
 sudo systemctl enable phonesim-enable-modem.service
@@ -195,13 +195,13 @@ sudo service phonesim-enable-modem start
 
 서비스가 잘 돌아가고 있는지 확인합니다.
 
-```zsh
+```bash
 sudo service phonesim-enable-modem status
 ```
 
 마지막으로 pulseaudio를 재 시작 해 줍니다.
 
-```zsh
+```bash
 pulseaudio -k
 ```
 

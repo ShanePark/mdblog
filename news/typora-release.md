@@ -88,7 +88,7 @@ Twitter에 유료화 소식을 알린 후에도 워낙 많은 유저들이 만�
 
 ### Ubuntu
 
-```zsh
+```bash
 sudo apt remove typora
 sudo apt install typora=0.11.18-1
 sudo apt-mark hold typora
@@ -97,7 +97,7 @@ sudo apt-mark hold typora
 
 나중에 유료 구입 후 hold를 취소 할 때는 아래와 같이 입력 해 주세요.
 
-```zsh
+```bash
 sudo apt-mark unhold typora
 ```
 

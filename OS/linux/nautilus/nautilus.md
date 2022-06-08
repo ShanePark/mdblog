@@ -18,7 +18,7 @@ Nautilus 에서는 기본적으로 Desktop, Documents, Downloads, Music, Picture
 
 해당 설정은 `.config` 폴더에 있는 `user-dirs.dirs` 에 있습니다.
 
-```zsh
+```bash
 sudo vi ~/.config/user-dirs.dirs
 ```
 
@@ -26,7 +26,7 @@ sudo vi ~/.config/user-dirs.dirs
 
 사용 하지 않을 폴더 앞에 `#` 을 붙여 주석 처리 하면 되겠습니다. 저는 Music과 Video를 없애 보겠습니다.
 
-```zsh
+```bash
 XDG_DESKTOP_DIR="$HOME/Desktop"
 XDG_DOWNLOAD_DIR="$HOME/Downloads"
 XDG_TEMPLATES_DIR="$HOME/Templates"
@@ -39,7 +39,7 @@ XDG_PICTURES_DIR="$HOME/Pictures"
 
 이제 nautilus를 재시작 해야 하는데요, 로그아웃 하기는 귀찮으니 아래의 명령어로 종료 시킵니다.
 
-```zsh
+```bash
 nautilus -q
 ```
 
@@ -61,7 +61,7 @@ nautilus -q
 
 해당 파일에서도 MUSIC과 VIDEOS를 주석 처리 해준다.
 
- ```zsh
+ ```bash
  sudo vi /etc/xdg/user-dirs.defaults
  ```
 
@@ -77,7 +77,7 @@ nautilus -q
 
 설정 변경 후에는 Nautilus를 새로 켜줍니다.
 
-```zsh
+```bash
 nautilus -q
 ```
 
@@ -89,11 +89,11 @@ nautilus -q
 
 대충 아래의 단계로 진행 되지만 추천하지 않습니다.
 
-```zsh
+```bash
 mkdir ~/.config/nautilus/ui
 ```
 
-```zsh
+```bash
 gresource extract /bin/nautilus \
           /org/gnome/nautilus/ui/nautilus-window.ui \
           > ~/.config/nautilus/ui/nautilus-window.ui
@@ -103,7 +103,7 @@ gresource extract /bin/nautilus \
 
 - 환경 설정 파일을 방금 작성한 파일로 overide 
 
-```zsh
+```bash
 export G_RESOURCE_OVERLAYS="/org/gnome/nautilus/ui=$HOME/.config/nautilus/ui"
 ```
 
@@ -111,13 +111,13 @@ export G_RESOURCE_OVERLAYS="/org/gnome/nautilus/ui=$HOME/.config/nautilus/ui"
 
 - 환경변수삭제
 
-```zsh
+```bash
 unset G_RESOURCE_OVERLAYS
 ```
 
 - nautilus가 꼬였다면 재설치
 
-```zsh
+```bash
 sudo apt remove nautilus
 sudo apt install nautilus
 ```

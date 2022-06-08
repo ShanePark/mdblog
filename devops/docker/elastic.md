@@ -20,19 +20,19 @@ docker-compose로 ELK 스택을 구축하는 간단한 링크
 
 간단 요약
 
-```zsh
+```bash
 docker run --name oracle11g -d -p 1521:1521 jaspeen/oracle-xe-11g
 ```
 
-```zsh
+```bash
 docker exec -it oracle11g bash
 ```
 
-```zsh
+```bash
 password
 ```
 
-```zsh
+```bash
 CREATE USER shane IDENTIFIED BY 1234
 ```
 
@@ -40,7 +40,7 @@ CREATE USER shane IDENTIFIED BY 1234
 
 버전은 각자 원하는 버전을 사용하지만 최신버전을 권장합니다. 하지만 LogStach, Kibana와 버전을 꼭 맞춰주세요.
 
-```zsh
+```bash
 docker run -d --name elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.14.1
 ```
 
@@ -76,7 +76,7 @@ docker run -d --name elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single
 
 예제를 위해 제가 작성한 gaia.conf 파일 전문을 올립니다.
 
-```zsh
+```bash
 input {
 	jdbc {
 		jdbc_driver_library => "/home/shane/Documents/ojdbc6.jar"
@@ -165,7 +165,7 @@ output {
 
 저는 logstash 폴더 에서 아래의 명령어를 실행 했습니다. 명령어 실행 위치에 따라 경로 설정은 달라 질 수 있습니다.
 
-```zsh
+```bash
 ./bin/logstash -f "./config/gaia.conf"
 ```
 

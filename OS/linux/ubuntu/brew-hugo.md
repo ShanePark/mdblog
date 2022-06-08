@@ -80,17 +80,17 @@ Homebrew 는 오픈소스 소프트웨어 패키지 매니지먼트 시스템으
 
 - 일단 아래의 두 커맨드를 터미널에 입력 해서 Homebrew를 PATH에 등록 합니다.
 
-```zsh
+```bash
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
 ```
 
-```zsh
+```bash
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ```
 
 - sudo 권한이 있다면 Homebrew의 의존성을 추가 해 줍니다.
 
-```zsh
+```bash
 sudo apt-get install build-essential
 ```
 
@@ -98,7 +98,7 @@ sudo apt-get install build-essential
 
 > GCC는 GNU 프로젝트의 오픈 소스 컴파일러 컬렉션 입니다. 유닉스 계열의 사실상 표준 컴파일러이며, GNU C Compiler의 약어 였지만, 다른 언어도 지원하게 되면서 GNU Compiler Collection 으로 이름을 변경 하였습니다.
 
-```zsh
+```bash
 brew install gcc
 ```
 
@@ -130,7 +130,7 @@ hugo 를 실행하면 zsh: command not found: hugo 라고 나옵니다.
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
 ```
 
-```zsh
+```bash
 source ~/.zshrc
 ```
 
@@ -150,7 +150,7 @@ brew Casks 는 macOS 에서만 됩니다. 다운로드가 되니 설치가 되�
 
 Brew가 준비 되었으니 바로 설치를 해 보겠습니다.
 
-```zsh
+```bash
 brew install hugo
 ```
 
@@ -176,7 +176,7 @@ brew install hugo
 
 선택한 테마를 git clone 해서 theme 폴더에 다운 받습니다.
 
-```zsh
+```bash
 cd ./shane.blog/themes
 git clone https://github.com/adityatelange/hugo-PaperMod.git
 
@@ -200,7 +200,7 @@ git clone https://github.com/adityatelange/hugo-PaperMod.git
 
 `hugo new <SECTIONNAME>/<FILENAME>.<FORMAT>` 형식으로 파일을 생성 합니다.
 
-```zsh
+```bash
 hugo new home/main.md
 ```
 
@@ -208,7 +208,7 @@ hugo new home/main.md
 
 파일도 금방 생성되었습니다. 생성된 파일을 확인 해 보겠습니다.
 
-```zsh
+```bash
 vi ./content/home/main.md
 ```
 
@@ -226,7 +226,7 @@ vi ./content/home/main.md
 
 아래의 명령어만 입력 하면 서버가 작동 됩니다.
 
-```zsh
+```bash
 hugo server
 ```
 

@@ -36,7 +36,7 @@ Apache Solr를 처음 사용해보는 입장에서도 쉽게 따라할 수 있�
 
 원하는 폴더에 압축을 풀어 줍니다.
 
-```zsh
+```bash
 unzip solr-8.11.1.zip -d ~/Documents/utils/
 ```
 
@@ -107,7 +107,7 @@ SolrCloud 모드로 솔라를 실행 했고, 외부 ZooKeeper 클러스터를 �
 
 혹시 학습을 하다가 Solr를 종료 하고 싶다면 아래의 명령어로 종료 하실 수 있습니다.
 
-```zsh
+```bash
 bin/solr stop -all
 ```
 
@@ -115,13 +115,13 @@ bin/solr stop -all
 
 **첫번째 노드 실행**
 
-```zsh
+```bash
 ./bin/solr start -c -p 8983 -s example/cloud/node1/solr
 ```
 
 **두번째 노드 실행**
 
-```zsh
+```bash
 ./bin/solr start -c -p 7574 -s example/cloud/node2/solr -z localhost:9983
 ```
 
@@ -205,7 +205,7 @@ Solr는 정말 강력한 검색 옵션을 가지고 있고 그 양이 워낙 방
 
 `Foundation`이라고 입력 해서 한번 검색 해 보도록 하겠습니다. curl을 통해 검색도 똑같이 해보겠습니다.
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 ```
 
@@ -258,7 +258,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 
 여러개의 단어로 이루어진 문장을 검색하려면 쌍따옴표로 양쪽을 감싸서 쿼리를 작성하면 됩니다. 예를 들어 `CAS latency`를 검색 하려면 Solr Admin UI의 q 박스에 `"CAS latency"`라고 작성 해 주거나 curl을 사용한다면 띄어쓰기가 URL 인코딩 되며 `+`로 변환되어야 하는걸 명심해서 작성 해 주면 됩니다.
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/techproducts/select?q=\"CAS+latency\""
 ```
 
@@ -274,7 +274,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=\"CAS+latency\""
 
 예를 들어 `electronics`와 `music`을 모두 포함하는 검색 결과를 위해 q박스에 `+ electronics +music` 을 입력 하면 되는데요, curl을 사용한다면 `+`를 `%2B`로 인코딩 해야만 합니다.
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/techproducts/select?q=%2Belectronics%20%2Bmusic"
 ```
 
@@ -284,7 +284,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=%2Belectronics%20%2Bmusic
 
 이번에는 electronics를 포함 하지만 music을 포함 하지 않는 검색 결과를 위해 `+electonics -music`을 쿼리 스트링에 작성 해 보겠습니다. 인코딩이 필요한 `+`와 다르게 `-`는 인코딩할 필요가 없습니다. 
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/techproducts/select?q=%2Belectronics+-music"
 ```
 
@@ -296,13 +296,13 @@ curl "http://localhost:8983/solr/techproducts/select?q=%2Belectronics+-music"
 
 실습을 위해 만든 `techproducts` 컬렉션은 더이상 필요 하지 않기 때문에 삭제를 원한다면 아래의 명령어를 입력 해서 삭제 하실 수 있습니다.
 
-```zsh
+```bash
 bin/solr delete -c techproducts
 ```
 
 또한 Solr 를 종료하려면 아래의 명령어를 입력 하면 됩니다.
 
-```zsh
+```bash
 bin/solr stop -all
 ```
 
@@ -318,13 +318,13 @@ bin/solr stop -all
 
 **첫번째 노드 실행**
 
-```zsh
+```bash
 ./bin/solr start -c -p 8983 -s example/cloud/node1/solr
 ```
 
 **두번째 노드 실행**
 
-```zsh
+```bash
 ./bin/solr start -c -p 7574 -s example/cloud/node2/solr -z localhost:9983
 ```
 
@@ -358,7 +358,7 @@ bin/solr stop -all
 
 이번에 색인 할 데이터는 영화에 관련되었습니다. `films` 라는 이름의 컬렉션을 `_default` configset을 사용해 생성 하도록 하겠습니다.
 
-```zsh
+```bash
 bin/solr create -c films -s 2 -rf 2
 ```
 
@@ -414,7 +414,7 @@ Solr는 record 상의 데이터를 토대로 field type을 추측하게 되는�
 
 여기에서 우리가 할 수 있는건 Solr가 항상 제목을 문자열로 해석 할 수 있도록 name 필드를 색인 전에 미리 설정 해 주는 것 입니다. Schema API를 활용해 본 설정을 하면 아래와 같습니다.
 
-```zsh
+```bash
 curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field": {"name":"name", "type":"text_general", "multiValued":false, "stored":true}}' http://localhost:8983/solr/films/schema
 ```
 
@@ -442,7 +442,7 @@ Admin UI를 통해 필드를 생성 할 수도 있지만, 필드에 설정 할 �
 
 **Command Line**
 
-```zsh
+```bash
 curl -X POST -H 'Content-type:application/json' --data-binary '{"add-copy-field" : {"source":"*","dest":"_text_"}}' http://localhost:8983/solr/films/schema
 ```
 
@@ -468,7 +468,7 @@ JSON 파일을 색인 해 보도록 하겠습니다.
 
 **Linux/Mac**
 
-```zsh
+```bash
 bin/post -c films example/films/films.json
 ```
 
@@ -476,7 +476,7 @@ bin/post -c films example/films/films.json
 
 **Windows**
 
-```zsh
+```bash
 C:\solr-8.11.0> java -jar -Dc=films -Dauto example\exampledocs\post.jar example\films\*.json
 ```
 
@@ -519,7 +519,7 @@ faceting의 타입들의 예는 다음과 같습니다.
 
 이제 장르별 facet 을 확인 해 보겠습니다.
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=true&facet.field=genre_str"
 ```
 
@@ -547,7 +547,7 @@ curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=true&facet.fiel
 
 Films 데이터에는 영화의 개봉일이 있기 때문에 날짜 범위별로 facet 할 수 있습니다. 또다른 range facet의 흔한 예 인데요, 아쉽게도 Solr Admin UI 자체적으로는 range facet 옵션을 제공하지 않습니다.
 
-```zsh
+```bash
 curl 'http://localhost:8983/solr/films/select?q=*:*&rows=0'\
 '&facet=true'\ 
 '&facet.range=initial_release_date'\ 
@@ -566,13 +566,13 @@ curl 'http://localhost:8983/solr/films/select?q=*:*&rows=0'\
 
 Pivot facets은 2개 혹은 그 이상의 필드들을 가능한 모든 조합에 대해 중첩 하는데요, Pivot facets은 Films 데이터를 활용해서 Drama 카테고리에 있는 영화 중 특정 감독에 의해 촬영된 영화가 몇개인지를 알아낼 수 있습니다.
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=on&facet.pivot=genre_str,directed_by_str"
 ```
 
 실행 했다가 쿼리 결과가 너무 길어 파일로 빼 보았습니다.
 
-```zsh
+```bash
 curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=on&facet.pivot=genre_str,directed_by_str" > queryresult.txt
 ```
 
@@ -586,13 +586,13 @@ Drama 장르에 522개의 영화가 있고, 각각의 감독 별로 몇개의 �
 
 위에서 했던 것 처럼 지금 사용한 컬렉션도 지우며 두번쨰 실습을 마치겠습니다.
 
-```zsh
+```bash
 bin/solr delete -c films
 ```
 
 위에서 techproducts를 안지웠다면 같이 지우도록 하겠습니다.
 
-```zsh
+```bash
 bin/solr delete -c techproducts
 ```
 
@@ -611,7 +611,7 @@ bin/solr delete -c techproducts
 
 시작하기 전에, 새로운 컬렉션을 생성하겠습니다. 하고 싶은 이름을 지으시면 되는데 `localDocs`라는 이름으로 이름을 짓는다면 아래와 같겠습니다. 아래 예제의 이름을 지우고 원하는 이름으로 작성해주세요.
 
-```zsh
+```bash
 ./bin/solr create -c localDocs -s 2 -rf 2
 ```
 
@@ -629,7 +629,7 @@ Solr는 데이터 인덱싱을 위해 다양한 방법들을 제공하고 있는
 
  Documents 폴더에 색인할 파일들이 있다고 가정하고, 방금 위에서 만든 localDocs 컬렉션에 색인 한다면
 
-```zsh
+```bash
 ./bin/post -c localDocs ~/Documents
 ```
 
@@ -687,13 +687,13 @@ Admin UI의 Document 탭에 색인하고자 하는 문서를 복사해 붙여 �
 
 특정 document를 삭제 한다면 아래의 커맨드를 입력 합니다.
 
-```zsh
+```bash
 bin/post -c localDocs -d "<delete><id>SP2514N</id></delete>"
 ```
 
 모든 document를 삭제하려면 `delete-by-query` 커맨드를 사용 할 수 있습니다.
 
-```zsh
+```bash
 bin/post -c localDocs -d "<delete><query>*:*</query></delete>"
 ```
 
@@ -728,7 +728,7 @@ Solr는 정교한 지형 검색도 제공합니다. 특정 위치로 부터 특�
 
 마지막으로 지금까지 실습한 내용을 모두 초기화 시키는 명령어를 남기겠습니다. 수고하셨습니다.
 
-```zsh
+```bash
 bin/solr stop -all ; rm -Rf example/cloud/
 ```
 
