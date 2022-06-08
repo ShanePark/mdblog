@@ -14,7 +14,7 @@
 
 ### ControllerMode 변경
 
-ControllerMode를 bredr로 변경 해 줘야 합니다.
+ControllerMode를 bredr로 변경 해 줍니다.
 
 ```zsh
 sudo vi /etc/bluetooth/main.conf
@@ -22,7 +22,15 @@ sudo vi /etc/bluetooth/main.conf
 
 ![image-20220323143010680](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143010680.png)
 
-> 51 번 라인에 주석 처리된 걸 풀고 bredr를 입력 해 줍니다.
+> 51 번 라인에 주석 처리된 걸 풀고 `bredr` 입력 후 저장 해 줍니다.
+>
+> 처음 에어팟에 연결 할 때는 bredr 로 변경해야 쉽게 에어팟을 찾아 연결을 할 수 있긴 한데 한번 연결 한 이후에는 추후 다시 dual로 돌리는것을 권장합니다. 
+>
+> ![image-20220608143631337](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220608143631337.png)
+>
+> 저같은 경우에는 bredr 로 설정을 하면 리얼포스 R3 키보드가 아무리 해도 블루투스로 연결이 되지 않았습니다. BR/EDR 은 블루투스 2.x 기반이지만 LE는 블루투스 4.x이후 기반이거든요.
+>
+> 아래까지 다 진행 해서 에어팟 연결을 한번 성공한 후에 설정을 돌려주시면 되는데, 굳이 bredr로 변경하지 않아도 에어팟을 쉽게 찾아 연결 가능하다면 이 과정을 건너 뛰셔도 됩니다.
 
 ### Bluetooth 서비스 재시작
 
