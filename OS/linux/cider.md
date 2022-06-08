@@ -89,7 +89,7 @@ yarn run dist
 
 > 다만 Windows 에서는 $0.99에 스토어에서 판매를 하고 있더라고요
 >
-> ![image-20220323212220504](/Users/shane/Documents/GitHub/mdblog/OS/linux/cider.assets/image-20220323212220504.png)
+> ![image-20220323212220504](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323212220504.png)
 >
 > 코드가 공개되어 있으니 개인적으로 Yarn 으로 컴파일 해서 실행하시면 무료로도 사용 할 수 있습니다.
 
