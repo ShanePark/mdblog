@@ -73,7 +73,7 @@ public class CharArray_VS_CharAt {
 
 코드에 대해 간단하게 요약 하자면.
 
-길이가 2억인 String 객체를 하나 생성 합니다. 후에 한번은 toCharArray로 캐릭터 배열을 생성 한 후에 index로 순회를 하고, 또 한번은 chatAt 메서드를 호출 하며 소모 시간을 확인 해 보았습니다. 사실 String 길이를 훨씬 더 길게 하고 싶었는데.. 제 맥북에어가 램이 8기가 밖에 없어서 그런지 힙메모리 부족으로 그 이상 스트링을 길게 만들지 못했습니다.
+길이가 2억인 String 객체를 하나 생성 합니다. 후에 한번은 toCharArray로 캐릭터 배열을 생성 한 후에 index로 순회를 하고, 또 한번은 chatAt 메서드를 호출 하며 소모 시간을 확인 해 보았습니다. 사실 String 길이를 훨씬 더 길게 하고 싶었는데.. 제 맥북에어가 램이 8기가 밖에 없어서 힙메모리 부족으로 스트링을 훨씬 길게는 만들지 못했습니다.
 
 > 자바에서 String의 최대 길이는 32비트로, Integer의 최대값과 같은 `2,147,483,647` 입니다.
 
@@ -96,7 +96,7 @@ public class CharArray_VS_CharAt {
 
     public static void main(String[] args) {
         StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < 200_000_000; i++) {
+        for (int i = 0; i < 300_000_000; i++) {
             sb.append('a');
         }
 
@@ -107,7 +107,7 @@ public class CharArray_VS_CharAt {
 
         start = System.currentTimeMillis();
         char[] chars = str.toCharArray();
-        System.out.println("array생성 소요시간: " + (System.currentTimeMillis() - start) + "ms");
+        System.out.println("array 생성 소요시간: " + (System.currentTimeMillis() - start) + "ms");
 
         start = System.currentTimeMillis();
         for (int i = 0; i < chars.length; i++) {
@@ -119,7 +119,7 @@ public class CharArray_VS_CharAt {
         for (int i = 0; i < str.length(); i++) {
             c = str.charAt(i);
         }
-        System.out.println("charAt 소요시간: " + (System.currentTimeMillis() - start) + "ms");
+        System.out.println("charAt 순회 소요시간: " + (System.currentTimeMillis() - start) + "ms");
 
     }
 
@@ -129,17 +129,21 @@ public class CharArray_VS_CharAt {
 
 이번 코드는, array 생성에 걸리는 시간과 배열 순회에 걸리는 시간을 나누어 계산 해 보도록 하였습니다.
 
-그 결과는 재밌었는데요
+그 결과는 재밌었는데요 
 
-![image-20220129103038871](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/toCharArray.assets/image-20220129103038871.png)
+![image-20220625230359458](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/toCharArray.assets/image-20220625230359458.png)
 
-캐릭터 배열을 생성하는데만 소모되는 비용이 chatAt으로 전체 순회 하는 비용 그 자체보다도 높았습니다. 반면 일단 생성 한 후에 index 만으로 배열을 순회하는 데에는 매우 짧은 시간이 소모되었습니다.
+사실 알고보니 대부분의 시간이 `.toCharArray()`에서 사용되고 있었습니다.
 
-캐릭터의 인덱스를 순회 할 때에 한번 순회하고 마는게 아닌 여러번 재활용이 필요하다면 배열을 생성하는 것도 고려할 법 하긴 하지만, 대부분의 경우에서는 그냥 charAt을 사용 하는게 훨씬 효과적입니다. 특히 배열을 따로 생성하면 그만큼의 메모리가 추가로 필요 하기 때문에 여러모로 불리합니다.
+반면 일단 생성 한 후에 index 만으로 배열을 순회하는 데에는 거의 무의미할 정도로 짧은 시간이 소요되었습니다.
+
+캐릭터의 인덱스를 순회 할 때에 한번 순회하고 마는게 아니고 두 번 이상 사용이 필요하다면 배열을 생성하는 것도 고려할 법 하긴 하지만, 그렇지 않은 경우에서는 그냥 charAt을 사용 하는게 훨씬 효과적입니다.
+
+특히 배열을 따로 생성하면 그만큼의 **메모리 공간**이 추가로 필요 하기 때문에 여러모로 불리합니다.
 
 ![image-20220129103550530](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/toCharArray.assets/image-20220129103550530.png)
 
->  toCharArray() 메서드도 확인을 해 보니 단순하게 String 객체가 가진 문자 배열을 복사해서 반환 합니다.
+>  toCharArray() 메서드도 확인을 해 보니 단순하게 String 객체가 가진 문자 배열을 복사해서 반환 합니다. arraycopy의 비용이 굉장히 큽니다.
 
 ### .length() VS final size
 
@@ -242,8 +246,14 @@ public class StaticLength {
 
 ![image-20220129104948613](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/toCharArray.assets/image-20220129104948613.png)
 
-그 결과는, 예상했던 대로 .length()를 호출 하는 것 보다 사이즈를 고정 해 두는게 더 빨랐습니다. 하지만 그 차이가 굉장히 미묘하기 때문에 사실 크게 의미는 없습니다. 함수 호출시의 약간의 오버 헤드가 전부고 특별히 연산은 없기 때문에 그런 듯 합니다.
+그 결과는, 예상했던 대로 .length()를 호출 하는 것 보다 사이즈를 고정 해 두는게 더 빨랐습니다. 
 
-<br><br> 이상으로 몇가지 실험을 통해 String 순회 성능 테스트를 진행 해 보았습니다. 앞으로의 메서드 선택에 도움이 되었으면 좋겠습니다. 감사합니다.
+하지만 그 차이가 굉장히 미묘하기 때문에 사실 크게 의미는 없습니다. 함수 호출시의 약간의 오버 헤드가 전부고 특별히 연산은 없기 때문에 그런 듯 합니다.
+
+<br><br>
+
+이상으로 몇가지 실험을 통해 String 순회 성능 테스트를 진행 해 보았습니다. 
+
+앞으로의 메서드 선택에 도움이 되었으면 좋겠습니다. 감사합니다.
 
  
