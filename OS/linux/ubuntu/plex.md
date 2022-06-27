@@ -14,7 +14,7 @@
 
 일단 시작에 앞서 모든 패키지를 업그레이드 해 줍니다.
 
-```ㅠㅁ노
+```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
