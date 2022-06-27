@@ -308,11 +308,19 @@ D2 Coding Font가 없거나 근본적인 해결을 원하시는 분들을 위해
 
 후에는 레지스트를 변경 해 줍니다. `~/.wine/system.reg` 파일 입니다.
 
+```bash
+vi ~/.wine/system.reg
+```
+
+저는 sudo 권한이 없어도 편집이 가능했지만, 혹시 권한 문제가 생긴다면 `sudo vi ~/.wine/system.reg` 로 편집해주세요.
+
 ![image-20220404100148531](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404100148531.png)
 
 > 변경 전
 
 65911 라인과 65912 라인에 보이는 `MS Shell Dlg`를 변경 해 주어야 합니다. 둘다 Tahoma로 되어 있는데 위에서 확인했던 `Malgun Gothic` 으로 변경 하였습니다.
+
+vim 에디터에서 특정 라인으로 이동은 `:` 키를 누르고 이동할 라인을 입력 하고 엔터키를 입력 하면 됩니다. `:65911`
 
 ![image-20220404100258814](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404100258814.png)
 
@@ -320,7 +328,7 @@ D2 Coding Font가 없거나 근본적인 해결을 원하시는 분들을 위해
 
 적용 후에는 저는 재부팅을 한번 했었는데, wine 재시작 등이 필요하기 때문에 최소 로그오프는 해야 할 것 같습니다.
 
-이렇게 하고 나서 카카오톡을 다시 켜면 더이상 한글이 깨지는 곳이 없습니다.
+이렇게 하고 나서 카카오톡을 다시 켜면 더이상 한글이 깨지는 곳이 없습니다. 위에서 D2 폰트로 바꿨다면 Malgun Gothic 으로 폰트를 변경 해 줍니다.
 
 ![image-20220404101622502](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220404101622502.png)
 
