@@ -120,10 +120,72 @@ QR 코드가 생성 된 것이 확인 됩니다.
 
 정상적으로 입력한 페이지로 이동 하는 것이 확인 됩니다.
 
-위의 코드와 구조를 조금만 변형 한다면 대부분의 경우에서 필요한 결과를 얻을 수 있을 거라고 생각합니다.
+## Documents
+
+마지막으로 QR 코드 이미지 생성에 사용 할 수 있는 필요한 옵션들 몇 가지 알아보겠습니다.
+
+### MatrixToImageConfig
+
+![image-20220701112654002](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zxing.assets/image-20220701112654002.png)
+
+> https://zxing.github.io/zxing/apidocs/com/google/zxing/client/j2se/MatrixToImageConfig.html
+
+QR코드 이미지 생성 시 색상 옵션을 설정 할 수 있습니다.
+
+![image-20220701112423989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zxing.assets/image-20220701112423989.png)
+
+> MatrixToImageWriter의 writeToStream을 호출 할 때, 마지막 파라미터로 넣어 줄 수 있습니다.
+
+```java
+MatrixToImageConfig conf = new MatrixToImageConfig(MatrixToImageConfig.BLACK,-1);
+```
+
+기본적으로는 위에 보이는 기본 세팅으로 되어 있습니다.
+
+> public static final int BLACK = -16777216;
+>
+> public static final int WHITE = -1;
+
+BLACK, WHITE로 되어 있는 기본 값을 원하는 컬러로 설정 할 수 있습니다. 하지만 ARGB 값으로 넣어야 하기 때문에 약간의 변환이 필요합니다. 저는 아래와 같이 코드를 작성해서 입력 받은 HEX값을 변환하도록 했습니다.
+
+```java
+int rgb = Color.white.getRGB();
+if (offColor != null && offColor.length() == 6) {
+    try {
+        int r = Integer.parseInt(offColor.substring(0, 2), 16);
+        int g = Integer.parseInt(offColor.substring(2, 4), 16);
+        int b = Integer.parseInt(offColor.substring(4, 6), 16);
+        rgb = new Color(r, g, b).getRGB();
+    } catch (NumberFormatException e) {
+        rgb = Color.white.getRGB();
+    }
+}
+```
+
+> QR Code의 배경 색상을 커스터마이징 할 수 있도록 했습니다.
+
+### Map<EncodeHintType, Object>
+
+EncodeHintType을 이용해 마진을 설정 하거나 필요한 몇 가지 설정을 할 수 있습니다.
+
+![image-20220701112933950](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zxing.assets/image-20220701112933950.png)
+
+해당 옵션은 MultiFormatWriter의 encode 메서드를 호출 할 때에 hints를 마지막 파라미터로 넣어서 사용 할 수 있습니다.
+
+```java
+Map<EncodeHintType, Object> hints = new EnumMap<>(EncodeHintType.class);
+hints.put(EncodeHintType.MARGIN, 0);
+BitMatrix matrix = new MultiFormatWriter().encode(url, BarcodeFormat.QR_CODE, width, height, hints);
+```
+
+저는 위의 코드를 작성해 Margin을 0으로 변경했습니다.
+
+<br><br>
+
+위의 작성된 코드와 구조를 활용 한다면 대부분의 경우에서 필요한 결과를 얻을 수 있을 거라고 생각합니다.
 
 이상입니다.
 
-reference
+**reference**
 
 - https://www.callicoder.com/generate-qr-code-in-java-using-zxing/
