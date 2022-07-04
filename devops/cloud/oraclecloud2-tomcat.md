@@ -326,7 +326,7 @@ sudo systemctl stop tomcat9
 혹시 삭제하고 싶다면 삭제도 합니다
 
 ```xml
-$ sudo apt-get remove tomcat9
+$ sudo apt remove tomcat9
 ```
 
 ### Tomcat8 실행
@@ -337,25 +337,31 @@ tomcat 8.5 버전을 실행하기 위해 bin 폴더로 들어가려는데 권한
 
 ![image-20211126220242125](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/image-20211126220242125.png)
 
+`sudo cd bin` 명령으로 bin 폴더에 들어 갈 수도 있지만
 
-
-sudo -i 명령어로 쉽게 root 권한을 얻을 수 있습니다.
+`sudo -i` 명령어로 쉽게 root 권한을 얻을 수 있습니다.
 
 
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077328.png)
 
+> `sudo -i` 이후 계정이 root로 변경 되었습니다.
+
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077329.png)
 
+> 이제 탐색이 자유롭습니다.
 
+그대로 톰캣을 실행 합니다.
 
-
+```bash
+./startup.sh
+```
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077330.png)
 
+> Tomcat started. 라고 나옵니다.
 
-
-그대로 톰캣을 실행 합니다.
+이제 접속할 때 사용한 아이피 주소에, 기본 톰캣 포트인 8080을 브라우저에 입력 해서 접속을 확인 해 봅니다.
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077331.png)
 
@@ -383,6 +389,8 @@ sudo -i 명령어로 쉽게 root 권한을 얻을 수 있습니다.
 
 vi server.xml 에서 아까처럼 port를 변경 해 줍니다.
 
+`Connector port="8080"` 이라고 작성 된 부분이 두개가 있는데, Catalina 블럭 안에 있는걸 변경 해 주어야 합니다.
+
 
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077325.png)
@@ -395,7 +403,7 @@ vi server.xml 에서 아까처럼 port를 변경 해 줍니다.
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077434.png)
 
-
+> 기본 웹 포트인 80 번으로 설정 되어서, 포트 번호를 입력 하지 않아도 연결되는 모습
 
 tomcat 8.5 버전에서 80port 로의 배포 준비가 완료 되었습니다.
 
@@ -448,20 +456,22 @@ scp /Users/shane/Desktop/gaia.war ubuntu@146.56.191.188:/opt/apache-tomcat-8.5.7
 root 권한으로 /opt 폴더의 권한을 777로 변경하겠습니다.
 
 ```xml
-chmod 777 /opt
+sudo chmod 777 /opt
 ```
 
 이후 ls-l로 확인을 해 보면, opt 폴더의 권한이 drwxrwxrwx 로 변해 있는 것을 확인 하실 수 있습니다.
 
-하위에 있는 모든 폴더와 파일까지 한번에 권한 변경을 하려면
+#### 하위 폴더까지 권한 설정
+
+하지만 하위 폴더까지 권한이 있어야 전송을 할 수 있기 때문에 recursive로 하위 폴더까지 모두 권한을 변경 해 주어야 합니다.
+
+하위에 있는 모든 폴더와 파일까지 한번에 권한 변경을 하려면 `-R` 옵션을 주면 됩니다. 
+
+아래와 같이 입력해 이번에는 opt 폴더 하위의 권한을 모두 풀어줍니다.
 
 ```xml
- chmod -R 777 폴더명
+sudo chmod -R 777 /opt
 ```
-
-형식으로 하면 한번에 하실 수 있습니다.
-
-
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/cloud/oraclecloud2-tomcat.assets/img-163789839077436.png)
 
