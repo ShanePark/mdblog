@@ -78,6 +78,26 @@ XML로 응답이 정상적으로 옵니다! 서버가 잘 돌아가고 있습니
 
 > 요금제에 대한 정보가 나오지만, 무료로도 충분히 이용 할 수 있습니다. 우측상단의 X를 클릭해 닫아줍니다.
 
+### 서버와 내부망이 같지 않을경우
+
+여기에서는 서버와 내부망이 같지 않아 Not authorized 인 상태인 경우에 대해 다룹니다. 
+
+정상적으로 설정 화면이 뜬 경우에는 아래의 PLEX 설정까지 스크롤을 내려주세요.
+
+![image-20220712090550096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/plex.assets/image-20220712090550096.png)
+
+> Not authorized You do not have access to this server
+
+외부의 Cloud 를 사용하는 등의 경우에는 서버와 접속하는 브라우저의 내부 망이 다를 수 있는데요, 이때는 PLEX 서버 입장에서는 관리자가 접속한 게 맞는지 아니면 다른 제 3자 인지를 확인 할 방법이 없기 때문에 Not authorized 라며 서버 설정으로 넘어가지 못합니다. 이때는 PLEX가 설치된 서버 내부에서 요청을 보내줘야 하는데요.
+
+처음에는 Dynamic proxy 로 시도를 해 보았는데 안되는걸로 봐서는 외부망을 타지 말고 바로 연결이 되어야 하는 모양이더라고요. 이때는 ssh의 -L 옵션으로 plex 서버의 32400 포트를 설정할 PC의 로컬호스트 32400 포트에 포워딩 해 주고
+
+```bash
+ssh [PLEX서버아이피] -L 32400:127.0.0.1:32400
+```
+
+그 이후에 웹브라우저에서 `http://localhost:32400` 으로 접속하면 Not authorized 를 해결 할 수 있습니다.
+
 ## PLEX 설정
 
 x 를 눌러 요금제 팝업을 닫고 나면 설정 화면이 나옵니다.
