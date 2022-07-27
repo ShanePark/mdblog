@@ -27,10 +27,11 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 apt package index를 업데이트 하고 HTTPS를 통해 repository 를 이용하기 위해 pakcage 들을 설치 해줍니다.
 
 ```bash
-$ sudo apt-get update
- 
-$ sudo apt-get -y install \
-    apt-transport-https \
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
@@ -40,7 +41,7 @@ $ sudo apt-get -y install \
 Docker의 Official GPG Key 를 등록합니다.
 
 ```bash
- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 
 stable repository 를 등록해줍니다.
@@ -56,9 +57,8 @@ stable repository 를 등록해줍니다.
 아래 명령어를 입력하면 자동으로 최신 버전이 설치 됩니다.
 
 ```bash
-$ sudo apt-get update
- 
-$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
 ### 설치 완료
@@ -88,7 +88,7 @@ Docker Compose는 여러개의 도커 어플리케이션 컨테이너들을 정�
 Docker 를 설치 해도 Compose 가 딸려 오는 것은 아니기 때문에 따로 설치 해 주어야 합니다.
 
 ```bash
- sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
 실행 할 수 있는 권한을 부여 합니다.
@@ -100,8 +100,9 @@ Docker 를 설치 해도 Compose 가 딸려 오는 것은 아니기 때문에 �
 잘 설치 되었는지 확인해봅니다.
 
 ```bash
-$ docker-compose --version
-docker-compose version 1.29.2, build 5becea4c
+docker-compose --version
+
+## docker-compose version 1.29.2, build 5becea4c
 ```
 
 
