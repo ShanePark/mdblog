@@ -97,7 +97,7 @@ where
 
 ### 특정 테이블의 컬럼정보 조회3
 
-![image-20220726180215723](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/table-column-info.assets/image-20220726180215723.png)
+![image-20220727100445481](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/table-column-info.assets/image-20220727100445481.png)
 
 이번에는 위에서 했던 조회1과 조회2의 정보를 섞어서
 
@@ -107,29 +107,40 @@ where
 - 데이터 타입
 - 최대 길이
 - Null 여부(Y,N)
+- PK 여부
+- 기본값
 
-이렇게 6가지 정보를 조회하도록 해 보았습니다. 이정도면 테이블 정의서를 작성하기에 충분 합니다.
+이렇게 8가지 정보를 조회하도록 해 보았습니다. 이정도면 테이블 정의서를 작성하기에 충분 합니다.
 
 ```sql
 select
 	cols.table_name,
-	c.comment,
 	cols.column_name,
-	cols.udt_name as "type"
-	,
-	cols.character_maximum_length as length
-	,
+	c.comment,
+	(case
+		when cols.udt_name = 'varchar' then concat('varchar(', cols.character_maximum_length, ')')
+		else cols.udt_name
+	end
+	) as "type",
+	(case
+		when cols.character_maximum_length is null then ''
+		else cast(cols.character_maximum_length as varchar)
+	end) as length,
 	(case
 		when cols.is_nullable = 'NO' then 'N'
 		else 'Y'
-	end) as "nullable"
+	end) as "nullable",
+	(case
+		when cols.is_identity = 'NO' then ''
+		else 'PK'
+	end) as is_identity ,
+	cols.column_default as default
 from
 	INFORMATION_SCHEMA.columns cols
 inner join (
 	select
 		c.relname as table_name,
-		a.attname as "column_name"
-		    ,
+		a.attname as "column_name",
 		(
 		select
 			col_description(a.attrelid, a.attnum)) as comment
@@ -160,7 +171,8 @@ inner join (
 	(cols.table_name = c.table_name
 		and cols.column_name = c.column_name)
 where
-	cols.table_name = '테이블명';
+	cols.table_name = 'person';
+
 ```
 
 위에서 전체 테이블 명 조회 쿼리와 조합한다면, 데이터베이스 내 전체 테이블 및 컬럼에 대한 조회도 가능합니다.
