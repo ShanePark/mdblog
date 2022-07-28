@@ -184,11 +184,13 @@ services:
 
 설정해 준 이후에는 컨테이너 이름이 정상적으로 표기되는 것이 확인 됩니다!
 
-## 마치며
-
 ![image-20220727175645617](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/image-20220727175645617.png)
 
 설치시 기본적으로 타임존이 UTC로 되어 있기 때문에, seoul을 검색해서 타임존을 UTC+9 으로 변경 해 주시고 사용 하면 됩니다.
+
+## 커스터마이징
+
+### API
 
 브라우저의 개발자 도구를 켜보셨다면 눈치 채셨을텐데요
 
@@ -201,5 +203,204 @@ services:
 https://editor.swagger.io/?url=https://raw.githubusercontent.com/netdata/netdata/master/web/api/netdata-swagger.yaml
 
 위의 Swagger 문서에 모든 API가 정리 되어 있기 때문에, 참고를 해서 필요하다면 필요한 API를 요청해 통계정보를 그리는 것도 가능하겠습니다.
+
+예를 들어 아래와 같은 HTML 문서를 작성 한다면
+
+```html
+<script>
+    var netdataNoBootstrap = true;
+</script>
+<script src="https://london.my-netdata.io/dashboard.js"/>
+
+<a href="#">
+ <img src="http://localhost:19999/api/v1/badge.svg?chart=system.cpu"/>
+</a>
+```
+
+![image-20220728102641654](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/image-20220728102641654.png)
+
+위에 보이는 것 처럼, CPU 상태를 확인하는 뱃지를 어렵지 않게 만들 수 있습니다.
+
+이번에는 자동으로 갱신 되게 하고 싶다면
+
+```html
+<a href="#">
+ <embed src="http://localhost:19999/api/v1/badge.svg?chart=system.cpu&refresh=auto"/>
+</a>
+```
+
+![gif](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/gif.gif)
+
+> 계속해서 갱신이 자동으로 이루어 집니다.
+
+### 외부 포트 개방하지 않기
+
+다만 19999 포트를 외부에 아무런 인증 작업 없이 노출 시키는건 좋지 않습니다. 아쉽게도  Netdata에서는 인증이나 인가 관련해서는 모두 사용자에게 위임을 하고 있기 때문에 각자 API 요청을 중계하는 프록시를 만들어서 사용하시는게 좋겠습니다.
+
+```java
+
+@RestController
+@RequiredArgsConstructor
+@Slf4j
+public class NetDataController {
+
+    private final CloseableHttpClient httpClient;
+
+    @Value("${url.netdata.api}")
+    private String netDataUrl;
+    private final String NETDATA = "/netdata/";
+
+    @GetMapping("/netdata/**")
+    public ResponseEntity netDataProxy(HttpServletRequest req) throws IOException {
+        StringBuffer requestURL = req.getRequestURL();
+        String url = netDataUrl + "/" + requestURL.substring(requestURL.indexOf(NETDATA) + NETDATA.length());
+        RequestBuilder requestBuilder = RequestBuilder.get(url);
+
+        MediaType mediaType = APPLICATION_JSON;
+        if (url.endsWith("js")) {
+            mediaType = valueOf("application/javascript");
+        } else if (url.endsWith("css")) {
+            mediaType = valueOf("text/css");
+        } else {
+            req.getParameterMap().entrySet().stream().forEach(e ->
+                    Arrays.stream(e.getValue()).forEach(v ->
+                            requestBuilder.addParameter(e.getKey(), v))
+            );
+        }
+        try (CloseableHttpResponse r = httpClient.execute(requestBuilder.build());
+             InputStream input = r.getEntity().getContent()) {
+            String body = IOUtils.toString(input, UTF_8);
+            return ResponseEntity.ok()
+                    .contentType(mediaType)
+                    .body(body);
+        }
+    }
+    
+}
+```
+
+> 중계 컨트롤러를 작성 해 보았습니다. netdata의 dashboard.js 파일도 :19999 에서 받아와야 했기 때문에 다소 코드가 복잡해집니다. dashboard.js 는 이후 하위의 라이브러리 js 파일 및 css 파일을 불러옵니다.
+
+이처럼 외부 포트를 막고 컨테이너 내부 네트워크에서 통신하게 한 후에 /netdata/** 하위 경로를 스프링 시큐리티에서 권한 설정을 해 주면 해당 컨트롤러를 통해서 권한을 가지고만 netdata 요청을 할 수 있습니다.
+
+### 커스텀 페이지
+
+이후 html 파일을 간단하게 만들어서 커스텀 통계 페이지도 만들어 보았습니다.
+
+```html
+<script>
+    var netdataNoBootstrap = true;
+</script>
+<script src="{{BASE}}/netdata/dashboard.js"/>
+
+<div class="col-md-4 item">
+  <div>
+    <div data-netdata="system.cpu"
+         data-host="/netdata/"
+         data-gauge-max-value="100"
+         data-chart-library="gauge"
+         data-width="50%"
+         data-after="-540"
+         data-points="540"
+         data-title="CPU"
+         data-units="%"
+         data-colors="#2c9588"
+         data-gauge-generate-gradient="[0, 80, 100]"
+         data-gauge-gradient-percent-color-0="#2c9588"
+         data-gauge-gradient-percent-color-80="#c96667"
+         data-gauge-gradient-percent-color-100="#ff3300"
+         class="netdata-container">
+    </div>
+    <div class="netdata-container-easypiechart"
+         data-netdata="system.ram"
+         data-host="/netdata/"
+         data-dimensions="used|buffers|active|wired"
+         data-append-options="percentage"
+         data-chart-library="easypiechart"
+         data-title="Used RAM"
+         data-units="%"
+         data-easypiechart-max-value="100"
+         data-width="45%"
+         data-after="-540"
+         data-points="540"
+         data-colors="#EE9911"
+         role="application">
+    </div>
+  </div>
+
+  <div>
+    <div data-netdata="disk_space._"
+         data-host="/netdata/"
+         data-title="disk space for /"
+         data-append-options="percentage"
+         data-decimal-digits="0"
+         data-dimensions="used"
+         data-chart-library="gauge"
+         data-width="100%"
+         data-height="100%"
+         data-after="-300"
+         data-points="300"
+         data-gauge-max-value="100"
+         data-colors="#ffffff"
+         data-gauge-generate-gradient="[0, 70, 100]"
+         data-gauge-gradient-percent-color-0="#ffffff"
+         data-gauge-gradient-percent-color-70="d88b2f"
+         data-gauge-gradient-percent-color-100="#ff3300"
+         data-units="%">
+    </div>
+  </div>
+</div>
+<div class="col-md-6 item">
+  <div data-netdata="system.io"
+       data-host="/netdata/"
+       data-dimensions="in" data-chart-library="easypiechart" data-title="Disk Read"
+       data-width="30%" data-points="540"
+       data-common-units="system.io.mainhead" role="application">
+  </div>
+  <div data-netdata="system.io"
+       data-host="/netdata/"
+       data-dimensions="out" data-chart-library="easypiechart"
+       data-title="Disk Write" data-width="30%"
+       data-points="540" data-common-units="system.io.mainhead" role="application">
+  </div>
+
+  <div data-netdata="system.cpu"
+       data-host="/netdata/"
+       data-width="100%"
+       data-height="260px"
+       data-legend="no"
+       role="application">
+  </div>
+
+  <div data-netdata="system.net" data-width="30%"
+       data-host="/netdata/"
+       data-dimensions="received" data-chart-library="easypiechart"
+       data-title="Net Inbound" data-width="11%"
+       data-points="540" data-common-units="system.net.mainhead" role="application">
+  </div>
+
+  <div data-netdata="system.net"
+       data-host="/netdata/"
+       data-width="30%"
+       data-dimensions="sent" data-chart-library="easypiechart" data-title="Net Outbound" data-width="11%"
+       data-points="540" data-common-units="system.net.mainhead" role="application">
+  </div>
+
+</div>
+```
+
+위와 같이 작성 했을때에는, 아래와 같은 모니터링 페이지를 띄울 수 있습니다.
+
+![monitor](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/monitor.gif)
+
+> 정리가 필요합니다.
+
+<br>
+
+## 마치며
+
+아래의 링크에 접속해서 `Developers > HTTP API > Netdata badges` 를 확인 하시면 보다 많은 API 정보를 찾으실 수 있습니다. 
+
+> https://learn.netdata.cloud/docs/agent/web/api/badges
 
 이상입니다.
