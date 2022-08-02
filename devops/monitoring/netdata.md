@@ -287,6 +287,8 @@ public class NetDataController {
 
 이후 html 파일을 간단하게 만들어서 커스텀 통계 페이지도 만들어 보았습니다.
 
+dashboard 커스터마이징은 https://learn.netdata.cloud/docs/agent/web/gui/custom 를 참고하면 됩니다.
+
 ```html
 <script>
     var netdataNoBootstrap = true;

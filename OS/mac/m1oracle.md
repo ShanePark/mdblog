@@ -1,14 +1,16 @@
-# MacOS) m1 맥북 Oracle SQL Developer (Docker 없이) 사용하기 및 the directory is not accessible 에러 해결하기
-
-<br><br>
+# MacOS) m1 맥북 Oracle SQL Developer 사용하기 및 the directory is not accessible 에러 해결하기
 
 ## 시작하기 앞서
 
 > 꾸준히 최신 정보로 수정 중입니다. 최근 수정일자를 확인해주세요.
 
-이미 SQL Developer 를 실행하는건 성공을 했는데 데이터베이스 구축을 하는 방법을 찾고 있는 분은 두 가지 방법이 있습니다.
+이미 SQL Developer 를 실행하는건 성공을 했는데 데이터베이스 구축을 하는 방법을 찾고 있는 분은 ~~두 가지 방법이 있습니다.~~ 이제 Apple Silicon 환경에서도 도커를 활용해 오라클 DB를 띄우는 방법이 생겼습니다.
 
-1. Docker를 이용한 가상 환경에 DB 구축
+0. **2022년 8월 추가**  : Docker 로 로컬에 DB 구축
+
+> 이제는 [[MacOS] M1 맥북 도커로 ORACLE DB 실행하기](https://shanepark.tistory.com/400) 를 참고 해서 로컬에서 오라클 DB를 띄우실 수 있습니다. 
+
+1. Docker를 이용한 가상 환경에 DB 구축 ( 2021년 8월 기준)
 
 > 현재 (2021. 08. 14) m1 맥북에서 Oracle 데이터베이스를 가동할 수 있는 방법은 전혀 없습니다. 수많은 해외 포럼도 찾아봤지만 그 누구도 Apple Silicon에서 OracleDB 구동한 사람은 아직 없습니다. arm64 방식으로 칩셋이 전혀 다르기 때문에 Docker를 사용해도 불가능합니다. 저도 여러가지 방법을 다 해봤는데 불가능 했습니다. 
 
