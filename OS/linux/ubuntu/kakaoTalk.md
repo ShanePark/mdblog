@@ -16,6 +16,26 @@ Windows나 Mac에서 되는데 Linux에서는 할 수 없는거야 셀수 없이
 
 지금부터 하나씩 잘 따라 하신다면 복잡하기는 해도 카카오톡을 잘 설치하실 수 있을거라고 생각됩니다. 
 
+## 2022년 8월 추가 내용
+
+아래의 설치 방법을 따르기에 앞서, 간략한 설치 과정 브리핑 및 변경 사항에 대해 말씀드리겠습니다.
+
+기존에는 최신의 Wine 버전에서 KakaoTalk을 설치 할 경우에는 `50151` 에러로 연결이 안되는 문제가 있었습니다. 그렇기 때문에 PlayOnLinux를 설치 해서 다양한 와인 버전 관리하며 작동이 가능한 버전을 찾아서 설치 했었고, 그중 **6.14 staging** 버전이 가장 안정적이었습니다. 
+
+2022년 8월 현재, 최신의 7.0 버전을 확인 해 본 결과 카카오톡이 원할하게 동작하는 것이 확인 되었고 그렇기 때문에 굳이 PlayOnLiux를 설치 하지 않아도 문제 없이 카카오톡 설치가 가능합니다. 본문에서는 7.x 버전이 RC(Release Candidate) 상태였기 때문에 사용하지 않았었는데 정식버전은 상황이 굉장히 좋아져서 심지어는 와인 6.14 버전에서 간혹 보이지 않던 이모티콘 마저도 모두 정상적으로 출력되는 상황 입니다. 
+
+다만, Wine 버전이 올라감에 따라 언제 또 다시 호환이 되지 않는 경우가 올 지 모르기 때문에 PlayOnLinux를 이용한 설치 방법은 그대로 남겨 두겠습니다. PlayOnLinux를 사용하지 않을 분은 본문 내용을 확인 하시고 Wine 설치까지는 똑같이 진행 하시되, PlayOnLinux 설치 하는 부분에서 그걸 설치하는 대신 카카오톡을 다운받고 `wine ~/Downloads/KakaoTalk_Setup.exe` 로 system의 wine에 바로 설치하시면 됩니다. 저도 테스트를 위해 PlayOnLinux를 제거 한 뒤에 이 방법으로 설치 해보니 문제 없이 카카오톡을 설치 할 수 있었습니다. 관련 내용은 진행중에 나오는 **Ubuntu 18.04를 사용하는 경우** 부분을 참고 해 주시면 됩니다.
+
+이것 저것 피드백을 받으며 내용을 추가하고, 여러가지 트러블 슈팅 상황에 대해서도 기록을 했다 보니 글이 굉장히 장황해졌는데, 최대한 많은 분들이 문제 없이 카카오톡 설치에 성공 하셨으면 좋겠습니다.
+
+> **한글 입력기에 대하여**
+>
+> 저는 KIME 한글 입력기를 사용중인데, wine 7.0 버전으로 실행 한 카카오톡에서는 한글 입력이 불가능한 문제가 있었습니다. 처음에는 `sudo apt-get install fcitx fcitx-hangul` 로 fcitx 설치 해서 한글 입력이 가능하도록 했지만, fcitx는 IntelliJ IDEA 에서 한글 입력시 네모 박스가 뜨는게 너무 불편해서 **KIME 입력기를 제거 후 재설치** 를 하고 기본 입력기로 다시 설정을 해 주니 카카오톡에서는 네모 박스가 뜨긴 했지만 크게 불편하지 않게(6.14에서도 같았음) 한글을 입력 할 수 있게 되었습니다. 제가 써 본 입력기중에는 KIME가 가장 좋았습니다.
+>
+> iBus의 경우에도 카카오톡에서 한글 입력이 되지 않으니 카톡을 설치했는데 한글 입력이 안되시는 분은 fcitx를 설치 해 보시거나 [Linux) KIME 한글 입력기](https://shanepark.tistory.com/318) 글을 참고해 KIME 입력기 설치를 고려해주세요.
+
+그럼 본문을 다시 시작해보겠습니다.
+
 ## Wine 설치
 
 wine 패키지는 기본 우분투 리포지터리에 포함되어 있기 때문에 쉽게 설치 할 수 있습니다.
@@ -75,12 +95,17 @@ sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal mai
 ```bash
 sudo apt update
 sudo apt install --install-recommends winehq-stable
+```
+
+를 입력해 wine 을 설치 해 줍니다.
+
+```bash
 sudo apt install playonlinux
 ```
 
-를 입력해 wine 및 playonlinux를 설치 해 줍니다.
+이어서 playonlinux를 설치 해 줍니다. 다른 Wine 버전을 사용할 계획이 없다면 설치하지 않으셔도 됩니다.
 
-### unmet dependencies 해결
+#### unmet dependencies 해결
 
 이번엔 저는 또 다른 에러가 발생했습니다. 대부분은 잘 되었겠지만 저와 같은 에러가 났을 분들을 위해 해결 방법을 함께 남겨 둡니다. 에러가 발생하지 않은 분들은 아래의 `Wine & PlayOnLinux 설치`로 쭉 내려가주세요.
 
@@ -120,17 +145,19 @@ sudo vi /etc/apt/sources.list
 sudo apt update && sudo apt upgrade
 ```
 
-### Wine & PlayOnLinux 설치
-
 ![image-20220129161103854](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129161103854.png)
 
 >  무려 1,953 MB 나 합니다. 엔터키를 입력 해 설치 해 줍니다. 용량이 용량이니 만큼 시간이 제법 걸립니다.
 
-이어서 `sudo apt install playonlinux` 도 하는데, 75.8MB 라서 금방 설치 합니다.
+이제 playonlinux 를 마저 설치 해 줍니다.
 
-## 환경 설정
+```bash
+ sudo apt install playonlinux
+```
 
-### wine 버전 설치
+75.8MB 라서 금방 설치 합니다.
+
+### PlayOnLinux에 특정버전 wine 설치
 
 PlayOnLinux 를 실행 해 줍니다.
 
@@ -144,17 +171,29 @@ Manage Wine versions를 클릭 합니다.
 
 ![image-20220129162135178](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129162135178.png)
 
-그러면 이렇게 사용 가능한 와인 버전들이 나오는데요, 처음 wine을 설치한 직후에 목록이 나오지 않아 재부팅을 한번 했습니다. 그런데 후에도 패키지가 안보일때가 종종 있는걸로 봐서는 그냥 자체 버그가 있는 것 같습니다. 껐다 키면 나오더라고요.
+그러면 이렇게 사용 가능한 와인 버전들이 나오는데요, 처음 wine을 설치한 직후에 목록이 나오지 않아 재부팅을 한번 했습니다. 그런데 후에도 패키지가 안보일때가 종종 있는걸로 봐서는 그냥 자체 버그가 있는 것 같습니다. 껐다 키면 나오더라고요. wine versions manager를 띄우고 아무것도 안보이더라도 10초정도 기다려보세요. 서버 상태에 따라 안될 수도 있습니다.
 
-여러가지 버전이 나오는데 7.0은 아직 출시되기 직전이라고 해도 배포 전이기 때문에 선택하지 않았습니다. 
+여러가지 버전이 나오는데 7.0은 RC 버전이기 때문에 선택하지 않았습니다. 
 
 그래서 저는 처음에는 6.18-staging으로 시도 했었는데 정상적으로 작동하지 않았습니다. 여러가지 버전들을 시도 해 보다가 **6.14-staging** 에서 마침내 성공했어요. 스샷이 처음 찍었던거라 6.18인게 몇개 포함 되어 있을 수 있지만, 다른 버전은 나중에 로그인이 되지 않기 때문에 꼭 **6.14-staging**을 선택해주세요. 
 
-> 저는 Ubuntu 20.04 버전을 사용 하고 있는데, 혹시 18.04 버전을 사용하시는 분들은 Wine 버전을 `3.20` 으로 선택 해 주세요. 우분투 버전에 따라 호환되지 않는 버전이 많은걸로 보이는데 여러 버전을 시도해서 먼저 찾아주신 분이 계셔서 편하게 선택 할 수 있습니다.
+> **<u>Ubuntu 18.04를 사용하는 경우</u>**
+>
+> 저는 Ubuntu 20.04 버전을 사용 하고 있는데, 18.04 버전에서는 선택 할 수 있는 버전이 최대 3.20 이라고 하더라고요. 원하는 버전을 선택 할 수가 없는 상황입니다.
 >
 > ![image-20220810093319972](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220810093319972.png)
 >
 > Thanks to [@JinraeKim](https://github.com/JinraeKim)
+>
+> PlayOnLinux를 사용하는 이유는 어플리케이션별로 여러가지 와인 버전을 두고 손쉽게 선택 할 수 있기 위함이었는데요, 어쩔수 없이 이 경우에는 Wine에서 바로 설치해서 사용 해 주시면 됩니다.
+>
+> 이미 위에서 와인은 설치 하였고, `wine --version` 을 확인 해보면 최근엔 7.x 버전이 설치 되어 있을 텐데요, 7.0 버전에서는 정상적으로 작동한다는 보고가 많이 때문에 그대로 사용하시면 됩니다. Downloads 폴더에 카카오톡 설치 파일이 있다는 전제 하에
+>
+> ```bash
+> wine ~/Downloads/KakaoTalk_Setup.exe
+> ```
+>
+> 위의 명령어로 설치 하시고, 아래의 **KakaoTalk 설치** 부분까지 스크롤을 쭉 내려주시면 됩니다!
 
 선택 하고 오른쪽 화살표를 클릭 하면 설치 합니다.
 
@@ -285,6 +324,8 @@ Manage Wine versions를 클릭 합니다.
 ![image-20220129172047646](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129172047646.png)
 
 > 입력 할 때는 한글이 깨져 보이지만 Send를 누르면 정상적으로 보내지긴 하더라고요.
+
+## 환경 설정
 
 ### Font 변경
 
