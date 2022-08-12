@@ -426,19 +426,13 @@ Minimize만 하면, Chrome 이나 인텔리제이 등에서는 여전히 커맨�
 
 ### 마우스 관련 설정
 
-1. 마우스 뒤로가기& 앞으로 가기 버튼 활성화
+맥북에서는 솔직히 트랙패드만 써도 충분 하긴 하지만, 마우스에 익숙한 분들은 마우스가 꼭 필요 하기도 합니다. 저도 트랙패드만으로 반년 정도 사용 해 오다가, 그래도 마우스를 완전 대체 할 수는 없다는 한계를 느껴서 요즘에는 두개 다 사용하고 있습니다. 그래도 마우스에 커맨드키들 몇개 넣어서 사용하니 트랙패드를 거의 안쓰게 되긴 하더라고요.
 
-마우스를 사용한다면 웹 브라우징을 할 때 뒤로가기, 앞으로가기 버튼을 이용하는게 편한데 기본 세팅이 되어 있지가 않습니다. 일반적인 마우스를 사용하시는 분들은 Karabiner 를 먼저 설치 한 후에 아래 링크를 참고해 뒤로가기와 앞으로가기 버튼을 활성화 시킬 수 있습니다.
-
-> https://shanepark.tistory.com/264
-
-2. 마우스 가속 끄기
+1. 마우스 가속 끄기
 
 ![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211206211559027.png)
 
-맥북에서는 솔직히 트랙패드만 써도 충분 하긴 하지만, 마우스에 익숙한 분들은 마우스가 꼭 필요 하기도 합니다. 저도 트랙패드만으로 반년 정도 사용 해 오다가, 그래도 마우스를 완전 대체 할 수는 없다는 한계를 느껴서 요즘에는 두개 다 사용하고 있습니다. 그래도 마우스에 커맨드키들 몇개 넣어서 사용하니 트랙패드를 거의 안쓰게 되긴 하더라고요.
-
-그런데 맥북만 쓸땐 상관 없지만 리눅스나 윈도우 컴퓨터와 번갈아가며 사용하다 보면 마우스 가속 기능때문에 참 어색한데, 이게 적응도 잘 되지 않습니다. 그래서 마우스 가속을 꺼 보았는데요. 이게 상당히 괜찮아서 게임도 가능 할 정도더라고요.
+그런데 맥북만 쓸땐 상관 없지만 리눅스나 윈도우 컴퓨터와 번갈아가며 사용하다 보면 마우스 가속 기능때문에 참 어색한데, 이게 아무리 지나도 적응이 되지 않습니다. 그래서 마우스 가속을 꺼 보았는데요. 이게 상당히 괜찮아서 게임도 가능 할 정도더라고요.
 
 맥북에서 마우스를 쓰고는 싶은데, 감도가 너무 어색하고 불편하다는 분들은 아래의 링크를 확인 해서 마우스 가속 기능을 끄고 사용해주세요.
 
@@ -446,11 +440,47 @@ Minimize만 하면, Chrome 이나 인텔리제이 등에서는 여전히 커맨�
 
 > https://shanepark.tistory.com/297
 
+혹은, 해당 스틸시리즈의 툴이 Apple Silicon을 아직도 지원 하지 않아서 저는 요즘 **LinearMouse** 라는 오픈소스를 소프트웨어를 대신 사용하고 있는데요. 만족스러워서 더욱 추천합니다.
+
+![image-20220812222307221](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222307221.png)
+
+> https://linearmouse.org
+>
+> https://github.com/linearmouse/linearmouse
+
+Homebrew로 간편하게 설치해서 사용하시면 됩니다.
+
+```bash
+brew install --cask linearmouse
+```
+
+![image-20220812222423052](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222423052.png)
+
+> 포인터 가속을 끄는 것 뿐만 아니라, 마우스 스크롤이 반대로 되는 문제도 해결 해 줍니다.
+
+2. Mac Mouse Fix
+
+![image-20220812222546132](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222546132.png)
+
+> https://github.com/noah-nuebling/mac-mouse-fix
+
+원래 한동안은 로지텍의 마우스 소프트웨어를 사용 했었는데 툭하면 설정이 초기화 되는 현상 때문에 결국 세번째에 인내심에 한계를 느껴 다른 툴을 찾았습니다. Mac Mouse Fix는 마우스 가운데 클릭을 활용해 스크롤 넘기기 및 미션 컨트롤이 가능합니다! 그리고 뒤로가기 앞으로 가기 버튼을 설정 해 주는것 뿐만 아니라 스크롤시 터치패드로 하는 것 처럼 부드럽게 만들어줍니다. Invert direction은 마우스 휠 방향을 반대로 해주는건데, 위의 LinearMouse와 함께 사용한다면 둘 중 하나에서만 켜주면 됩니다.
+
+![image-20220812223046023](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812223046023.png)
+
+> 위와 같이 여러가지 설정이 가능 합니다.
+
+이 역시 brew로 간편하게 설치 하시면 됩니다.
+
+```bash
+brew install --cask mac-mouse-fix
+```
+
 ## 개발 관련 소프트웨어
 
 > 알파벳 오름차순 순서로 나열 하였습니다.
 
-### Docker
+### Docker 
 
 docker에 대한 설명은 크게 필요 없을 것 같습니다. 한참동안 rosetta에서 조차 구동이 불가능 했는데 어느 순간 그걸 건너 뛰고 바로 native로 지원을 해 주더라고요. 간단한 예제와 함께 설치 방법을 작성 해 보았습니다. 아래 링크로 따로 준비했습니다.
 
@@ -527,7 +557,7 @@ m1 맥북에서 오라클 데이터베이스를 사용하려면 꽤나 골치가
 
 애플 실리콘 환경에서 오라클 데이터 베이스 사용에 대한 전반적인 내용은 아래의 글을 확인 해주세요.
 
-> <a href="https://shanepark.tistory.com/208?category=1182535" target="_blank">Apple Silicon m1 맥북에서 Oracle Database 사용하기</a>
+> [[MacOS] M1 맥북 도커로 ORACLE DB 실행하기](https://shanepark.tistory.com/400)
 
 아니면 서버는 필요 없고 SQL Developer만 있으면 된다는 분들은 아래의 글을 참고 해 주세요.
 
