@@ -30,19 +30,51 @@ brew install colima
 
 ### docker 설치
 
+docker가 아직 설치되어 있지 않았다면 본 항목을 확인하며 설치해주시고, 기존에 이미 설치되어있다면 실행중인 Docker desktop을 종료만 하고 아래의 Colima 실행으로 넘어가주세요.
+
+![image-20220821090106960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821090106960.png)
+
+도커 설치가 필요한데요..
+
+도커 데스크탑을 설치할 수도 있고, 도커 엔진만 설치해서 하실 수도 있는데. 도커 데스크탑을 원하시면 아래의 링크에서 우측 Mac with Apple chip을 선택 해서 다운 받으시면 됩니다.
+
+![image-20220821082548481](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082548481.png)
+
+> https://www.docker.com/products/docker-desktop/
+
+아니면 brew로도 설치가 가능합니다.
+
+```bash
+brew install --cask docker
+```
+
+Colima는 Docker Desktop을 대신해서 docker 엔진을 실행해주기 때문에, 도커 데스크탑과 같이 띄우면 안된다고 생각했는데..
+
+테스트를 해 보니 같이 실행해도 문제는 없더라고요. 
+
+![image-20220821091050604](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091050604.png)
+
+그래서 둘다 실행 되어 있다면 docker 명령어를 누가 가져가나 했는데
+
+![image-20220821091307865](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091307865.png)
+
+> 서로 docker 이미지는 공유를 하지 않는 것 같고, 둘다 동시에 실행되면 colima가 docker desktop 대신 docker 명령어를 처리 하는 걸로 보입니다.
+
+Docker desktop은 필요 없고 도커엔진만 필요하다면 brew로 도커 엔진만 설치하셔도 됩니다.
+
 ```bash
 brew install docker
 ```
 
-docker가 아직 설치되어 있지 않았다면 설치 해 주고, 이미 설치되어있다면 Docker desktop을 종료해주세요.
+![image-20220821082753728](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082753728.png)
 
-Colima는 Docker Desktop을 대신하는 것 이기 때문에, 같이 띄우면 안됩니다. Docker Desktop을 삭제 해도 상관은 없는데, 제가 잠깐 써봤을때는 서로 이미지를 공유하는 것 같지는 않았습니다.
+> 도커 엔진만 설치하면 Treating docker as a formula. For the cask, use homebrew/cask/docker 라고 나옵니다. 도커 엔진이 있으면, 그걸 구동 할 수 있는 도커 머신이 필요한데요. Docker Desktop 혹은 Colima 가 그 역할을 해 줍니다.
 
 ### colima 실행
 
 Colima와 Docker를 모두 설치했다면, colima를 x86_64 환경으로 띄워 줍니다.
 
-Colima를 사용하지 않고 Docker Desktop 환경에서는 `oci-oracle-xe` 이미지로 컨테이너를 띄웠을 때 아키텍처가 달라 문제가 되었었는데, 그걸 Colima가 해결 해 줍니다.
+Colima를 사용하지 않고 Docker Desktop 환경에서는 `oci-oracle-xe` 이미지로 컨테이너를 띄웠을 때 아키텍처가 달라 문제가 되었었는데, 그걸 Colima가 해결 해 줍니다. 
 
 ```bash
 colima start --memory 4 --arch x86_64
@@ -50,7 +82,7 @@ colima start --memory 4 --arch x86_64
 
 ![image-20220802074246457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074246457.png)
 
-> `docker ps` 명령어가 작동됩니다.
+> `docker ps` 명령어가 잘 작동됩니다.
 
 정상적으로 가상 환경이 준비 되면 docker 명령어들이 작동됩니다.
 
