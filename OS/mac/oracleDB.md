@@ -176,9 +176,33 @@ docker run --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-x
 
 두번째 방법은 볼륨을 설정 하는 방법 입니다.
 
-## 볼륨 설정해서 컨테이너 띄우기
+2. 볼륨 지정해서 띄우기(위치미지정)
 
 애초에 볼륨으로 데이터를 매핑 해 두면 컨테이너를 실수로 지운다고 해도 데이터를 계속 사용 하실 수 있습니다.
+
+```bash
+docker run --name oracle -d -p 1521:1521 -e ORACLE_PASSWORD=pass -v oracledb:/opt/oracle/oradata gvenzl/oracle-xe
+```
+
+이렇게 하면 oracledb 라는 볼륨을 생성해서 모든 데이터를 저장 합니다.
+
+나중에 볼륨을 확인하려면 
+
+```bash
+docker volume ls
+```
+
+명령어로 확인 하실 수 있어요.
+
+![image-20220825115718339](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220825115718339.png)
+
+리눅스의 경우에는 `/var/lib/docker/volumes/` 에서 볼륨 경로를 직접 확인 할 수 있지만 대신 MacOS 의 경우에는 도커를 네이티브로 구동 할 수 없다보니 Hyperkit라는 가상화 이미지를 사용합니다.
+
+`~/Library/Containers/com.docker.docker/Data/vms/0` 경로에 가상 이미지가 있고, 이미지 내에서 `var/lib/docker` 경로까지 들어 가야 도커의 기본 경로라고 하는데.. 굉장히 복잡합니다.
+
+그래서 볼륨을 원하는 위치를 지정해서 하는 방법이 있는데 아래의 방법으로 하시면 됩니다.
+
+## 볼륨 설정해서 컨테이너 띄우기(위치지정)
 
 볼륨에 대한 자세한 내용은 본 글의 범위를 넘어가기 때문에 간단히 언급만 하고 넘어가려고 했는데 이게 권한 문제를 일으키더라고요.
 
