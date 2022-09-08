@@ -82,7 +82,7 @@ internal class QuizCreateDtoTest {
 }
 ```
 
-![image-20220907224546684](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/validation.assets/image-20220907224546684.png)
+![image-20220907224546684](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/validation.assets/image-20220907224546684.png)
 
 > 실패
 
@@ -90,7 +90,7 @@ internal class QuizCreateDtoTest {
 
 프로퍼티나 주 생성자에 어노테이션을 달았을 때, 해당 코틀린 엘리먼트로 부터 생성되는 자바 엘리먼트들이 다양하기 때문에 정확히 어느 요소에 어노테이션이 달릴지 알 수 없습니다. 
 
-![image-20220907230145276](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/validation.assets/image-20220907230145276.png)
+![image-20220907230145276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/validation.assets/image-20220907230145276.png)
 
 > https://kotlinlang.org/docs/annotations.html#annotation-use-site-targets
 
@@ -137,7 +137,7 @@ data class QuizCreateDto(
 
 이제 테스트 코드를 다시 실행 해 보면
 
-![image-20220907230414818](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/validation.assets/image-20220907230414818.png)
+![image-20220907230414818](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/validation.assets/image-20220907230414818.png)
 
 이제는 아까 실패했던 테스트가 정상적으로 수행되는 것을 확인 할 수 있습니다.
 
@@ -223,13 +223,13 @@ internal class QuizApiControllerTest {
 
 ```
 
-![image-20220907230737296](/Users/shane/Documents/GitHub/mdblog/backend/kotlin/validation.assets/image-20220907230737296.png)
+![image-20220907230737296](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/validation.assets/image-20220907230737296.png)
 
 이제는 원하는 대로 밸리데이션이 이루어 지고 있습니다.
 
 Validation 뿐만 아니라, 자바 기반의 어노테이션 라이브러리를 사용 한다면 어디에 붙어야 하는지 정확히 명시해 줄 필요가 있다고 합니다.
 
-이상입니다.
+이상입니다. 
 
 **References**
 
