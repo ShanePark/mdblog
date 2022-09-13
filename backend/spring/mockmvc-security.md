@@ -484,7 +484,7 @@ internal class QuizApiControllerTest {
 
 이상입니다. 감사합니다.
 
-References
+**References**
 
 - https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
 
