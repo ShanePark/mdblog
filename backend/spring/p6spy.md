@@ -559,9 +559,7 @@ decorator:
 
 새로운 포맷터는 https://github.com/p6spy/p6spy/issues/308 를 참고 해서 작성 하였습니다.
 
-
-
-코틀린 코드가 갑자기 등장하는데.. 당황 하지 않으셔두 됩니다. 저는 코틀린 프로젝트였지만.. 자바에서도 같은 내용을 자바로 작성 해 주시면 됩니다.
+저는 코틀린 프로젝트라서 코틀린 코드로 작성 했지만, 바로 이어서 자바로도 작성 해 두었습니다.
 
 **PrettySqlFormat.kt**
 
@@ -624,44 +622,50 @@ sql을 확인 해서 sql문이 비어 있지 않을 경우에는 `org.hibernate.
 
 
 
-자바로 작성하실 경우에는 아래 코드와 비슷하게 하시면 될 거에요. (호출 스택 부분은 빠졌습니다)
+자바로 작성하실 경우에는 아래 처럼 작성 하면 됩니다. (호출 스택 부분은 빠졌습니다, 호출 스택을 넣고 싶은 분은 위의 코틀린 코드를 참고 해서 작성 해 주세요)
 
 ```java
+import com.p6spy.engine.logging.Category;
+import com.p6spy.engine.spy.P6SpyOptions;
+import com.p6spy.engine.spy.appender.MessageFormattingStrategy;
+import org.hibernate.engine.jdbc.internal.FormatStyle;
+import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.PostConstruct;
+import java.util.Locale;
+
 @Configuration
-public class PrettySqlFormat implements MessageFormattingStrategy {
-  
-   @PostConstruct
-   public void setLogMessageFormat() {
-		P6SpyOptions.getActiveInstance().setLogMessageFormat(this.getClass().getName());
-   }
-  
-	@Override
-	public String formatMessage(int connectionId, String now, long elapsed, String category, String prepared,
-			String sql) {
-		sql = formatSql(category,sql);
-		return "| took " + elapsed + " ms |" + formatSql(category, sql)
-	}
-	
-	private String formatSql(String category,String sql) {
-		if(sql ==null || sql.trim().equals("")) return sql;
-		
-		// Only format Statement, distinguish DDL And DML
-		if(Category.STATEMENT.getName().equals(category)) {
-			String tmpsql = sql.trim().toLowerCase(Locale.ROOT);
-			if(tmpsql.startsWith("create") || tmpsql.startsWith("alter") || tmpsql.startsWith("comment")) {
-				sql = FormatStyle.DDL.getFormatter().format(sql);
-			}else {
-				sql = FormatStyle.BASIC.getFormatter().format(sql);
-			}
-			sql = "|\nHeFormatSql(P6Spy sql,Hibernate format):"+ sql;
-		}
-		
-		return sql;
-	}
+public class P6SpySqlFormatter implements MessageFormattingStrategy {
+
+    @PostConstruct
+    public void setLogMessageFormat() {
+        P6SpyOptions.getActiveInstance().setLogMessageFormat(this.getClass().getName());
+    }
+
+    @Override
+    public String formatMessage(int connectionId, String now, long elapsed, String category, String prepared, String sql, String url) {
+        sql = formatSql(category, sql);
+        return String.format("[%s] | %d ms | %s", category, elapsed, formatSql(category, sql));
+    }
+
+    private String formatSql(String category, String sql) {
+        if (sql != null && !sql.trim().isEmpty() && Category.STATEMENT.getName().equals(category)) {
+            String trimmedSQL = sql.trim().toLowerCase(Locale.ROOT);
+            if (trimmedSQL.startsWith("create") || trimmedSQL.startsWith("alter") || trimmedSQL.startsWith("comment")) {
+                sql = FormatStyle.DDL.getFormatter().format(sql);
+            } else {
+                sql = FormatStyle.BASIC.getFormatter().format(sql);
+            }
+            return sql;
+        }
+        return sql;
+    }
+
 }
+
 ```
 
-> https://github.com/p6spy/p6spy/issues/308
+
 
 이제 프로젝트를 다시 실행 해서 SQL의 멀티 라인이 적용 되었는지 확인 해 봅니다.
 
