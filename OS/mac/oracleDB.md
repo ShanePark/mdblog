@@ -1,20 +1,24 @@
-# [MacOS] M1 맥북 도커로 ORACLE DB 실행하기
+# [MacOS] M1, M2 맥북 도커로 ORACLE DB 실행하기
 
 ## Intro
 
-M1 맥북을 구입 한 이후로 약 1년 반동안, 오라클 데이터베이스를 띄우기 위해 참 많은 노력을 했습니다. 
+M1 맥북을 구입 한 이후로 약 1년 반동안, 오라클 데이터베이스를 띄우기 위해 참 많은 노력을 했습니다. 원래 MacOS를 Oracle이 정식 지원을 하진 않지만, 그나마도 이전의 맥북에서 사용하던 방법들도 Apple Silicon 에서는 먹히지가 않았습니다. 아키텍처가 바꼈거든요.
 
 많은 고민과 시도 끝에 결국 [오라클 클라우드에 DB를 띄워놓고 사용하는 방법](https://shanepark.tistory.com/208) 으로 해결을 해 왔는데요, 난이도가 높은건 둘째 치더라도 인터넷이 안되는 환경에서는 이용할 수 없었습니다.
 
 > 인터넷이 안되면 사실 개발을 못하는게 맞지않나..?!
 
-하지만 이제는 더이상 그럴 필요가 없어졌습니다. 오픈 소스 컨테이너 런타임인 `Colima`를 사용해 `oci-oracle-xe` 이미지를 x86/64 환경으로 띄운다면 M1 맥북에서 오라클 데이터베이스를 로컬에서도 띄울 수 있습니다. 
+하지만 이제는 더이상 그럴 필요가 없어졌습니다. 오픈 소스 컨테이너 런타임인 `Colima`를 사용해 `oci-oracle-xe` 이미지를 x86/64 환경으로 띄운다면 M1 맥북에서 오라클 데이터베이스를 로컬에서도 띄울 수 있습니다. 지금 저는 M2 MacBook Air 를 사용하고 있고 잘 작동 합니다.
 
-아래의 내용을 차근 차근 진행해주시면 마침내 `localhost:1521` 를 얻으실거에요.
+사실 본 글의 내용이 초보자들에게 쉬운건 아니기 때문에 어느정도 이미 다른 환경에서 비슷한 과정을 했던 분들을 대상으로 작성 되었지만, 제가 M1 맥북 에어를 처음 샀을 때 그러했 던 것 처럼 지금 이 글을 읽고 있는 분들중 상당수는 Docker는 커녕 OracleDB도 안써본 분들이 참 많을거에요.
+
+그렇기에, 쉽지는 않겠지만 딱히 대안이 없는 상황이기 때문에 차근 차근 진행 해 보시고, 막히는 부분이 있다면 이미 100개 가까이 달린 아래의 질문과 답변들을 참고 하셔서 꼭 성공 하시길 응원 합니다.
+
+아래의 내용을 차근 차근 잘 진행해주시면 마침내 `localhost:1521` 를 얻으실거에요.
 
 ## 설치
 
-### colima 설치
+### colima 설치 (*필수)
 
 Colima는 무거운 Docker Desktop을 대신해 간단한 CLI 환경에서 도커 컨테이너들을 실행 할 수 있는 오픈 소스 소프트웨어 입니다.
 
@@ -34,7 +38,7 @@ docker가 아직 설치되어 있지 않았다면 본 항목을 확인하며 설
 
 ![image-20220821090106960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821090106960.png)
 
-도커 설치가 필요한데요..
+도커를 아직 설치 한 적이 없으시다면 도커 설치가 필요한데요..
 
 도커 데스크탑을 설치할 수도 있고, 도커 엔진만 설치해서 하실 수도 있는데. 도커 데스크탑을 원하시면 아래의 링크에서 우측 Mac with Apple chip을 선택 해서 다운 받으시면 됩니다.
 
@@ -58,7 +62,29 @@ Colima는 Docker Desktop을 대신해서 docker 엔진을 실행해주기 때문
 
 ![image-20220821091307865](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091307865.png)
 
-> 서로 docker 이미지는 공유를 하지 않는 것 같고, 둘다 동시에 실행되면 colima가 docker desktop 대신 docker 명령어를 처리 하는 걸로 보입니다.
+> 둘다 동시에 실행되면 colima가 docker desktop로 설정되어 있던 default docker context를 가져가 버립니다. 
+>
+> Docker context가 다르면 이미지 공유도 안되는 모양이더라고요.
+
+![image-20220916224949482](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220916224949482.png)
+
+위에서 처럼 Docker Context를 변경 하면 자유롭게 왔다 갔다 하면서 사용 할 수 있긴 하지만, 헷갈릴 수 있으니 Docker Desktop은 종료 하고 해주세요. 
+
+**Docker Context 목록 보기** (안따라 하셔도 됩니다.)
+
+```bash
+docker context ls
+```
+
+**Docker Context 변경** (안따라 하셔도 됩니다.)
+
+```bash
+docker context use desktop-linux
+# 혹은
+docker context use colima
+```
+
+**Docker Engine 만 설치** (Docker Desktop 설치 했으면 필요 없음.)
 
 Docker desktop은 필요 없고 도커엔진만 필요하다면 brew로 도커 엔진만 설치하셔도 됩니다.
 
@@ -106,8 +132,6 @@ docker run -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
 docker logs -f 컨테이너명
 ```
 
-
-
 ![image-20220802074458233](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074458233.png)
 
 ![image-20220802074511589](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074511589.png)
@@ -134,7 +158,7 @@ m1 맥북에서 localhost:1521 로 DB 접속에 처음 성공한 감격의 순�
 
 ## 재시작후 데이터가 사라져요
 
-제가 Docker 사용에 익숙하지 않은 분들이 제법 있을거라는걸 충분히 배려하지 못했던 것 같더라고요 죄송해요. 그래서 내용을 추가했습니다.
+제가 Docker 사용에 익숙하지 않은 분들이 제법 있을거라는걸 충분히 배려하지 못했던 것 같더라고요. 그래서 내용을 추가했습니다!
 
 사실 데이터가 진짜로 사라진건 아니고, 컨테이너가 종료 되었을때 같은 컨테이너를 다시 띄워주지 않고 그냥 `docker run -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe` 를 또 입력 하신다면 **새로운 컨테이너**가 또 생성 됩니다. 
 
