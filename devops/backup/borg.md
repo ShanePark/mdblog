@@ -29,11 +29,9 @@ Borg의 기본 목표는 효율적이고 안전한 데이터 백업의 제공인
 
 - 백업 데이터들은 파일시스템에 바로 마운트가 가능
 
-- 다양한 플랫폼에서 쉽게 설치가능 (Linux, MacOX, FreeBSD, OpenBSD, WSL 등등)
+- 다양한 플랫폼에서 쉽게 설치 및 사용 가능 (Linux, MacOX, FreeBSD, OpenBSD, WSL 등등)
 
 - 무료 오픈 소스 소프트웨어(BSD 라이센스)
-
-- 쉬운 사용방법
 
 
 ## 설치
@@ -47,6 +45,8 @@ Borg의 기본 목표는 효율적이고 안전한 데이터 백업의 제공인
 | Debian / Ubuntu | [Debian packages](https://packages.debian.org/search?keywords=borgbackup&searchon=names&exact=1&suite=all&section=all)<br />[Ubuntu packages](https://launchpad.net/ubuntu/+source/borgbackup), [Ubuntu PPA](https://launchpad.net/~costamagnagianfranco/+archive/ubuntu/borgbackup) | `apt install borgbackup`                                     |
 | Fedora/RHEL     | [Fedora official repository](https://apps.fedoraproject.org/packages/borgbackup) | `dnf install borgbackup`                                     |
 | macOS           | [Homebrew](https://formulae.brew.sh/formula/borgbackup)      | `brew install borgbackup` (official formula, **no** FUSE support) **or** `brew install --cask macfuse` ([private Tap](https://github.com/borgbackup/homebrew-tap), FUSE support) `brew install borgbackup/tap/borgbackup-fuse` |
+
+#### Ubuntu 에서 설치
 
 저는 Ubuntu 를 사용하고 있으니 apt를 이용해 설치 해 보겠습니다.
 
@@ -70,11 +70,62 @@ borg --version
 >
 > ![image-20221004095930095](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221004095930095.png)
 
+#### RockyLinux 8에서 설치
+
+`cat /etc/redhat-release` 을 했을 때 `Rocky Linux release 8.6 (Green Obsidian)` 라고 표기가 되는 서버에서 설치를 하려고 헀는데 `Error: Unable to find a match: borgbackup` 가 되더라고요
+
+yum repo를 먼저 확인 해 보고
+
+```bash
+ls /etc/yum.repos.d/
+```
+
+![image-20221005095247427](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221005095247427.png)
+
+EPEL Fedora 저장소를 추가 해 줍니다.
+
+```bash
+dnf -y install epel-release
+```
+
+![image-20221005095614405](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221005095614405.png)
+
+이제 다시 설치를 시도 합니다
+
+```bash
+sudo dnf install borgbackup
+```
+
+이번에는 borgbackup은 찾았는데 python3.6dist을 EPEL에서 찾지를 못해서 설치가 안됩니다.
+
+```
+Error: 
+ Problem: conflicting requests
+  - nothing provides python3.6dist(packaging) needed by borgbackup-1.1.17-1.el8.x86_64
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)
+```
+
+> 이미 이슈로 등록된 사안입니다 
+>
+> https://github.com/borgbackup/borg/issues/5953
+>
+> https://github.com/borgbackup/borg/issues/6234
+
+issue에 안내 된 대로 powertools 를 활성화 시키는 방법으로 해결이 가능합니다.
+
+```bash
+sudo yum config-manager --set-enabled powertools
+```
+
+![image-20221005100622251](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221005100622251.png)
+
+이제야 설치가 가능합니다.
+
 ### Standalone Binary로 설치
 
-패키지 매니저를 이용 할 수 없는 경우에는 바이너리 파일을 이용해 설치 할 수 있습니다.
+패키지 매니저를 이용 할 수 없는 경우에는 바이너리 파일을 이용해 설치 할 수도 있습니다.
 
-저도 RockyLinux 에 설치하려고 하니 `No match for argument: borgbackup` 라고 뜨며 찾지를 못했는데요. 이때는 직접 설치 할 수 있는데, 각 버전별 릴리즈들은 https://github.com/borgbackup/borg/releases 에서 받을 수 있습니다.
+각 버전별 릴리즈들은 https://github.com/borgbackup/borg/releases 에서 받을 수 있습니다.
 
 ![image-20221004162227667](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221004162227667.png)
 
@@ -229,7 +280,7 @@ sudo apt install borgbackup
 
 ![image-20221004113113361](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221004113113361.png)
 
-> 스크린샷에는 나오지 않았지만 가운데 있는 백업 대상 서버에서도 BoardBackup을 설치 해 줍니다.
+> 스크린샷에는 나오지 않았지만 가운데 있는 백업 대상 서버에서도 BorgBackup을 설치 해 줍니다.
 
 2. 저장소 서버에 리포지터리 초기화 (클라이언트, 백업할 서버, 저장소 서버 어디에서든 가능)
 
@@ -387,8 +438,16 @@ sudo vi /etc/crontab
 
 등록 후 `syslog`를 확인 해서 CRON이 의도대로 작동 하고 있는지를 확인 해 봅니다.
 
+**Ubuntu**
+
 ```bash
 tail -f /var/log/syslog
+```
+
+**RHEL**
+
+```bash
+sudo tail -f /var/log/cron
 ```
 
 ![image-20221004155420083](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/backup/borg.assets/image-20221004155420083.png)
