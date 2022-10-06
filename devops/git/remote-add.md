@@ -2,7 +2,9 @@
 
 ## 개요
 
-`add remote`는 로컬 git 저장소에 원격 저장소를 추가 하는 명령입니다. 보통, git init 이후에 Github 이나 Gitlab의 원격 저장소를 추가하기 위해 사용하는 명령어 인데요, 이미 특정 원격 저장소와 연결이 되어 있을때, 해당 저장소와의 연결을 끊고 다른 저장소와 새로 연결을 하거나 혹은 한번에 여러 개의 저장소에 push 하는 등 여러가지 용도로 사용할 수 있는 명령어 입니다.
+`add remote`는 로컬 git 저장소에 원격 저장소를 추가 하는 명령입니다. 
+
+보통, `git init` 이후에 Github 이나 Gitlab의 원격 저장소를 추가하기 위해 사용하는 명령어 인데요, 이미 특정 원격 저장소와 연결이 되어 있을때, 해당 저장소와의 연결을 끊고 다른 저장소와 새로 연결을 하거나 혹은 한번에 여러 개의 저장소에 push 하는 등 여러가지 용도로 사용할 수 있는 명령어 입니다.
 
 ## Repository 생성
 
@@ -16,9 +18,9 @@
 
 > Create repository를 눌러서 생성
 
-Gitlab에서는 저장소를 생성 했을 때, readme 를 추가 하지 않고 완전 비운 상태로 생성하니 아래와 같은 instruction을 보여주었습니다.
+Github이나 Gitlab 에서는 저장소를 생성 할 때, readme 를 추가 하지 않고 완전 비운 상태로 생성하면 아래와 같은 instruction을 보여줍니다.
 
-덕분에 어렵지 않게 필요한 내용들을 찾아 보고 힌트를 얻을 수 있는데, 얼마 전 나스닥에 상장한 Gitlab의 센스가 돋보입니다.
+덕분에 어렵지 않게 필요한 내용들을 찾아 보고 힌트를 얻을 수 있습니다.
 
 ![image-20211125100954245](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125100954245.png)
 
