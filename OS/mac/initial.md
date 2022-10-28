@@ -290,6 +290,51 @@ Dock & Menu Bar 설정에 가면 맨 아래 체크박스로 메뉴바를 숨길 
 
 >  Dock 체크박스중 맨 아래 있는 Show recent applications in Dock에 체크 되어있는것도 체크 해지 하는것을 강력 추천합니다. 자주 사용하는 앱은 어차피 바로가기를 등록하고 사용하니, 최근 사용 어플에 뜨는건 아이러니하게도 잘 안쓰는 앱 입니다.
 
+### Dock 빨리띄우기
+
+사실 처음부터 맥북을 사용했고, 다른 Dock을 사용해본 적이 없다면 MacOS에서의 독 시스템에 크게 불편함을 느끼지 않을 수 있지만
+
+회사에서는 우분투로 개발을 하다 보니, 맥북에서의 Dock 뜨는 속도가 제게는 **너무 느리게** 느껴지더라고요.
+
+ 평소에도 독이 좀 더 빠릿빠릿 하게 올라왔으면 했던 분들도 이 설정을 변경 해 주시면 됩니다.
+
+#### 설정 확인하기
+
+```bash
+defaults read com.apple.dock "autohide-delay"
+```
+
+설정된 `autohide-delay`를 확인 할 수 있습니다.
+
+#### 딜레이 없이 바로 띄우기
+
+0으로 설정 해 주면 바로 뜹니다.
+
+```bash
+defaults write com.apple.dock autohide-delay -float 0
+killall Dock
+```
+
+#### 보다 자연스럽게
+
+저는 조금 더 자연스럽게 하기 위해 0.2로 설정 해 두고 사용하고 있습니다.
+
+```bash
+defaults write com.apple.dock autohide-delay -float 0.2
+killall Dock
+```
+
+#### 기본 설정으로 복구
+
+기본설정은 0.5초로 되어 있습니다.
+
+```bash
+defaults delete com.apple.dock autohide-delay
+killall Dock
+```
+
+좀 더 자세한 정보는 https://macos-defaults.com/dock/autohide-delay.html#requirements 에 자세히 나와 있습니다.
+
 ### 손가락 3개 드래그
 
 > 터치패드를 쓸 때 불편한게 드래그가 어렵다는 건데, 해당 설정을 통해 편하게 할 수 있습니다.
