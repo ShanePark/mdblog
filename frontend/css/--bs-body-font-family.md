@@ -1,4 +1,4 @@
-# 부트스트랩 scss 기본 폰트 --bs-body-font-family 변경하기
+# 부트스트랩 기본 폰트 --bs-body-font-family 변경하기
 
 ## Intro
 
@@ -7,6 +7,8 @@
 물론 css를 덮어 쓰며 `!important;` 를 붙이는 방법이 있기는 하지만 애초에 important 는 css 작성 시 권장되지 않는 방법이기도 하고, 그렇게 한번 해 버리면 하위 요소들의 세부적인 폰트 설정이 어려워집니다.
 
 이 문제 상황을 해결 해 보도록 하겠습니다.
+
+bootstrap.min.css 인 경우와 scss 인 경우 모두 해결 방법을 작성 해 두었습니다.
 
 ## 문제상황
 
@@ -69,6 +71,16 @@ body {
 그래서 `!important;` 를 걸지 않는 이상은 위의 속성이 먼저 걸리게 됩니다.
 
 ## 해결
+
+### bootstrap.min.css
+
+scss 가 아닌 일반적인 css 파일을 사용 하고 있는 경우는 보다 간단합니다. 아래와 같이 해당 변수를 적당한 위치에서 오버라이드 해 줍니다.
+
+```css
+--bs-body-font-family: Galmuri7;
+```
+
+### bootstrap.scss
 
 일단 `import "bootstrap/scss/bootstrap.scss";` 로 부트스트랩을 바로 불러오는 대신에 `import "/src/assets/scss/main.scss";` 로 변경 해 줍니다.
 
