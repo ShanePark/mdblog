@@ -370,6 +370,70 @@ class DutyApiController(
 
 의도한 대로 잘 작동 합니다.
 
+## 별도 쓰레드에서 처리
+
+다만, 슬랙을 웹 훅에 요청을 보내고, 그 응답을 받기까지의 시간을 비즈니스 로직이 함께 기다리는건 뭔가 공평하지 않습니다.
+
+비즈니스 로직은 본인이 처리할 내용만 완료 하고 응답을 바로 보내야 하는데, 네트워크를 오고 가는 슬랙 웹훅이 그 과정에 낀다면 응답 시간이 굉장히 많이 늘어나게 됩니다. 슬랙 알림 요청의 경우에는 그래서 별도의 쓰레드에서 처리하는게 좋겠습니다.
+
+![image-20221106221709211](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/slack-webhook.assets/image-20221106221709211.png)
+
+> 응답 시간 확인
+
+일단 슬랙 요청이 같은 쓰레드에서 순차적으로 처리 되었을 경우의 응답 시간을 먼저 체크 해 보았습니다.
+
+평균 800 ms 가량이 나오고 있습니다.
+
+### TaskExecutor Bean 등록
+
+일단 스프링이 제공하는 TaskExecutor를 Bean으로 등록 해 줍니다. TaskExecutor 구현체는 아래와 같이 여러개가 있는데요
+
+![image-20221106222716985](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/slack-webhook.assets/image-20221106222716985.png)
+
+일반적으로 많이 사용하는 ThreadPoolTaskExecutor 를 등록 해서 사용 해 보도록 하겠습니다.
+
+```kotlin
+@Bean
+fun threadPoolTaskExecutor(): TaskExecutor {
+    val executor = ThreadPoolTaskExecutor()
+    executor.corePoolSize = 5
+    executor.maxPoolSize = 5
+    executor.initialize()
+    return executor
+}
+```
+
+### 비동기 호출
+
+이제 빈으로 주입한 TaskExecutor를 의존하도록 한 뒤에, 이를 이용해 비동기 호출을 합니다.
+
+```kotlin
+@Aspect
+@Component
+class SlackNotificationAspect(
+    private val slackApi: SlackApi,
+    private val taskExecutor: TaskExecutor,
+) {
+  
+  @Around("@annotation(com.tistory.shanepark.dutypark.common.slack.annotation.SlackNotification)")
+  fun slackNotification(proceedingJoinPoint: ProceedingJoinPoint): Any? {
+    ...
+    taskExecutor.execute {
+      slackApi.call(slackMessage)
+    }
+
+    return proceedingJoinPoint.proceed()
+  }
+
+}
+```
+
+이제 슬랙 알림에 대한 웹훅은 신경쓰지 않고 로직이 진행 됩니다. 응답시간을 확인 해 보겠습니다.
+
+![image-20221106224833358](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/slack-webhook.assets/image-20221106224833358.png)
+
+> 응답에 걸리는 시간이 절반으로 줄어들었습니다.  
+
 ## 마치며
 
 아주 간단한 방법으로 에러 관제하는 방법에 대해서 알아 보았습니다.
