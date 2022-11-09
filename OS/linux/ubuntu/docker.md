@@ -85,27 +85,30 @@ docker --version
 
 Docker Compose는 여러개의 도커 어플리케이션 컨테이너들을 정의하고 실행 할 수 있게 도와주는 툴 입니다. YAML 파일을 사용해 어플리케이션의 서비스를 설정하고 하나의 커맨드만으로 여러개의 도커 컨테이너들을 사용 할 수 있습니다.
 
-Docker 를 설치 해도 Compose 가 딸려 오는 것은 아니기 때문에 따로 설치 해 주어야 합니다.
+Docker 를 설치 해도 Compose 가 딸려 오는 것은 아니기 때문에 따로 설치 해 주어야 합니다. 이전에는 stand-alone 으로만 제공되었지만 이제는 플러그인 형태로 지원되고 있습니다.
 
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-```
-
-실행 할 수 있는 권한을 부여 합니다.
-
-```bash
- sudo chmod +x /usr/local/bin/docker-compose
+sudo apt-get update
+sudo apt-get install docker-compose-plugin
 ```
 
 잘 설치 되었는지 확인해봅니다.
 
 ```bash
-docker-compose --version
-
-## docker-compose version 1.29.2, build 5becea4c
+docker compose version
+## Docker Compose version v2.12.2
 ```
 
+### Compose 를 standalone 형태로 설치 원할 경우
 
+플러그인 형태가 아닌 이전처럼 standalone 형태로의 설치를 원할 경우는 아래와 같이 할 수 있습니다.
+
+```bash
+curl -SL https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version # 설치 여부 확인
+```
 
 ### sudo 없이 docker 명령어 실행
 
@@ -117,6 +120,14 @@ docker를 쓴다면 사실상 꼭 설정해야 한다고 생각하니, 아래 �
 
 ### 마치며
 
-Windows 나 Mac 에서는 Docker Desktop 이라는 GUI Tool 이 따로 존재하지만, Linux 환경에서는 없어서 굳이 GUI 환경을 사용 하려면 다른 서드파티 어플리케이션을 이용해야 하는 것 같습니다. 하지만 docker를 사용하며 GUI가 필요한 일은 딱히 없습니다. 커맨드를 익히는데 약간의 시간은 걸리겠지만, 훨씬 더 빠르고 간단하게 여러가지 기능들을 활용 할 수 있기 때문에 CUI 환경을 사용하시는걸 추천드립니다.
+Windows 나 Mac 에서는 Docker Desktop 이라는 GUI Tool 이 따로 존재하지만, Linux 환경에는 제공되지 않아왔었습니다.
+
+하지만 2022년 5월 Docker Desktop for Linux가 세상에 나왔기 때문에,  원한다면 Mac 혹은 Windows 에서의 익숙했던 Docker Desktop을 사용 하실 수도 있습니다. https://docs.docker.com/desktop/install/debian/
+
+다만 개인적으로 도커를 사용하며 GUI가 필요한 일은 딱히 없었습니다. 필요한 명령어들을 익히는데 약간의 시간은 걸리겠지만, 훨씬 더 빠르고 간단하게 여러가지 기능들을 활용 할 수 있기 때문에 커맨드라인을 통해 Docker를 사용하시는걸 추천드립니다.
+
+심지어 Docker Desktop을 이용할 경우에는 리눅스 운영체제에서도 KVM/QEMU 기반의 가상머신으로 docker를 운용하기 때문에 자원을 훨씬 많이 사용합니다. 
+
+> Linux에서도 VM으로 작동하는 이유는 몇 가지가 있지만, 그 중 첫번째는 <u>platform에 상관 없이 동일한 경험을 주기 위해서</u> 라고 합니다.
 
 이상입니다.
