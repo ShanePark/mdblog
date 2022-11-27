@@ -194,7 +194,15 @@ docker start f4ac517e4ee4
 docker run --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
 ```
 
-![image-20220815205215329](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815205215329.png)
+거기에 restart 옵션까지 준다면, 나중에 colima만 실행 하면 컨테이너는 알아서 실행 되도록 할 수 있습니다. 되도록이면 restart 옵션 주는 것을 추천 합니다.
+
+```bash
+docker run --restart unless-stopped --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
+```
+
+![image-20221127151846174](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20221127151846174.png)
+
+> restart 옵션 덕에 colima 를 띄우니 oracle container가 자동으로 실행 된 상태 
 
 이제 컨테이너 이름이 식별하기 쉽기 때문에, 다음에 다시 띄울때는 `docker start oracle` 만 해주면 됩니다.
 

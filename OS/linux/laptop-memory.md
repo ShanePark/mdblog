@@ -124,7 +124,7 @@ sudo shutdown now
 
 ## 확인
 
-이제 다시 컴퓨터를 켜고 free 명령어로 램 공간을 확인 해 보았습니다. 16B는 14.9 GiB 이기 때문에 15Gi 라고 나오는 것이 맞습니다.
+이제 다시 컴퓨터를 켜고 free 명령어로 램 공간을 확인 해 보았습니다. 16GB는 14.9 GiB 이기 때문에 15GiB 라고 나오는 것이 맞습니다.
 
 ![image-20221127102612379](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-memory.assets/image-20221127102612379.png)
 
@@ -146,7 +146,7 @@ docker update --memory="1g" elastic
 
 ![image-20221127145432960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-memory.assets/image-20221127145432960.png)
 
-> elastic 컨테이너가 1GiB 이하의 메모리를 양심적으로 사용하고 있습니다.
+> 이제 elastic 컨테이너가 양심적으로 1GiB 이하의 메모리를  사용하고 있습니다.
 
 지금까지 노트북 메모리 변경에 대해 알아보았습니다.
 
