@@ -120,7 +120,7 @@ beanName을 가지고 cancidateBean 들을 처리 하는 과정입니다. 해당
 
 ![image-20221230112204790](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-annotation.assets/image-20221230112204790.png)
 
-혹은 `org.springframework.web.servlet.mvcController` 인터페이스를  구현해야 했을 때를 생각해보면, 하나의 클래스에서는 하나의 매핑정보만을 가질 수 있었습니다. 컨트롤러 어노테이션 덕분에 메서드별로 매핑 정보를 가지고 코드를 간단하게 작성 할 수 있게 되었습니다.
+혹은 `org.springframework.web.servlet.mvcController` 인터페이스를  구현해야 했을 때를 생각해보면, 하나의 클래스에서는 하나의 매핑정보만을 가질 수 있었습니다. JDK 1.5에서 추가된 어노테이션 덕분에 손쉽게 메서드별로 매핑 정보를 가지고 코드를 간단하게 작성 할 수 있게 되었습니다.
 
 ## @Repository
 
@@ -128,9 +128,9 @@ beanName을 가지고 cancidateBean 들을 처리 하는 과정입니다. 해당
 
 ![image-20221230114712757](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-annotation.assets/image-20221230114712757.png)
 
-스프링은 **DataAccessException** 을 통해 DB에 독립적으로 적용 가능한 추상화된 런타임 예외 계층을 제공 합니다. 
+스프링은 **DataAccessException** 을 통해 DB 벤더에 상관없이 독립적으로 적용 가능한 추상화된 런타임 예외 계층을 제공 합니다. 
 
-데이터베이스의 종류나 사용하는 ORM에 따라 각기 다른 예외를 발생 하는데요, 어떤 데이터 액세스 기술을 사용하건 신경 쓸 필요 없이 기술에 독립적인 예외 추상화를 통해 다룰 수 있도록 예외 변환을 해 줍니다. 그리고 그 플랫폼 종속적인 예외들을 변환하도록 안내해주는게 @Repository의 역할 입니다.
+Persistence Layer 에서는 사용하는 데이터베이스의 종류나 ORM에 따라 각기 다른 예외를 발생 하는데요, 이 때 어떤 데이터 액세스 기술을 사용하건 신경 쓸 필요 없이 기술에 독립적인 예외 추상화를 통해 다룰 수 있도록 예외 변환을 해 줍니다. 그리고 그 플랫폼 종속적인 예외들의 변환 작업이 필요한 클래스라는걸 마크하는게 `@Repository`의 역할입니다.
 
 그 과정도 눈으로 확인을 해 보도록 하겠습니다.
 
@@ -172,7 +172,7 @@ JPA를 사용하며 JpaRepository를 상속하는 Repository 인터페이스를 
 
 > 다이어그램을 확인 해 보면 JpaRepository는 `Repository<T, ID>` 인터페이스를 상속 하고 있습니다.
 
-JpaRepository를 상속해 만든 인터페이스 역시 구현체가 아닌 **인터페이스**에 불과합니다. 실제 구현체는 프록시 객체로 스프링에 의해 동적으로 생성되고, 에러변환 또한 그 안에서 처리됩니다. `@NoRepositoryBean` 어노테이션은 특정 인터페이스를 스프링에서 그 자체가 Repository 인 것 처럼 다루는 것을 방지 하기 위해 등록 합니다. 만약 해당 인터페이스를 상속해서 개발자가 스스로의 Repository 계층을 직접 구현한다면 그때에 `@Repository`를 붙일 필요가 있지만, 인터페이스 그 자체로 사용 할 때에는 붙일 필요도 없고 붙여도 의미가 없습니다.
+JpaRepository를 상속해 만든 인터페이스 역시 구현체가 아닌 **인터페이스**에 불과합니다. 실제 구현체는 Spring Data JPA에 의해 프록시 객체로 동적으로 생성되고, 에러변환 또한 그 안에서 처리됩니다. `@NoRepositoryBean` 어노테이션은 특정 인터페이스를 스프링에서 그 자체가 Repository 인 것 처럼 다루는 것을 방지 하기 위해 등록 합니다. 만약 해당 인터페이스를 상속해서 개발자가 스스로의 Repository 계층을 직접 구현한다면 그때에 `@Repository`를 붙일 필요가 있지만, 인터페이스 그 자체로 사용 할 때에는 붙일 필요도 없고 붙여도 의미가 없습니다.
 
 ![image-20221230134554066](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/spring-annotation.assets/image-20221230134554066.png)
 
