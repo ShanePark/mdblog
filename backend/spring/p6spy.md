@@ -523,6 +523,34 @@ decorator:
       enable-logging: true
 ```
 
+### Spring Boot 3.0.x
+
+스프링부트 3.0 버전으로 업데이트 하고 난 후로 P6Spy가 정상적으로 작동하지 않았습니다. 이는 아직 P6Spy가 Spring Boot 3.0.0 버전을 정식으로 지원하지 않고 있기 때문인데요.. 
+
+제가 사용하고 있는 p6spy-spring-boot-starter 버전은 `implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1")` 이며 이 경우에는 아래와 같은 추가 설정이 필요했습니다.   
+
+![image-20230101173208235](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/p6spy.assets/image-20230101173208235.png)
+
+1. `resources/META-INF/spring/` 경로에 아래와 같은 내용을 가진 `org.springframework.boot.autoconfigure.AutoConfiguration.imports` 파일 추가하기 
+
+**org.springframework.boot.autoconfigure.AutoConfiguration.imports**
+
+```
+com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration
+
+```
+
+2. `resources/` 경로에 아래와 같은 내용의 `spy.properties` 파일 추가하기
+
+**spy.properties**
+
+```properties
+appender=com.p6spy.engine.spy.appender.Slf4JLogger
+
+```
+
+이렇게 두개의 파일을 추가 할 경우 P6Spy가 Spring Boot 3.0 버전에서도 정상 동작함을 확인 했습니다.
+
 ### 멀티라인 적용하기
 
 이제 위에서 적용하지 못했던, 쿼리를 이쁘게 출력하는 작업을 해 보도록 하겠습니다.
