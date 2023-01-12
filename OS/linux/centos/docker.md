@@ -30,9 +30,8 @@ sudo yum install -y yum-utils
 
 ```bash
 sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-    
+  --add-repo \
+  https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 ![image-20211118114751166](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114751166.png)
