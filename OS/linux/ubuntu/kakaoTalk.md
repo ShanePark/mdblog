@@ -16,7 +16,17 @@ Windows나 Mac에서 되는데 Linux에서는 할 수 없는거야 셀수 없이
 
 지금부터 하나씩 잘 따라 하신다면 복잡하기는 해도 카카오톡을 잘 설치하실 수 있을거라고 생각됩니다. 
 
-## 2022년 8월 추가 내용
+### 2023년 1월 추가 내용
+
+2023년 1월 24일에 Wine 8.0 버전이 릴리즈 되었습니다. APT 저장소도 업데이트 되어서, `apt update` 할 경우 와인이 8.x버전으로 업데이트 되는데요. 업데이트 직후에는 카카오톡이 의도대로 작동하지 않을 수 있습니다.
+
+이때는 재부팅을 한번 해 주세요.
+
+![image-20230126154856143](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20230126154856143.png)
+
+이후 카카오톡을 실행 하면 Wine Mono package가 필요하다며 Installer가 실행 되는데, `Install` 해 주면 이후 문제 없이 카카오톡을 사용 할 수 있습니다.
+
+### 2022년 8월 추가 내용
 
 아래의 설치 방법을 따르기에 앞서, 간략한 설치 과정 브리핑 및 변경 사항에 대해 말씀드리겠습니다.
 
@@ -24,7 +34,9 @@ Windows나 Mac에서 되는데 Linux에서는 할 수 없는거야 셀수 없이
 
 2022년 8월 현재, 최신의 7.0 버전을 확인 해 본 결과 카카오톡이 원할하게 동작하는 것이 확인 되었고 그렇기 때문에 굳이 PlayOnLiux를 설치 하지 않아도 문제 없이 카카오톡 설치가 가능합니다. 본문에서는 7.x 버전이 RC(Release Candidate) 상태였기 때문에 사용하지 않았었는데 정식버전은 상황이 굉장히 좋아져서 심지어는 와인 6.14 버전에서 간혹 보이지 않던 이모티콘 마저도 모두 정상적으로 출력되는 상황 입니다. 
 
-다만, Wine 버전이 올라감에 따라 언제 또 다시 호환이 되지 않는 경우가 올 지 모르기 때문에 PlayOnLinux를 이용한 설치 방법은 그대로 남겨 두겠습니다. PlayOnLinux를 사용하지 않을 분은 본문 내용을 확인 하시고 Wine 설치까지는 똑같이 진행 하시되, PlayOnLinux 설치 하는 부분에서 그걸 설치하는 대신 카카오톡을 다운받고 `wine ~/Downloads/KakaoTalk_Setup.exe` 로 system의 wine에 바로 설치하시면 됩니다. 저도 테스트를 위해 PlayOnLinux를 제거 한 뒤에 이 방법으로 설치 해보니 문제 없이 카카오톡을 설치 할 수 있었습니다. 관련 내용은 진행중에 나오는 **Ubuntu 18.04를 사용하는 경우** 부분을 참고 해 주시면 됩니다.
+다만, Wine 버전이 올라감에 따라 언제 또 다시 호환이 되지 않는 경우가 올 지 모르기 때문에 PlayOnLinux를 이용한 설치 방법은 그대로 남겨 두겠습니다. PlayOnLinux를 사용하지 않을 분은 본문 내용을 확인 하시고 Wine 설치까지는 똑같이 진행 하시되, PlayOnLinux 설치 하는 부분에서 그걸 설치하는 대신 카카오톡을 다운받고 `wine ~/Downloads/KakaoTalk_Setup.exe` 로 system의 wine에 바로 설치하시면 됩니다. 저도 테스트를 위해 PlayOnLinux를 제거 한 뒤에 이 방법으로 설치 해보니 문제 없이 카카오톡을 설치 할 수 있었습니다. 
+
+개인적으로는 이제 PlayOnLinux 없이 바로 설치하는걸 추천합니다.
 
 이것 저것 피드백을 받으며 내용을 추가하고, 여러가지 트러블 슈팅 상황에 대해서도 기록을 했다 보니 글이 굉장히 장황해졌는데, 최대한 많은 분들이 문제 없이 카카오톡 설치에 성공 하셨으면 좋겠습니다.
 
@@ -107,7 +119,7 @@ sudo apt install playonlinux
 
 #### unmet dependencies 해결
 
-이번엔 저는 또 다른 에러가 발생했습니다. 대부분은 잘 되었겠지만 저와 같은 에러가 났을 분들을 위해 해결 방법을 함께 남겨 둡니다. 에러가 발생하지 않은 분들은 아래의 `Wine & PlayOnLinux 설치`로 쭉 내려가주세요.
+이번엔 저는 또 다른 에러가 발생했습니다. 대부분은 잘 되었겠지만 저와 같은 에러가 났을 분들을 위해 해결 방법을 함께 남겨 둡니다. 에러가 발생하지 않은 분들은 아래의 `Wine으로 카카오톡 설치`로 쭉 내려가주세요.
 
 > ref: https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa
 
@@ -149,7 +161,31 @@ sudo apt update && sudo apt upgrade
 
 >  무려 1,953 MB 나 합니다. 엔터키를 입력 해 설치 해 줍니다. 용량이 용량이니 만큼 시간이 제법 걸립니다.
 
-이제 playonlinux 를 마저 설치 해 줍니다.
+## Wine으로 카카오톡 설치
+
+이제 카카오톡을 다운 받습니다. Windows 버전을 받으면 됩니다.
+
+![image-20220129162516111](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129162516111.png)
+
+> https://www.kakaocorp.com/page/service/service/KakaoTalk
+
+다운받은 파일은 `~/Downloads/KakaoTalk_Setup.exe`에 저장 되었습니다.
+
+PlayOnLinux를 사용했던 이유는 어플리케이션별로 여러가지 와인 버전을 두고 손쉽게 선택 할 수 있기 위함이었는데요, 이미 위에서 기본 와인은 설치 하였고, `wine --version` 을 확인 해보면 최근엔 7.x 혹은 8.x 버전이 설치 되어 있습니다. 7버전부터는 카카오톡이 정상적으로 설치가되기 때문에 굳이 Play On Linux를 쓰지 않아도 괜찮습니다.
+
+이제 Downloads 폴더에 카카오톡 설치 파일이 있다는 전제 하에
+
+```bash
+wine ~/Downloads/KakaoTalk_Setup.exe
+```
+
+> 위의 명령어로 설치파일을 실행 하시고 아래의 PlayOnLinux 쪽은 건너 뛰고 **카카오톡 설치** 부분까지 스크롤을 쭉 내려주시면 됩니다!
+
+### PlayOnLinux 설치 및 특정버전 wine 설치
+
+> PlayOnLinux는 최종적으로 카카오톡 설치에 실패했을 경우에만 시도 해 주세요.
+
+playonlinux 를 설치 해 줍니다.
 
 ```bash
  sudo apt install playonlinux
@@ -157,9 +193,7 @@ sudo apt update && sudo apt upgrade
 
 75.8MB 라서 금방 설치 합니다.
 
-### PlayOnLinux에 특정버전 wine 설치
-
-PlayOnLinux 를 실행 해 줍니다.
+설치 후에는 PlayOnLinux 를 실행 해 줍니다.
 
 ![image-20220129161312060](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129161312060.png)
 
@@ -177,43 +211,17 @@ Manage Wine versions를 클릭 합니다.
 
 그래서 저는 처음에는 6.18-staging으로 시도 했었는데 정상적으로 작동하지 않았습니다. 여러가지 버전들을 시도 해 보다가 **6.14-staging** 에서 마침내 성공했어요. 스샷이 처음 찍었던거라 6.18인게 몇개 포함 되어 있을 수 있지만, 다른 버전은 나중에 로그인이 되지 않기 때문에 꼭 **6.14-staging**을 선택해주세요. 
 
-> **<u>Ubuntu 18.04를 사용하는 경우</u>**
->
-> 저는 Ubuntu 20.04 버전을 사용 하고 있는데, 18.04 버전에서는 선택 할 수 있는 버전이 최대 3.20 이라고 하더라고요. 원하는 버전을 선택 할 수가 없는 상황입니다.
->
-> ![image-20220810093319972](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220810093319972.png)
->
-> Thanks to [@JinraeKim](https://github.com/JinraeKim)
->
-> PlayOnLinux를 사용하는 이유는 어플리케이션별로 여러가지 와인 버전을 두고 손쉽게 선택 할 수 있기 위함이었는데요, 어쩔수 없이 이 경우에는 Wine에서 바로 설치해서 사용 해 주시면 됩니다.
->
-> 이미 위에서 와인은 설치 하였고, `wine --version` 을 확인 해보면 최근엔 7.x 버전이 설치 되어 있을 텐데요, 7.0 버전에서는 정상적으로 작동한다는 보고가 많이 때문에 그대로 사용하시면 됩니다. Downloads 폴더에 카카오톡 설치 파일이 있다는 전제 하에
->
-> ```bash
-> wine ~/Downloads/KakaoTalk_Setup.exe
-> ```
->
-> 위의 명령어로 설치 하시고, 아래의 **KakaoTalk 설치** 부분까지 스크롤을 쭉 내려주시면 됩니다!
-
 선택 하고 오른쪽 화살표를 클릭 하면 설치 합니다.
 
 ![image-20220129162339315](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129162339315.png)
 
 > 다운을 받는데 속도가 굉장히 느려서 꽤 오래 걸립니다.
 
-이왕 오래걸리는거 미리 PC 카카오톡을 다운 받습니다. Windows 버전을 받으면 됩니다.
-
-![image-20220129162516111](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129162516111.png)
-
-> https://www.kakaocorp.com/page/service/service/KakaoTalk
-
 다운 받고 나서도 한참 시간이 남을 정도로 오래 걸리기 때문에 다른일을 하고 계시면 됩니다. 저는 5~10분 정도 걸렸습니다.
 
 ![image-20220129170905659](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129170905659.png)
 
 > 정말 오래걸려 설치 되었습니다. 다시 한번 말씀드리지만, **6.14-staging** 버전을 선택하셔야 합니다.
-
-### KakaoTalk 설치
 
 ![image-20220129163538854](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129163538854.png)
 
@@ -285,6 +293,8 @@ Manage Wine versions를 클릭 합니다.
 
 이제 위의 화면이 나오면, Browse 를 클릭하고 아까 다운받아놓은 PC버전 카카오톡 설치파일을 실행 합니다.
 
+## 카카오톡 설치
+
 ![image-20220129165009348](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129165009348.png)
 
 > 원하는 언어를 선택 하고 계속 진행 해 줍니다. 
@@ -295,11 +305,13 @@ Manage Wine versions를 클릭 합니다.
 
 설치가 완료 되었습니다. Run KakaoTalk 는 체크 하지 말고 Finish 해 줍니다.
 
+PlayOnLinux일 경우에는 카카오톡 Shrtcut을 만들기 위해 선택 해 줍니다.
+
 ![image-20220129165147783](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129165147783.png)
 
-> 카카오톡 Shrtcut을 만들기 위해 선택 해 줍니다.
-
 ![image-20220129165208997](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129165208997.png)
+
+> 설치 완료
 
 카카오톡이 설치 되었습니다. 바로 실행 해 봅니다.
 
@@ -453,7 +465,7 @@ xprop WM_CLASS
 
 ## TopIcon Plugin
 
-마지막으로 하나의 플러그인을 추가하겠습니다.
+마지막으로 하나의 플러그인을 추가하겠습니다. (굳이 안해도 됨)
 
 ![image-20220129173829524](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129173829524.png)
 
@@ -488,6 +500,3 @@ OFF 를 ON으로 돌리면 간단하게 설치 됩니다.
 굳이 업무에서 카카오톡을 쓸 일이 많지는 않아서 계속 미뤄 왔는데, 긴 연휴를 이용해서 끝장을 보자는 각오로 시작 했고 생각보다는 어렵지 않게 금방 설치에 성공 했습니다.
 
 기대했던 것 보다 훨씬 우분투에서 정상적으로 작동하며 모든 기능을 사용 가능하기 때문에, 다소 과정이 길기는 하지만 차근차근 따라하신다면 설치에 성공해서 유용하게 사용 하실 수 있을 거라 생각합니다.
-
-
-

@@ -156,6 +156,87 @@ m1 맥북에서 localhost:1521 로 DB 접속에 처음 성공한 감격의 순�
 
 이제 마음놓고 M1 맥북에서도 로컬에서 오라클 데이터베이스를 사용하실 수 있게 되었습니다 :) 
 
+## SCOTT 계정 생성
+
+윈도우에서 오라클을 쓸 때는 아래와 같이 기존에 포함된 scott 계정을 unlock만 해서 바로 쓸 수 있는데요,
+
+```sql
+ALTER USER SCOTT
+2 IDENTIFIED BY tiger
+3 ACCOUNT UNLOCK;
+
+CONNECT scott/tiger;
+DESCRIBE EMP;
+```
+
+해당 도커 이미지에는 샘플 계정이 포함 되어 있지 않기 때문에
+
+![image-20230126095055792](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126095055792.png)
+
+> ORA-01918: user 'SCOTT' does not exist 라고 나옵니다.
+
+그렇기 때문에 수동으로 생성 해 주셔야 합니다. 
+
+### 계정 생성
+
+ sqlplus로 접속 후에
+
+```bash
+docker exec -it oracle sqlplus
+```
+
+> 유저네임은 system, 비밀번호는 위에서 입력(예시는 pass)한 값을 입력 합니다.
+
+먼저 유저를 생성 하고 필요한 권한을 부여 합니다.
+
+```sql
+CREATE USER scott identified by tiger;
+-- 한줄씩 입력해주세요.
+GRANT CONNECT, resource, dba to scott;
+```
+
+![image-20230126100205611](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100205611.png)
+
+> User created, Grant succeeded.
+
+생성 후에는 아래 쿼리로 유저가 정상적으로 생성 된 것을 확인 할 수 있습니다.
+
+```sql
+select username from dba_users where username = 'SCOTT';
+```
+
+![image-20230126095607033](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126095607033.png)
+
+### SCOTT 으로 접속
+
+`ctrl + d` 키로 접속을 끊고 나서 다시 sqlplus로 접속 합니다. 
+
+```bash
+docker exec -it oracle sqlplus
+```
+
+대신 이번에는 계정명 scott 암호 tiger로 접속 합니다.
+
+![image-20230126100415173](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100415173.png)
+
+> scott 으로 접속한 상태.
+
+이제 `demobld.sql` 파일을 구해서 쿼리를 실행 해 줍니다. 총 117 라인의 SQL 파일인데 아래 링크에서 확인하실 수 있습니다. 14년 전 커밋이라서 링크가 깨질 가능성은 낮아 보이지만, 혹시나 접속이 안되더라도 구글에 `demobld.sql` 을 검색하면 많이 나옵니다.
+
+https://github.com/mv/mvdba/blob/master/demo/demobld.sql
+
+쿼리를 실행 한 뒤에, 샘플 데이터가 입력이 잘 되었는지 확인 해 봅니다. 
+
+```sql
+select * from emp;
+```
+
+![image-20230126100726727](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100726727.png)
+
+> 정상적으로 데이터가 입력 된 상태.
+
+이제 이 샘플 계정을 활용해 SQL 기초를 연습 하시면 됩니다.
+
 ## 재시작후 데이터가 사라져요
 
 제가 Docker 사용에 익숙하지 않은 분들이 제법 있을거라는걸 충분히 배려하지 못했던 것 같더라고요. 그래서 내용을 추가했습니다!
