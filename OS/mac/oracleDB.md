@@ -2,17 +2,17 @@
 
 ## Intro
 
-M1 맥북을 구입 한 이후로 약 1년 반동안, 오라클 데이터베이스를 띄우기 위해 참 많은 노력을 했습니다. 원래 MacOS를 Oracle이 정식 지원을 하진 않지만, 그나마도 이전의 맥북에서 사용하던 방법들도 Apple Silicon 에서는 먹히지가 않았습니다. 아키텍처가 바꼈거든요.
+M1 맥북을 처음 구입 한 이후로 약 1년 반동안, 오라클 데이터베이스를 띄우기 위해 참 많은 노력을 했었습니다. 원래부터 Oracle이 MacOS를 정식 지원을 하지는 않았지만, 그나마 이전의 맥북에서는 작동시킬 방법들이 있었는데 Apple Silicon 에서는 먹히지가 않았습니다. 아키텍처가 바꼈거든요.
 
-많은 고민과 시도 끝에 결국 [오라클 클라우드에 DB를 띄워놓고 사용하는 방법](https://shanepark.tistory.com/208) 으로 해결을 해 왔는데요, 난이도가 높은건 둘째 치더라도 인터넷이 안되는 환경에서는 이용할 수 없었습니다.
+많은 고민과 시도 끝에 결국 [오라클 클라우드에 DB를 띄워놓고 사용하는 방법](https://shanepark.tistory.com/208) 으로 한참을 해결을 해 왔는데요, 난이도가 높은건 둘째 치더라도 인터넷이 안되는 환경에서는 이용할 수 없었습니다.
 
-> 인터넷이 안되면 사실 개발을 못하는게 맞지않나..?!
+> 요즘엔 사실 인터넷이 안되면 개발을 못하는게...
 
-하지만 이제는 더이상 그럴 필요가 없어졌습니다. 오픈 소스 컨테이너 런타임인 `Colima`를 사용해 `oci-oracle-xe` 이미지를 x86/64 환경으로 띄운다면 M1 맥북에서 오라클 데이터베이스를 로컬에서도 띄울 수 있습니다. 지금 저는 M2 MacBook Air 를 사용하고 있고 잘 작동 합니다.
+하지만 이제는 방법이 생겼습니다. 오픈 소스 컨테이너 런타임인 `Colima`를 사용해 `oci-oracle-xe` 이미지를 x86/64 환경으로 띄운다면 M1 맥북에서도 오라클 데이터베이스를 띄울 수 있습니다. 지금 저는 M2 MacBook Air 를 사용하고 있고 역시 잘 작동 합니다.
 
-사실 본 글의 내용이 초보자들에게 쉬운건 아니기 때문에 어느정도 이미 다른 환경에서 비슷한 과정을 했던 분들을 대상으로 작성 되었지만, 제가 M1 맥북 에어를 처음 샀을 때 그러했 던 것 처럼 지금 이 글을 읽고 있는 분들중 상당수는 Docker는 커녕 OracleDB도 안써본 분들이 참 많을거에요.
+사실 본 글의 내용이 초보자들에게 쉬운건 아니기 때문에 어느정도 이미 다른 환경에서 비슷한 과정을 했던 분들을 대상으로 작성 되었지만, 제가 M1 맥북 에어를 처음 샀을 때 그러했던 것 처럼 지금 이 글을 읽고 있는 대다수의 분들은 Docker는 커녕 OracleDB도 아직 안써본 분들이 많을거에요.
 
-그렇기에, 쉽지는 않겠지만 딱히 대안이 없는 상황이기 때문에 차근 차근 진행 해 보시고, 막히는 부분이 있다면 이미 100개 가까이 달린 아래의 질문과 답변들을 참고 하셔서 꼭 성공 하시길 응원 합니다.
+그렇기에 쉽지는 않겠지만 딱히 대안이 없는 상황이기에 차근 차근 진행 해 보시고, 아래 수백개의 질문과 답변도 참고해보세요.
 
 아래의 내용을 차근 차근 잘 진행해주시면 마침내 `localhost:1521` 를 얻으실거에요.
 
@@ -64,11 +64,11 @@ Colima는 Docker Desktop을 대신해서 docker 엔진을 실행해주기 때문
 
 > 둘다 동시에 실행되면 colima가 docker desktop로 설정되어 있던 default docker context를 가져가 버립니다. 
 >
-> Docker context가 다르면 이미지 공유도 안되는 모양이더라고요.
+> Docker context가 다르면 이미지 공유도 안되더라고요.
 
 ![image-20220916224949482](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220916224949482.png)
 
-위에서 처럼 Docker Context를 변경 하면 자유롭게 왔다 갔다 하면서 사용 할 수 있긴 하지만, 헷갈릴 수 있으니 Docker Desktop은 종료 하고 해주세요. 
+위에서 처럼 Docker Context를 변경 하면 자유롭게 왔다 갔다 하면서 사용 할 수 있긴 하지만, 헷갈릴 수 있으니 왠만하면 처음에는 Docker Desktop은 종료 하고 해주세요. 
 
 **Docker Context 목록 보기** (안따라 하셔도 됩니다.)
 
@@ -80,7 +80,6 @@ docker context ls
 
 ```bash
 docker context use desktop-linux
-# 혹은
 docker context use colima
 ```
 
@@ -95,6 +94,8 @@ brew install docker
 ![image-20220821082753728](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082753728.png)
 
 > 도커 엔진만 설치하면 Treating docker as a formula. For the cask, use homebrew/cask/docker 라고 나옵니다. 도커 엔진이 있으면, 그걸 구동 할 수 있는 도커 머신이 필요한데요. Docker Desktop 혹은 Colima 가 그 역할을 해 줍니다.
+>
+> 초보자분들은 이렇게 하지 말고 Docker Desktop을 설치해주세요.
 
 ### colima 실행
 
@@ -110,12 +111,16 @@ colima start --memory 4 --arch x86_64
 
 > `docker ps` 명령어가 잘 작동됩니다.
 
-정상적으로 가상 환경이 준비 되면 docker 명령어들이 작동됩니다.
+정상적으로 가상 환경이 준비 되었다면 docker 명령어들이 작동됩니다.
 
-이제 오라클 서버를 띄우겠습니다. 비밀번호 옵션만 각자 원하는대로 변경 해 주세요.
+이제는 오라클 서버를 띄우겠습니다. 비밀번호 옵션만 각자 원하는대로 변경 해 주세요. 
+
+> 컨테이너 이름을 명시하지 않고 실행 후 나중에 차차 변경하는 식으로 글을 작성했었는데, 명령어 치는데 oracle이라는 이름의 컨테이너가 없다는 댓글이 많이 달려서 처음부터 컨테이너명을 명시하도록 글을 수정했습니다.
+>
+> 원래는 restart 옵션도 글 후반부에 더했었지만, docker 사용법이 서툰 분들을 위해 처음부터 모두 포함된 명령어를 포함한걸 감안해주세요.
 
 ```bash
-docker run -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
+docker run --restart unless-stopped --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
 ```
 
 ![image-20220802074143096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074143096.png)
@@ -129,7 +134,8 @@ docker run -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
 이제 로그를 확인 해 봅니다.
 
 ```bash
-docker logs -f 컨테이너명
+# docker logs -f (컨테이너명)
+docker logs -f oracle
 ```
 
 ![image-20220802074458233](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074458233.png)
@@ -146,9 +152,9 @@ docker logs -f 컨테이너명
 
 ## 연결 테스트
 
-이제 DBeaver로 연결 테스트를 해 보겠습니다.
+이제 DBeaver로 연결 테스트를 해 보겠습니다. SQL Developer가 설치되어있다면 그걸 이용하셔도 됩니다.
 
-Host 는 localhost, Database는 xe, 포트는 1521 을 입력하고 유저네임은 system, 비밀번호는 아까 위에서 옵션으로 준 값을 입력 (pass) 하고 테스트를 합니다.
+Host 는 **localhost**, Database는 **xe**, 포트는 **1521** 을 입력하고 유저네임은 **system**, 비밀번호는 아까 위에서 옵션으로 준 값을 입력 (pass) 하고 테스트를 합니다. 데이터베이스명이 혹시 orcl 로 되어 있다면, xe로 꼭 바꿔주셔야 합니다.
 
 ![image-20220802074851769](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074851769.png)
 
@@ -221,7 +227,7 @@ docker exec -it oracle sqlplus
 
 > scott 으로 접속한 상태.
 
-이제 `demobld.sql` 파일을 구해서 쿼리를 실행 해 줍니다. 총 117 라인의 SQL 파일인데 아래 링크에서 확인하실 수 있습니다. 14년 전 커밋이라서 링크가 깨질 가능성은 낮아 보이지만, 혹시나 접속이 안되더라도 구글에 `demobld.sql` 을 검색하면 많이 나옵니다.
+이제 `demobld.sql` 파일을 구해서 쿼리를 실행 해 줍니다. 총 117 라인의 SQL 파일인데 아래 링크에서 확인하실 수 있습니다. 14년 전 커밋이라서 링크가 깨질 가능성은 낮아 보이지만, 혹시나 접속이 안되더라도 구글에 `demobld.sql` 을 검색하면 같은 파일이 많이 나옵니다.
 
 https://github.com/mv/mvdba/blob/master/demo/demobld.sql
 
@@ -237,7 +243,7 @@ select * from emp;
 
 이제 이 샘플 계정을 활용해 SQL 기초를 연습 하시면 됩니다.
 
-## 재시작후 데이터가 사라져요
+## 자주묻는질문: 재시작후 데이터가 사라져요
 
 제가 Docker 사용에 익숙하지 않은 분들이 제법 있을거라는걸 충분히 배려하지 못했던 것 같더라고요. 그래서 내용을 추가했습니다!
 
@@ -315,11 +321,15 @@ docker volume ls
 
 그래서 볼륨을 원하는 위치를 지정해서 하는 방법이 있는데 아래의 방법으로 하시면 됩니다.
 
-## 볼륨 설정해서 컨테이너 띄우기(위치지정)
+## 볼륨 설정해서 컨테이너 띄우기
+
+> 위치지정
 
 볼륨에 대한 자세한 내용은 본 글의 범위를 넘어가기 때문에 간단히 언급만 하고 넘어가려고 했는데 이게 권한 문제를 일으키더라고요.
 
-그래서 볼륨을 설정 한 상태로 컨테이너를 띄우는 방법을 step-by-step 으로 안내해드릴테니 천천히 따라 해 주세요. 자세한 설명을 하기에는 내용이 너무 어려운데 그래도 볼륨은 지정해서 하는 게 좋을 것 같아서.. 제가 천천히 한번 진행 해 보겠습니다. 막히는 부분은 댓글을 달아주세요.
+그래서 볼륨을 설정 한 상태로 컨테이너를 띄우는 방법을 한단계씩 안내해드릴테니 천천히 따라 해 주세요. 
+
+사실 내용이 너무 어려울 수 있긴 한데 그래도 볼륨지정이 필요한 상황이 있을 수 있어서 적어둡니다
 
 > @jeeweon 님께서 제가 적어둔 볼륨 지정을 따라해 보시다가 에러로 고생을 해 주셔서 그 덕분에 본 내용을 추가 할 수 있었습니다. 감사합니다.
 
@@ -328,7 +338,6 @@ docker volume ls
 ```bash
 mkdir ~/Documents/oracledb
 docker run -d --name oracle -v ~/Documents/oracledb:/opt/oracle/oradata -p 1521:1521 -e ORACLE_PASSWORD=pass gvenzl/oracle-xe
-
 ```
 
 > 볼륨 지정시 권한 문제로 비밀번호 지정이 어차피 문제되기 때문에 여기에서 환경변수로 선언하는 비밀번호는 크게 의미 없습니다.
@@ -461,7 +470,9 @@ docker exec oracle resetPassword <원하는 비밀번호>
 docker run --name oracle -v ~/Documents/oracledb:/u01/app/oracle/oradata -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe:11
 ```
 
-> 11g의 경우 옵션 힌트
+> 11g에서의 볼륨 설정 예시
+
+그 외의 버전이 필요한 경우에도 https://hub.docker.com/r/gvenzl/oracle-xe/tags 에서 태그정보를 확인해서 이미지명을 변경 해서 컨테이너를 생성 하시면 됩니다. 확인해보니 11g, 18c, 21c가 준비되어 있습니다.
 
 이상입니다. 감사합니다.  
 
