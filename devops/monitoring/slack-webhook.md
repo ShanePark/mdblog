@@ -442,9 +442,9 @@ class SlackNotificationAspect(
 
 에러가 발생 했을 때, 무방비하게 당하지 않기 위해서는 토이 프로젝트라고 해도 알림 시스템은 갖추는게 좋을 거라고 생각합니다.
 
-위의 코드는 제가 진행중인 토이 프로젝트 Github 저장소에서 확인 할 수 있으며 추후 코드가 변경 될 것에 대비해 Slack 알림 시스템을 막 추가한 커밋에서의 파일 탐색을 할 수 있는 Github 링크를 남겨 두도록 하겠습니다.
+위의 코드는 제가 진행중인 토이 프로젝트 Github 저장소에서 확인 할 수 있으며 추후 코드가 변경 될 것에 대비해 Slack 알림 시스템을 막 추가한 PR의 Github 링크를 남겨 두도록 하겠습니다.
 
-> https://github.com/Shane-Park/dutypark/tree/133ecb7b59c6771e5e75780e01a7e0dbc9dba90b
+> https://github.com/ShanePark/dutypark/pull/15/files
 
 이상입니다. 
 
