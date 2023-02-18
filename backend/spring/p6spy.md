@@ -525,7 +525,13 @@ decorator:
 
 ### Spring Boot 3.0.x
 
-스프링부트 3.0 버전으로 업데이트 하고 난 후로 P6Spy가 정상적으로 작동하지 않았습니다. 이는 아직 P6Spy가 Spring Boot 3.0.0 버전을 정식으로 지원하지 않고 있기 때문인데요.. 
+~~스프링부트 3.0 버전으로 업데이트 하고 난 후로 P6Spy가 정상적으로 작동하지 않았습니다. 이는 아직 P6Spy가 Spring Boot 3.0.0 버전을 정식으로 지원하지 않고 있기 때문인데요..~~ 
+
+> https://github.com/gavlyukovskiy/spring-boot-data-source-decorator/pull/78
+>
+> `implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0")` 버전부터 Spring Boot 3.0.0에서도 정상 작동되도록 마이그레이션이 완료 되었습니다. 확인해본 결과 잘 작동합니다.
+>
+> 혹시 이후에 또 버전이슈가 발생할 때를 대비해서 기존의 해결 방법은 남겨두겠습니다.
 
 제가 사용하고 있는 p6spy-spring-boot-starter 버전은 `implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1")` 이며 이 경우에는 아래와 같은 추가 설정이 필요했습니다.   
 
