@@ -353,7 +353,6 @@ package com.example.tusuploadsample.controller
 import me.desair.tus.server.TusFileUploadService
 import org.apache.commons.io.FileUtils
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod.*
@@ -369,12 +368,11 @@ class UploadController(
     @Value("\${tus.upload.dir}")
     private val tusStoragePath: String,
 ) {
-
     @RequestMapping(
         value = ["/upload", "/upload/**"],
         method = [GET, POST, HEAD, PATCH, DELETE]
     )
-    fun tusUpload(request: HttpServletRequest, response: HttpServletResponse): ResponseEntity<Any> {
+    fun tusUpload(request: HttpServletRequest, response: HttpServletResponse) {
         fileUploadService.process(request, response)
 
         val requestURI = request.requestURI
@@ -389,14 +387,15 @@ class UploadController(
                 fileUploadService.deleteUpload(requestURI)
             }
         }
-
-        return ResponseEntity.ok().build()
     }
 
 }
+
 ```
 
-이제 위에서 설정한 uploadURL에 처리를 맡을 컨트롤러를 추가 해 주면 되는데요, `TusConfiguration.kt` 에서 Bean으로 등록 한 TusFileUploadService를 주입 받아 단순하게 `fileUploadService.process(request, response)` 만 해 주면 됩니다. 
+이제 위에서 설정한 uploadURL에 처리를 맡을 컨트롤러를 추가 해 주면 되는데요, `TusConfiguration.kt` 에서 Bean으로 등록 한 TusFileUploadService를 주입 받아 단순하게 `fileUploadService.process(request, response)` 만 해 주면 됩니다.
+
+TusFileUploadService가 request와 response를 직접 핸들링 하기 때문에 리턴도 필요 없습니다.
 
 그 후에 추가된 코드들은 `uploadInfo` 를 체크 해 보고 이미 완료 된 `UploadInfo` 라면 파일을 원하는 경로에 저장 한 후 업로드 정보를 제거합니다. 아래의 과정은 굳이 같은 컨트롤러에 있을 필요는 없고 나중에 업로드가 완료 되었을 때 완료된 requestUrI를 따로 처리하도록 코드를 구성하는 편이 좀 더 좋지만 샘플 코드를 간단하게 구성 하기 위해 하나의 라우터에 담아 보았습니다.
 
@@ -443,6 +442,8 @@ class UploadController(
 - new Uppy() 할 때 `locale: Uppy.locales.ko_KR` 설정 해 주면 한국어로 표시할 수 있습니다. Ko_KR.min.js 파일을 추가 해 주어야 합니다.
 - Tus 옵션에 endpoint를 정확히 입력 해 주어야 합니다.
 - Tus 옵션에 `overridePatchMethod: true`로 설정 해 주면 PATCH 메서드가 막힌 서버에서도 POST 요청으로 대신 보낼 수 있습니다.
+- delete 메서드는 오버라이드 하는 옵션이 따로 없는데, 제가 필요해서 추가 해 두었습니다. delete 요청을 방화벽에서 막아둔 상황이라면 https://github.com/ShanePark/tus-upload-sample 에 올려둔 js 파일을 사용하시고, `overrideDeleteMethod: true` 옵션을 주시면 됩니다.
+- 전체 샘플 코드는 https://github.com/Shane-Park/tus-upload-sample 에서 확인 해 주세요.
 
 테스트를 해 보면
 

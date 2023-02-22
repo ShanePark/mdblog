@@ -12,9 +12,7 @@
 
 > 최근에는 저장해뒀다가 나중에 더 깊게 공부하고 싶은 내용들을 `Clip` 해 두고 있습니다.
 
-​	
-
-하지만 아쉽게도 Linux용 어플리케이션은 아쉽게도 찾아 볼 수 없었는데요
+하지만 아쉽게도 Linux용 공식 어플리케이션은 아쉽게도 찾아 볼 수 없었는데요
 
 ![image-20211027090548669](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211027090548669.png)
 
@@ -22,17 +20,15 @@
 
 Chrome이나 Firefox 등의 브라우저를 따로 띄워서 사용해도 완벽하게 동일한 사용자 경험을 할 수 있지만, 그래도 브라우저 따로 띄우고, 즐겨찾기에서 해당 페이지 방문 하고 하는, 또 다른 탭들과 따로 관리하는 번거로움보다는 어플리케이션이 있는 편이 확실히 편합니다.
 
-​	
+Lotion과 Notion-enhancer가 있으니 읽어보시고 더 마음에 드는걸 설치하시면 됩니다. 특별한 경우가 아니라면 후자를 선택 하시는게 좋습니다.
 
 ## Lotion
 
-Linux에서 Notion 어플리케이션을 쓰고싶은 사용자들의 많은 노력이 있었고, 실제로 여러가지 프로젝트들이 존재 했지만 대부분의 경우는 개발을 중단 한 상태 입니다. 그 중 Lotion을 써 보았는데 MacOS에서 사용했던 것과 정확히 일치한다고 생각되고 그 만족도도 굉장히 높아서 소개해드리고자 합니다.
+Linux에서 Notion 어플리케이션을 쓰고싶은 사용자들의 많은 노력이 있었고, 실제로 여러가지 프로젝트들이 존재 했지만 대부분의 경우는 개발을 중단 한 상태 입니다. 그 중 사용 가능한게 Lotion 입니다.
 
 > https://github.com/puneetsl/lotion
 
-​		
-
-## 7Zip 설치
+### 7Zip 설치
 
 ![image-20211027091811073](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211027091811073.png)
 
@@ -45,30 +41,23 @@ Linux에서 Notion 어플리케이션을 쓰고싶은 사용자들의 많은 노
 ```bash
 sudo add-apt-repository universe
 sudo apt update
-
 ```
 
 ```bash
 sudo apt install p7zip-full p7zip-rar
 ```
 
-​		
-
-## Lotion 설치
+### Lotion 설치
 
 설치 방법도 굉장히 간단 합니다.
 
 ![image-20211027092002449](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211027092002449.png)
-
-​	
 
 curl 혹은 wget으로 setup.sh 파일을 다운 받습니다.
 
 ```bash
 curl https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh > setup.sh
 ```
-
-​	
 
 실행 가능하게 권한 설정을 해 주고요
 
@@ -77,8 +66,6 @@ curl https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh > setup.s
 chmod +x setup.sh
 
 ```
-
-​	
 
 설치 해 주시면 됩니다.
 
@@ -92,8 +79,6 @@ sudo ./setup.sh web
 
 ```
 
-​		
-
 설치가 된 후엔 Notion native 라는 이름으로 저장이 됩니다. dock 에 favourite 추가를 해 두고 사용하시면 됩니다.
 
 ![image-20211027092241360](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211027092241360.png)
@@ -104,14 +89,26 @@ sudo ./setup.sh web
 
 참고로 로그인시에는 `Continue with Google`을 눌러 하는 Google SSO login을 사용할 수 없는데요, 구글이 인가받지 않는 브라우저들에 대한 로그인 지원을 중단했기 때문입니다.
 
-간단하게 아래의 Continue with email을 사용해서 이메일 인증을 통한 로그인 한다면 문제는 간단하게 해결됩니다.
-
-​				
+간단하게 아래의 Continue with email을 사용해서 이메일 인증을 통한 로그인 한다면 문제는 간단하게 해결됩니다.				
 
 ![image-20211027092451478](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/notion.assets/image-20211027092451478.png)
 
 어플리케이션을 실행 한 모습입니다. dark 모드 설정도 가능 하며 속도도 빠르고 굉장히 만족스럽게 사용 할 수 있습니다. 
 
-Ubuntu와 Notion 모두 사용하시는 분이라면 정말 추천 합니다.
+## Notion Enhancer
 
- 
+> https://notion-enhancer.github.io/getting-started/installation/
+
+Lotion은 개발이 끊겼기 때문에 최근에도 꾸준히 개발중인 Notion-Enhancer가 좀 더 나은 선택 입니다.
+
+Lotion 쓰며 거의 완벽한 사용성이 보장되지만 가끔 불편한 점이 몇가지 있었는데요 (이메일 로그인만 됨, 가끔 페이지가 안떠서 Ctrl + R 로 새로 고침 필요)  Notion-Enhancer는 거의 완벽합니다. SSO 로그인도 잘 됩니다.
+
+설치는 간단 합니다.
+
+```bash
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
+sudo apt update
+sudo apt install notion-app-enhanced
+```
+
+이상입니다.
