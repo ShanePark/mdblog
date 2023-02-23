@@ -6,8 +6,6 @@ java에서도 파일을 압축 하고 압축을 해제 할 수 있습니다. 심
 
 아주 간단한 예제를 만들어서 실습 해 보겠습니다.
 
-<br><br>
-
 ### 사전준비
 
 ![image-20211111221742519](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111221742519.png)
@@ -19,8 +17,6 @@ java에서도 파일을 압축 하고 압축을 해제 할 수 있습니다. 심
 ![image-20211111221928162](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111221928162.png)
 
 Terminal 을 켜서 파일들의 경로도 미리 확인을 해 둡니다.
-
-<br><br>
 
 ### 코드작성
 
@@ -195,12 +191,85 @@ public class AddFileToZip {
 
 > 실행을 하니 오류 없이 잘 추가가 됩니다.
 
-<br><br>
-
 ![image-20211111225107379](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111225107379.png)
 
 새로 생긴 압축 파일에는 기존의 파일들에 new.txt 파일이 추가 된 것이 확인 됩니다.
 
-이상입니다.
+## 디렉터리를 포함한 압축 파일 생성
 
- 
+지금처럼 파일 하나하나로 `FileInputStream`을 여는 방법은 폴더에서는 작동이 되지 않습니다. 폴더를 대상으로는 파일 인풋스트림을 열 수 없기 때문인데요.
+
+사실 ZIP 파일을 생성 할 때는 실제로 파일 내에 해당하는 폴더들이 생성되는건 아니고, 각각의 경로가 각자 스스로 저장된 위치를 나타냅니다. 예를 들어서 `mydir`이라는 폴더에 `file1.txt`와 `file2.txt` 파일이 있다고 할때, 하나의 ZIP 파일에는 두개의 엔트리 `mydir/file1.txt` `mydir/file2.txt` 가 저장 될 뿐이지 폴더가 포함되는건 아닙니다.
+
+위의 코드를 조금 응용 하면 손쉽게 이 경우의 코드도 작성 할 수 있습니다.
+
+파일 구조는 이렇게 준비 해 보았습니다.
+
+![image-20230223125520111](https://raw.githubusercontent.com/ShanePark/mdblog/main/backend/java/zip.assets/image-20230223125520111.png)
+
+새로 작성한 코드는 아래와 같습니다.
+
+**CreateZipFileWithFoldersAndFiles.java**
+
+```java
+package com.tistory.shanepark.file.zip;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+public class CreateZipFileWithFoldersAndFiles {
+    final static String folder = System.getProperty("user.home") + "/Downloads/fileTest";
+
+    public static void main(String[] args) throws IOException {
+        File file1 = new File(folder, "1.txt");
+        File file2 = new File(folder, "2.txt");
+        File file3 = new File(folder, "folder1");
+
+        List<File> files = new ArrayList<>();
+        files.add(file1);
+        files.add(file2);
+        files.add(file3);
+
+        File zipFile = new File(folder, "압축파일.zip");
+
+        try (ZipOutputStream out = new ZipOutputStream(new FileOutputStream(zipFile))) {
+            for (File file : files) {
+                addFile(out, file, "");
+            }
+        }
+        System.out.println("압축 파일 생성 성공");
+    }
+
+    private static void addFile(ZipOutputStream out, File file, String path) throws IOException {
+        if (file.isDirectory()) {
+            for (File f : file.listFiles()) {
+                addFile(out, f, path + file.getName() + File.separator);
+            }
+            return;
+        }
+        try (FileInputStream in = new FileInputStream(file)) {
+            ZipEntry ze = new ZipEntry(path + file.getName());
+            out.putNextEntry(ze);
+
+            int len;
+            byte[] buf = new byte[4096];
+            while ((len = in.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+
+            out.closeEntry();
+        }
+    }
+}
+
+```
+
+이제 코드를 실행해보면 의도한 대로 잘 압축이 되어있는걸 확인 할 수 있습니다.
+
+이상입니다. 
