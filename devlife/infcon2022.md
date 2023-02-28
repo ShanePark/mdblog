@@ -1,4 +1,4 @@
-# [인프콘] INFCON 2022 를 기다리며
+# INFCON 2022 신청 성공
 
 ![image-20220802215602013](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022.assets/image-20220802215602013.png)
 
