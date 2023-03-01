@@ -212,7 +212,7 @@ jacoco {
 
 ## Next.. 
 
-원래는 한번에 다루려고 했었는데, 글이 워낙에 길어지다 보니 Github Action을 활용해 Coverage Badge를 붙이는 방법에 대해서는 다음 글에서 이어 작성하도록 하겠습니다.
+원래는 한번에 다루려고 했었는데, 글이 워낙에 길어지다 보니 Github Action을 활용해 Coverage Badge를 붙이는 방법에 대해서는 다음 글 [Github Action으로 코드 커버리지 뱃지 생성하기](https://shanepark.tistory.com/457) 에 작성했습니다. 혹시 관심이 있다면 확인 해 주세요.
 
 이상입니다.
 
