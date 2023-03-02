@@ -281,6 +281,56 @@ class SecurityConfig {
 
  `내가 개발한 작업물을 인터넷에 올리고 접속이 가능하게 해보고 싶어` 의 꿈을 이루셨네요 축하드립니다.
 
+## 만료후 연장
+
+SSL 인증서를 처음 발급받은지 어느덧 3개월이 금방 지났습니다. 만료 14일 전 부터 연장이 가능합니다.
+
+![image-20230302223659120](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302223659120.png)
+
+> Expiring Soon
+
+Renew 버튼을 눌러 연장을 해 보겠습니다.
+
+![image-20230302223750100](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302223750100.png)
+
+처음에는 딱히 바꿀게 없습니다 Next Step을 누릅니다.
+
+![image-20230302223808699](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302223808699.png)
+
+당연히 무료인 90Day Certificate를 선택 합니다.
+
+![image-20230302223925945](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302223925945.png)
+
+CRS 은 역시 Auto-Generate를 그대로 합니다.
+
+![image-20230302223955637](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302223955637.png)
+
+Renew 할 때도 처음 SSL 발급받을때와 거의 다를게 없습니다. Free를 선택 하고 Next Step을 눌러 줍니다.
+
+![image-20230302224248676](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302224248676.png)
+
+처음에 했던 것 처럼 Verify Domain도 해줍니다. 다만, 위의 링크에 적혀 있는 것 처럼 http 링크로 인증을 해 주어야 하기 때문에 이게 좀 불편 했습니다. 잠시 SSL을 disable 해두지 않으면
+
+![image-20230302225310485](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302225310485.png)
+
+이처럼 HTTP transport error가 나며 인증에 실패합니다. 포트도 80으로 돌리고, SSL도 끄고, http 요청을  https로 자동으로 돌려주는 기능도 꺼두어야 합니다.
+
+그러고 나면 인증에 성공 합니다.
+
+![gif](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/gif.gif)
+
+> 잠시 기다려 줍니다
+
+![image-20230302225838703](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302225838703.png)
+
+드디어 새로운 인증서가 발급 되었습니다. `Download Cetrificte(.zip)` 을 클릭해 다운받고 나서는 처음 발급했던 것과 똑같이 Java keystore로 변환 해서 등록 해 주면 됩니다. 비밀번호만 전에꺼와 똑같이 해 주면 굳이 설정파일을 변경하지 않아도 `keystore.p12` 파일만 갈아 끼우면 끝 입니다.
+
+서버에 새로 반영해서 Certificate를 확인 해 봅니다.
+
+![image-20230302230419112](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ssl.assets/image-20230302230419112.png)
+
+> issued On 및 Expires On 날짜가 새로 업데이트 되었습니다! 
+
 이상입니다 
 
 **References**
