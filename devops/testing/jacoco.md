@@ -198,7 +198,9 @@ jacoco {
 
 ![image-20230225173423190](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/testing/jacoco.assets/image-20230225173423190.png)
 
-성공케이스만 테스트중기때문에 실패 케이스의 분기에 대해서도 작성을 해줘야 Ps 의 Branch가 100%가 되는 상황이었습니다. 바로 작성해서 커버리지를 끌어 올려 주었습니다.
+성공하는 케이스만 테스트했기 때문에, 실패 케이스의 분기는 타지를 못했습니다. 
+
+실패 케이스까지 작성을 해 줘야 Ps 의 Branch coverage를 100%로 만들 수 있습니다. 바로 추가로 작성해서 커버리지를 끌어 올려 주었습니다.
 
 ![image-20230225221815823](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/testing/jacoco.assets/image-20230225221815823.png)
 
