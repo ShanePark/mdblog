@@ -484,7 +484,44 @@ jar.enabled = false
 
 > https://github.com/ShanePark/ci-cd-example
 
-이상입니다. 
+## 추가내용: `.gitignore`중인 파일 업로드
+
+HTTPS 적용을 위한 Key Store 파일이나 DB 접속 정보와같은 민감한 정보들은 버전관리에서 꼭 제외해두어야합니다.
+
+하지만 제외해둔 파일들도 CI/CD 과정에서는 반드시 필요한데요, 몇가지 해결 방법이 있겠지만 여기서는 따로 설정이 필요 없는 간단한 방법을 소개해드리겠습니다. 
+
+개인적으로는 민감한 파일들은 따로 비공개 깃 저장소에 저장해두고 SSH 키를 deploy 키로 등록 해서 pull 한 뒤 쓰도록 하는 방법이 괜찮을 것 같습니다. 지금 소개해드리는 방법의 경우에는 민감 정보를 업데이트 할 때마다 번거로이 새로 업로드를 해주어야 하지만, 비공개 저장소를 쓴다면 commit만 하면 되기 때문에 훨씬 간단하겠습니다.
+
+저는 `application-op.yml` 파일과 `keystore.p12` 파일이 필요하다고 예를 들겠습니다. 먼저 두개의  tar 파일로 묶어 줍니다.
+
+```bash
+tar czvf secrets.tar.gz application-op.yml keystore.p12
+```
+
+이번에는 그 tar 파일을 base64로 인코딩 해서 텍스트 파일을 생성합니다.
+
+```bash
+base64 -i secrets.tar.gz -o secrets_base64.txt
+```
+
+위에서 생성된 텍스트를 Github의 Secrets 에 `MY_SECRETS_ARCHIVE`  라는 이름으로 추가해줍니다.
+
+그리고는 Build 과정에서 해당 파일을 이용하도록, setup jdk 다음에 아래와 같이 추가해줍니다.
+
+```yaml
+      - name: Retrieve secrets
+        env:
+          MY_SECRETS_ARCHIVE: ${{ secrets.MY_SECRETS_ARCHIVE }}
+        run: |
+          echo "$MY_SECRETS_ARCHIVE" | base64 --decode > secrets.tar.gz
+          tar xzvf secrets.tar.gz -C src/main/resources
+```
+
+![image-20230402005142976](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ci-cd/github/springboot-github-action.assets/image-20230402005142976.png)
+
+빌드 과정에 자동으로 tar 파일을 해제하고, 거기에 있던 application-op.yml 파일과 keystore.p12 파일을 필요한 폴더로 옮겨서 해당 파일들을 포함하여 정상적으로 빌드에 성공하였으며, 배포에도 성공합니다.
+
+이상입니다.  
 
 **References**
 
