@@ -18,7 +18,7 @@
 
 https://releases.ubuntu.com
 
-![image-20211129203010989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211129203010989.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/Ubuntu-server/install.assets/image-20211129203010989.png" height=500 width=700 alt="first">
 
 > server 이미지를 다운 받습니다.
 

@@ -1,7 +1,5 @@
 # Ubuntu 20.04 LTS ) Docker 설치하기 
 
-![Empowering App Development for Developers | Docker](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/docker.assets/docker_facebook_share.png)
-
 ## Intro
 
 Docker는 제가 회사에서 사용하는 노트북의 OS를 Windows 에서 Ubuntu 로 변경하게 된 트리거 였습니다.

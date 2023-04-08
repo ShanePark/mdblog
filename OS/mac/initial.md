@@ -18,7 +18,7 @@
 
 ### Homebrew
 
-[![Stainless Steel Beer Dispenser](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/beer-machine-alcohol-brewery-159291-20211101231216301.jpeg)](https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?cs=srgb&dl=pexels-pixabay-159291.jpg&fm=jpg)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/beer-machine-alcohol-brewery-159291-20211101231216301.jpeg" width="700" height="500" alt="first">
 
 <a href="https://shanepark.tistory.com/45" target="_blank">Mac 에 brew 설치하기</a>
 

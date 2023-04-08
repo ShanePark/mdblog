@@ -1,7 +1,5 @@
 # Ubuntu) 우분투에서 카카오톡 실행 (100% 정상작동 방법)
 
-![image-20220129171723784](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/kakaoTalk.assets/image-20220129171723784.png)
-
 ## Intro
 
 Windows나 Mac에서 되는데 Linux에서는 할 수 없는거야 셀수 없이 많지만 왠만한거는 다 괜찮습니다. 어딘가에 대체할 만한 소프트웨어가 다 있기 마련이며 크리티컬 한 소프트웨어 일수록 사용 가능 할 확률이 높습니다. 심지어 Third Party 소프트웨어들이 정말 많기 때문에 저는 Notion, Apple music, iCloud Drive, Github Desktop 등 공식 지원 하지 않는 소프트웨어들을 사용 하고 있으며 심지어 intelliJ IDEA, Visual Studio Code, Postman, Dropbox, Typora, Slack 등은 제조사에서 Linux를 공식적으로 지원을 해 줍니다.

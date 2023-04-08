@@ -2,13 +2,15 @@
 
 ## Intro
 
-MacOS에서 화면분할용 프로그램중에 가장 유명한 프로그램은 단연 Magnet 입니다. 종종 $0.99 세일도 한다고 해서 저도 구입을 하려고 Black Friday도 기다려보고, Boxing데이도 기다렸는데 세일을 할 생각을 안하더라고요.. ![image-20220216193647633](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/rectangle.assets/image-20220216193647633.png)
+MacOS에서 화면분할용 프로그램중에 가장 유명한 프로그램은 단연 Magnet 입니다. 종종 $0.99 세일도 한다고 해서 저도 구입을 하려고 Black Friday도 기다려보고, Boxing데이도 기다렸는데 세일을 할 생각을 안하더라고요...
+
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/rectangle.assets/image-20220216193647633.png" width=750 height=500 alt=first>
 
 > 혹시 내가 이걸 샀는데 Apple이 MacOS에서 정식 기능으로 제공하면 어떡하지? 하는 맘에 정가에 못사고 있는 Magnet
 
 아쉬운 대로 지금까지는 오픈소스중에 가장 괜찮다는 Spectacle을 꾸준히 사용 해 왔습니다.
 
-![image-20220216193746834](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/rectangle.assets/image-20220216193746834.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/rectangle.assets/image-20220216193746834.png" widht=750 height=450 alt=img2>
 
 나름 필요한 기능도 다 있고 속도도 빠릿빠릿 해서 단축키만 잘 설정 해 주면 괜찮게 사용 할 수 있습니다. Windows나 Linux에서 사용하던 창 분할 들에 비하면 부족한 느낌이 없지않긴 하지만 그래도 꾸준히 사용 해 왔는데요 Spectacle의 큰 단점이 있습니다.
 

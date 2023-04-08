@@ -12,9 +12,9 @@
 
 아래 사진의 예제는 각각 Gitlab과 Github입니다. 어렵지 않게 새로운 저장소를 만드실 수 있습니다.
 
-![image-20211125095445626](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125095445626.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125095445626.png" alt="first" width=750 height=430>
 
-![image-20211125124244286](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125124244286.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125124244286.png" alt="second" height="730" width="750">
 
 > Create repository를 눌러서 생성
 
