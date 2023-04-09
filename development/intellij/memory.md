@@ -2,13 +2,13 @@
 
 ## 문제
 
-![image-20220815121217417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/memory.assets/image-20220815121217417.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/memory.assets/image-20220815121217417.png" width=695 height=514 alt=main>
 
 사실 인텔리제이를 사용하다보면 흔히 겪는 일인데, 힙메모리 부족으로 퍼포먼스가 느려진다는 경고가 뜰 때가 있습니다.
 
 불과 얼마 전 까지만 해도 8GB 메모리의 M1 맥북에어를 사용 하고 있었기때문에 메모리를 많이 늘릴 생각보다는 사용중인 웹 브라우저들을 최대한 닫는 등의 방법으로 넘어 갔었는데요 
 
-![image-20220815121331541](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/memory.assets/image-20220815121331541.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/memory.assets/image-20220815121331541.png" width=698 height=425>
 
 얼마전 큰맘 먹고 넉넉한 메모리의 새로운 맥북을 구입 하였기 때문에 이제는 해결이 가능 해 졌습니다.
 

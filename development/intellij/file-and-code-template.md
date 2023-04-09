@@ -10,11 +10,11 @@
 
 `Setting` > `Editor` > `File and Code Template` 로 들어갑니다.
 
-![image-20221223111820166](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/file-and-code-template.assets/image-20221223111820166.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/file-and-code-template.assets/image-20221223111820166.png" width=750 height=413 alt=first>
 
 그러면 위와 같은 화면이 나오는데, 가장 먼저 상단의 Scheme을 선택해서 File template이 적용될 스코프를 선택 합니다.
 
-![image-20221223111927072](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/file-and-code-template.assets/image-20221223111927072.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/file-and-code-template.assets/image-20221223111927072.png" height=200 width=400 alt=second>
 
 - Default: 전체 어플리케이션에 설정합니다. 현재 사용하는 인텔리제이를 통해 띄우는 모든 프로젝트에 해당 템플릿이 적용 됩니다. 프로젝트에 상관 없이 사용할 경우 선택 합니다. `IDE configuration directory`에 저장 됩니다.
 - Project: 현재 띄워둔 프로젝트에만 해당 설정을 적용 합니다.  본 설정은 `.idea/fileTemplates`에 저장됩니다.

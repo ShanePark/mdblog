@@ -1,5 +1,7 @@
 # [Ubuntu] 우분투에서 우분투 설치 USB 드라이브 만들기
 
+## Intro
+
 전에는 MacOS 및 Windows 에서 우분투 설치 드라이브를 만들었었는데, 이번에 우분투 설치 드라이브를 만들어 야 할 일이 생겼는데 사용중인 컴퓨터가 마침 우분투라서 그 과정을 정리 해 보았습니다.
 
 윈도우나 맥북에서 했던 것 보다 훨씬 쉽고 간단하게 생성이 가능했습니다.
@@ -8,13 +10,13 @@
 
 https://ubuntu.com/download/desktop 링크에 접속해 원하는 버전의 우분투를 다운 받습니다.
 
-![image-20221229100830293](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/boot-drive.assets/image-20221229100830293.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/boot-drive.assets/image-20221229100830293.png" width=750 height=600 alt=down> 
 
 저는 Ubuntu 22.04.1 LTS Desktop 버전을 다운 받았습니다.
 
 서버용도로 사용할 게 아니라면 Desktop 버전을 다운 받으면 됩니다.
 
-![image-20221229100927783](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/boot-drive.assets/image-20221229100927783.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/boot-drive.assets/image-20221229100927783.png" height=550 width=750 alt=size>
 
 > 다운받은 파일은 총 3.6 GB 입니다.
 

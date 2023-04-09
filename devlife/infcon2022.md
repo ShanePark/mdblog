@@ -1,6 +1,6 @@
 # INFCON 2022 신청 성공
 
-![image-20220802215602013](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022.assets/image-20220802215602013.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022.assets/image-20220802215602013.png" width=750 height=400 alt=main>
 
 > https://infcon.day/
 

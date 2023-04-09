@@ -1,6 +1,6 @@
 # Leetcode 1년, 드디어 릿코드 티셔츠
 
-![leetcode2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/leetcode2.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/leetcode2.png" width=500 height=500 alt=tshirt>
 
 > 릿코드에서는 6,000 릿코드 코인을 모으면 티셔츠를 줍니다.
 
@@ -10,7 +10,7 @@
 
 릿코드를 시작하게 된 계기는 단순했습니다. 심심할 때 마다 게임하는 기분으로 프로그래머스에서 코딩 문제풀이를 하곤 했었는데, 지금은 프로그래머스에 제법 새로운 문제가 많이 추가 되었지만 제가 릿코드를 시작한 22년 1월에는 지금처럼 문제가 많지는 않았습니다.
 
-![image-20230208211550515](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208211550515.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208211550515.png" width=375 height=170 alt=programmers>
 
 > 제 실력으로 간단히 풀 수 있는 문제는 거의 다 풀어서, 심심할 때 풀기에는 너무 어려운 문제들만 남아있습니다.
 
@@ -18,7 +18,7 @@
 
 그러던 중 Leetcode를 알게 되었고, 심지어 Daily Quest 도 있고 꾸준히 문제를 풀면 릿코드 코인이라는 것도 주기 때문에 너무 재밌었고 그대로 1년을 하루도 빼먹지 않고 문제풀이를 하였습니다.
 
-![image-20230208212124656](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208212124656.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208212124656.png" width=750 height=350>
 
 그렇게 1년 정도를 꾸준히 한 결과, 어느덧 6,000 포인트가 쌓였습니다. 2022년 1월에 시작했고, 2023년 1월에 포인트를 다 모았으니 정확히 1년 정도가 걸렸습니다. 물론 더 빨리 포인트를 모으고 싶어서 weekly contest에 참여를 여러번 하기는 했습니다.
 

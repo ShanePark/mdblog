@@ -10,7 +10,7 @@
 
 대기열은 아주 조금씩 줄어들었고, 한 3분정도 기다리고 나니 아래와 같이 신청 화면이 등장합니다.
 
-![-----3-3](https://raw.githubusercontent.com/ShanePark/mdblog/main/devlife/deview2023.assets/-----3-3.png)
+<img src="https://raw.githubusercontent.com/ShanePark/mdblog/main/devlife/deview2023.assets/-----3-3.png" width=750 height=750 alt=first>
 
 > https://d2.naver.com/news/1888051
 
@@ -18,7 +18,7 @@
 
 이렇게 첫째날 예약에 성공했고, 둘째날 신청을 할 때에도 정각에는 똑같이 `마감되었습니다!`가 나왔지만 이번에는 더 빠르게 재시도를 하니 대기번호 없이 바로 신청 화면으로 넘어갔습니다. 정각에 마감되었다고 나오는 알림에 속아 포기한 분들이 꽤 많은 것 같았는데 재빨리 다시 시도하면 최소한 대기번호는 볼 수 있습니다.
 
-![deview](https://raw.githubusercontent.com/ShanePark/mdblog/main/devlife/deview2023.assets/deview.png)
+<img src="https://raw.githubusercontent.com/ShanePark/mdblog/main/devlife/deview2023.assets/deview.png" width=700 height=600 alt=second>
 
 > 이렇게 얼떨결에 Day 1, Day 2 신청에 모두 성공했습니다.
 
@@ -30,7 +30,7 @@
 
 ### 등록
 
-![C0D3ED90-82B7-40CE-87D9-C5E168760786_1_105_c](https://raw.githubusercontent.com/ShanePark/mdblog/main/devlife/deview2023.assets/C0D3ED90-82B7-40CE-87D9-C5E168760786_1_105_c.jpeg)
+<img src="https://raw.githubusercontent.com/ShanePark/mdblog/main/devlife/deview2023.assets/C0D3ED90-82B7-40CE-87D9-C5E168760786_1_105_c.jpeg" width=700 height=600 alt=third>
 
 > 아침 일찍 도착해서 한적한 모습
 

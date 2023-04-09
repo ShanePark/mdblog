@@ -2,7 +2,7 @@
 
 ## Intro
 
-![image-20220726103836013](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/image-20220726103836013.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/image-20220726103836013.png" width=750 height=640 alt=main>
 
 > https://github.com/netdata/netdata
 

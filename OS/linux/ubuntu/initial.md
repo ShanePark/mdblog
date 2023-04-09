@@ -1,6 +1,6 @@
 # 개발자를 위한 Ubuntu 필수 설치와 설정
 
-![How To Install Ubuntu Linux inside Windows - Techi Signals](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Install-Ubuntu-Linux.jpg)	
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Install-Ubuntu-Linux.jpg" width=640 height=400 alt=ubuntu>
 
 > 꾸준히 최신 정보로 업데이트 되는 글 입니다.
 

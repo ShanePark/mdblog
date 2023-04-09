@@ -1,6 +1,6 @@
 # INFCON 2022 후기
 
-![A592AF81-5F16-4C2E-B859-A152D878AB86_1_105_c](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/A592AF81-5F16-4C2E-B859-A152D878AB86_1_105_c.jpeg)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/A592AF81-5F16-4C2E-B859-A152D878AB86_1_105_c.jpeg" width=750 height=560 alt=infcon>
 
 ## Intro
 
@@ -14,7 +14,7 @@
 
 ## 찾아가는길
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/IMG_8139%20Medium.png" alt="IMG_8139 Medium" style="zoom: 67%;" /><img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/IMG_8141%20Medium.png" alt="IMG_8141 Medium" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/IMG_8139%20Medium.png" width=480 height=650 alt=daejeon><img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/IMG_8141%20Medium.png" alt="IMG_8141 Medium" width=480 height=650/>
 
 >  대전에서 가다 보니 SRT 열차를 이용했습니다. 수서역이 COEX 에서 멀지 않아 시간은 오래 걸리지 않습니다.
 
