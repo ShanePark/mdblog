@@ -14,15 +14,15 @@ apt install로 간단하게 설치 할 수 있습니다.
 sudo apt install terminator
 ```
 
-![image-20220104160052289](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160052289.png)
+![image-20220104160052289](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160052289.webp)
 
 > 설치는 금방 됩니다.
 
 설치를 완료 하고 Terminator를 실행 해 봅니다.
 
-![image-20220104160119308](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160119308.png)
+![image-20220104160119308](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160119308.webp)
 
-![image-20220104160148761](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160148761.png)
+![image-20220104160148761](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160148761.webp)
 
 폰트도 깨지고 디자인이 엉망이 되어 있지만 일단 실행은 됩니다.
 
@@ -30,7 +30,7 @@ sudo apt install terminator
 
 적당히 까만 화면을 우클릭 하고 Preferences 버튼을 눌러 설정 화면에 진입합니다.
 
-![image-20220104160404978](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160404978.png)
+![image-20220104160404978](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104160404978.webp)
 
 설정을 Global에서 바꾸도 되지만 그럴 경우에는 Profiles의 설정이 우선이기 때문에 Profiles에서도 Global 설정을 따르겠다고 변경을 한번 더 해줘야 합니다.
 
@@ -38,13 +38,13 @@ sudo apt install terminator
 
 ### 폰트
 
-### ![image-20220104161020630](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161020630.png)
+### ![image-20220104161020630](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161020630.webp)
 
 > 일단 Font를 깨지지 않는 폰트로 변경 해 주어야 하는데요, 저는 D2 Coding Font를 즐겨 사용합니다.
 
 ### 투명도
 
-![image-20220104161241936](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161241936.png)
+![image-20220104161241936](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161241936.webp)
 
 > 투명도는 개인적으로 0.85 정도가 적당한 것 같습니다.
 >
@@ -58,7 +58,7 @@ sudo apt install terminator
 vi ~/.config/terminator/config
 ```
 
-![image-20220104161546609](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161546609.png)
+![image-20220104161546609](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161546609.webp)
 
 ## 단축키
 
@@ -68,13 +68,13 @@ vi ~/.config/terminator/config
 
 > Ctrl + Shift + E
 
-![image-20220104161915204](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161915204.png)
+![image-20220104161915204](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161915204.webp)
 
 ### 수평분할
 
 > Ctrl + Shift + O
 
-![image-20220104161934386](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161934386.png)
+![image-20220104161934386](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104161934386.webp)
 
 ### 현재 창 닫기
 
@@ -102,6 +102,6 @@ vi ~/.config/terminator/config
 
 기본 Terminal에서 Alt + 방향키로 전환하던 것도 사용하고 싶다면 KeyBindings에 추가 하면 똑같이 사용 할 수 있습니다.
 
-![image-20220104162721288](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104162721288.png)
+![image-20220104162721288](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/terminator.assets/image-20220104162721288.webp)
 
 이상입니다.

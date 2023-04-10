@@ -14,7 +14,7 @@ Pull Request를 기다리다가, merge가 되었다고 착각하고 커밋 했�
 
 `dev` 라는 branch를 만들어서, gitbranch.txt 파일을 추가해 commit 및 push 까지 마친 상태입니다.
 
-![image-20220112133947192](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112133947192.png)
+![image-20220112133947192](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112133947192.webp)
 
 이 상태에서는 dev에 커밋이 되었지만, 해당 사항이 master에 까지 반영은 되지 않았습니다.
 
@@ -26,13 +26,13 @@ Pull Request를 기다리다가, merge가 되었다고 착각하고 커밋 했�
 git branch -d dev
 ```
 
-![image-20220112134339113](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134339113.png)
+![image-20220112134339113](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134339113.webp)
 
 그러면, 로컬에서는 dev branch가 삭제 되었지만, 아직 원격저장소에는 dev가 있습니다.
 
 > checkout을 하려고 보면 origin/dev가 있는것을 확인 할 수 있습니다.
 >
-> ![image-20220112134424209](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134424209.png)
+> ![image-20220112134424209](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134424209.webp)
 
 ### remote branch 삭제
 
@@ -43,7 +43,7 @@ git push -d origin dev
 
 위의 명령어를 입력해서 원격 branch도 삭제 할 수 있습니다.
 
-![image-20220112134741139](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134741139.png)
+![image-20220112134741139](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134741139.webp)
 
 > 삭제후에는 더이상 origin/dev가 보이지 않습니다.
 
@@ -59,7 +59,7 @@ git push -d origin dev
 git reflog
 ```
 
-![image-20220112134914567](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134914567.png)
+![image-20220112134914567](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112134914567.webp)
 
 그러면 최근 작업내용들이 모두 보이는데요, 복구해야 할 commit 혹은 헤드 번호를 확인합니다.
 
@@ -72,7 +72,7 @@ git reflog
 git checkout -b 'dev' HEAD@{1}
 ```
 
-![image-20220112135229989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112135229989.png)
+![image-20220112135229989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112135229989.webp)
 
 `dev` branch를 체크 아웃 했다는 메시지가 나옵니다.
 
@@ -82,7 +82,7 @@ git checkout -b 'dev' HEAD@{1}
 git log
 ```
 
-![image-20220112135329188](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112135329188.png)
+![image-20220112135329188](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112135329188.webp)
 
 맨 위에 `branch 복구 테스트` 라는 이름으로 했던 커밋이 다시 돌아 와 있습니다. 
 
@@ -92,7 +92,7 @@ git log
 git push --set-upstream origin dev
 ```
 
-![image-20220112135414989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112135414989.png)
+![image-20220112135414989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/recover-branch.assets/image-20220112135414989.webp)
 
 모든 복구가 완료되었습니다!
 
