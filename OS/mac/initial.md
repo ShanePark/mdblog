@@ -18,7 +18,7 @@
 
 ### Homebrew
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/beer-machine-alcohol-brewery-159291-20211101231216301.jpeg" width="700" height="500" alt="first">
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/beer-machine-alcohol-brewery-159291-20211101231216301.webp" width="700" height="500" alt="first">
 
 <a href="https://shanepark.tistory.com/45" target="_blank">Mac 에 brew 설치하기</a>
 
@@ -28,7 +28,7 @@
 
 > Spotlight 를 대신해 여러가지 편의 기능을 제공합니다. 익숙해지면 정말 유용한 기능이 많습니다.
 
-![image-20211101231458490](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101231458490.png)
+![image-20211101231458490](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101231458490.webp)
 
 https://shanepark.tistory.com/164
 
@@ -40,7 +40,7 @@ https://shanepark.tistory.com/164
 >
 > Caps lock 키를 사용해 한/영 키를 변경하는건 정말 불편합니다.
 
-[![Black and Silver Macbook Pro](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/pexels-photo-7662049.jpeg)](https://images.pexels.com/photos/7662049/pexels-photo-7662049.jpeg?cs=srgb&dl=pexels-szabó-viktor-7662049.jpg&fm=jpg)
+[![Black and Silver Macbook Pro](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/pexels-photo-7662049.webp)](https://images.pexels.com/photos/7662049/pexels-photo-7662049.webp?cs=srgb&dl=pexels-szabó-viktor-7662049.jpg&fm=jpg)
 
 https://shanepark.tistory.com/165
 
@@ -62,7 +62,7 @@ JDK, ant, Gradle, Maven 등등 자바 기반의 개발 도구를 간편하게 �
 curl -s "https://get.sdkman.io" | bash
 ```
 
-![image-20220324232846059](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232846059.png)
+![image-20220324232846059](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232846059.webp)
 
 ```bash
 source "/Users/shane/.sdkman/bin/sdkman-init.sh"
@@ -72,7 +72,7 @@ source "/Users/shane/.sdkman/bin/sdkman-init.sh"
 
 그리고 설치가 잘 되었는지 확인을 위해 `sdk version`을 입력 해 봅니다.
 
-![image-20220324232923619](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232923619.png)
+![image-20220324232923619](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324232923619.webp)
 
 설치가 잘 되었네요.
 
@@ -80,7 +80,7 @@ source "/Users/shane/.sdkman/bin/sdkman-init.sh"
 
 > java 개발자뿐만 아니라, 대부분의 개발자에게 필요 할 거에요.
 
-[![Text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/pexels-photo-6190327.jpeg)](https://www.pexels.com/photo/creative-dark-internet-designer-6190327/)
+[![Text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/pexels-photo-6190327.webp)](https://www.pexels.com/photo/creative-dark-internet-designer-6190327/)
 
 #### SDKMAN 를 이용하지 않는 경우
 
@@ -94,7 +94,7 @@ brew tap AdoptOpenJDK/openjdk
 
 일단 brew해서 tap 을 먼저 해줘야 합니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056849.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056849.webp)
 
 이제 `brew search openjdk` 를 입력 하면 , 많은 버전의 openjdk를 보여줍니다. 
 
@@ -106,13 +106,13 @@ brew install adoptopenjdk14
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056887.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056887.webp)
 
 왠만하면 설치가 될 텐데, 저는 m1 맥북인데 아직 Rosetta 2 를 설치하지 않아서 에러가 발생했습니다. 혹시 Rosetta 2가 설치되어 있지 않다면 에러 메시지를 보시고 그대로 설치 하셔도 되고, 위에 있는 Rosetta 2 설치하기 를 참고해주세요.
 
 ​			
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img.webp)
 
 자바도 간단하게 설치 완료했습니다.
 
@@ -124,7 +124,7 @@ brew install adoptopenjdk14
 
 를 입력 하면 설치된 모든 자바의 버전과 경로가 표시됩니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-16390941970761.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-16390941970761.webp)
 
 > 11버전을 설치한 경우
 
@@ -138,7 +138,7 @@ brew install adoptopenjdk14
 sdk list java
 ```
 
-![image-20220324233217175](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233217175.png)
+![image-20220324233217175](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233217175.webp)
 
 > Corretto(AWS), Dragonwell(Alibaba), Microsoft, Oracle, Temurin(Eclipse) 등 많은 Vendor들의 자바목록이 보입니다. 맨 우측의 Identifier가 중요한데요, 설치하고자 하는 버전의 Identifider를 복사 해 둡니다.
 
@@ -150,7 +150,7 @@ sdk install java 17.0.2-tem
 
 으로 저는 Temurin JDK 17을 설치하겠습니다. 이전에는 AdoptOpenJDK 였는데 Temurin으로 리 브랜딩 되었습니다 
 
-![image-20220324233424318](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233424318.png)
+![image-20220324233424318](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233424318.webp)
 
 > 자바 설치도 완료 되었고, 17 버전이 기본 버전으로 설정 되었습니다.
 
@@ -172,13 +172,13 @@ sudo softwareupdate --install-rosetta
 
 m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을때는 Apple Silicon 최적화된 프로그램이 거의 없다 싶이 해서 컴퓨터 뭐 설치하면서 금방 설치했었는데, 왠만한 게 다 Apple Silicon 을 지원하는 지금에서는 아직 설치하지 않았다는걸 깨닫는데 한참 걸렸네요.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056818.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056818.webp)
 
 동의하면 A 누르고 엔터 치라는데 . 당연히 동의합니다.
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056803.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056803.webp)
 
 그닥 오래 걸리지 않습니다.	
 
@@ -186,7 +186,7 @@ m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을
 
 > mac의 기본 terminal도 나쁘지 않지만 iterm은 더 좋습니다.
 
-![image-20211101233257878](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101233257878.png)
+![image-20211101233257878](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101233257878.webp)
 
 아래의 명령어만 입력하면 설치는 손쉽게 됩니다.
 
@@ -198,7 +198,7 @@ brew install iterm2
 
 Preferences -> Keys -> Key Bindings에 `Split Vertically`와 `Split Horizontally ` 를 설정 해 주시면 되는데요 안타깝게도 한/영 전환이 된상태에서는 단축키를 인식하지 못하기 때문에 한/영 상태 둘 다 등록 해 주어야 불편함 없이 사용 할 수 있습니다.
 
-![image-20220319101034561](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220319101034561.png)
+![image-20220319101034561](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220319101034561.webp)
 
 > 위와 같이 설정 해 주시면 Terminator와 동일한 키로 창 분할을 하실 수 있습니다.
 
@@ -212,7 +212,7 @@ https://shanepark.tistory.com/60?category=1182535
 
 ### Rectangle
 
-### ![mac512pts1x](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/mac512pts1x.png)
+### ![mac512pts1x](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/mac512pts1x.webp)
 
 윈도우에서는 기본으로 지원하는 창 분할 기능을 MacOS에서는 왜 안해주는지는 정말 의문입니다.
 
@@ -232,11 +232,11 @@ Rectangle에 대한 자세한 내용을 확인 하고 싶다면 아래의 포스
 
 ### JetBrains ToolBox 
 
-![image-20211210212629372](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212629372.png)
+![image-20211210212629372](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212629372.webp)
 
 IntelliJ IDEA등 JetBrains사의 제품을 사용한다면, ToolBox를 사용해서 설치하는 것이 좋습니다. 간편하게 개발 툴들을 설치 할 수 있을 뿐만 아니라, 자동으로 업데이트 해주며 IDE와 함께 플러그인도 업데이트 할 수 있습니다. 심지어 롤백 및 다운그레이드도 지원해주기 때문에 단독으로 소프트웨어를 설치하는 것 보다 좋습니다.
 
-![image-20211210212332631](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212332631.png)
+![image-20211210212332631](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212332631.webp)
 
 > brew로 검색 해보니 jetbrains-toolbox라는 이름으로 있습니다.
 
@@ -250,27 +250,27 @@ brew install jetbrains-toolbox
 
 m1을 비롯한 Apple Silicon 맥북 사용자라면, mac OS Apple Sillicon 을 선택해서 다운 받으세요.
 
-![image-20211210213104689](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210213104689.png)
+![image-20211210213104689](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210213104689.webp)
 
-![image-20211210212532158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212532158.png)
+![image-20211210212532158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212532158.webp)
 
 금방 설치가 되었습니다. 실행해줍니다.
 
-![image-20211210212811081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212811081.png)
+![image-20211210212811081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212811081.webp)
 
 > 다양한 JetBrains 사의 제품들이 나옵니다. 
 
-![image-20211210212829153](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212829153.png)
+![image-20211210212829153](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212829153.webp)
 
 > 저는 IntelliJ IDEA Ultimate을 설치 합니다.
 
-![image-20211210212933262](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212933262.png)
+![image-20211210212933262](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210212933262.webp)
 
 > 원한다면 여러가지 이전 버전중 골라서 설치 할 수도 있습니다.
 
 그닥 어려울게 없습니다. 다만 툴박스는 창이 아니고 팝업이기 때문에 리사이즈나 이동이 안되어 정말 불편합니다. 
 
-![image-20211210214449797](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210214449797.png)
+![image-20211210214449797](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211210214449797.webp)
 
 > https://toolbox-support.jetbrains.com/hc/en-us/community/posts/360000094690-Why-is-the-Toolbox-not-a-real-window-
 
@@ -280,7 +280,7 @@ m1을 비롯한 Apple Silicon 맥북 사용자라면, mac OS Apple Sillicon 을 
 
 ### 배터리 표시 변경
 
-![image-20211101231719474](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101231719474.png)
+![image-20211101231719474](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211101231719474.webp)
 
 https://shanepark.tistory.com/166
 
@@ -288,7 +288,7 @@ https://shanepark.tistory.com/166
 
 ### Dock & Menu bar 숨기기
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056834.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056834.webp)
 
 Dock & Menu Bar 설정에 가면 맨 아래 체크박스로 메뉴바를 숨길 수 있습니다.  Dock 에서 아래서 세번째 버튼인 Automatically hide and show the Dock 을 체크해서 Dock 도 숨길 수 있습니다. 
 
@@ -345,13 +345,13 @@ killall Dock
 
 > 터치패드를 쓸 때 불편한게 드래그가 어렵다는 건데, 해당 설정을 통해 편하게 할 수 있습니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101232235913.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101232235913.webp)
 
 설정 -> 손쉬운 사용 (Accessibility) -> Pointer Control -> Trackpad Options 로 이동합니다.
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056847.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056847.webp)
 
 Enable dragging 을 클릭 하고 세 손가락으로 드래그 하기를 선택 한 뒤 OK를 눌러 저장합니다.
 
@@ -369,7 +369,7 @@ markdown으로 글을 작성하면 백틱 키입력을 많이 하게 되는데�
 
 1) cd ~/Library 입력해 Library 폴더로 이동 후 mkdir KeyBindings 입력해 KeyBindings 폴더를 만들어줍니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056827-5775856.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056827-5775856.webp)
 
 ​		
 
@@ -379,7 +379,7 @@ markdown으로 글을 작성하면 백틱 키입력을 많이 하게 되는데�
 vi ~/Library/KeyBindings/DefaultkeyBinding.dict
 ```
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056839.png) 
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056839.webp) 
 
 에디터가 켜지면 다음과 같이 입력하고 :wq로 저장 합니다.
 
@@ -399,7 +399,7 @@ vi ~/Library/KeyBindings/DefaultkeyBinding.dict
 
 > 애플워치가 있다면 애플워치로 맥북 잠금해제 옵션을 설정합니다.
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056857.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056857.webp)
 
 Preference - Security & Privacy 에서 Use your Apple Watch to unlock 체크를 설정 해 두면 됩니다. Require password 설정도 기본 5분으로 되어있지만 보안을 위해서는 immediately 로 하는게 좋습니다. 애플 워치가 있으니 번거로울 일도 없어 즉시로 변경 해 두었습니다.
 
@@ -407,19 +407,19 @@ Preference - Security & Privacy 에서 Use your Apple Watch to unlock 체크를 
 
 ### Finder 설정
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056866.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056866.webp)
 
 Finder 설정도 순정 상태에서 사용하기에는 조금 불편함이 있습니다. Finder를 켠 상태에서 View - > Show Path Bar ( 저는 이미 선택해서 Hide Path Bar 로 이름이 바뀌었습니다) 를 선택합니다.
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056875.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056875.webp)
 
 그러면 맨 아래 보이는 것 처럼 Path Bar가 생겨서 전체 경로를 한눈에 쉽게 보고 더블클릭으로 Navigate도 할 수 있습니다.
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056865.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056865.webp)
 
 개인적으로 키보드 설정에서 New Terminal at Folder도 켜두는걸 추천합니다. 저는 New iTerm2 를 대신 사용해서 체크가 해제 되어 있습니다.
 
@@ -431,13 +431,13 @@ Chrome에서는 기본적으로 F12 를 누르거나 Command + Shift + C 가 먹
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056901.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056901.webp)
 
 메뉴바에서 Safari -> Preferences를 들어가거나 사파리 켠 상태에서 Command 키 + 쉼표 키를 입력합니다.
 
 ​	
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056891.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056891.webp)
 
 이후 설정 윈도우가 뜨면 Advanced 에 들어가서 맨 아래 있는 Show Develop menu in menu bar를 체크 해 주시면 됩니다.
 
@@ -459,19 +459,19 @@ System Preferences > Keyboard > Shortcuts 메뉴에 들어가면 맨 아래에 A
 
 그걸 누르고 `+` 버튼을 눌러서,  
 
-![image-20220402184640432](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402184640432.png)
+![image-20220402184640432](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402184640432.webp)
 
 >  Minimize를 추가 해 주고 누르기 어려운 단축 키로 변경해 줍니다.
 
 Minimize만 하면, Chrome 이나 인텔리제이 등에서는 여전히 커맨드 M 키가 먹히거든요. 몇몇 어플리케이션들을 위해 Minmise를 입력하고 같은 작업을 반복 해 줍니다. 스펠링 맨 끝에서 2번째가 z 와 s 로 달라요.
 
-![image-20220402184538909](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402184538909.png)
+![image-20220402184538909](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402184538909.webp)
 
 > Minimize 와 Minimise가 모두 등록된 상태
 
 이렇게 하면 이제 실수로 커맨드 M 키를 눌러도 창이 내려갈 걱정이 없습니다.
 
-![image-20220402185325955](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402185325955.png)
+![image-20220402185325955](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220402185325955.webp)
 
 > 참고로 인텔리제이 사용자라면 KeyMap에도 Minimize가 설정 되어 있기 때문에 이 단축키도 비활성화 해주셔야 합니다.
 
@@ -481,7 +481,7 @@ Minimize만 하면, Chrome 이나 인텔리제이 등에서는 여전히 커맨�
 
 1. 마우스 가속 끄기
 
-![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211206211559027.png)
+![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20211206211559027.webp)
 
 그런데 맥북만 쓸땐 상관 없지만 리눅스나 윈도우 컴퓨터와 번갈아가며 사용하다 보면 마우스 가속 기능때문에 참 어색한데, 이게 아무리 지나도 적응이 되지 않습니다. 그래서 마우스 가속을 꺼 보았는데요. 이게 상당히 괜찮아서 게임도 가능 할 정도더라고요.
 
@@ -493,7 +493,7 @@ Minimize만 하면, Chrome 이나 인텔리제이 등에서는 여전히 커맨�
 
 혹은, 해당 스틸시리즈의 툴이 Apple Silicon을 아직도 지원 하지 않아서 저는 요즘 **LinearMouse** 라는 오픈소스를 소프트웨어를 대신 사용하고 있는데요. 만족스러워서 더욱 추천합니다.
 
-![image-20220812222307221](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222307221.png)
+![image-20220812222307221](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222307221.webp)
 
 > https://linearmouse.org
 >
@@ -505,19 +505,19 @@ Homebrew로 간편하게 설치해서 사용하시면 됩니다.
 brew install --cask linearmouse
 ```
 
-![image-20220812222423052](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222423052.png)
+![image-20220812222423052](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222423052.webp)
 
 > 포인터 가속을 끄는 것 뿐만 아니라, 마우스 스크롤이 반대로 되는 문제도 해결 해 줍니다.
 
 2. Mac Mouse Fix
 
-![image-20220812222546132](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222546132.png)
+![image-20220812222546132](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812222546132.webp)
 
 > https://github.com/noah-nuebling/mac-mouse-fix
 
 원래 한동안은 로지텍의 마우스 소프트웨어를 사용 했었는데 툭하면 설정이 초기화 되는 현상 때문에 결국 세번째에 인내심에 한계를 느껴 다른 툴을 찾았습니다. Mac Mouse Fix는 마우스 가운데 클릭을 활용해 스크롤 넘기기 및 미션 컨트롤이 가능합니다! 그리고 뒤로가기 앞으로 가기 버튼을 설정 해 주는것 뿐만 아니라 스크롤시 터치패드로 하는 것 처럼 부드럽게 만들어줍니다. Invert direction은 마우스 휠 방향을 반대로 해주는건데, 위의 LinearMouse와 함께 사용한다면 둘 중 하나에서만 켜주면 됩니다.
 
-![image-20220812223046023](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812223046023.png)
+![image-20220812223046023](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220812223046023.webp)
 
 > 위와 같이 여러가지 설정이 가능 합니다.
 
@@ -676,13 +676,13 @@ brew로 쉽게 설치 할 수 있습니다.
 brew install --cask monitorcontrol
 ```
 
-![image-20230317222421612](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317222421612.png)
+![image-20230317222421612](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317222421612.webp)
 
 설치하시면, 위에 보이는 것 처럼 메뉴바에서 사용이 가능합니다. 놀라운건 여러개의 모니터를 연결 한 경우에도 각각의 모니터 밝기를 다르게 설정 할 수 있다는 겁니다.
 
 기본적으로 기존에 맥북에서 사용하던것과 같은 `F2` 밝기 조정 단축키를 사용하면 되는데요 
 
-![image-20230317222533094](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317222533094.png)
+![image-20230317222533094](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317222533094.webp)
 
 > Screen to control 에서 Depens on mouse pointer position 으로 설정해두면 마우스 포인터가 위치한 모니터의 밝기를 조절하게 됩니다.
 
@@ -692,7 +692,7 @@ brew install --cask monitorcontrol
 
 ### Stats
 
-![Stats](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/68747470733a2f2f7365726869792e73332e65752d63656e7472616c2d312e616d617a6f6e6177732e636f6d2f4769746875625f7265706f2f73746174732f706f7075707325334676322e332e322e706e673f7633.png)
+![Stats](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/68747470733a2f2f7365726869792e73332e65752d63656e7472616c2d312e616d617a6f6e6177732e636f6d2f4769746875625f7265706f2f73746174732f706f7075707325334676322e332e322e706e673f7633.webp)
 
 > https://github.com/exelban/stats
 
@@ -720,7 +720,7 @@ M1 혹은 M2 맥북에어를 사용한다면 외장 모니터를 1개밖에 사�
 
 디스플레이 연결을 소프트웨어를 통해 가상으로 변환해주는 원리이기 때문에 부하가 크거나 마우스 움직임이 끊기지는 않을까 걱정이 많았었는데 정말 매끄럽게 잘 연결이 됩니다. 
 
-![image-20230317224842982](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317224842982.png)
+![image-20230317224842982](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317224842982.webp)
 
 >  다만 4K 이상의 고해상도의 동영상을 시청할 때에는 위에 보이는 것 처럼 CPU 자원을 엄청나게 소모하는것을 감안은 하셔야 합니다. 그래도 CPU 온도가 65도 이상으로 올라가지도 않고 이상태에서 4K 영상을 하나 더 트는것도 가볍게 소화해내니 딱히 상관은 없습니다. 굳이 따지자면 고해상도 영상 편집작업쯤 되면 약간 무리가 오기 시작하지 않을까 싶긴 한데 그런 작업을 자주 한다면 맥북 프로를 구입하는 편이 좋겠습니다.
 
@@ -728,7 +728,7 @@ M1 혹은 M2 맥북에어를 사용한다면 외장 모니터를 1개밖에 사�
 
 ### Typora
 
-![image-20220319095900973](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220319095900973.png)
+![image-20220319095900973](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220319095900973.webp)
 
 수많은 markdown editor들이 있지만 제가 개인적으로 가장 좋아하는건 Typora 입니다. 2021년 말에 정식 버전을 릴리즈 하며 $14.99 의 비용이 책정되기는 했지만 여전히 매력적인 소프트웨어 입니다. 제가 작성하는 모든 블로그의 글들도 Typora로 작성하고 있습니다.
 
@@ -756,7 +756,7 @@ alias typora="/Applications/Typora.app/Contents/MacOS/Typora"
 
 저는 paintbrush를 사용하고 있습니다. 
 
-![image-20230317225922431](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317225922431.png)
+![image-20230317225922431](https://raw.githubusercontent.com/ShanePark/mdblog/main/OS/mac/initial.assets/image-20230317225922431.webp)
 
 아래 명령어로 설치 합니다.
 
