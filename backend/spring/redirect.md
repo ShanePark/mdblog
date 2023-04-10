@@ -30,7 +30,7 @@ public class RedirectTestController {
 
 코드를 일단 재현 해 보았습니다. `localhost:8080/redirect` 로 요청을 보내보면
 
-![image-20220513152636744](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513152636744.png)
+![image-20220513152636744](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513152636744.webp)
 
 > Status: 200 OK 와 함께 redirect:/ 라는 문자열이 그대로 반환 됩니다.
 
@@ -51,7 +51,7 @@ public class RedirectTestController {
 
 > "/" 주소로 리다이렉트 하는 코드
 
-![image-20220513154939747](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513154939747.png)
+![image-20220513154939747](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513154939747.webp)
 
 > 이후 `/redirect` 주소로 요청을 보내면 301 Status Code를 내며 문제없이 "/" 주소로 리다이렉트를 해 줍니다.
 
@@ -82,37 +82,37 @@ public class RedirectTestController {
 
 이번에는 스프링이 어떤 과정을 통해 "redirect:" 라고 작성된 부분을 리다이렉트로 인식하고, 리다이렉트를 보내주는지 확인 해 보도록 하겠습니다.
 
-![image-20220513155529213](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513155529213.png)
+![image-20220513155529213](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513155529213.webp)
 
 > 브레이크 포인트를 찍고 디버깅을 시작합니다.
 
 **ServletInvocableHandlerMethod.invokeAndHandle**(..)
 
-![image-20220513155911559](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513155911559.png)
+![image-20220513155911559](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513155911559.webp)
 
 invokeForRequest의 결과로 받은 `returnValue` 객체에 저희가 반환한 `"redirect:/"`이 값으로 들어가 있는게 보입니다. 여기서부터 찾으면 되겠네요. 
 
 여기서의 invokeAndHandle 메서드는 RequestMappingHandlerAdapter가 요청처리를 위한 수많은 선행 작업을 한 이후에 본격적으로 이루어 집니다.
 
-![image-20220513160350839](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160350839.png)
+![image-20220513160350839](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160350839.webp)
 
 > 같은 메서드 안에서 handleReturnValue() 메서드를 호출 합니다.
 
 **HandlerMethodReturnValueHandlerComposite.handleReturnValue(..)**
 
-![image-20220513160448741](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160448741.png)
+![image-20220513160448741](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160448741.webp)
 
 > returnValue를 토대로 handler를 결정 한 뒤에, handleReturnValue를 해줍니다
 
 **ViewNameMethodReturnValueHandler.handleReturnValue(..)**
 
-![image-20220513160828734](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160828734.png)
+![image-20220513160828734](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160828734.webp)
 
 `returnValue` 결과를 토대로 ViewNameMethodReturnValueHandler가 핸들러로 결정 되었고, returnValue가 문자열인 걸 확인 한 뒤에, RedirectViewName(viewName)을 확인 후 true라면 mavContainer의 RedirectModelScenario값을 true로 변경 해 줍니다.
 
 **ViewNameMethodReturnValueHandler.isRedirectViewName(String viewName)**
 
-![image-20220513160954749](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160954749.png)
+![image-20220513160954749](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513160954749.webp)
 
 > isRedirectViewName(String viewName) 메서드는 `viewName.startsWith("redirect:")` 로 리다이렉트에 관련된 문자열인지를 확인 합니다.
 
@@ -122,51 +122,51 @@ invokeForRequest의 결과로 받은 `returnValue` 객체에 저희가 반환한
 
 **RequestMappingHandlerAdapter.invokeHandlerMethod(..)**
 
-![image-20220513162226034](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513162226034.png)
+![image-20220513162226034](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513162226034.webp)
 
 > 위에 보이는 진한 파란색에서 invokeAndHandle 작업을 마쳤으며, 이제는 아래의 파란줄에서 invoke 된 결과를 토대로 ModelAndView를 만들어서 반환 하는 과정 입니다.
 
 **RequestMappingHandlerAdapter.getModelAndView(..)**
 
-![image-20220513171441058](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513171441058.png)
+![image-20220513171441058](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513171441058.webp)
 
  isRequestHandled()를 확인 후, 이미 핸들되었다면 null을 반환하고, 그렇지 않다면 ModelAndView 객체를 만들게 되는데요, 미리 스포일러를 하자면.. @RequestBody 어노테이션이 작성된 경우에는 isRequestHandled()에서 걸려 ModelAndView가 null 상태로 반환됩니다.
 
-![image-20220513171720682](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513171720682.png)
+![image-20220513171720682](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513171720682.webp)
 
 조금 더 내려와서 해당 mavContainer가 viewReference()가 아닌지를 확인 하는데요, 
 
-![image-20220513171756138](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513171756138.png)
+![image-20220513171756138](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513171756138.webp)
 
 > mavContainer의 view 객체의 타입이 String이라면 true를 반환합니다.
 
-![image-20220513172008118](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513172008118.png)
+![image-20220513172008118](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513172008118.webp)
 
 > mavContainer의 view는 `"redirect:/"` 인 상태기 때문에 mav.setView() 메서드를 그냥 건너뛰게 됩니다.
 
 그렇게 전달된 ModelAndView는 이제 호출 스택을 다시 하나씩 치우고는 스프링의 얼굴마담인 **DispatcherServlet** 으로 전달됩니다. doDispatch() 를 진행중이었으니깐요.
 
-![image-20220513172523081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513172523081.png)
+![image-20220513172523081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513172523081.webp)
 
 doDispatch 코드를 한 화면에 담아 봤는데요, 파란색 블록된 부분이 핸들러 어댑터로부터 ModelAndView를 획득 한 상태 입니다.
 
 이제 마지막으로 ViewResolver로 부터 View를 획득해 View를 뿌려주는 일만 남았습니다.
 
-![image-20220513173146172](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173146172.png)
+![image-20220513173146172](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173146172.webp)
 
 **DispatcherServlet.processDispatchResult(..)**
 
-![image-20220513173314399](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173314399.png)
+![image-20220513173314399](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173314399.webp)
 
 Exception이 있는지 먼저 확인 한 후에 바로 획득한 ModelAndView로 렌더링을 시도합니다.
 
-![image-20220513173652729](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173652729.png)
+![image-20220513173652729](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173652729.webp)
 
 > viewName이 null이 아니기 때문에 resolveViewName(..) 을 호출해서 View를 획득하는데요
 
 **DispatcherServlet.resolveViewName(..)**
 
-![image-20220513173909138](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173909138.png)
+![image-20220513173909138](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513173909138.webp)
 
 4개의 viewResolver를 가지고 있고, 그 중 View를 획득 할 때 까지 resolveViewName(..)을 시도합니다.
 
@@ -174,19 +174,19 @@ Exception이 있는지 먼저 확인 한 후에 바로 획득한 ModelAndView로
 
 **ContentNegotiatingViewResolver.resolveViewName(String viewName, Locale locale)**
 
-![image-20220513174401734](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513174401734.png)
+![image-20220513174401734](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513174401734.webp)
 
 getCandiateViews를 호출 해서 viewName과 MediaType 등을 활용해 가능한 View 후보자들을 모아내고, 그 중 BestView를 반환하게 되어 있습니다.
 
 **ContentNegotiatingViewResolver.getCandidateViews(..)**
 
-![image-20220513174632967](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513174632967.png)
+![image-20220513174632967](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513174632967.webp)
 
 후보자들을 찾아내는 코드 입니다. 이제 가지고 있는 ViewResolver들을 활용해 viewName으로 후보자들을 찾는데요. 
 
 그렇게 여러개의 ViewResolver들이 resolveViewName을 시도 하다가 결국 **AbstractCachingViewResolver** 에서 createView를 시도 하는데요
 
-![image-20220513175508765](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513175508765.png)
+![image-20220513175508765](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513175508765.webp)
 
 > createView를 시도 합니다
 
@@ -194,21 +194,21 @@ getCandiateViews를 호출 해서 viewName과 MediaType 등을 활용해 가능�
 
 **UrlBasedViewResolver.createView(String viewName, Locale locale)**
 
-![image-20220513175704371](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513175704371.png)
+![image-20220513175704371](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513175704371.webp)
 
 그리고 마침내 viewName이  REDIRECT_URL_PREFIX("redirect:") 로 시작하는지를 확인 하고는 RedirectView 객체를 생성 해서 반환 하게 되는 겁니다.
 
 이제 다시 ContentNegotiatingViewResolver로 돌아와서, 여러개의 후보 View중에 bestView를 뽑는데
 
-![image-20220513180043612](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513180043612.png)
+![image-20220513180043612](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513180043612.webp)
 
 > bestView 경연대회
 
-![image-20220513180135960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513180135960.png)
+![image-20220513180135960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513180135960.webp)
 
 > RedirectView라니 우승은 따놓은 당상입니다. 특별 취급을 해주네요
 
-![image-20220513180254998](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513180254998.png)
+![image-20220513180254998](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/redirect.assets/image-20220513180254998.webp)
 
 그렇게 힘들게 얻은 View를 가지고 render 처리 함으로서 길고 길었던 리다이렉트 요청 처리는 어느정도 마무리가 됩니다.
 
