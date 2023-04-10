@@ -30,19 +30,19 @@ brew 를 활용해서 손쉽게 설치합니다. brew가 없다면 [링크](http
 brew install colima
 ```
 
-![image-20220802074204725](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074204725.png)
+![image-20220802074204725](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074204725.webp)
 
 ### docker 설치
 
 docker가 아직 설치되어 있지 않았다면 본 항목을 확인하며 설치해주시고, 기존에 이미 설치되어있다면 실행중인 Docker desktop을 종료만 하고 아래의 Colima 실행으로 넘어가주세요.
 
-![image-20220821090106960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821090106960.png)
+![image-20220821090106960](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821090106960.webp)
 
 도커를 아직 설치 한 적이 없으시다면 도커 설치가 필요한데요..
 
 도커 데스크탑을 설치할 수도 있고, 도커 엔진만 설치해서 하실 수도 있는데. 도커 데스크탑을 원하시면 아래의 링크에서 우측 Mac with Apple chip을 선택 해서 다운 받으시면 됩니다.
 
-![image-20220821082548481](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082548481.png)
+![image-20220821082548481](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082548481.webp)
 
 > https://www.docker.com/products/docker-desktop/
 
@@ -56,17 +56,17 @@ Colima는 Docker Desktop을 대신해서 docker 엔진을 실행해주기 때문
 
 테스트를 해 보니 같이 실행해도 문제는 없더라고요. 
 
-![image-20220821091050604](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091050604.png)
+![image-20220821091050604](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091050604.webp)
 
 그래서 둘다 실행 되어 있다면 docker 명령어를 누가 가져가나 했는데
 
-![image-20220821091307865](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091307865.png)
+![image-20220821091307865](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821091307865.webp)
 
 > 둘다 동시에 실행되면 colima가 docker desktop로 설정되어 있던 default docker context를 가져가 버립니다. 
 >
 > Docker context가 다르면 이미지 공유도 안되더라고요.
 
-![image-20220916224949482](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220916224949482.png)
+![image-20220916224949482](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220916224949482.webp)
 
 위에서 처럼 Docker Context를 변경 하면 자유롭게 왔다 갔다 하면서 사용 할 수 있긴 하지만, 헷갈릴 수 있으니 왠만하면 처음에는 Docker Desktop은 종료 하고 해주세요. 
 
@@ -91,7 +91,7 @@ Docker desktop은 필요 없고 도커엔진만 필요하다면 brew로 도커 �
 brew install docker
 ```
 
-![image-20220821082753728](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082753728.png)
+![image-20220821082753728](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220821082753728.webp)
 
 > 도커 엔진만 설치하면 Treating docker as a formula. For the cask, use homebrew/cask/docker 라고 나옵니다. 도커 엔진이 있으면, 그걸 구동 할 수 있는 도커 머신이 필요한데요. Docker Desktop 혹은 Colima 가 그 역할을 해 줍니다.
 >
@@ -107,7 +107,7 @@ Colima를 사용하지 않고 Docker Desktop 환경에서는 `oci-oracle-xe` 이
 colima start --memory 4 --arch x86_64
 ```
 
-![image-20220802074246457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074246457.png)
+![image-20220802074246457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074246457.webp)
 
 > `docker ps` 명령어가 잘 작동됩니다.
 
@@ -123,11 +123,11 @@ colima start --memory 4 --arch x86_64
 docker run --restart unless-stopped --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
 ```
 
-![image-20220802074143096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074143096.png)
+![image-20220802074143096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074143096.webp)
 
 용량이 꽤 큰데, 어느 정도 시간이 걸려 설치가 완료 되었습니다.
 
-![image-20220802074435458](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074435458.png)
+![image-20220802074435458](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074435458.webp)
 
 > oracle 컨테이너가 떠있습니다.
 
@@ -138,15 +138,15 @@ docker run --restart unless-stopped --name oracle -e ORACLE_PASSWORD=pass -p 152
 docker logs -f oracle
 ```
 
-![image-20220802074458233](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074458233.png)
+![image-20220802074458233](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074458233.webp)
 
-![image-20220802074511589](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074511589.png)
+![image-20220802074511589](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074511589.webp)
 
 같은 도커 이미지를 Docker desktop 에서 돌렸을때에는 실행이 되지 않았는데, Colima로 돌리니 Database mounted가 되었습니다!
 
 조금 더 기다리면..
 
-![image-20220802074556719](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074556719.png)
+![image-20220802074556719](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074556719.webp)
 
 > 마침내 DATABASE IS READY TO USE 가 되었습니다.
 
@@ -156,7 +156,7 @@ docker logs -f oracle
 
 Host 는 **localhost**, Database는 **xe**, 포트는 **1521** 을 입력하고 유저네임은 **system**, 비밀번호는 아까 위에서 옵션으로 준 값을 입력 (pass) 하고 테스트를 합니다. 데이터베이스명이 혹시 orcl 로 되어 있다면, xe로 꼭 바꿔주셔야 합니다.
 
-![image-20220802074851769](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074851769.png)
+![image-20220802074851769](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220802074851769.webp)
 
 m1 맥북에서 localhost:1521 로 DB 접속에 처음 성공한 감격의 순간 입니다.
 
@@ -177,7 +177,7 @@ DESCRIBE EMP;
 
 해당 도커 이미지에는 샘플 계정이 포함 되어 있지 않기 때문에
 
-![image-20230126095055792](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126095055792.png)
+![image-20230126095055792](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126095055792.webp)
 
 > ORA-01918: user 'SCOTT' does not exist 라고 나옵니다.
 
@@ -201,7 +201,7 @@ CREATE USER scott identified by tiger;
 GRANT CONNECT, resource, dba to scott;
 ```
 
-![image-20230126100205611](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100205611.png)
+![image-20230126100205611](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100205611.webp)
 
 > User created, Grant succeeded.
 
@@ -211,7 +211,7 @@ GRANT CONNECT, resource, dba to scott;
 select username from dba_users where username = 'SCOTT';
 ```
 
-![image-20230126095607033](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126095607033.png)
+![image-20230126095607033](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126095607033.webp)
 
 ### SCOTT 으로 접속
 
@@ -223,7 +223,7 @@ docker exec -it oracle sqlplus
 
 대신 이번에는 계정명 scott 암호 tiger로 접속 합니다.
 
-![image-20230126100415173](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100415173.png)
+![image-20230126100415173](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100415173.webp)
 
 > scott 으로 접속한 상태.
 
@@ -237,7 +237,7 @@ https://github.com/mv/mvdba/blob/master/demo/demobld.sql
 select * from emp;
 ```
 
-![image-20230126100726727](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100726727.png)
+![image-20230126100726727](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20230126100726727.webp)
 
 > 정상적으로 데이터가 입력 된 상태.
 
@@ -257,7 +257,7 @@ select * from emp;
 docker ps -a
 ```
 
-![image-20220815204617787](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815204617787.png)
+![image-20220815204617787](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815204617787.webp)
 
 제걸 예로 들면, **trusting_nash** 라는 이름으로 된 `oracle-xe` 컨테이너가 종료 된 상태인게 보입니다. 저 컨테이너를 다시 띄워줘야 해요.
 
@@ -267,7 +267,7 @@ docker ps -a
 docker start f4ac517e4ee4
 ```
 
-![image-20220815204804384](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815204804384.png)
+![image-20220815204804384](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815204804384.webp)
 
 이후 다시 `docker ps`를 해보면, 기존에 사용하던 컨테이너가 다시 떠있는걸 확인 할 수 있고, DB 접속을 해 보시면 기존에 사용하던 데이터를 이어서 사용 하실 수 있습니다.
 
@@ -287,7 +287,7 @@ docker run --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-x
 docker run --restart unless-stopped --name oracle -e ORACLE_PASSWORD=pass -p 1521:1521 -d gvenzl/oracle-xe
 ```
 
-![image-20221127151846174](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20221127151846174.png)
+![image-20221127151846174](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20221127151846174.webp)
 
 > restart 옵션 덕에 colima 를 띄우니 oracle container가 자동으로 실행 된 상태 
 
@@ -313,7 +313,7 @@ docker volume ls
 
 명령어로 확인 하실 수 있어요.
 
-![image-20220825115718339](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220825115718339.png)
+![image-20220825115718339](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220825115718339.webp)
 
 리눅스의 경우에는 `/var/lib/docker/volumes/` 에서 볼륨 경로를 직접 확인 할 수 있지만 대신 MacOS 의 경우에는 도커를 네이티브로 구동 할 수 없다보니 Hyperkit라는 가상화 이미지를 사용합니다.
 
@@ -352,7 +352,7 @@ docker logs -f oracle
 
 위의 명령을 띄워 놓고 데이터베이스가 생성되는 로그를 확인 해주세요. 제법 오랜 시간이 걸립니다.
 
-![image-20220824211245890](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211245890.png)
+![image-20220824211245890](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211245890.webp)
 
 > 볼륨을 걸고, 컨테이너가 정상적으로 뜬 상태 입니다. 데이터 베이스를 생성 중 입니다.
 >
@@ -360,13 +360,13 @@ docker logs -f oracle
 
 완성되면 oracledb 폴더가 아래와 같은 구조가 됩니다.
 
-![image-20220815210255971](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815210255971.png)
+![image-20220815210255971](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220815210255971.webp)
 
 > 자동으로 oracledb 폴더가 생성되고 파일들이 생깁니다. 이 폴더만 있으면 컨테이너를 새로 만들어도 데이터를 유지 할 수 있습니다.
 
 ### 2. 데이터 베이스 생성완료. 하지만 password file 열기 오류
 
-![image-20220824211558466](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211558466.png)
+![image-20220824211558466](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211558466.webp)
 
 이제 볼륨을 걸어서 진행 했다면 권한 문제로 비밀번호 파일을 열지 못하기 때문에 컨테이너가 `ALTER USER SYS    IDENTIFIED BY "pass"` 를 시도하다가 그대로 죽어 버립니다. 실제로 해당 컨테이너 내부로 들어가서 확인 해 보면, `/opt/oracle/oradata` 의 소유주가 호스트의 uid로 지정 되어있습니다.
 
@@ -380,7 +380,7 @@ docker logs -f oracle
 docker start oracle
 ```
 
-![image-20220824211845793](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211845793.png)
+![image-20220824211845793](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211845793.webp)
 
 실행 후에는 컨테이너 내부의 uid를 확인 해 줍니다.
 
@@ -388,7 +388,7 @@ docker start oracle
 docker exec -it oracle id
 ````
 
-![image-20220824211949528](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211949528.png)
+![image-20220824211949528](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824211949528.webp)
 
 해당 컨테이너 내부에서 oracle 이라는 이름의 uid는 54321인 것으로 확인 됩니다.
 
@@ -400,7 +400,7 @@ docker exec -it oracle id
 sudo chown -R 54321:54321 ~/Documents/oracledb
 ```
 
-![image-20220824212212682](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824212212682.png)
+![image-20220824212212682](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824212212682.webp)
 
 > 54321로 소유자가 변경 되었습니다.
 
@@ -410,7 +410,7 @@ sudo chown -R 54321:54321 ~/Documents/oracledb
 docker exec -it oracle ls -al /opt/oracle/oradata
 ```
 
-![image-20220824212336169](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824212336169.png)
+![image-20220824212336169](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824212336169.webp)
 
 이어서 퍼미션 정보도 변경 해 줍니다. 퍼미션을 열어주지 않으면 호스트에 권한이 없어서 컨테이너를 띄울 때 문제가 생깁니다.
 
@@ -418,7 +418,7 @@ docker exec -it oracle ls -al /opt/oracle/oradata
  sudo chmod -R 777 oracledb
 ```
 
-![image-20220824212931572](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824212931572.png)
+![image-20220824212931572](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824212931572.webp)
 
 이제 변경 된 퍼미션으로 문제없이 실행되는지 확인을 위해 컨테이너를 재 시작 해줍니다.
 
@@ -426,7 +426,7 @@ docker exec -it oracle ls -al /opt/oracle/oradata
 docker restart oracle
 ```
 
-![image-20220824213041978](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213041978.png)
+![image-20220824213041978](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213041978.webp)
 
 재시작 후에는 로그를 확인 해 보면 천천히 DB가 뜨는게 확인 됩니다.
 
@@ -434,9 +434,9 @@ docker restart oracle
 docker logs -f oracle
 ```
 
-![image-20220824213141649](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213141649.png)
+![image-20220824213141649](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213141649.webp)
 
-![image-20220824213208113](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213208113.png)
+![image-20220824213208113](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213208113.webp)
 
 컨테이너가 정상적으로 뜨고, 오라클 DB가 준비되었다면 `Ctrl+C` 로 로그를 종료 시키고, 비밀번호를 초기화 해 줍니다.
 
@@ -444,7 +444,7 @@ docker logs -f oracle
 docker exec oracle resetPassword <원하는 비밀번호>
 ```
 
-![image-20220824213250141](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213250141.png)
+![image-20220824213250141](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213250141.webp)
 
 > 권한 문제가 해결되었다면 비밀번호가 정상적으로 변경 됩니다.
 
@@ -452,7 +452,7 @@ docker exec oracle resetPassword <원하는 비밀번호>
 
 이제 모든 설정이 끝났습니다.. 디비 클라이언트를 켜고 Database 에는 xe를, Username에는 system, 그리고 패스워드에는 위에서 resetPassword 할 때 입력한 값을 써 줍니다.
 
-![image-20220824213559116](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213559116.png)
+![image-20220824213559116](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/oracleDB.assets/image-20220824213559116.webp)
 
 모든 설정이 완료되었습니다.
 

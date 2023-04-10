@@ -69,7 +69,7 @@ docker --version
 
 를 입력해서 버전을 확인 하거나
 
-![image-20210919181521058](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/docker.assets/image-20210919181521058.png)
+![image-20210919181521058](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/docker.assets/image-20210919181521058.webp)
 
  혹은 hello-world 이미지를 실행 시켜 잘 설치되었는지 확인 할 수 있습니다.
 
@@ -77,7 +77,7 @@ docker --version
  sudo docker run hello-world
 ```
 
-![image-20210919181654082](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/docker.assets/image-20210919181654082.png)
+![image-20210919181654082](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/docker.assets/image-20210919181654082.webp)
 
 ## Compose 설치
 

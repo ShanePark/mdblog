@@ -12,9 +12,9 @@
 
 아래 사진의 예제는 각각 Gitlab과 Github입니다. 어렵지 않게 새로운 저장소를 만드실 수 있습니다.
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125095445626.png" alt="first" width=750 height=430>
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125095445626.webp" alt="first" width=750 height=430>
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125124244286.png" alt="second" height="730" width="750">
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125124244286.webp" alt="second" height="730" width="750">
 
 > Create repository를 눌러서 생성
 
@@ -22,13 +22,13 @@ Github이나 Gitlab 에서는 저장소를 생성 할 때, readme 를 추가 하
 
 덕분에 어렵지 않게 필요한 내용들을 찾아 보고 힌트를 얻을 수 있습니다.
 
-![image-20211125100954245](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125100954245.png)
+![image-20211125100954245](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125100954245.webp)
 
 ## 원격저장소 추가
 
 저는 이미 다른 원격 저장소와 연결 되어 있던 Git저장소를 가지고 새로운 원격 저장소를 추가 해 보겠습니다.
 
-![image-20211125100212265](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125100212265.png)
+![image-20211125100212265](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125100212265.webp)
 
 ### 원격 저장소 추가 방법
 
@@ -50,7 +50,7 @@ git push origin master
 
 하지만 이미 기존의 원격저장소가 등록 되어 있는 경우에는
 
-![image-20211125125907662](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125125907662.png)
+![image-20211125125907662](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125125907662.webp)
 
 > 이미 origin 이라는 이름의 remote가 있기 때문에 추가가 되지 않습니다.
 >
@@ -64,7 +64,7 @@ git push origin master
 git remote -v
 ```
 
-![image-20211125125947416](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125125947416.png)
+![image-20211125125947416](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125125947416.webp)
 
 원격 저장소 추가는 크게 세가지 방법이 있겠네요.
 
@@ -97,7 +97,7 @@ git remote add origin git@github.com:Shane-Park/playddit.git
 
 저는 기존의 원격 저장소가 필요 없어서 3번을 선택 했습니다. 여러개의 원격 저장소가 추가된다면 혼동이 올 수도 있습니다.
 
-![image-20211125101541590](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125101541590.png)
+![image-20211125101541590](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125101541590.webp)
 
 ## 소스 반영
 
@@ -107,7 +107,7 @@ git remote add origin git@github.com:Shane-Park/playddit.git
 git push
 ```
 
-![image-20211125101643076](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125101643076.png)
+![image-20211125101643076](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125101643076.webp)
 
 -u 옵션을 붙여 push 합니다. 
 
@@ -119,7 +119,7 @@ git push
 git push -u origin master
 ```
 
-![image-20211125101839398](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125101839398.png)
+![image-20211125101839398](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125101839398.webp)
 
 보통의 경우는 push가 됩니다. 아마 대부분 되셨을텐데요, 저는 `shallow update not allowed` 에러가 발생 했습니다.
 
@@ -141,7 +141,7 @@ git fetch --unshallow old
 
 아무래도 새로운 저장소로 간다고 해도 이전의 버전관리도 함께 하는게 좋으니 과거의 원격 저장소에 접속을 하지 못하는 경우가 아니라면 1번 옵션으로 진행 하는게 좋겠습니다.
 
-![image-20211125103534899](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125103534899.png)
+![image-20211125103534899](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125103534899.webp)
 
 > 모든 작업을 마치고 Everything up-todate 상태가 되었습니다.
 
