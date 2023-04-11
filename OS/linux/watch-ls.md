@@ -4,7 +4,7 @@
 
 서버에 파일 업로드할 때 임시 파일이 생성되고 소멸되는 시점과 소요 시간 등을 확인 하기 위해 `ls -al` 명령어를 계속 치고 있었습니다. 
 
-![image-20220617103225058](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/watch-ls.assets/image-20220617103225058.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/watch-ls.assets/image-20220617103225058.webp width=670 height=500 alt=1>
 
 임시 파일을 생성 하거나 삭제 할 때에 로그를 남기는 방법이 있지만, 스프링이 MultipartFile 을 받아 임시 파일을 생성하는 시점을 확인 하려니 쉽지 않았습니다.
 
@@ -35,7 +35,7 @@ watch -n 1 "ls -altr"
 
 이제 명령어를 직접 입력 해 확인 해보면
 
-![peek](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/watch-ls.assets/peek.gif)
+![peek](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/watch-ls.assets/peek.webp)
 
 > 파일이 생성 되거나 삭제 될 때 실시간으로 확인 할 수 있습니다.
 

@@ -4,7 +4,7 @@
 
 저희집은 iPhone, MacBook, Apple TV, HomePod, iPad 등등 가족들이 사용하는 Apple 디바이스들이 많다보니 편의상 애플 뮤직을  꽤 오래 전 부터 구독 하고 있습니다.
 
-![image-20220323151555440](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323151555440.png) 
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323151555440.webp width=750 height=480 alt=1>
 
 13,500원인 Family Plan을 구독하면 무려 6명까지 제한 없이 음악을 들을 수 있습니다. 무려 <u>세금도 포함</u>한 금액으로, 꽉 채워 구독시 인당 2,250원이라는 믿기지 않는 가성비로 인해 잠시 Spotify 를 구독 하다가 다시 Apple Music으로 돌아온지도 이제 제법 되었습니다.
 
@@ -14,7 +14,7 @@
 
 이 상황을 해결해 내기 위해
 
-![image-20220323152012888](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323152012888.png)
+![image-20220323152012888](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323152012888.webp)
 
 Snap 에 있는 Apple Music 소프트웨어를 다운 받아 사용 해 보았는데
 
@@ -22,7 +22,7 @@ Snap 에 있는 Apple Music 소프트웨어를 다운 받아 사용 해 보았�
 
 겉 보기와는 다르게 소프트웨어의 상태가 너무도 조악하고 에러도 심각하며 단순하게 웹 브라우저를 내장한 소프트웨어에 불과하기 때문에 도저히 사용 할수가 없어서 음악을 며칠 들어 보고는 바로 지워버렸었습니다. Snap에 있는 Apple 관련 앱들은 다 비추천합니다.
 
-![image-20220323152234076](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323152234076.png)
+![image-20220323152234076](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323152234076.webp)
 
 > https://music.apple.com/browse
 
@@ -36,7 +36,7 @@ Snap 에 있는 Apple Music 소프트웨어를 다운 받아 사용 해 보았�
 
 ### 소개
 
-![image-20220323153020866](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153020866.png)
+![image-20220323153020866](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153020866.webp)
 
 > 오픈소스라는게 믿기지 않는 UI/UX
 
@@ -46,7 +46,7 @@ Cider는 Windows, Linux, macOS, 등등 거의 모든 OS에서 사용 할 수 있
 - 기존 Apple Music 의 모든 기능을 담았으며
 - 가볍습니다. iTunes로 노래를 들을떄랑 비교가 안됩니다.
 
-![image-20220323153247393](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153247393.png)
+![image-20220323153247393](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153247393.webp)
 
 - 심지어 독자적인 추가 기능들도 있습니다.
 
@@ -65,21 +65,21 @@ yarn run dist
 
 하지만 굳이 컴파일 하지 않아도 다운로드 링크를 제공 하고 있습니다.
 
-![image-20220323153637903](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153637903.png)
+![image-20220323153637903](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153637903.webp)
 
 > https://download.cider.sh/?utm_source=homepage&utm_medium=cta
 
 `.deb` 파일을 받아서 `sudo dpkg -i cider*` 로 설치 해 주면 됩니다. 이제 실행을 하면
 
-![2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/2.png)
+![2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/2.webp)
 
 > 애플 아이디로 로그인 하라고 나옵니다.
 
-![3](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/3.png)
+![3](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/3.webp)
 
 > 로그인 후 Continue를 누르는데 안넘어가길래 그냥 창을 닫으니 로그인 되었습니다.
 
-![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153954522.png)
+![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323153954522.webp)
 
 >  사용 화면입니다.
 
@@ -89,7 +89,7 @@ yarn run dist
 
 > 다만 Windows 에서는 $0.99에 스토어에서 판매를 하고 있더라고요
 >
-> ![image-20220323212220504](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323212220504.png)
+> ![image-20220323212220504](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/cider.assets/image-20220323212220504.webp)
 >
 > 코드가 공개되어 있으니 개인적으로 Yarn 으로 컴파일 해서 실행하시면 무료로도 사용 할 수 있습니다.
 

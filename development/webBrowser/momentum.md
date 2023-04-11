@@ -1,6 +1,6 @@
 # 웹 브라우저 애드온 추천: Momentum
 
-![image-20220108093654529](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093654529.webp)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093654529.webp width=750 height=470 alt=1>
 
 ## Intro
 
@@ -12,7 +12,7 @@ Chrome과 Firefox에 각각 설치해 두고 사용을 하고 있는데, 워낙 
 
 > https://momentumdash.com/
 
-![image-20220108091929693](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108091929693.webp)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108091929693.webp width=750 height=320 alt=2>
 
 해당 플러그인을 찾아 보니 Momentum 이라는 이름의 Extention 이었습니다.
 

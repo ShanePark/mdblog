@@ -2,7 +2,7 @@
 
 ## Intro
 
-![image-20220517155040479](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155040479.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155040479.webp width=663 height=235 alt=1>
 
 Eclipse IDEA를 사용하며 습관처럼 `Ctrl + Option(Alt) + O` 키를 눌러 Optimize import 기능을 사용 하다 보면, 혼자서 진행하는 프로젝트가 아닌 이상은 각자의 IDE 환경설정 등에 따라 import 문을 모두 재 정돈 해 줍니다.
 
@@ -10,7 +10,7 @@ Eclipse IDEA를 사용하며 습관처럼 `Ctrl + Option(Alt) + O` 키를 눌러
 
 ## import 설정 변경
 
-![image-20220517155512146](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155512146.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155512146.webp width=750 height=450 alt=2>
 
 일단 `Settings` > `Editor` > `Code Style` > `Java` > `imports` 로 찾아 들어 가 줍니다.
 
@@ -18,17 +18,17 @@ Scheme이 보이는데, IDE 전체 설정으로 할지, 해당 프로젝트에�
 
 저는 개인용도로 작업하는 프로젝트에서는 인텔리제이의 기본 규칙을 따르기 위해 해당 프로젝트에만 설정되도록 할 예정입니다
 
-![image-20220517155722474](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155722474.png)
+![image-20220517155722474](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155722474.webp)
 
 > 그것을 위해 일단 Scheme을 Project로 변경 해 주었습니다.
 
-![image-20220517155741357](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155741357.png)
+![image-20220517155741357](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517155741357.webp)
 
 첫번째로, import 시 와일드카드를 사용하지 않도록 변경 해 주었습니다.
 
 따로 기능을 끄는건 보이지 않아서 99로 지정 해 주었는데 이정도면 끈거나 다름 없습니다.
 
-![image-20220517160212616](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517160212616.png)
+![image-20220517160212616](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517160212616.webp)
 
 이후에는 아래쪽의  Import Layout을 Eclipse와 같은 순서로 맞춰 줍니다.
 
@@ -50,7 +50,7 @@ Scheme이 보이는데, IDE 전체 설정으로 할지, 해당 프로젝트에�
 
 변경 후 테스트를 해 보면
 
-![image-20220517160410757](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517160410757.png)
+![image-20220517160410757](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517160410757.webp)
 
 > 정확하게 추가되거나 제거된 패키지만 변경되는 것이 확인 됩니다.
 
@@ -60,7 +60,7 @@ Scheme이 보이는데, IDE 전체 설정으로 할지, 해당 프로젝트에�
 
 Armeria 등 커미터가 많은 오픈소스의 경우에는 정해진 스타일로 기여를 받기 때문에, import 순서를 바꾸거나 할 경우에는 merge가 되지 않습니다. 코드리뷰에서 바로 지적을 받게 됩니다.
 
-![image-20220517160714820](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517160714820.png)
+![image-20220517160714820](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/organize-imports.assets/image-20220517160714820.webp)
 
 > https://armeria.dev/community/developer-guide/ 
 

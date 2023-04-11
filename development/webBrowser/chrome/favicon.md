@@ -2,13 +2,13 @@
 
 ## Intro
 
-![image-20220115190803851](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115190803851.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115190803851.webp width=750 height=660 alt=1>
 
 위의 제 Chrome 브라우저에서 보이는 것 처럼, 저는 Bookmark bar에 추가해 둔 사이트가 제법 많아지면서, 즐겨찾기 사이트들의 이름을 지우고 아이콘만 남겨 사용 하고 있습니다.
 
 하지만 favicon이 없는 웹사이트를 즐겨 찾기에 추가 하는 경우에는 아래 보이는 것 처럼, 지구본 모양(?) 아이콘이 남게 되는데요
 
-> ![image-20220115192617042](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115192617042.png)
+> ![image-20220115192617042](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115192617042.webp)
 
 아이콘만으로 웹사이트를 구분하는 경우에는, 이렇게 아이콘이 겹치는 몇개가 생겨버리면, 어떤 사이트인지 한눈에 알 방법이 없습니다.
 
@@ -18,7 +18,7 @@
 
 ### 설치
 
-![image-20220115193155440](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115193155440.png)
+![image-20220115193155440](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115193155440.webp)
 
 > https://chrome.google.com/webstore/detail/bookmark-favicon-changer/acmfnomgphggonodopogfbmkneepfgnh?hl=en-US
 
@@ -28,21 +28,21 @@
 
 일단 즐겨찾기 아이콘을 변경할 페이지로 이동 후, 해당 Extention을 실행 합니다.
 
-![image-20220115203101099](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115203101099.png)
+![image-20220115203101099](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115203101099.webp)
 
 > 우측 상단의 Extention 목록에서 방금 설치한 플러그인을 선택합니다.
 
-![image-20220115203124995](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115203124995.png)
+![image-20220115203124995](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115203124995.webp)
 
 > 그러고는 적용 할 domain을 선택 해 줍니다.
 
 `Change icon and add rule` 을 클릭 후
 
-![image-20220115202715868](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115202715868.png)
+![image-20220115202715868](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115202715868.webp)
 
 > 미리 준비 해둔 이미지를 선택 합니다.
 
-![image-20220115203210607](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115203210607.png)
+![image-20220115203210607](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/favicon.assets/image-20220115203210607.webp)
 
 > 제일 우측 네이버 아이콘이 변경 되었습니다.
 

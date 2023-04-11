@@ -9,12 +9,6 @@
 
 이 두가지 조건이 만족될때면 어김없이 게임을 하곤 했었습니다.
 
-![IMG_8186](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/IMG_8186.jpg)
-
-> MAY 2020. Queenstown, New Zealand
->
-> 퇴근후 집에 오면 어김없이 이런 열악한 환경에서도 리그오브레전드 혹은 롤토체스를 즐겨 하곤 했습니다.
-
 그러다 한국에 돌아와 2020년 11월. 개발 공부를 시작 한 이후로 게임을 하는 첫번째 조건이었던 `시간이 남는다` 로 로직을 타는 경우가 전혀 없게 되었습니다. 우선순위큐에 꾸준히 `다음 학습 해야 할 것` 이라는 항목으로 꾸준히 다음 할 일이 쌓이고 있으며 취업을 한 이후로는 단순히 공부만 하는게 아니고 내가 해야 할 업무까지 함께 쌓이다 보니 게임을 하고 싶다는 생각도 그닥 들지 않고, 할 여유도 없습니다.
 
 처음 개발을 공부 할 때 학습을 하는게 곧바로 성취감으로 이어지는건 쉽지 않기 때문에 아무래도 잘 모를때라서 성취감에 목말라
@@ -27,11 +21,11 @@
 
 > [Programmers Weekly Challenge 12주 후기](https://shanepark.tistory.com/268)
 
-![image-20220116165636741](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116165636741.png)
+![image-20220116165636741](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116165636741.webp)
 
 하지만 프로그래머스에는 문제가 그리 많지는 않기 때문에, 이쯤 풀고 나니 이제 남은 문제들은 무작정 풀기에는 난이도가 벅차고 한문제 한문제에 너무 많은 시간이 들기 시작했습니다. 학습이나 도전이 아닌 취미로 풀만한 문제는 더이상 남아있지 않았습니다.
 
-![image-20220116165915011](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116165915011.png)
+![image-20220116165915011](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116165915011.webp)
 
 그래서 새로운 문제를 접해볼겸 다른 사람들과 경쟁도 조금 해볼겸 프로그래머스의 챌린지에도 접수하곤 했었습니다.
 
@@ -53,21 +47,21 @@ Leetcode는 전세계적으로 가장 잘 알려진 Online Judge Platform 중 �
 
 ### Challenge 시스템
 
-![image-20220116171146940](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116171146940.png)
+![image-20220116171146940](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116171146940.webp)
 
 매일매일 그날에 풀어 보라고 문제를 하나씩 골라 주기 때문에 골라준 문제를 숙제처럼 하나씩 할 수 있습니다. 물론 시간이 너무 없거나 혹은 너무 어려운 문제를 만나면 이렇게 중간중간 빵꾸를 내고는 합니다. Solution을 보거나 다른 사람들의 풀이를 보면 다 채울수도 있겠지만 자존심이 허락하지 않아 스스로 문제를 풀어내기 전까지는 확인하지 않습니다. 힘들게 풀어내고 나서 다른 사람이 쉽고 명쾌하게 푼 코드를 보면 허무하기도 놀라기도 합니다.
 
 매일매일 이렇게 문제를 풀면 릿코드 포인트를 주는데, 부지런히 모으면 아래의 상품으로 교환도 가능합니다.
 
-![image-20220116210318905](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116210318905.png)
+![image-20220116210318905](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116210318905.webp)
 
 ### 다양한 문제
 
-![image-20220116172017208](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116172017208.png)
+![image-20220116172017208](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116172017208.webp)
 
 무려 2141 개의 문제가 있습니다.
 
-![image-20220116172114354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116172114354.png)
+![image-20220116172114354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116172114354.webp)
 
  Easy 541개 , Medium 1143개, Hard 457개의 문제가 있는데요. 제 체감으로는 Easy는 프로그래머스 1단계 2단계 사이. Medium은 프로그래머스 2단계~3단계 문제 정도 되지 않을까 싶습니다. Hard문제도 하나 풀어 봤는데 프로그래머스 기준 3단계의 쉬운 문제에 걸려 간신히 풀 수 있었지만 다른 문제들은 많이 어려워 엄두가 안났습니다.
 
@@ -75,13 +69,13 @@ Leetcode는 전세계적으로 가장 잘 알려진 Online Judge Platform 중 �
 
 ### 결과 분석
 
-![image-20220116172521145](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116172521145.png)
+![image-20220116172521145](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116172521145.webp)
 
 프로그래머스에서 처럼 단순하게 문제를 풀이해 통과하고 만족하고 끝나는 게 아니라, Runtime과 Memory 사용량을 다른 유저들의 제출결과와 비교해 어느 정도 효율적인 코드인지를 알려 주기 때문에 이게 정말 자극됩니다. 문제를 풀고도 하위 5%에 속했다는 결과를 받아들면 어느 누가 만족하고 다음 문제로 넘어 갈 수 있을까요? 그래서 풀이 후에도 시간 복잡도를 줄이기 위해 계속 문제에 도전 하게 됩니다.
 
 ### 훌륭한 자체 IDE
 
-![image-20220116173037846](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116173037846.png)
+![image-20220116173037846](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116173037846.webp)
 
 Theme 설정, 폰트사이즈, Vim 혹은 Emacs 키 바인딩 등등 뿐만 아니라 심지어 LeetCode Primium에 가입하면 코드 자동완성마저도 됩니다.
 
@@ -109,29 +103,29 @@ Theme 설정, 폰트사이즈, Vim 혹은 Emacs 키 바인딩 등등 뿐만 아�
 
 설치에 앞서서 Leetcode 전용 저장소를 Github에 하나 만들어 줍니다.
 
-![image-20220116211037259](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211037259.png)
+![image-20220116211037259](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211037259.webp)
 
 > 저는 leetcode 라는 이름으로 생성 했습니다.
 
- ![image-20220116210859098](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116210859098.png)
+ ![image-20220116210859098](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116210859098.webp)
 
 > https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi?hl=en
 
 위의 링크에 들어가 Add to Chrome 으로 추가 합니다.
 
-![image-20220116210941446](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116210941446.png)
+![image-20220116210941446](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116210941446.webp)
 
 > 그러면 Extention 목록에 추가 된 것을 확인 할 수 있습니다.  Authenticate를 클릭하고
 
-![image-20220116211116424](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211116424.png)
+![image-20220116211116424](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211116424.webp)
 
 > Authorize 해 줍니다.
 
-![image-20220116211335557](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211335557.png)
+![image-20220116211335557](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211335557.webp)
 
 > 그리고 사용할 저장소를 연결 해줍니다.
 
-![image-20220116211402762](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211402762.png)
+![image-20220116211402762](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211402762.webp)
 
 모든 준비가 끝났습니다.
 
@@ -139,17 +133,17 @@ Theme 설정, 폰트사이즈, Vim 혹은 Emacs 키 바인딩 등등 뿐만 아�
 
 코드를 한번 제출 해 보겠습니다. 그냥 평소 leetcode 할 때 처럼 Submit을 해 주면
 
-![image-20220116211512801](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211512801.png)
+![image-20220116211512801](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211512801.webp)
 
 코드 제출 결과가 나온 후에 플러그인을 확인 해 보았습니다.
 
-![image-20220116211612159](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211612159.png)
+![image-20220116211612159](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116211612159.webp)
 
 > Problems Solved가 1로 늘어 났습니다.
 
 Github 저장소에 들어가서 확인을 해 보면
 
-![image-20220116212357355](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116212357355.png)
+![image-20220116212357355](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetHub.assets/image-20220116212357355.webp)
 
 위에 보이는 것 처럼, 각각 문제에 해당하는 폴더를 생성 해서 작성한 코드와 해당 문제의 내용을 `.md`파일로 저장 해 알아서 커밋을 해 준 것이 보입니다.
 

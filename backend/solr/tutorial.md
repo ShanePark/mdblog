@@ -26,7 +26,7 @@ Apache Solr를 처음 사용해보는 입장에서도 쉽게 따라할 수 있�
 
 ### Downloads
 
-![image-20220411104634492](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411104634492.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411104634492.webp width=750 height=520 alt=1>
 
 > https://solr.apache.org/downloads.html
 
@@ -40,7 +40,7 @@ Apache Solr를 처음 사용해보는 입장에서도 쉽게 따라할 수 있�
 unzip solr-8.11.1.zip -d ~/Documents/utils/
 ```
 
-![image-20220411105225255](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411105225255.png)
+![image-20220411105225255](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411105225255.webp)
 
 ## 실습 1. Techproducts 예제 색인
 
@@ -48,21 +48,21 @@ unzip solr-8.11.1.zip -d ~/Documents/utils/
 
 ### SolrCloud 모드로 Solr 실행
 
-![image-20220411110132226](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110132226.png)
+![image-20220411110132226](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110132226.webp)
 
 > `/bin`
 
 Solr를 시작 하기 위해 Linux나 MacOS에서는 `bin/solr start -e cloud` 명령어를, Windows 에서는 `bin/solr.cmd start -e cloud`명령어를 입력 해 줍니다.
 
-![image-20220411110423296](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110423296.png)
+![image-20220411110423296](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110423296.webp)
 
 > 처음에는 몇개의 Solr node를 실행하고 싶은지 물어봅니다. 마지막에 [2] 라고 써있는 것처럼 기본값이 이미 2로 설정 되어 있으니, 간단하게 엔터키만 입력해 줍니다.
 
-![image-20220411110631181](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110631181.png)
+![image-20220411110631181](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110631181.webp)
 
 > 이번에는 각각의 노드에 할당할 포트 번호를 설정하는데요, 각각의 포트를 사용하는 곳이 딱히 없다면 엔터키를 입력해 각각 8983/ 7574 포트를 사용하게 해 줍니다. Solr의 기본 포트는 8983 입니다.
 
-![image-20220411110835241](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110835241.png)
+![image-20220411110835241](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411110835241.webp)
 
 > 2개의 Solr 인스턴스가 2개의 노드에서 실행 되었습니다. 
 
@@ -74,7 +74,7 @@ SolrCloud 모드로 솔라를 실행 했고, 외부 ZooKeeper 클러스터를 �
 
 드디어 첫번째로 엔터를 치지 않고 값을 입력 할 때가 되었는데요..  이번 튜토리얼에서 Solr에 포함되어 있는 샘플 데이터인 `techproducts`를 색인 해 볼 예정이기 때문에 `techproducts` 라고 입력 하도록 하겠습니다.
 
-![image-20220411112651667](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411112651667.png)
+![image-20220411112651667](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411112651667.webp)
 
 > techproducts
 
@@ -82,13 +82,13 @@ SolrCloud 모드로 솔라를 실행 했고, 외부 ZooKeeper 클러스터를 �
 
 기본값이 2로 되어있는데, 이렇게 하면 두개의 노드에 균일하게 색인을 나누게 됩니다. 엔터키를 입력 해 기본값인 `2`를 선택 하도록 합니다.
 
-![image-20220411112851845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411112851845.png)
+![image-20220411112851845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411112851845.webp)
 
 이번에는 replica를 몇개 만들지 물어보는데요, 레플리카는 Failover 기능을 위해 사용합니다. 이번에도 엔터키를 입력 해 기본값인 2를 선택하도록 합니다.
 
 > Failover: 장애 극복 기능을 말 합니다. 시스템이나 네트워크에 장애가 생겼을 때 미리 준비한 다른 시스템으로 자동 전환 되어 문제를 해결합니다.
 
-![image-20220411113309962](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411113309962.png)
+![image-20220411113309962](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411113309962.webp)
 
 이번에는 컬렉션에 적용 할 설정 파일을 선택합니다. Solr는 기본적으로 configset 이라고 불리는 두개의 샘플 설정 파일이 있습니다.
 
@@ -101,7 +101,7 @@ SolrCloud 모드로 솔라를 실행 했고, 외부 ZooKeeper 클러스터를 �
 
 우리가 위에서 컬렉션 이름을 `techproduct` 로 지은 것 에서 예상하셨겠지만 `sample_techproducts_config`를 입력 해 줍니다.
 
-![image-20220411114542426](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411114542426.png)
+![image-20220411114542426](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411114542426.webp)
 
 축하합니다! 이로서 Solr가 준비 되었습니다.
 
@@ -131,7 +131,7 @@ bin/solr stop -all
 
 웹 브라우저를 통해 http://localhost:8983/solr/ 페이지에 방문 하면, Solr 관리자 모드에 진입 할 수 있습니다.
 
-![image-20220411114809930](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411114809930.png)
+![image-20220411114809930](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411114809930.webp)
 
 > http://localhost:8983/solr/ 
 
@@ -139,11 +139,11 @@ Solr는 현재 각각 8983과 7574 포트에서 두개의 노드로 실행 되�
 
 그림으로 표현하면 아래와 같습니다.
 
-![tutorial solrcloud](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-solrcloud.png)
+![tutorial solrcloud](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-solrcloud.webp)
 
 관리자 화면에서도 `http://localhost:8983/solr/#/~cloud` 페이지에서 보기 좋게 표로 나타내어 줍니다.
 
-![image-20220411115443234](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411115443234.png)
+![image-20220411115443234](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411115443234.webp)
 
 > http://localhost:8983/solr/#/~cloud
 
@@ -165,7 +165,7 @@ solr-8.11.0:$ bin/post -c techproducts example/exampledocs/*
 C:\solr-8.11.0> java -jar -Dc=techproducts -Dauto example\exampledocs\post.jar example\exampledocs\*
 ```
 
-![image-20220411120354081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411120354081.png)
+![image-20220411120354081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411120354081.webp)
 
 2.043초 만에 21개의 파일을 색인 해 주었습니다.
 
@@ -177,17 +177,17 @@ Solr는 REST 클라이언트, curl, 포스트맨 등등 다양한 언어로 작�
 
 고맙게도 Solr Admin UI는 쿼리탭을 통한 쿼리 빌더 인터페이스를 포함 하고 있기 때문에 Execute Query 버튼을 클릭해 JSON 포맷의 쿼리 결과를 확인 할 수 있습니다.
 
-![image-20220411132843918](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411132843918.png)
+![image-20220411132843918](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411132843918.webp)
 
 > 좌측의 Collection Select를 누르고 techproducts 컬렉션을 선택 해 줍니다.
 
-![image-20220411132946441](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411132946441.png)
+![image-20220411132946441](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411132946441.webp)
 
 > 이후 좌측 하단의 Query 버튼을 누르면 쿼리를 보낼 수 있는 인터페이스가 등장 합니다.
 
 아무 수정 없이 바로 Execute Query를 수행 해 보겠습니다.
 
-![image-20220411133117702](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411133117702.png)
+![image-20220411133117702](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411133117702.webp)
 
 1번으로 표시 해 둔 `http://localhost:8983/solr/techproducts/select?indent=true&q.op=OR&q=*%3A*`가 요청된 url 입니다.  
 
@@ -209,7 +209,7 @@ Solr는 정말 강력한 검색 옵션을 가지고 있고 그 양이 워낙 방
 curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 ```
 
-![image-20220411134830093](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411134830093.png)
+![image-20220411134830093](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411134830093.webp)
 
 검색 결과 4개의 문서가 발견 되었습니다. 쿼리 결과는 JSON 형태로 반환 됩니다.
 
@@ -224,7 +224,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 
 검색 결과로 받은 documents 들은 각각 모든 필드들을 포함 하고 있는데요, 기본적인 동작은 이렇지만 응답에서 보여줄 필드들을 제한하고 싶다면 `fl`파라미터를 등록 해서 요청 하면 됩니다. 각각의 필드명은 `,`(콤마) 를 통해 구분되며 이 또한 Admin UI 에서 설정 할 수 있습니다.
 
-![image-20220411135610959](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411135610959.png)
+![image-20220411135610959](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411135610959.webp)
 
 > fl을 `id`로 제한 하니 4개의 검색 결과의 필드가 모두 id 만으로 제한 되었습니다.
 
@@ -238,7 +238,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 
 저희가 사용중인 샘플 데이터 셋은 대부분 상품과 관련이 있습니다. 그럼 이번에는 색인에서 모든 `전자제품`을 한번 검색 해 보도록 하겠습니다. 처음에는 단순하게 `q=electronics`로 시작하겠습니다.
 
-![image-20220411140655810](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411140655810.png)
+![image-20220411140655810](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411140655810.webp)
 
 > http://localhost:8983/solr/techproducts/select?indent=true&q.op=OR&q=electronics
 
@@ -246,7 +246,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 
 그런데 필드를 자세히 살펴보면 `cat`이 보이는데요. electronics, connector, memory 등이 써 있는 걸 보아 카테고리를 분류 해 둔 필드라는걸 쉽게 알 수 있습니다. 이번에는 쿼리스트링을 `cat:electronics`로 변경 하면
 
-![image-20220411141257628](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411141257628.png)
+![image-20220411141257628](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411141257628.webp)
 
 > http://localhost:8983/solr/techproducts/select?indent=true&q.op=OR&q=cat:electronics
 
@@ -262,7 +262,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=foundation"
 curl "http://localhost:8983/solr/techproducts/select?q=\"CAS+latency\""
 ```
 
-![image-20220411143218984](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411143218984.png)
+![image-20220411143218984](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411143218984.webp)
 
 > 2개의 검색 결과가 나옵니다.
 
@@ -278,7 +278,7 @@ curl "http://localhost:8983/solr/techproducts/select?q=\"CAS+latency\""
 curl "http://localhost:8983/solr/techproducts/select?q=%2Belectronics%20%2Bmusic"
 ```
 
-![image-20220411144314850](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411144314850.png)
+![image-20220411144314850](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411144314850.webp)
 
 > 검색 결과가 딱 1개 나옵니다.
 
@@ -328,11 +328,11 @@ bin/solr stop -all
 ./bin/solr start -c -p 7574 -s example/cloud/node2/solr -z localhost:9983
 ```
 
-![image-20220411145801481](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411145801481.png)
+![image-20220411145801481](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411145801481.webp)
 
 > 정상적으로 실행 되었습니다. 
 >
-> ![image-20220411150036015](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411150036015.png)
+> ![image-20220411150036015](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411150036015.webp)
 >
 > 만약 `solr.in.sh` 혹은 `solr.in.cmd`에 `ZK_HOST`를 정의 해 두면 `-z <zk 호스트>` 옵션을 생략 할 수도 있습니다.
 
@@ -362,7 +362,7 @@ bin/solr stop -all
 bin/solr create -c films -s 2 -rf 2
 ```
 
-![image-20220411154138338](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411154138338.png)
+![image-20220411154138338](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411154138338.webp)
 
 > configset을 따로 설정 하지 않으니 자동으로 `_default` configset이 선택되었습니다.
 
@@ -372,7 +372,7 @@ bin/solr create -c films -s 2 -rf 2
 
 아무튼 컬렉션이 생성 되었습니다. Admin UI에 가서 확인 해 보면
 
-![image-20220411154832414](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411154832414.png)
+![image-20220411154832414](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411154832414.webp)
 
 > films 컬렉션이 준비 되었습니다.
 
@@ -402,7 +402,7 @@ bin/solr create -c films -s 2 -rf 2
 - release date
 - genre(s)
 
-![image-20220411162504498](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411162504498.png)
+![image-20220411162504498](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411162504498.webp)
 
 > `head --line 16 example/films/films.xml`
 
@@ -418,7 +418,7 @@ Solr는 record 상의 데이터를 토대로 field type을 추측하게 되는�
 curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field": {"name":"name", "type":"text_general", "multiValued":false, "stored":true}}' http://localhost:8983/solr/films/schema
 ```
 
-![image-20220411163440966](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411163440966.png)
+![image-20220411163440966](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411163440966.webp)
 
 > 실행 결과
 
@@ -426,7 +426,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field": {"n
 
 Admin UI를 통해 필드를 생성 할 수도 있지만, 필드에 설정 할 수 있는 범위에 제한이 있습니다. 물론 지금 필요한 필드명과 필드 타입 설정 정도는 가능합니다.
 
-![Adding a Field](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-add-field.png)
+![Adding a Field](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-add-field.webp)
 
 > https://solr.apache.org/guide/8_11/solr-tutorial.html#exercise-2
 
@@ -448,11 +448,11 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{"add-copy-field"
 
 **Admin UI**
 
-![image-20220411165258718](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411165258718.png)
+![image-20220411165258718](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411165258718.webp)
 
 > Schema > Add Copy Field 를 클릭 후 source 에는 `*`을, destination 에는 `_text_`를 입력 합니다.
 
-![image-20220411165419876](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411165419876.png)
+![image-20220411165419876](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411165419876.webp)
 
 > 설정 후에 field 목록에 `_text_`가 추가 된 게 확인 됩니다.
 
@@ -480,11 +480,11 @@ bin/post -c films example/films/films.json
 C:\solr-8.11.0> java -jar -Dc=films -Dauto example\exampledocs\post.jar example\films\*.json
 ```
 
-![image-20220411170137391](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411170137391.png)
+![image-20220411170137391](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411170137391.webp)
 
 > 1초 만에 색인이 완료 되었습니다.
 
-![image-20220411170422299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411170422299.png)
+![image-20220411170422299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411170422299.webp)
 
 > http://localhost:8983/solr/#/films/query
 
@@ -492,7 +492,7 @@ C:\solr-8.11.0> java -jar -Dc=films -Dauto example\exampledocs\post.jar example\
 
 이제는 아까 설정한 `catchall` 필드가 잘 동작하는지를 확인 하기 위해 `q`에 comedy를 입력 해 검색 해 보겠습니다.
 
-![image-20220411170622110](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411170622110.png)
+![image-20220411170622110](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411170622110.webp)
 
 검색 결과가 417개 있다고 나옵니다. 물론 rows가 기본 10으로 되어 있기 때문에 10개까지만 표시됩니다.
 
@@ -511,7 +511,7 @@ faceting의 타입들의 예는 다음과 같습니다.
 
 검색 결과를 제공 할 뿐 아니라 Solr 쿼리는 모든 결과에서 특정 value를 포함하는 document들의 수를 반환할 수도 있습니다. admin UI 쿼리탭에서 facet 체크박스를 클릭 하면 facet과 관련된 옵션들이 보입니다.
 
-![image-20220411171615812](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411171615812.png)
+![image-20220411171615812](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411171615812.webp)
 
 > 체크를 해야 등장하는 facet 으로 시작하는 옵션들
 
@@ -523,7 +523,7 @@ faceting의 타입들의 예는 다음과 같습니다.
 curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=true&facet.field=genre_str"
 ```
 
-![image-20220411172157695](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411172157695.png)
+![image-20220411172157695](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411172157695.webp)
 
 > 실행 결과
 
@@ -531,7 +531,7 @@ curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=true&facet.fiel
 
 `facet.mincount` 파라미터를 설정 하면 특정 갯수 이상이 포함된 facet만을 조회 할 수도 있습니다. 
 
-![image-20220411172446380](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411172446380.png)
+![image-20220411172446380](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411172446380.webp)
 
 > `http://localhost:8983/solr/films/select?facet.field=genre_str&facet.mincount=100&facet=true&indent=true&q.op=OR&q=*:*&rows=0`
 >
@@ -541,7 +541,7 @@ curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=true&facet.fiel
 
 날짜나 숫자는 각각 하나씩 값을 나누는 것 보다는 특정 범위별로 파티션을 나누는게 도움이 되는데요. 처음 실습했던 techproducts 데이터에서 price를 범위별로 나누면 아래와 같은 결과가 나옵니다.
 
-![Solr Quick Start: Range facets](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-range-facet.png)
+![Solr Quick Start: Range facets](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-range-facet.webp)
 
 > range facet의 흔한 예
 
@@ -556,7 +556,7 @@ curl 'http://localhost:8983/solr/films/select?q=*:*&rows=0'\
 '&facet.range.gap=%2B1YEAR'
 ```
 
-![image-20220411174052485](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411174052485.png)
+![image-20220411174052485](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411174052485.webp)
 
 쿼리실행 결과, 20년 전 부터 시작해서 오늘까지를 1년 단위로 나누어 각 기간별 갯수를 카운트 해 주었습니다.
 
@@ -576,7 +576,7 @@ curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=on&facet.pivot=
 curl "http://localhost:8983/solr/films/select?q=*:*&rows=0&facet=on&facet.pivot=genre_str,directed_by_str" > queryresult.txt
 ```
 
-![image-20220411175244675](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411175244675.png)
+![image-20220411175244675](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220411175244675.webp)
 
 Drama 장르에 522개의 영화가 있고, 각각의 감독 별로 몇개의 영화가 있는지 카운트 되었습니다.
 
@@ -645,7 +645,7 @@ Solr는 DataImportHandler(DIH) 라고 불리는 툴을 내장하고 있는데요
 
 피드나 Gmail, 혹은 작은 HSQL 데이터베이스를 이용하는 예제가 있는데요 
 
-![image-20220412101012776](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220412101012776.png)
+![image-20220412101012776](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220412101012776.webp)
 
 `example/example-DIH` 폴더의 README.txt 파일에 이 도구를 사용 하는 방법이 자세히 작성 되어 있습니다.
 
@@ -653,13 +653,13 @@ Solr는 DataImportHandler(DIH) 라고 불리는 툴을 내장하고 있는데요
 
 Solrj는 자바 기반의 Solr와의 통신을 지원하는 클라이언트 입니다. JVM 기반의 언어를 사용한다면 Solr를 활용 하면 되고 다른 프로그래밍 언어를 이용해 Solr를 사용하고 싶다면 [링크](https://solr.apache.org/guide/8_11/client-apis.html)를 확인 해 주세요.
 
-![image-20220412101211648](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220412101211648.png)
+![image-20220412101211648](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220412101211648.webp)
 
 > https://solr.apache.org/guide/8_11/client-apis.html
 
 ### Documents Screen
 
-![image-20220412101434810](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220412101434810.png)
+![image-20220412101434810](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/image-20220412101434810.webp)
 
 Admin UI의 Document 탭에 색인하고자 하는 문서를 복사해 붙여 넣거나 혹은 Document Type에서 `Document Builder` 를 선택하면 한번에 하나씩의 필드를 직접 색인 할 수도 있습니다.
 
@@ -705,7 +705,7 @@ Solr는 정교한 지형 검색도 제공합니다. 특정 위치로 부터 특�
 
 실습 1에서 연습했던 techproducts 문서에 위치 정보가 포함 되어 있기 때문에 샌프란시스코에서 10킬로 이내에 있는 아이팟을 검색하는게 가능합니다.
 
-![Solr Quick Start: spatial search](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-spatial.png)
+![Solr Quick Start: spatial search](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/solr/tutorial.assets/tutorial-spatial.webp)
 
 > https://solr.apache.org/guide/8_11/solr-tutorial.html#exercise-3
 >

@@ -6,7 +6,7 @@
 
 ### Optional
 
-![image-20220720231556398](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/optional.assets/image-20220720231556398-16583589580901.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/optional.assets/image-20220720231556398-16583589580901.webp" width=730 height=350 alt=1>
 
 > java.util.Optional.java
 
@@ -105,7 +105,7 @@ return member.orElseThrow();
 
 사실 컬렉션과 배열은 자체적으로 이미 비어있는 상태를 표현할 준비가 되어있습니다. 
 
-![image-20220721082602845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/optional.assets/image-20220721082602845.png)
+![image-20220721082602845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/optional.assets/image-20220721082602845.webp)
 
 emptyList()나 emptyMap()등을 활용하면 굳이 비싼값을 지불하고 Optional이라는 컨테이너로 한번 더 포장 할 필요 없이 비어있는 상태를 나타낼 수 있습니다. 배열도 마찬가지로 크기가 0인 배열로 비어있는 상태를 손쉽게 표현 할 수 있습니다.
 
@@ -169,7 +169,7 @@ Optional로 감싸진 두개의 값을 서로 비교 하기 위해서는 각각�
 
 하지만 Optional.equals()의 코드를 확인 해 보면
 
-![image-20220721085124464](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/optional.assets/image-20220721085124464.png)
+![image-20220721085124464](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/optional.assets/image-20220721085124464.webp)
 
 참조 대상을 비교할 뿐만 아니라 비교하는 대상이 Optional일 경우에는 각자의 value를 비교해 주기 때문에 굳이 값을 꺼낼 필요가 없습니다. 그렇다고해서 Optional끼리 동등 연산(`==`) 을 사용해서는 안됩니다. 꼭 equals를 호출해 비교해 주세요.
 

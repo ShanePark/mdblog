@@ -8,7 +8,7 @@
 
 일단 Unknown 장비들이 무지막지하게 뜨는데 그 중 어떤게 에어팟인지도 모르겠고, 연결도 되지 않았습니다.
 
-![image-20220323142544239](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323142544239.png) 
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323142544239.webp width=750 height=630 alt=1>
 
 ## Bluetooth 설정
 
@@ -20,13 +20,13 @@ ControllerMode를 bredr로 변경 해 줍니다.
 sudo vi /etc/bluetooth/main.conf
 ```
 
-![image-20220323143010680](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143010680.png)
+![image-20220323143010680](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143010680.webp)
 
 > 51 번 라인에 주석 처리된 걸 풀고 `bredr` 입력 후 저장 해 줍니다.
 >
 > 처음 에어팟에 연결 할 때는 bredr 로 변경해야 쉽게 에어팟을 찾아 연결을 할 수 있긴 한데 한번 연결 한 이후에는 추후 다시 dual로 돌리는것을 권장합니다. 
 >
-> ![image-20220608143631337](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220608143631337.png)
+> ![image-20220608143631337](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220608143631337.webp)
 >
 > 저같은 경우에는 bredr 로 설정을 하면 리얼포스 R3 키보드가 아무리 해도 블루투스로 연결이 되지 않았습니다. BR/EDR 은 블루투스 2.x 기반이지만 LE는 블루투스 4.x이후 기반이거든요.
 >
@@ -40,7 +40,7 @@ sudo /etc/init.d/bluetooth restart
 
 블루투스 서비스를 재 시작 해 줍니다.
 
-![image-20220323143128303](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143128303.png)
+![image-20220323143128303](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143128303.webp)
 
 ## Airpod 연결
 
@@ -52,7 +52,7 @@ sudo /etc/init.d/bluetooth restart
 >
 > 그러면 Bluetooth Devices 목록에 에어팟이 뜨는데, 바로 클릭해서 연결 해 주면 됩니다.
 
-![image-20220323143210423](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143210423.png)
+![image-20220323143210423](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143210423.webp)
 
 > 연결이 끝났습니다! 이제 에어팟으로 리눅스의 모든 사운드를 잘 즐길 수 있습니다.
 
@@ -60,11 +60,11 @@ sudo /etc/init.d/bluetooth restart
 
 > 혹시 Apple Music을 구독하신다면 Cider 라는 정말 훌륭한 Apple Music Client가 있으니 다운 받아서 사용 해 보시길 추천 드립니다. 관련글을 링크 달아두겠습니다. [Linux) 리눅스에서 Apple Music 듣기 Cider App](https://shanepark.tistory.com/347)
 >
-> ![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323153954522.png)
+> ![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323153954522.webp)
 
 ## 마이크 설정
 
-![image-20220323143941208](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143941208.png)
+![image-20220323143941208](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323143941208.webp)
 
 에어팟을 연결 해도 Output만 사용이 가능하고 Input은 사용이 불가능합니다.  Zoom 회의 등을 할 때 에어팟을 사용하고 싶다면 마이크도 연결을 해 주어야 하는데, 연결 방법에는 Pipewire를 이용하는 방법과 HSP/HFP 를 이용하는 방법이 있습니다.
 
@@ -92,7 +92,7 @@ sudo apt install ofono
 sudo vi /etc/pulse/default.pa
 ```
 
-![image-20220323144855065](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323144855065.png)
+![image-20220323144855065](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/Airpod.assets/image-20220323144855065.webp)
 
 71 번 라인의 `load-module module-bluetooth-discover` 를 `load-module module-bluetooth-discover headset=ofono` 로 변경해줍니다.
 
