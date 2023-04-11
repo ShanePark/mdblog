@@ -10,7 +10,7 @@ MacOS에서 화면분할용 프로그램중에 가장 유명한 프로그램은 
 
 아쉬운 대로 지금까지는 오픈소스중에 가장 괜찮다는 Spectacle을 꾸준히 사용 해 왔습니다.
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/rectangle.assets/image-20220216193746834.png" widht=750 height=450 alt=img2>
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/rectangle.assets/image-20220216193746834.png" width=750 height=450 alt=img2>
 
 나름 필요한 기능도 다 있고 속도도 빠릿빠릿 해서 단축키만 잘 설정 해 주면 괜찮게 사용 할 수 있습니다. Windows나 Linux에서 사용하던 창 분할 들에 비하면 부족한 느낌이 없지않긴 하지만 그래도 꾸준히 사용 해 왔는데요 Spectacle의 큰 단점이 있습니다.
 
