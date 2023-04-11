@@ -1,6 +1,6 @@
 # 웹 브라우저 애드온 추천: Momentum
 
-![image-20220108093654529](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093654529.png)
+![image-20220108093654529](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093654529.webp)
 
 ## Intro
 
@@ -12,7 +12,7 @@ Chrome과 Firefox에 각각 설치해 두고 사용을 하고 있는데, 워낙 
 
 > https://momentumdash.com/
 
-![image-20220108091929693](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108091929693.png)
+![image-20220108091929693](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108091929693.webp)
 
 해당 플러그인을 찾아 보니 Momentum 이라는 이름의 Extention 이었습니다.
 
@@ -26,7 +26,7 @@ Chrome과 Firefox에 각각 설치해 두고 사용을 하고 있는데, 워낙 
 
 > https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
 
-![image-20220108092415154](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092415154.png)
+![image-20220108092415154](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092415154.webp)
 
 저는 이미 설치 한 상태기 때문에 Remove from Chrome 이라는 버튼이 보이지만, 설치하지 않으셨다면 해당 자리에 설치 버튼이 위치합니다.
 
@@ -42,15 +42,15 @@ Chrome과 Firefox에 각각 설치해 두고 사용을 하고 있는데, 워낙 
 
 > https://apps.apple.com/ca/app/momentum/id1564329434?mt=12
 
-![image-20220108092608099](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092608099.png)
+![image-20220108092608099](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092608099.webp)
 
 GET 버튼을 눌러 설치 해 줍니다.
 
-![image-20220108092702273](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092702273.png)
+![image-20220108092702273](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092702273.webp)
 
 보안이 철저한 애플 이기 때문에, 다른 브라우저와 다르게 좀 더 설정 과정이 필요합니다. Open Preferences를 누르고
 
-![image-20220108092738872](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092738872.png)
+![image-20220108092738872](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092738872.webp)
 
 좌측의 Momentum을 체크 해 줍니다.
 
@@ -60,31 +60,31 @@ GET 버튼을 눌러 설치 해 줍니다.
 
 설정 과정은 모든 브라우저가 같습니다.
 
-![image-20220108092836992](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092836992.png)
+![image-20220108092836992](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092836992.webp)
 
 처음 설치가 끝나면, 새로운 배경화면을 보여주며 이름을 입력 받습니다.
 
-![image-20220108092858780](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092858780.png)
+![image-20220108092858780](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092858780.webp)
 
 여기에서 로그인을 유도하는데, 저는 그냥 하단의 Stay logged out을 눌러 진행합니다.
 
-![image-20220108092945580](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092945580.png)
+![image-20220108092945580](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108092945580.webp)
 
 초기 설정이 끝나면, 유료 요금제 사용을 권장 하는데요. 
 
 ### 비용
 
-![image-20220108093111354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093111354.png)
+![image-20220108093111354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093111354.webp)
 
 > 개인은 $3.33/월
 
-![image-20220108093134501](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093134501.png)
+![image-20220108093134501](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093134501.webp)
 
 > 몇가지 팀에서 사용할 수 있는 부가기능이 있는 Team 플랜은, $5/월 이지만 할인 기간이라 $3에 제공중입니다.
 
 하지만 개인적으로는, 사진만 띄우는걸로 충분해서 따로 유료 플랜을 사용할 계획은 없습니다.
 
-![image-20220108093301687](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093301687.png)
+![image-20220108093301687](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093301687.webp)
 
 위와같이 기본적인 셋팅이 완료 되었습니다.
 
@@ -94,15 +94,15 @@ GET 버튼을 눌러 설치 해 줍니다.
 
 좌측 하단의 설정 버튼을 누르고
 
-![image-20220108093414152](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093414152.png)
+![image-20220108093414152](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093414152.webp)
 
 날씨와 시간을 제외하고는 모두 꺼 둡니다.
 
-![image-20220108093437454](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093437454.png)
+![image-20220108093437454](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093437454.webp)
 
 시계에서 `...` 버튼을 눌러 24-hour 시계로 바꿨습니다. AM/PM이 따로 표기가 되지는 않더라고요.
 
-![image-20220108093729577](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093729577.png)
+![image-20220108093729577](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/momentum.assets/image-20220108093729577.webp)
 
 설정이 완료 된 모습입니다.
 

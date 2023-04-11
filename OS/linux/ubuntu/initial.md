@@ -1,6 +1,6 @@
 # 개발자를 위한 Ubuntu 필수 설치와 설정
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Install-Ubuntu-Linux.jpg" width=640 height=400 alt=ubuntu>
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Install-Ubuntu-Linux.webp" width=640 height=400 alt=ubuntu>
 
 > 꾸준히 최신 정보로 업데이트 되는 글 입니다.
 
@@ -64,7 +64,7 @@ SSH 접속을 위한 key를 생성 해 둡니다. 처음에는 키를 저장할 
 ssh-keygen -t rsa
 ```
 
-![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920101205629.png)
+![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920101205629.webp)
 
 생성이 완료되었습니다.
 
@@ -84,11 +84,11 @@ Settings -> Privacy -> ScreenLock에서
 
 Blank Screen Delay를 Never로, Automatic Screen Lock을 체크 해제 합니다.
 
-![a](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/a.png)
+![a](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/a.webp)
 
-![b](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/b.png)
+![b](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/b.webp)
 
-![c](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/c.png)
+![c](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/c.webp)
 
 ### Ctrl+Alt+방향키 키바인딩 삭제
 
@@ -96,15 +96,15 @@ Blank Screen Delay를 Never로, Automatic Screen Lock을 체크 해제 합니다
 
 - dconf Editor 를 켜고 org.gnome.desktop.wm.keybindings에 가서
 
-![image-20211208095711980](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211208095711980.png)
+![image-20211208095711980](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211208095711980.webp)
 
 switch-to-workspace 를 검색합니다.
 
-![image-20211124090259043](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211124090259043.png)
+![image-20211124090259043](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211124090259043.webp)
 
 위에 보이는 것 처럼 up과 down에 있는 모든 내용을 
 
-![image-20211124090435799](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211124090435799.png)
+![image-20211124090435799](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211124090435799.webp)
 
 Use default value를 해제 한 후에, `, '<Control><Alt>Down'` 를 통째로 지우고 Apply 를 하면 됩니다. Up, Down 모두 번갈아 가며 지워 줍니다. 그러고 나면 Ctrl+Alt+방향키를 눌러도 workspace 전환이 되지는 않습니다. 자유롭게 해당 단축키를 다른 필요한 곳에 할당 해서 사용 할 수 있습니다.
 
@@ -121,7 +121,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 
 ### 시스템 종료 단축키 만들기
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/img.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/img.webp)
 
 저는 종료할 때 윈도우의 Alt+F4 같은 간단한 종료 단축키가 필요한데 우분투에는 마땅히 없더라고요.
 
@@ -135,7 +135,7 @@ gnome-session-quit --power-off
 
 기본 APT 저장소 미러 주소는 `kr.archive.ubuntu.com/ubuntu` 인데요.
 
-![image-20220415162010647](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162010647.png)
+![image-20220415162010647](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162010647.webp)
 
 >  ping을 날려 보았을 때 응답 시간이 200ms 에 육박할 정도로 느리기 때문에 꽤나 답답합니다.
 
@@ -153,7 +153,7 @@ sources.list 파일을 sudo 권한으로 열어서
 
 찾아 바꾸기 명령을 이용해 카카오 미러로 변경 해 줍니다.
 
-![image-20220415162415447](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162415447.png)
+![image-20220415162415447](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162415447.webp)
 
 > 변경 후에 위에 보이는 것 처럼 모든 미러가 카카오로 변경 되었으면 OK 입니다.
 
@@ -163,7 +163,7 @@ sources.list 파일을 sudo 권한으로 열어서
 %s/security.ubuntu.com/mirror.kakao.com/
 ```
 
-![image-20220415162301748](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162301748.png)
+![image-20220415162301748](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220415162301748.webp)
 
 이후에는 이제 `sudo apt update` 등의 명령어를 날려보면 이전과는 비교할 수 없을 정도로 속도가 빨라진 것을 바로 체감 할 수 있습니다. 
 
@@ -175,7 +175,7 @@ sources.list 파일을 sudo 권한으로 열어서
 
 Ubuntu 환경에서 기본 설치되어있는 vim을 이용해보니 방향키를 누를 때 이상한 문자가 입력 된다던가 하는 불편함이 있었습니다. 그래서 기본으로 설치되어 있는게 향상된 vim이 아닌가 싶어 -version을 입력 해 보니
 
-![image-20210920093024091](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920093024091.png)
+![image-20210920093024091](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920093024091.webp)
 
 Vi IMproved 라고 나오긴 했습니다. 방향키야 hjkl를 사용하면 된다지만 백스페이스 라던가 몇가지 불편한 점이 있어서 새로 설치를 해 보려고 합니다.
 
@@ -187,17 +187,17 @@ sudo apt-get install vim
 
 ```
 
-![image-20210920093725359](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920093725359.png)
+![image-20210920093725359](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920093725359.webp)
 
 설치가 끝났습니다. 
 
 -version 을 해보니 완전 똑같이 나와서. 뭐야, 이전이랑 똑같은게 아니야 ? 할 수 있는데요.
 
-![image-20210920093946034](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920093946034.png)
+![image-20210920093946034](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920093946034.webp)
 
 <br><br>vi test.txt 입력해서 새로 편집기를 띄워 보니 백스페이스, 방향키 등이 의도한 대로 잘 동작이 됩니다.
 
-![image-20210920094102444](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920094102444.png)	
+![image-20210920094102444](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920094102444.webp)	
 
 <br><br>
 
@@ -207,7 +207,7 @@ sudo apt-get install vim
 vi ~/.vimrc
 ```
 
-![image-20210920094256866](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920094256866.png)
+![image-20210920094256866](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920094256866.webp)
 
 ```bash
 " Syntax Highlighting
@@ -249,7 +249,7 @@ sudo apt install terminator
 
 ### KAKAO TALK
 
-![image-20220129171723784](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220129171723784.png)
+![image-20220129171723784](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220129171723784.webp)
 
 사실 카카오톡이 필수 설치인지에 대해서는 이견이 갈릴 수 있겠습니다.
 
@@ -273,7 +273,7 @@ SDKMAN은 대부분의 Unix 기반 시스템에서 Soft Development Kits들을 �
 
 다만 추후에 분명 필요성을 느낄 때가 있을테니, 이왕 하는거 지금 설치하는 것도 나쁘진 않겠죠.
 
-![image-20220324144040544](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144040544.png)
+![image-20220324144040544](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144040544.webp)
 
 > https://sdkman.io/
 
@@ -283,7 +283,7 @@ SDKMAN은 대부분의 Unix 기반 시스템에서 Soft Development Kits들을 �
 curl -s "https://get.sdkman.io" | bash
 ```
 
-![image-20220324144152738](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144152738.png)
+![image-20220324144152738](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144152738.webp)
 
 설치 후에는 시키는대로 아래의 명령어를 한번 실행 해 줍니다.
 
@@ -297,13 +297,13 @@ source "/home/shane/.sdkman/bin/sdkman-init.sh"
 sdk version
 ```
 
-![image-20220324144503252](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144503252.png)
+![image-20220324144503252](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324144503252.webp)
 
 > 5.14.1 버전이 설치 되었네요.
 
 ### JDK 설치 
 
-![black and silver laptop computer on table](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1517694712202-14dd9538aa97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
+![black and silver laptop computer on table](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1517694712202-14dd9538aa97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.webp)
 
 #### SDKMAN 미설치의 경우
 
@@ -325,7 +325,7 @@ sdk list java
 
  위의 명령어를 입력해 설치 가능한 자바 목록을 확인 합니다.
 
-![image-20220324145930354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324145930354.png)
+![image-20220324145930354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324145930354.webp)
 
 Corretto(아마존), Dragonwell(알리바바), Microsoft, Oracle, Temurin(이클립스) 등등등 수많은 Vendor의 자바목록이 보입니다. 우측의 Identifier를 입력해 원하는 버전을 설치 할 수 있습니다.
 
@@ -335,7 +335,7 @@ Corretto(아마존), Dragonwell(알리바바), Microsoft, Oracle, Temurin(이클
 sdk install java 17.0.2-tem
 ```
 
-![image-20220324150041725](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150041725.png)
+![image-20220324150041725](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150041725.webp)
 
 설치 후에 자바 버전을 확인 해 보면
 
@@ -343,7 +343,7 @@ sdk install java 17.0.2-tem
 java --version
 ```
 
-![image-20220324150133845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150133845.png)
+![image-20220324150133845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150133845.webp)
 
 openjdk 17 버전으로 자바 설치가 잘 된 것이 확인 됩니다.
 
@@ -353,9 +353,9 @@ openjdk 17 버전으로 자바 설치가 잘 된 것이 확인 됩니다.
 sdk install java 8.0.322-tem
 ```
 
-![image-20220324150335093](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150335093.png)
+![image-20220324150335093](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150335093.webp)
 
-![image-20220324150358592](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150358592.png)
+![image-20220324150358592](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150358592.webp)
 
 > 설치가 완료 되면 JDK 8.0.322 버전을 기본 자바로 설정할건지 물어보는데요, Y를 눌러줬습니다.
 
@@ -365,7 +365,7 @@ sdk install java 8.0.322-tem
 sdk list java
 ```
 
-![image-20220324150607944](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150607944.png)
+![image-20220324150607944](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150607944.webp)
 
 > Temurin 8.0.322와 17.0.2가 설치 되어 있으며, 8 버전이 Default로 표시 되어 있습니다.
 
@@ -375,7 +375,7 @@ sdk list java
 sdk use java 17.0.2-tem
 ```
 
-![image-20220324150731317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150731317.png)
+![image-20220324150731317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324150731317.webp)
 
 > 자바 버전이 손쉽게 변경됩니다. 하지만 Using java version 17.0.2-tem in this shell 에 나오는 것 처럼 지금의 shell 에서만 버전이 변경되었고, 새로 shell을 띄운다면 여전히 JDK 1.8을 사용 중입니다.
 
@@ -385,7 +385,7 @@ sdk use java 17.0.2-tem
 sdk default java 17.0.2-tem
 ```
 
-![image-20220324153033532](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324153033532.png)
+![image-20220324153033532](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324153033532.webp)
 
 > 기본 자바 버전이 변경되었습니다.
 
@@ -393,7 +393,7 @@ sdk default java 17.0.2-tem
 
 Linux의 Microsoft Office 입니다. 무료로 사용 할 수 있습니다.
 
-![image-20211125144106550](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144106550.png)
+![image-20211125144106550](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144106550.webp)
 
 > https://www.libreoffice.org/download/download/
 
@@ -405,7 +405,7 @@ Linux의 Microsoft Office 입니다. 무료로 사용 할 수 있습니다.
 tar -xvf LibreOffice_7.2.2_Linux_x86-64_deb.tar.gz
 ```
 
-![image-20211125144209993](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144209993.png)
+![image-20211125144209993](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144209993.webp)
 
 압축이 풀렸으면 DEBS 내의 모든 `.deb`파일을 설치 해 줍니다.
 
@@ -413,11 +413,11 @@ tar -xvf LibreOffice_7.2.2_Linux_x86-64_deb.tar.gz
 sudo dpkg -i *.deb
 ```
 
-![image-20211125144336873](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144336873.png)
+![image-20211125144336873](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144336873.webp)
 
 잠시 기다리면 모든 설치가 완료됩니다.
 
-![image-20211125144421314](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144421314.png)
+![image-20211125144421314](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211125144421314.webp)
 
 ### zsh와 oh-my-zsh
 
@@ -427,7 +427,7 @@ bash 보다는 zsh가 많이 쓰이는 추세입니다.
 
 ### VLC Media Player
 
-![image-20210920114245540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920114245540.png)
+![image-20210920114245540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20210920114245540.webp)
 
 요즘에는 동영상 파일을 직접 재생할 일이 잘 없기는 하지만 전혀 없진 않아서 필요 할 떄가 있습니다.
 
@@ -439,7 +439,7 @@ sudo apt install vlc
 
 ### Kolourpaint
 
-![KolourPaint screenshot.png](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/300px-KolourPaint_screenshot.png)
+![KolourPaint screenshot.webp](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/300px-KolourPaint_screenshot.webp)
 
 Linux 에서의  Microsoft Paint (그림판) 입니다. 간단한 이미지 편집을 하기 위해 사용합니다.
 
@@ -467,7 +467,7 @@ alias open="nautilus"
 
 ### SSH 접속 허용
 
-![text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1629654297299-c8506221ca97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
+![text](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1629654297299-c8506221ca97ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.webp)
 
 다른 컴퓨터에서도 접속 하고 싶다면 SSH 접속을 허용 해줍니다. 아래의 링크를 참고해주세요.
 
@@ -483,7 +483,7 @@ alias open="nautilus"
 
 ### MacOS 테마 입히기
 
-![ubuntu](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/ubuntu.png)
+![ubuntu](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/ubuntu.webp)
 
 개인적으로 macOS의 환경을 좋아해서 macOS 처럼 만들어두고 사용하고 있습니다. 아래 링크를 따라하면 어렵지 않게 가능합니다.
 
@@ -507,17 +507,17 @@ sudo apt install gnome-shell-extension-autohidetopbar
 
 그러고 나서 재부팅을 하고 나서 Tweaks 를 실행해주면 아래와 같이 Extentions 에 hide top bar 옵션이 추가 된 것이 확인 됩니다.
 
-![image-20211001144534045](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211001144534045.png)
+![image-20211001144534045](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211001144534045.webp)
 
 이 설정을 켜주면 이제 상단이 밀릴때 상단 바가 안으로 들어가는데요,
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/autohide-top-panel.gif)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/autohide-top-panel.webp)
 
 > ref : https://fostips.com/auto-hide-top-panel-debian-ubuntu-fedora/
 
 평소에 숨어있다가 마우스를 올릴 때만 나오게 하려면 아래와 같이 설정 하면 됩니다.
 
-![image-20211001145441964](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211001145441964.png)
+![image-20211001145441964](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211001145441964.webp)
 
 가장 위에 있는 Show Panel when mouse approaches edge of the screen 옵션을 켜주고 가장 아래의 Intellihide 에 있는 두개의 옵션을 꺼주면 됩니다.
 
@@ -527,13 +527,13 @@ Gnome의 기본 창 분할도 사용하는데 꽤나 만족스러웠습니다만
 
 필수에 넣을까 고민 할 정도로 꼭 설치해야 한다고 생각하지만, 필요성을 먼저 느낀 후 설치하는것도 괜찮다고 봅니다.
 
-![tiling windows](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/window_tiling.gif)
+![tiling windows](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/window_tiling.webp)
 
 > https://github.com/emasab/shelltile
 
 설치 방법은 간단합니다. 아래의 링크에 들어가서 ON으로 사용 여부를 토글 해 주면 설치가 금방 끝납니다.
 
-![image-20220216153315020](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220216153315020.png)
+![image-20220216153315020](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220216153315020.webp)
 
 >  https://extensions.gnome.org/extension/657/shelltile/
 
@@ -554,51 +554,51 @@ Gnome을 사용하며 불편했던 것 중 하나가 한가운데에 푸시 알�
 
 GNOME EXTENTION에서 스위치를 ON으로 돌리는 것으로 간단하게 설치 합니다.
 
-![image-20220323155051437](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155051437.png)
+![image-20220323155051437](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155051437.webp)
 
 > https://extensions.gnome.org/extension/4105/notification-banner-position/
 
-![image-20220323155142403](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155142403.png)
+![image-20220323155142403](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155142403.webp)
 
 Install 을 눌러주면 설치는 바로 끝납니다.
 
-![image-20220323155228357](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155228357.png)
+![image-20220323155228357](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155228357.webp)
 
 설치 후 Tweaks 를 켜서 Extensions에 보면 Notification banner position이 설치 되어 활성화 되어 있는게 확인 됩니다. 이제 Notification 이 오면
 
-![image-20220323155409439](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155409439.png)
+![image-20220323155409439](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323155409439.webp)
 
 > 우측 상단에 알림이 뜹니다. 
 
 ### OpenWeather
 
-![image-20220526102044457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102044457.png)
+![image-20220526102044457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102044457.webp)
 
 간단히 날씨를 확인 할 수 있는 Extention 입니다.
 
 종종 날씨가 춥거나 덥거나 혹은 비가 올 것 같거나.. MacOS에서는 기본 날씨 위젯이 있기 때문에 간편하게 확인이 가능 한데, 우분투를 사용 할 때도 비슷한 경험을 하고 싶었습니다.
 
-![image-20220526102243898](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102243898.png)
+![image-20220526102243898](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102243898.webp)
 
 > https://extensions.gnome.org/extension/750/openweather/
 
 다행히도 이를 위해 OpenWeather라는 Extention이 있기 때문에 위의 링크에서 간단하게 활성화 시켜 사용 할 수 있습니다.
 
-![image-20220526102347243](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102347243.png)
+![image-20220526102347243](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102347243.webp)
 
 > 설치 후에는 우측 하단의 톱니 바퀴를 클릭 해서 설정 창으로 들어가고
 
-![image-20220526102405819](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102405819.png)
+![image-20220526102405819](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102405819.webp)
 
 > 좌측 하단의 + 버튼을 클릭 해서 원하는 지역을 추가 할 수 있습니다.
 
-![image-20220526102457786](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102457786.png)
+![image-20220526102457786](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220526102457786.webp)
 
 > 한국어로 검색 해도 지역이 뜨기 때문에 해당하는 지역을 등록 해서 사용하면 됩니다.
 
 ### 노트북 지문인식 등록
 
-![round black and white light](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1585079374502-415f8516dcc3ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80)
+![round black and white light](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1585079374502-415f8516dcc3ixlib=rb-1.2.webp)
 
 >  필요한 분만 하면 됩니다. 솔직히 굳이 하지 않아도 되는 기능이긴 합니다. 아래 링크를 참고해주세요.
 
@@ -615,7 +615,7 @@ gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 
 ### Fusuma 설치
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/img.gif)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/img.webp)
 
 데스크탑이 아닌 노트북 사용자 라던가, 혹은 별도의 터치패드를 연결해서 사용한다면 터치 제스처를 다양하게 사용해 MacOS 만큼 생산성을 높일 수 있는 fusuma 라는 어플리케이션이 있습니다.
 
@@ -663,7 +663,7 @@ Github Desktop의 설치는 아래 링크를 확인 해 주세요.
 
 ### Postman
 
-![Using Variables and Chaining Requests in Postman - Vonage Developer Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Blog_Postman2_1200x600.png)
+![Using Variables and Chaining Requests in Postman - Vonage Developer Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Blog_Postman2_1200x600.webp)
 
 API 테스트를 편하게 할 수 있습니다.
 
@@ -677,7 +677,7 @@ sudo snap install postman
 
 1. 일단 먼저 https://www.postman.com/downloads/ 에서 다운받습니다. Linux 64-bit를 받으면 되겠네요.
 
-   ![image-20211105155753299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105155753299.png)
+   ![image-20211105155753299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105155753299.webp)
 
 2. 다운받은 파일을 opt 폴더에 압축 해제합니다.
 
@@ -698,7 +698,7 @@ sudo snap install postman
    Encoding=UTF-8
    Name=Postman
    Exec=/opt/Postman/app/Postman %U
-   Icon=/opt/Postman/app/resources/app/assets/icon.png
+   Icon=/opt/Postman/app/resources/app/assets/icon.webp
    Terminal=false
    Type=Application
    Categories=Development;
@@ -707,7 +707,7 @@ sudo snap install postman
 
 ### Visual Studio Code
 
-![image-20211123223857894](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123223857894.png)
+![image-20211123223857894](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123223857894.webp)
 
 간단히 메모장 용도로 사용하기에도 훌륭할 만큼 가볍습니다. `.deb` 파일을 다운 받아서 설치 하시면 쉽습니다.
 
@@ -719,7 +719,7 @@ sudo dpkg -i 파일명.deb
 
 ### Albert
 
-![Untitled](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Untitled.png)
+![Untitled](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Untitled.webp)
 
 MacOS에서의 Alfred를 정확히 따라하는 Albert 입니다. 이름부터가 노리고 지은걸 알 수 있습니다.
 
@@ -733,7 +733,7 @@ MacOS에서의 Alfred를 정확히 따라하는 Albert 입니다. 이름부터�
 curl "https://build.opensuse.org/projects/home:manuelschneid3r/public_key" | sudo apt-key add -
 ```
 
-![Untitled](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Untitled-7674177.png)
+![Untitled](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Untitled-7674177.webp)
 
 아래는 Ubuntu 20.04 기준의 설치 방법 입니다.
 
@@ -749,17 +749,17 @@ sudo apt install albert
 
 > https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert
 
-![Untitled2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Untitled2.png)
+![Untitled2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Untitled2.webp)
 
 설치 된 후엔, 그냥 검색하면 아무것도 나오지 않기 때문에 Applications 를 체크 해야 합니다. 위에선 Files를 체크 했지만 FIles를 체크 하면 굉장히 불편하기 때문에 Applications랑 Calculator만 체크 하고 사용하시길 권장 합니다.
 
-![image-20211124155400697](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211124155400697.png)
+![image-20211124155400697](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211124155400697.webp)
 
 General 설정에서 단축키로도 `Alt + Space`를 설정 해서 MacOS에서 Spotlight나 Alfred 쓰듯 사용 하면 됩니다. `Autostart on log`을 반드시 체크 해주세요. 그렇지 않으면 컴퓨터를 새로 켤 때 마다 일일히 Albert를 실행 해 주어야 합니다.
 
 Extentions > WebSearch 에 등록을 해 두면 간편하게 네이버 검색, 카카오 지도 검색등도 가능합니다.
 
-![image-20220324101106703](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101106703.png)
+![image-20220324101106703](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101106703.webp)
 
 카카오 지도 검색
 
@@ -775,11 +775,11 @@ https://search.naver.com/search.naver?query=%s
 
 한번 이렇게 등록 해 두고 이후 호출할 때는 
 
-![image-20220324101225404](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101225404.png)
+![image-20220324101225404](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101225404.webp)
 
 등록해둔 Trigger 와 함께 검색어를 입력 하면 해당 명령이 호출 됩니다.
 
-![image-20220324101304632](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101304632.png)
+![image-20220324101304632](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220324101304632.webp)
 
 > `kmap 대전맛집` 결과 대전 맛집을 카카오 지도에서 검색 합니다.
 
@@ -787,7 +787,7 @@ https://search.naver.com/search.naver?query=%s
 
 ### Docker
 
-![Empowering App Development for Developers | Docker](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/docker_facebook_share.png)
+![Empowering App Development for Developers | Docker](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/docker_facebook_share.webp)
 
 Windows 에서 Ubuntu 로 넘어오게 된 가장 큰 계기입니다. Docker를 사용하면 정말 편하게 격리된 컨테이너들을 구성해 가상화의 장점을 살릴 수 있습니다. 사실상 업계 표준인 만큼 접근성이 높으며 사용에 굉장히 편리합니다. 관련 레퍼런스도 어렵지 않게 찾아 볼 수 있으며 사용자들이 작성해 둔 패키지/이미지들이 넘쳐나기 때문에 뭔가를 정말 간단하게 할 수 있습니다. 윈도우즈에서도 WSL2(Windows Subsystem for Linux)를 이용해 사용은 가능 했지만 메모리나 안정성 문제로 불편함이 있었습니다.
 
@@ -801,7 +801,7 @@ Windows 에서 Ubuntu 로 넘어오게 된 가장 큰 계기입니다. Docker를
 
 새로운 버전이 나왔다고 신나서 새 버전 깔았다가 기존의 플러그인들이 전부 죽어버리는 사태를 몇번 겪었는데 아마 다들 공감하실거에요.
 
-![image-20220321165133106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165133106.png) 
+![image-20220321165133106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165133106.webp) 
 
 > https://www.jetbrains.com/toolbox-app/
 
@@ -817,17 +817,17 @@ tar -xf jetbrains-toolbox-*
 
 압축이 풀린 폴더로 이동 후 `./jetbrains-toolbox`를 입력해 줍니다.
 
-![image-20220321165428244](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165428244.png)
+![image-20220321165428244](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165428244.webp)
 
 반응이 꽤나 오래 없어서 설치가 안되는 건가 했는데
 
-![image-20220321165628401](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165628401.png)
+![image-20220321165628401](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220321165628401.webp)
 
 잠시 기다리니 잘 뜹니다. Toolbox를 한번 사용 해 보면 계속 사용하게 되니 안써보셨다면 한번 써보는걸 권장합니다.
 
 ### IntelliJ IDEA 
 
-![IntelliJ IDEA 2021.2 Release Candidate Is Out! | The IntelliJ IDEA Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/BlogFeatured_IntelliJ-IDEA-2x-2400x1350.png)
+![IntelliJ IDEA 2021.2 Release Candidate Is Out! | The IntelliJ IDEA Blog](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/BlogFeatured_IntelliJ-IDEA-2x-2400x1350.webp)
 
 위의  ToolBox를 설치하는걸 권장하지만, IntelliJ IDEA만 설치를 원하는 경우도 있으니 함께 올려둡니다.
 
@@ -839,13 +839,13 @@ sudo snap install intellij-idea-ultimate --classic
 
 그런데 snap으로 설치하면 사용할때 이상하게도 로딩도 너무 느리고 사용하기가 불편 하더라고요.
 
-![image-20211021084558418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084558418.png)
+![image-20211021084558418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084558418.webp)
 
 그래서 삭제 뒤 위에 안내된 것 처럼 공식 홈페이지에 나온 방법 대로 설치 해서 사용해보니, MacOS에서 경험했던 훌륭한 속도 그대로  잘 사용 하고 있습니다.
 
 IntelliJ IDEA 다운로드 링크도 첨부 해 둡니다.
 
-![image-20211021084925005](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084925005.png)
+![image-20211021084925005](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211021084925005.webp)
 
 > https://www.jetbrains.com/idea/download/#section=linux
 
@@ -857,11 +857,11 @@ STS 4 를 설치할 경우 아래의 글을 참고해주세요.
 
 ### DBeaver
 
-![GitHub - dbeaver/dbeaver: Free universal database tool and SQL client](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/f3f5c080-808b-11ea-9713-2bea65875d95.png)
+![GitHub - dbeaver/dbeaver: Free universal database tool and SQL client](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/f3f5c080-808b-11ea-9713-2bea65875d95.webp)
 
 모든 데이터베이스를 한가지 클라이언트 만으로 관리 할 수 있으니 정말 편리합니다.
 
-![image-20211123221145003](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123221145003.png)
+![image-20211123221145003](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211123221145003.webp)
 
 > https://dbeaver.io/download/
 
@@ -875,7 +875,7 @@ dpkg -i ~/Downloads/dbeaver-ce_21.2.5_amd64.deb
 
 ### Typora
 
-![image-20211105163432374](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105163432374.png)
+![image-20211105163432374](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105163432374.webp)
 
 마크다운 에디터로 Typora를 사용하고 있습니다.
 
@@ -901,7 +901,7 @@ sudo apt-get install typora
 
 > 글을 수정하며 확인해보니 지금은 위의 방법으로 설치가 되니 그대로 진행 해주세요.
 
-![image-20211105163031170](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105163031170.png)
+![image-20211105163031170](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211105163031170.webp)
 
 > https://typora.io/#linux
 
@@ -922,7 +922,7 @@ vi ~/.local/share/applications/Typora.desktop
   2 Encoding=UTF-8
   3 Name=Typora
   4 Exec=/opt/Typora-linux-x64/Typora %U
-  5 Icon=/opt/Typora-linux-x64/resources/assets/icon/icon_128x128.png
+  5 Icon=/opt/Typora-linux-x64/resources/assets/icon/icon_128x128.webp
   6 Terminal=false
   7 Type=Application
   8 Categories=Development;
@@ -935,7 +935,7 @@ vi ~/.local/share/applications/Typora.desktop
 
 ### Notion 설치
 
-![image-20211027092241360](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211027092241360.png)
+![image-20211027092241360](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20211027092241360.webp)
 
 Notion에서 공식 우분투용 프로그램을 지원하지는 않지만, 감사하게도 개발자들이 힘을 모아 만든 Lotion 프로젝트 덕에 Notion을 native 앱으로 사용 할 수 있습니다. Notion 사용자라면, 아래의 링크에서 설치 방법을 확인 해 주세요.
 
@@ -943,7 +943,7 @@ Notion에서 공식 우분투용 프로그램을 지원하지는 않지만, 감�
 
 ### Spotify
 
-![green and white logo illustration](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1611339555312-e607c8352fd7ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
+![green and white logo illustration](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/photo-1611339555312-e607c8352fd7ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.webp)
 
 Spotify를 구독 중이라면 설치해주세요. Linux를 공식 지원하기 때문에 굉장히 좋습니다.
 
@@ -964,7 +964,7 @@ sudo apt-get update && sudo apt-get install spotify-client
 
 ### Apple Music(Cider)
 
-![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323153954522-20220323213045396.png) 
+![image-20220323153954522](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/image-20220323153954522-20220323213045396.webp) 
 
 Apple Music은 Linux를 정식 지원하지는 않지만, Cider라는 오픈 소스가 정말 훌륭한 UI/UX로 MacOS에서나 iOS에서의 애플 뮤직 경험 그대로 혹은 그 이상으로 사용 하실 수 있습니다. 
 
