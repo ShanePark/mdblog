@@ -8,7 +8,7 @@
 grep . /etc/*-release
 ```
 
-![image-20211118123434384](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118123434384.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118123434384.webp width=750 height=410 alt=1>
 
 > CentOS 7.9 버전 입니다.
 
@@ -22,7 +22,7 @@ Docker Engine을 설치 하기 전에 먼저 Docker Repository 를 셋업 해야
 sudo yum install -y yum-utils
 ```
 
-![image-20211118114637276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114637276.png)
+![image-20211118114637276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114637276.webp)
 
 > 금방 설치가 됩니다.
 
@@ -34,7 +34,7 @@ sudo yum-config-manager \
   https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
-![image-20211118114751166](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114751166.png)
+![image-20211118114751166](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114751166.webp)
 
 > 역시 금방 설치 됩니다.
 
@@ -46,15 +46,15 @@ sudo yum-config-manager \
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
-![image-20211118114821706](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114821706.png)
+![image-20211118114821706](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114821706.webp)
 
 > 94MB 의 파일을 다운로드 하고, 총 설치 공간은 382MB를 차지합니다. y를 입력해 진행합니다.
 
-![image-20211118114838871](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114838871.png)
+![image-20211118114838871](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114838871.webp)
 
 > 저장소를 신뢰하는지 확인합니다. y 를 입력해 계속 진행 해 줍니다.
 
-![image-20211118114930988](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114930988.png)
+![image-20211118114930988](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118114930988.webp)
 
 > 설치가 완료 되었습니다.
 
@@ -68,7 +68,7 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 yum list docker-ce --showduplicates | sort -r
 ```
 
-![image-20211118115158944](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115158944.png)
+![image-20211118115158944](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115158944.webp)
 
 정말 다양한 버전이 나오는데요, 그 중 설치할 버전을 고른 다음에는 아래의 명령어를 입력해 설치 합니다. `VERSION_STRING` 자리에 설치할 버전을 기입 해 줍니다.
 
@@ -92,7 +92,7 @@ docker ps
 
 <br><br>
 
-![image-20211118115030463](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115030463.png)
+![image-20211118115030463](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115030463.webp)
 
 docker명령어는 처음에는 sudo 권한이 있어야 실행이 됩니다. 나중에는 docker를 쓸 때마다 `sudo`를 쓰기 번거로우니 유저를 docker 그룹에 추가하면 sudo 권한 없이 docker 명령어를 사용 할 수 있습니다. 해당 방법은 아래 링크에 따로 포스팅 해 두었습니다.
 
@@ -124,7 +124,7 @@ Docker Compose 안정화 버전을 다운 받기 위해 아래의 명령어를 �
  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
-![image-20211118115703371](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115703371.png)
+![image-20211118115703371](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115703371.webp)
 
 > 바로 다운로드가 진행 됩니다. 용량이 작기 때문에 금방 끝납니다.
 
@@ -144,7 +144,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-![image-20211118115819859](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115819859.png)
+![image-20211118115819859](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/centos/docker.assets/image-20211118115819859.webp)
 
 Docker Compose도 설치가 완료 되었습니다. 이상입니다.
 

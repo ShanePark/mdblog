@@ -11,7 +11,7 @@ select row_number(), i.*
 from item i;
 ```
 
-![image-20211119145307908](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/subqueryUpdate.assets/image-20211119145307908.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/subqueryUpdate.assets/image-20211119145307908.webp width=750 height=500 alt=1>
 
 윈도우 함수 호출에는 OVER 절이 필요함 이라는 에러가 나옵니다.
 

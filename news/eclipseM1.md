@@ -1,6 +1,6 @@
 # Eclipse Apple Silicon 지원소식 
 
-![image-20211224220326989](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220326989.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220326989.webp width=750 height=520 alt=1>
 
 ## Intro
 
@@ -16,7 +16,7 @@
 
 > https://www.eclipse.org/downloads/packages/
 
-![image-20211224220806486](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220806486.png)
+![image-20211224220806486](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220806486.webp)
 
 > 애플 실리콘을 지원하는 버전은 2021-12R 입니다.
 >
@@ -24,31 +24,31 @@
 >
 > m1 맥북에서는 그 이전의 버전을 사용할 경우 정말 많은 버그를 경험 하며 사용이 거의 불가능 합니다. 아주 다행히도 맥북을 처음 구입했을때에 2020-12 버전을 사용 할 수 있었기 때문에 개발이 가능 했습니다. 그 이전 버전을 사용해야 했다면.. 정말 아찔합니다.
 
-![image-20211224220902385](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220902385.png)
+![image-20211224220902385](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224220902385.webp)
 
 > 카카오 서버를 통해 다운 받기 때문에 속도도 괜찮습니다. 용량은 319.3MB 입니다.
 
-![image-20211224221209299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221209299.png)
+![image-20211224221209299](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221209299.webp)
 
 익숙한 설치 과정을 거쳐 설치 후 실행 해 줍니다.
 
 ## 실행
 
-![image-20211224221238686](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221238686.png)
+![image-20211224221238686](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221238686.webp)
 
 2021-12의 새로운 로고 입니다. 개인적으로는 마음에 드네요.
 
-![image-20211224221314141](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221314141.png)
+![image-20211224221314141](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221314141.webp)
 
 > 일단 디자인부터 기대를 확 무너뜨립니다만.. 혹시 모르죠
 
 드디어 이클립스가 실행 되었습니다.
 
-![image-20211224221408469](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221408469.png)
+![image-20211224221408469](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221408469.webp)
 
 윈도우가 하나 떴을 뿐인데, 속도가 이전과 차원이 다른게 느껴집니다.
 
-![image-20211224221519734](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221519734.png)
+![image-20211224221519734](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/image-20211224221519734.webp)
 
 > Apple native로 실행 되고 있음이 확인 됩니다. 그 얼마나 기다렸던 순간입니까.. 조금 늦었지만 말이죠
 
@@ -58,7 +58,7 @@
 
 이클립스를 포기하게 만든 트리거 였는데, 과연 해결 되었을까요?
 
-![gif](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/gif.gif)
+![gif](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/eclipseM1.assets/gif.webp)
 
 > 여전합니다. 이거 하나만으로도 맥북에서 이클립스의 매력이 그냥 바닥으로 떨어집니다.
 

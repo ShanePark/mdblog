@@ -12,7 +12,7 @@ Gnome Shell 은 desktop icon을 가져 왔지만, 3.28 버전부터 개발자들
 
 Gnome Extentions 사이트를 통해 해당 플러그인을 ON 해 주면 됩니다. Chrome이나 Firefox에서 GNOME EXTENTIONS 플러그인을 또 설치 해 줘야 하는 번거로움이 있기는 합니다.
 
-![image-20211129092858853](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129092858853.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129092858853.webp width=750 height=270 alt=1>
 
 > https://extensions.gnome.org/extension/1465/desktop-icons/
 
@@ -28,17 +28,17 @@ Gnome Extentions 사이트를 통해 해당 플러그인을 ON 해 주면 됩니
 sudo apt install desktopfolder gnome-tweak-tool
 ```
 
-![image-20211129092505875](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129092505875.png)
+![image-20211129092505875](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129092505875.webp)
 
 설치가 완료 되고 난 후에는 desktop folder 어플리케이션을 실행 해 줍니다.
 
-![image-20211129093039375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129093039375.png)
+![image-20211129093039375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129093039375.webp)
 
 > Desktop Folder 검색
 
 이제 바탕화면에 아이콘들이 표시되면 바탕화면을 사용 할 수 있습니다. 
 
-![image-20211129093117535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129093117535.png)
+![image-20211129093117535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/desktop.assets/image-20211129093117535.webp)
 
 ## 세번째 방법 Gnome classic mode
 

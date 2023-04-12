@@ -4,7 +4,7 @@
 
 ## 12주의  `Programmers Weekly Challenge` 가 끝났습니다.
 
-![image-20211029235014514](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211029235014514.png)
+<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211029235014514.webp" width=750 height=550 alt=1>
 
 ​		
 
@@ -18,13 +18,13 @@
 
 아무래도 라이선스 문제가 있지 않았을까 추측이 되지만 정확한 이유는 모르겠습니다.
 
-![image-20211030000002242](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030000002242.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030000002242.webp width=600 height=600 alt=2>
 
 ​		
 
 그래도 다행인건 문제 풀이를 했던 코드들은 모두 남아 있습니다. 문제까지 남기지는 않지만 풀이만 있다고 하더라도 마찬가지로 라이선스 문제가 있을 수 있을 거라 생각해서 코딩테스트 했던 코드들은 모두 비공개 저장소에 저장 해 두었습니다.
 
-![image-20211029235158920](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211029235158920.png)
+![image-20211029235158920](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211029235158920.webp)
 
 ​		
 
@@ -34,7 +34,7 @@
 
 사실 9~10월 JetBrains와 프로그래머스가 공동으로 주최했던 월간 코드 챌린지 시즌 3에 참여 하며 다른 사람들과의 격차를 체감 하고는 Problem Solving에 흥미가 뚝 떨어질 뻔 했었거든요.
 
-![image-20211030001423883](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030001423883.png)
+![image-20211030001423883](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030001423883.webp)
 
 ​	
 
@@ -42,7 +42,7 @@
 
 ​		
 
-![image-20211030001515850](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030001515850.png)
+![image-20211030001515850](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030001515850.webp)
 
 JetBrains 기념품 세트, 해피해킹 프로2, 프로그래머스 굿즈 Kit를 노리고 신나서 참여 했는데. 각 회차별 2문제만 딱 풀어서 총 4문제를 풀었습니다. 경품 응모의 자격을 갖추기는 했는데 아쉽게도 어떤 상품도 당첨 되지는 않았더라고요.
 
@@ -50,7 +50,7 @@ JetBrains 기념품 세트, 해피해킹 프로2, 프로그래머스 굿즈 Kit�
 
 하지만 무엇보다 월간 코딩챌린지에 참여하며 가장 좌절 한 순간은 다른 사람들의 문제 풀이 속도를 보았을 때 였습니다. 보통 문제 1 은 엄청 쉬우니 그렇다 쳐도 문제2를 풀고 나면 보통 1시간 가까이는 걸리곤 했던 것 같은데 상위권인 분들은 그 시간에 이미 문제 4 까지 다 끝내고 테스트를 마치더라고요.
 
-![image-20211030001658683](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030001658683.png)
+![image-20211030001658683](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030001658683.webp)
 
 ​		
 
@@ -66,7 +66,7 @@ JetBrains 기념품 세트, 해피해킹 프로2, 프로그래머스 굿즈 Kit�
 
 ​	
 
-![image-20211030002706169](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030002706169.png)
+![image-20211030002706169](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ProgrammersWeekly.assets/image-20211030002706169.webp)
 
 Leetcode 에서는 runtime이 다른 사람들과 비교했을 때 얼마나 빨랐는지, 메모리 사용이 얼마나 더 효과적이었는지를 비교해서 보여주기 때문에 문제를 풀고도 여전히 화가나 있는 스스로를 종종 보게 됩니다. ㅎㅎ
 

@@ -109,7 +109,7 @@ public class Proxy {
 
 실행 결과
 
-![image-20211029224829879](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211029224829879.png)
+![image-20211029224829879](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211029224829879.webp)
 
 ​	두번의 실행에서 나오는 아이피 주소가 다릅니다. 두번째에는 프록시 서버를 통해 접속이 진행 된 것이 확인 됩니다.
 
@@ -154,17 +154,17 @@ IDE 마다 설정 방법이 조금 씩 다른데 IntelliJ IDEA와 Eclipse 의 �
 
 - IntelliJ IDEA
 
-![image-20211026145103818](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145103818.png)
+![image-20211026145103818](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145103818.webp)
 
 Edit Configurations... 에 들어갑니다.
 
 ​	
 
-![image-20211026145153972](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145153972.png)
+![image-20211026145153972](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145153972.webp)
 
 Run/Debug Confiurations > Add VM options`Alt+V` 를 선택 하면 하나의 필드가 추가됩니다.
 
-![image-20211026145208614](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145208614.png)
+![image-20211026145208614](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145208614.webp)
 
 VM options 블록이 생겼네요. 아래의 내용을 입력 해 줍니다.
 
@@ -186,7 +186,7 @@ System.getProperties().put("socksProxyPort", "9999");
 
 
 
-![image-20211026145341253](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145341253.png)
+![image-20211026145341253](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026145341253.webp)
 
 작성이 완료 되었습니다.
 
@@ -194,7 +194,7 @@ System.getProperties().put("socksProxyPort", "9999");
 
 이제 실행 해 보면 코드에 따로 프록시 관련한 내용이 없지만, 프록시 서버의 아이피 주소가 확인 됩니다.
 
-![image-20211029230105502](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211029230105502.png)
+![image-20211029230105502](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211029230105502.webp)
 
 ​	
 
@@ -202,7 +202,7 @@ System.getProperties().put("socksProxyPort", "9999");
 
 이클립스는 조금 다르긴 한데 뭐 비슷 합니다. Edit Configuration 에서 VM arguments: 라는 항목을 찾아서 똑같이 넣어주면 끝 입니다.
 
-![image-20211026144951353](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026144951353.png)
+![image-20211026144951353](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/proxy.assets/image-20211026144951353.webp)
 
 ​	
 

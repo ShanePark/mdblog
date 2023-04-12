@@ -4,7 +4,7 @@
 
 ## Postman
 
-![image-20211030150334040](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030150334040.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030150334040.webp width=630 height=360 alt=1>
 
 > Postman은 API 테스팅을 쉽고 빠르고 간편하게 할 수 있도록 도와주는 어플리케이션 입니다. TeliportMe의 CTO로 있던 Abhinav Asthana이 본인의 필요에 의해 Chrome extention을 만들었던 것이 그 시작 입니다.
 
@@ -22,7 +22,7 @@
 
 https://www.postman.com/downloads/
 
-![image-20211030142800642](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030142800642.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030142800642.webp width=750 height=550 alt=2>
 
 공식 Download 페이지에서는 아직까지 8.12.5의 stable 버전만을 제공 하고 있습니다.
 
@@ -32,7 +32,7 @@ Github의 Postman 그룹에서 해당 내용을 발견 할 수 있었는데요
 
 https://github.com/postmanlabs/postman-app-support/issues/9346
 
-![image-20211030143816990](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030143816990.png)
+![image-20211030143816990](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030143816990.webp)
 
 ​		
 
@@ -44,7 +44,7 @@ https://dl.pstmn.io/download/version/9.0.7/osx_arm64 를 눌러 다운 받으시
 
 ​		
 
-![image-20211030144044879](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030144044879.png)
+![image-20211030144044879](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/postmanM1.assets/image-20211030144044879.webp)
 
 그렇게 새로 설치하고 업데이트 까지 마친 9.1.3 버전의 Postman 입니다.
 
