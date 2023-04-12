@@ -4,23 +4,23 @@
 
 요즘에는 페이지에 표시할 내용이 너무 많을 때에는 중요한 정보를 한 페이지에 들어오도록 하면서, 간단한 클릭 한번으로 숨겨져 있는 정보들도 확인할 수 있도록 하기 위해 접기/펼치기를 많이 사용 하고 있습니다.
 
-![image-20211213220501354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220501354.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220501354.webp width=750 height=410 alt=1>
 
 > www.naver.com
 
 거의 매일 접속하는 naver 페이지만 보더라도 메인에 접기/펼치기 버튼 두개가 바로 보입니다.
 
-![image-20211213220538608](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220538608.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220538608.webp width=750 height=420 alt=2>
 
 > 검색 히스토리
 
-![image-20211213220553681](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220553681.png)
+![image-20211213220553681](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220553681.webp)
 
 > 서비스 전체보기
 
 물론 네이버에서 `details` 태그를 사용해서 접기와 펼치기를 구현한 것은 아닙니다. 시간적 여유가 있으며 접고 펼칠때에 상황에 맞는 여러가지 이벤트들을 넣고, 맘에 드는 css 를 적용하는 등 예전처럼 접고 펼치기를 구현 해 내려면 자바스크립트 코드를 작성하는 방법 밖에 없었습니다.
 
-![image-20211213220902343](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220902343.png)
+![image-20211213220902343](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213220902343.webp)
 
 > 네이버의 접기 펼치기 코드를 보니 a 태그에 href="#" 을 쓰고.. onclick="return false;" 해둔다음에 클릭 이벤트를 리스너로 받아 처리하는 듯 합니다. 네이버 개발자도 사람이었다! 
 
@@ -91,7 +91,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## Broswer compatibility
 
-![image-20211213223510845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213223510845.png)
+![image-20211213223510845](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/html/details.assets/image-20211213223510845.webp)
 
 브라우저 호환성도 크게 걱정 하지 않아도 됩니다.
 

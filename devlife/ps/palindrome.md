@@ -1,6 +1,6 @@
 # 문제풀이: 가장 긴 팬린드롬(palindrome)
 
-![image-20211218160705282](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218160705282.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218160705282.webp width=750 height=320 alt=1>
 
 ## Intro
 
@@ -223,7 +223,7 @@ public static int solution(String s) {
     }
 ```
 
-![image-20211218163722366](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218163722366.png)
+![image-20211218163722366](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218163722366.webp)
 
 드디어 4차 시도만에 통과 했습니다.
 
@@ -231,13 +231,13 @@ public static int solution(String s) {
 
 내친김에 바로 `leetcode.com` 에 들어가서 같은 알고리즘으로 문제 풀이를 해 보았습니다.
 
-![image-20211218161257293](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218161257293.png)
+![image-20211218161257293](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218161257293.webp)
 
 통과를 하긴 했지만..
 
-![image-20211218164011470](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218164011470.png)
+![image-20211218164011470](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218164011470.webp)
 
-![image-20211218164132227](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218164132227.png)
+![image-20211218164132227](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218164132227.webp)
 
 메모리 사용은 상위 5% 안에 들만큼 적게 사용 했지만 효율성이 한참 떨어집니다. 442ms가 나왔는데, 25ms대에 대부분의 사용자가 모여있는 걸 보면  `O(n^3)` 으로 풀지 말고  `O(n^2)`로 풀이 했어야 하는 듯 합니다.
 
@@ -269,7 +269,7 @@ public static int solution(String s) {
     }
 ```
 
-![image-20211218170318495](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218170318495.png)
+![image-20211218170318495](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/palindrome.assets/image-20211218170318495.webp)
 
 > Runtime이 확연 하게 줄어들었습니다.
 

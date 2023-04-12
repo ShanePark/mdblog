@@ -1,6 +1,6 @@
 # Eclipse) 자바스크립트 에러표시 제거
 
-![image-20211130161550605](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130161550605.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130161550605.webp width=500 height=300 alt=1>
 
 ## Intro
 
@@ -16,21 +16,21 @@
 
 >  프로젝트 우클릭 -> Properties -> Client-side JavaScript > `Include Path`
 
-![image-20211130161707081](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130161707081.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130161707081.webp width=750 height=520 alt=2>
 
 위에 있는 Source 탭을 누르고 > Excluded 선택 > `Edit...` 버튼을 클릭 합니다.
 
-![image-20211130162020800](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162020800.png)
+![image-20211130162020800](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162020800.webp)
 
 아래의 Inclusion and Exclusion Patterns가 뜨면 `Add...` 버튼을 클릭 합니다.
 
-![image-20211130162236441](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162236441.png)
+![image-20211130162236441](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162236441.webp)
 
-![image-20211130162211420](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162211420.png)
+![image-20211130162211420](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162211420.webp)
 
 그냥 모든 js파일의 validation을 안하도록 하겠습니다. `**/*.js` 라고 입력 합니다.
 
-![image-20211130162453269](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162453269.png)
+![image-20211130162453269](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162453269.webp)
 
 추가가 되었으면 Finish, Apply and Close 버튼 클릭 하여 마무리 합니다.
 
@@ -38,7 +38,7 @@
 
 작업이 완료되었으면 Project Clean을 한번 해줍니다.
 
-![image-20211130162647276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162647276.png)
+![image-20211130162647276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/eclipse-javascript-error.assets/image-20211130162647276.webp)
 
 > 더이상 에러가 표시되지 않습니다.
 

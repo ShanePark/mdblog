@@ -14,7 +14,7 @@ Linux와 MacOS를 모두 지원하는 마크다운 에디터는 흔하지 않기
 
 제가 예상했던 것 보다 보다 빠르게 정식 버전이 출시되었습니다.
 
-<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211129090454460.webp widht=650 height=550 alt=2>
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/typora-release.assets/image-20211129090454460.webp width=650 height=550 alt=2>
 
 > https://typora.io/
 

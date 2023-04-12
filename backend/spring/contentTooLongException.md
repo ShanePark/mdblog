@@ -64,7 +64,7 @@ executor.submit(() -> doPost(uri,entity) ); // 비동기 요청
 
 에러가 발생한 org.apache.http.entity.mime.MultipartFormEntity.class 를 확인 해 보았습니다. 객체의 프로터티 중 contentLength() 가 0 이하라서 문제가 발생 했습니다.
 
-![image-20211103103528908](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/contentTooLongException.assets/image-20211103103528908.png)
+![image-20211103103528908](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/spring/contentTooLongException.assets/image-20211103103528908.webp)
 
 그런데 아래줄을 보니 contentLength 가 25*1024 보다 커도 예외를 발생 시킵니다. 동기 요청으로 했을 때는 똑같이 `addBinaryBody` 에 `MultipartFile`의 inputStream을 그대로 담아 보내도 문제가 없었는데, 비동기에서는 동작 원리가 다른 걸로 추정 됩니다.
 

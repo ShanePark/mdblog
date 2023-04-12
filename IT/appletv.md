@@ -1,8 +1,6 @@
 # Apple TV 한국에서 애플티비와 홈팟미니 스테레오 활용 후기
 
-
-
-![Untitled](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/Untitled.jpg)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/Untitled.webp width=750 height=800 alt=1>
 
 <br>
 
@@ -46,51 +44,51 @@
 
 ### 1) Apple TV
 
-![324c903d-193d-4c15-aeee-b9f837469026](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/324c903d-193d-4c15-aeee-b9f837469026.jpeg)
+![324c903d-193d-4c15-aeee-b9f837469026](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/324c903d-193d-4c15-aeee-b9f837469026.webp)
 
 애플티비는 이러한 패키지로 배송이 옵니다. 박스 내부에는 Apple TV와 리모컨, 전원어댑터와 리모컨 충전을 위한 라이트닝 포트 충전 케이블이 들어 있습니다. 보통은 iPhone을 사용하실 테니 리모컨 충전은 아이폰 충전 할 때 사용하시는 것 그대로 사용 하시면 됩니다만 좀처럼 배터리가 달지 않습니다. 아직까지 한번도 충전 할 일이 없었습니다.
 
 <br>
 
-![3737a7a3-8d9d-4821-a4d7-60f373739c09](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/3737a7a3-8d9d-4821-a4d7-60f373739c09.PNG)
+![3737a7a3-8d9d-4821-a4d7-60f373739c09](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/3737a7a3-8d9d-4821-a4d7-60f373739c09.webp)
 
 애플티비는 전원에 연결하면 자동으로 핸드폰에 Set Up 팝업이 뜨기 때문에 정말 간단하게 설정 할 수 있습니다. 에어팟을 사용해 보신 분은 비슷한 화면을 보셨기 때문에 얼마나 간단한지 아실거에요. 특히 한국 출시 전에는 따로 미국 계정을 만들어서 AppStore는 미국계정으로, 그 외 다른 계정 연결은 한국 계정으로 하며 복잡한 설정을 했어야 했지만 지금은 한국에 정식 출시 되었기 때문에 간단하게 초기 설정이 됩니다.
 
 ### 2) HomePod Mini
 
-![785297a5-3866-44e2-9fc0-35ba7cd3bfc9](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/785297a5-3866-44e2-9fc0-35ba7cd3bfc9.jpg)
+![785297a5-3866-44e2-9fc0-35ba7cd3bfc9](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/785297a5-3866-44e2-9fc0-35ba7cd3bfc9.webp)
 
 > $99 의 저렴한 제품이지만 언박싱은 맥북에 버금갑니다. 괜히 HomePod 계열 제품은 애플이 팔 때 마다 적자를 낸다고 하는 게 아닙니다.
 
-![6e094de2-a70f-46ba-beda-fbc83f3ac7f9](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/6e094de2-a70f-46ba-beda-fbc83f3ac7f9.jpg)
+![6e094de2-a70f-46ba-beda-fbc83f3ac7f9](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/6e094de2-a70f-46ba-beda-fbc83f3ac7f9.webp)
 
 > 두툼한 보호 상자 안에는 앙증맞은 크기의 스피커가 들어 있습니다.
 
-![6e072646-655f-48b8-afef-24a3bc4715e7](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/6e072646-655f-48b8-afef-24a3bc4715e7.jpeg)
+![6e072646-655f-48b8-afef-24a3bc4715e7](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/6e072646-655f-48b8-afef-24a3bc4715e7.webp)
 
 > 전원 연결 케이블과 어댑터, 그리고 스피커가 들어 있습니다. 국내에 정식 발매가 되지 않아 충전 어댑터는 해외 어댑터기 때문에    사용하시려면 변환기가 필요합니다. 저는 해외 어댑터 제품이 너무 많다보니 샤오미의 해외용 멀티탭을 구입 했습니다.
 
-![IMG_3634](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3634.jpeg)
+![IMG_3634](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3634.webp)
 
 > TV 뒤에 있다 보니 먼지가 많이 쌓이네요. Apple TV, 홈팟 미니 2개, 그리고 해외에서 구입한 노트북에 Ubuntu를 올려 전원에 연결해놓고 개발할 때 홈 서버로 이용하고 있습니다.
 
-![IMG_3635](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3635.jpeg)
+![IMG_3635](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3635.webp)
 
 > 이렇게 전 세계 어느 타입의 전원이라도 연결 할 수 있는 형태라서 해외 직구 제품이 많은 분은 구매하면 참 편합니다.
 
-![cfa5d7ca-d199-4bfa-998b-961dcdd994a2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/cfa5d7ca-d199-4bfa-998b-961dcdd994a2.jpg)
+![cfa5d7ca-d199-4bfa-998b-961dcdd994a2](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/cfa5d7ca-d199-4bfa-998b-961dcdd994a2.webp)
 
 > 보이지 않는 바닥에는 애플 로고가 있습니다.
 
-![50d5cf4c-65c3-482c-ba6f-f206903b1024](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/50d5cf4c-65c3-482c-ba6f-f206903b1024.jpg)
+![50d5cf4c-65c3-482c-ba6f-f206903b1024](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/50d5cf4c-65c3-482c-ba6f-f206903b1024.webp)
 
 > 위에는 볼륨 조절 버튼이 있지만 보통은 시리를 호출하거나 iPhone 으로, 혹은 Apple TV 리모컨으로 볼륨 조절을 하기 떄문에 사용하지 않습니다. 위에 불이 다양한 색상으로 들어오는데, 상황에 따라 변하는 애니메이션이 재밌습니다.
 
-![9e068fa6-9ce9-4a69-81ae-ccef6625b20d](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/9e068fa6-9ce9-4a69-81ae-ccef6625b20d.jpeg)
+![9e068fa6-9ce9-4a69-81ae-ccef6625b20d](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/9e068fa6-9ce9-4a69-81ae-ccef6625b20d.webp)
 
 > Apple TV와 HomePod Mini 2대가 모여 하나의 Apple Home 을 이룹니다. 
 
-![ab24a1af-c9f6-4b6f-b781-181aaf7ce6db](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/ab24a1af-c9f6-4b6f-b781-181aaf7ce6db.PNG)
+![ab24a1af-c9f6-4b6f-b781-181aaf7ce6db](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/ab24a1af-c9f6-4b6f-b781-181aaf7ce6db.webp)
 
 > 두대가 연결되면 알아서 서로 인식해 Stereo로 묶을지 물어봅니다. 누가 왼쪽이고 누가 오른쪽인지만 알려주면 알아서 서로 연결이 되어 음악이 함께 나옵니다.
 
@@ -108,7 +106,7 @@
 
 사실 티비 바로 옆에 공유기가 있어서 간섭도 없고 와이파이 공유기도 성능이 좋기 때문에 굳이 유선 연결을 하지 않고 쓰고 있었는데요, 아무래도 속도가 영 느려서 혹시나 하는 맘에 속도 테스트를 해보니 무선으로는 사용을 할 수 없을 정도였습니다. 그래서 선을 연결 해서 사용하니 최대 속도가 잘 나와서 선을 연결해서 사용 하고 있습니다.
 
-![IMG_3637](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3637.jpeg)
+![IMG_3637](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3637.webp)
 
 > Apple TV로 스크린샷 찍는 방법을 찾아 봤는데, Mac에서 C타입 연결하는게 거의 유일한 방법이었던 것 같은데 이제 Apple TV에서 c타입 단자가 사라져서 그마저도 불가능 하네요.
 
@@ -116,7 +114,7 @@
 
 <br>
 
-![IMG_3636](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3636.jpeg)
+![IMG_3636](https://raw.githubusercontent.com/Shane-Park/mdblog/main/IT/appletv.assets/IMG_3636.webp)
 
 반면 유선으로 연결 했을때의 속도 입니다. 저희 집 인터넷 제한 속도인 500Mbps의 99% 속도를 내주고 있습니다.
 

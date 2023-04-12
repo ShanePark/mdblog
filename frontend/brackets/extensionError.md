@@ -4,7 +4,7 @@
 
 Brackets 에서 플러그인을 설치하려고 하는데, Available에 접속이 되지 않았습니다. 구글에 검색해보니 Adobe가 망했다는 등 말도 안되는 말이 많았는데요, 어쨌든 플러그인을 설치 해야 하는 상황이었기 때문에 문제를 해결 해야 했습니다.
 
-![image-20211117212343400](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117212343400.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117212343400.webp width=750 height=500 alt=1>
 
 ## 원인
 
@@ -18,23 +18,23 @@ config.json 파일을 편집해서 간단하게 에러를 해결 할 수 있습�
 
 ### 1. config.json 파일 찾기
 
-![image-20211117213043000](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213043000.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213043000.webp width=750 height=390 alt=2>
 
 > 일단 Applications 를 열어서 Brackets이 있는 위치로 찾아 갑니다.
 
-![image-20211117213131422](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213131422.png)
+![image-20211117213131422](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213131422.webp)
 
 > Brackets 아이콘을 우클릭 하면 Show Package Contents 메뉴가 있습니다. 클릭해줍니다.
 
-![image-20211117213200224](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213200224.png)
+![image-20211117213200224](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213200224.webp)
 
 > Contents 폴더에 가서
 
-![image-20211117213210103](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213210103.png)
+![image-20211117213210103](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213210103.webp)
 
 > www 폴더에 들어갑니다.
 
-![image-20211117213217764](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213217764.png)
+![image-20211117213217764](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213217764.webp)
 
 > config.json 파일을 찾았습니다.
 
@@ -44,7 +44,7 @@ config.json 파일을 편집해서 간단하게 에러를 해결 할 수 있습�
 
 18번 라인의 `extension_registry`가 사진 처럼 s3.amazonaws 로 시작하는 주소로 되어 있을 텐데요.
 
-![image-20211117213343798](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213343798.png)
+![image-20211117213343798](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213343798.webp)
 
 <br><br>
 
@@ -69,7 +69,7 @@ config.json 파일을 편집해서 간단하게 에러를 해결 할 수 있습�
         
 ```
 
-![image-20211117213836788](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213836788.png)
+![image-20211117213836788](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213836788.webp)
 
 <br><br>
 
@@ -77,11 +77,11 @@ config.json 파일을 편집해서 간단하게 에러를 해결 할 수 있습�
 
 아까처럼 플러그인 메뉴를 누르면 이번에는
 
-![image-20211117213936096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213936096.png)
+![image-20211117213936096](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117213936096.webp)
 
 > 정상적으로 목록이 잘 뜹니다!
 
-![image-20211117214014762](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117214014762.png)
+![image-20211117214014762](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/brackets/extensionError.assets/image-20211117214014762.webp)
 
 > Beautify 를 설치 해 보니 잘 설치도 됩니다.
 
