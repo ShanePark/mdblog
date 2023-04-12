@@ -4,7 +4,7 @@
 
 지난번에는 노트북에 램을 추가시켰습니다. 본격적으로 이것 저것 다양한 용도로 사용하려고 하는데 저장공간이 이미 거의 다 차버렸습니다.
 
-![labtop](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/laptop.jpeg)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/laptop.webp width=750 height=562 alt=1>
 
 > 하단의 비어있는 2.5인치 SATA 슬롯
 
@@ -12,7 +12,7 @@
 
 ### SSD 설치
 
-![IMG_0108 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/IMG_0108Large.jpeg)
+![IMG_0108 Large](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/IMG_0108Large.webp)
 
 SSD는 설치는 그냥 비어있는 슬롯에 꼽기만 하면 되기 때문에 정말 쉽습니다. 같은 공간에 2.5인치 하드디스크를 구입해서 설치 해도 됩니다. 
 
@@ -26,7 +26,7 @@ SSD는 그냥 꼽고 땡이지만 하드디스크는 물리적 충격에 민감�
 sudo fdisk -l
 ```
 
-![image-20221201200200520](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201200200520.png)
+![image-20221201200200520](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201200200520.webp)
 
 > 238.47GiB 용량을 가진 SanDisk 디스크가 하나 보입니다.
 
@@ -36,7 +36,7 @@ sudo fdisk -l
 sudo fdisk -l
 ```
 
-![image-20221201200907418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201200907418.png)
+![image-20221201200907418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201200907418.webp)
 
 > 맨 아래에 476.94 GiB의 디스크가 추가된게 확인됩니다.
 
@@ -48,19 +48,19 @@ sudo fdisk -l
 sudo fdisk /dev/sda
 ```
 
-![image-20221201202020234](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202020234.png)
+![image-20221201202020234](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202020234.webp)
 
 > fdisk가 실행 된 상태. 설정한 정보는 저장하기 전까지는 메모리에만 남아있다고 합니다.
 
 명령어 목록을 확인 하기 위해 일단 `m`을 입력 해 봅니다.
 
-![image-20221201202048933](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202048933.png)
+![image-20221201202048933](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202048933.webp)
 
 > 다양한 명령어가 나옵니다. 
 
 파티션을 생성 할 목적이기 때문에 `n` 을 입력해 add a new partition을 합니다.
 
-![image-20221201202118690](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202118690.png)
+![image-20221201202118690](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202118690.webp)
 
 > 파티션  타입 선택
 
@@ -68,7 +68,7 @@ sudo fdisk /dev/sda
 
 하나의 디스크로 여러개의 파티션을 생성 한다면 그때는 extended도 사용하겠네요
 
-![image-20221201202346539](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202346539.png)
+![image-20221201202346539](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202346539.webp)
 
 이후에는 
 
@@ -80,13 +80,13 @@ sudo fdisk /dev/sda
 
 파티션 설정 후에는 `p`를 입력 해서 Print the partition table 명령을 실행 합니다.
 
-![image-20221201202400073](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202400073.png)
+![image-20221201202400073](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202400073.webp)
 
 > /dev/sda1에 476.9G 용량의 Linux 타입 파티션이 생성된 상태
 
 이제 정보가 잘 입력 되었다면 `w`를 입력 해 저장 해 줍니다.
 
-![image-20221201202422700](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202422700.png)
+![image-20221201202422700](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201202422700.webp)
 
 > 정상적으로 파티션 정보가 Sync 됩니다.
 
@@ -98,7 +98,7 @@ sudo fdisk /dev/sda
 sudo fdisk -l
 ```
 
-![image-20221201203101156](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203101156.png)
+![image-20221201203101156](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203101156.webp)
 
 ### 포맷
 
@@ -119,7 +119,7 @@ mount: wrong fs type, bad option, bad superblock on /dev/sda1,
  sudo mkfs.ext4 /dev/sda1
 ```
 
-![image-20221201203824644](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203824644.png)
+![image-20221201203824644](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203824644.webp)
 
 > done 이 연속으로 모두 나오며 정상적으로 포맷이 완료 됩니다. Filesystem UUID가 보이는데, 저걸 나중에 마운트 할 때 사용 할 수 있으니 필요하다면 이 때 복사 해 둡니다.
 
@@ -131,7 +131,7 @@ mount: wrong fs type, bad option, bad superblock on /dev/sda1,
 sudo mkdir /mnt0
 ```
 
-![image-20221201203410674](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203410674.png)
+![image-20221201203410674](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203410674.webp)
 
 > 폴더가 생성되었습니다.
 
@@ -143,7 +143,7 @@ sudo mkdir /mnt0
 mount /dev/sda1 /mnt0
 ```
 
-![image-20221201203938545](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203938545.png)
+![image-20221201203938545](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201203938545.webp)
 
 > 마운트 완료
 
@@ -153,7 +153,7 @@ mount /dev/sda1 /mnt0
 df -h
 ```
 
-![image-20221201204002885](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204002885.png)
+![image-20221201204002885](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204002885.webp)
 
 > 가장 아래에 /dev/sda1이 추가되었고 /mnt0에 마운트 된 것이 확인 됩니다.
 
@@ -163,7 +163,7 @@ df -h
 sudo touch /mnt0/hello
 ```
 
-![image-20221201204146764](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204146764.png)
+![image-20221201204146764](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204146764.webp)
 
 > 파일이 생성 되었습니다.
 
@@ -175,7 +175,7 @@ sudo touch /mnt0/hello
 sudo reboot
 ```
 
-![image-20221201204344783](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204344783.png)
+![image-20221201204344783](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204344783.webp)
 
 > 마운트 정보도, mnt0의 hello 파일도 사라진게 확인 됩니다.
 
@@ -185,7 +185,7 @@ sudo reboot
 sudo vi /etc/fstab
 ```
 
-![image-20221201204643417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204643417.png)
+![image-20221201204643417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201204643417.webp)
 
 가장 아래에 아래와 같이 마운트할 파티션 정보를 입력 해 줍니다.
 
@@ -204,7 +204,7 @@ sudo vi /etc/fstab
 
 다섯번째 여섯번째는 잘 몰라서 `man fstab`을 입력해서 확인 해 보았습니다.
 
-![image-20221201210716334](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201210716334.png)
+![image-20221201210716334](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201210716334.webp)
 
 > 다섯번째는 dump 여부 설정이고, 여섯번째 필드는 부팅시 파일시스템 체크를 하는 순서를 정하는 옵션이라고 하네요. 둘 다 default 값으로 설정 해 주었습니다.
 
@@ -224,7 +224,7 @@ sudo reboot
 
 이후에 다시 확인 해 보면
 
-![image-20221201205800790](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201205800790.png)
+![image-20221201205800790](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201205800790.webp)
 
 > 마운트가 정상적으로 되어 있습니다. `/mnt0` 경로에 아까 만든 hello 파일도 보입니다.
 
@@ -234,7 +234,7 @@ sudo reboot
 sudo chmod -R 775 /mnt0
 ```
 
-![image-20221201210000603](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201210000603.png)
+![image-20221201210000603](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/laptop-storage.assets/image-20221201210000603.webp)
 
 이제 사용 할 준비가 완료 되었습니다! 용량이 늘어 난 만큼 파일 서버 등으로 다양하게 사용 할 수 있을 것 같습니다. 
 

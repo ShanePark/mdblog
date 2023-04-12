@@ -2,7 +2,7 @@
 
 ## 서론
 
-![image-20211120230953064](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120230953064.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120230953064.webp width=698 height=448 alt=1>
 
 ### 취소 이유
 
@@ -14,7 +14,7 @@
 
 베타 버전을 사용하지 않는다고 해도, Time Machine 백업은 정기적으로 해주는게 좋습니다.
 
-![image-20211120231310264](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231310264.png)
+![image-20211120231310264](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231310264.webp)
 
 일단 공개베타를 종료하기에 앞서 확실하게 컴퓨터의 내용들을 확실하게 Time Machine 백업 해 줍니다.
 
@@ -22,31 +22,31 @@
 
 일단 시스템 환경설정에서 소프트 웨어 업데이트에 들어갑니다.
 
-![image-20211120231523863](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231523863.png)
+![image-20211120231523863](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231523863.webp)
 
 > software 라고 검색 하면 편하게 찾을 수 있습니다.
 
 이번에는 Mac 등록 해제를 위해 좌측 하단 Details... 를 클릭 합니다.
 
-![image-20211120231611296](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231611296.png)
+![image-20211120231611296](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231611296.webp)
 
 > 12.1 Beta 3 가 나왔는데 설치를 안해보고 떠나네요..
 
 자 이제, 정말로 Beta Software Programme 을 끝내고 default로 돌아갈 지 물어봅니다. Restore Defaults를 클릭합니다.
 
-![image-20211120231723534](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231723534.png)
+![image-20211120231723534](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231723534.webp)
 
 > 위 버튼을 클릭 합니다.
 
 비밀번호를 입력 하라는 창이 뜹니다.
 
-![image-20211120231810042](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231810042.png)
+![image-20211120231810042](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231810042.webp)
 
 > 비밀번호를 입력 해 줍니다.
 
 <br><br>
 
-![image-20211120231840175](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231840175.png)
+![image-20211120231840175](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120231840175.webp)
 
 자 이제 공개베타 구독은 이제 끝났습니다.
 
@@ -60,27 +60,27 @@
 
 Appstore에 가서 macOS Monterey를 다운 받습니다.
 
-![image-20211120232108457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120232108457.png)
+![image-20211120232108457](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120232108457.webp)
 
 > VIEW 를 클릭하고
 
-![image-20211120232139917](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120232139917.png)
+![image-20211120232139917](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120232139917.webp)
 
 > GET을 클릭합니다.
 
-![image-20211120232216201](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120232216201.png)
+![image-20211120232216201](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120232216201.webp)
 
 그러면 앱스토어에서 GET을 눌렀지만, Software Update 를 통해 다운 받기 시작합니다. 처음엔 3시간 걸린다고 나오더라도 인터넷 환경에 따라 다르긴 하지만 그렇게 오래 걸리지는 않습니다.  용량이 12GB로 꽤 큰 편이기 때문에 유선으로 연결하는게 좋습니다.
 
-![image-20211120233709279](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120233709279.png)
+![image-20211120233709279](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120233709279.webp)
 
 > 10분정도 다운 받았을 때 이정도 진행되었으니, 총 15분 정도 걸렸던 것 같습니다. 예상 시간은 오차가 꽤 심하게 있는 편 입니다만 애플이 원래부터 iOS때도 그렇고, 넉넉하게 예측해주는 편 입니다
 
-![image-20211120234313183](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120234313183.png)
+![image-20211120234313183](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120234313183.webp)
 
 > 업데이트 준비가 되면 바로 이런 화면이 나옵니다. Continue를 클릭합니다.
 
-![image-20211120234334107](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120234334107.png)
+![image-20211120234334107](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120234334107.webp)
 
 하지만 알고 있으시겠지만, 다운그레이드는 되지 않습니다. 그래서 베타 참여하기 전에 신중히 생각 해 보아야 하는 것 입니다.
 
@@ -94,7 +94,7 @@ Appstore에 가서 macOS Monterey를 다운 받습니다.
 
 ## 결론
 
-![image-20211120235842664](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120235842664.png)
+![image-20211120235842664](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/betaCancel.assets/image-20211120235842664.webp)
 
 네. 이 글의 취지와는 조금 멀어졌지만 저는 베타를 계속 참여하기로 했습니다. 베타를 이용하다 문제가 생긴다면 Time Machine으로 돌아오는 방법도 있고, 어차피 모든걸 Git으로 관리하다보니 아에 초기화 하는 것도 그닥 꺼려지지는 않습니다.
 
