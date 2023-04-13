@@ -1,7 +1,7 @@
 # n중 for문과 깊이우선탐색 DFS
 
 ## Intro
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921277.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921277.webp width=750 height=208 alt=1>
 
 재미삼아 취미로 시간 날때마다 한 두 문제씩 풀었던 programmers의 코딩 테스트 연습이 어느덧 100문제를 넘어갔습니다.
 
@@ -96,9 +96,9 @@ public class Dice {
 
 
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921305-2338561.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921305-2338561.webp)
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img.webp)
 
 
 
@@ -136,7 +136,7 @@ public class Dice2Possibility {
 
 
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921303.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921303.webp)
 
 
 
@@ -172,7 +172,7 @@ public class Dice2Possibility {
 
 
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921294.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921294.webp)
 
 
 
@@ -221,7 +221,7 @@ public class Dice2Possibility {
 
 실행 결과는 아래와 같습니다. 총 4번 주사위를 굴렸으니 6^4 으로 1296 가지의 경우의 수가 존재합니다.
 
-![img](https://blog.kakaocdn.net/dn/qyWgX/btraHZXPKFk/In3VTDwRH2AjQKN4XOKlI0/img.png)
+![img](https://blog.kakaocdn.net/dn/qyWgX/btraHZXPKFk/In3VTDwRH2AjQKN4XOKlI0/img.webp)
 
 
 
@@ -420,7 +420,7 @@ public class Permutation {
 
 
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921310.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921310.webp)
 
 
 
@@ -459,7 +459,7 @@ https://programmers.co.kr/learn/courses/30/lessons/1835
 
 
 
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921305.png)
+![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/dfs.assets/img-20220116220921305.webp)
 
 
 
