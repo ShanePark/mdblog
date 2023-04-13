@@ -38,7 +38,7 @@ intelliJ IDEA를 8월 말에 구입 한 이후로, 3개월동안 집에서 혼�
 
 시간 날때마다 틈틈히 인텔리제이를 활용해 프로젝트를 띄워보려고 했는데, 뭐 해결을 다 한 지금에야 아무것도 아닌 문제였다는 생각이 들지만 이 에러가 지금까지 정말 까마득히 높은, 넘거나 뚫을 수 없는 견고한 벽 이었습니다.
 
-![image-20211202095322828](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/module-template.assets/image-20211202095322828-8447966.png)
+![image-20211202095322828](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/module-template.assets/image-20211202095322828-8447966.webp)
 
 인텔리제이에서는 이클립스와 다르게 워크스페이스 개념이 없기 때문에 여러개의 프로젝트를 띄우려면 module로 추가 해서 사용 해야 합니다. 그렇게 여러개의 프로젝트를 불러오면 실행에도 문제가 없습니다. 
 
@@ -48,7 +48,7 @@ intelliJ IDEA를 8월 말에 구입 한 이후로, 3개월동안 집에서 혼�
 >
 > 해당 프로젝트는 jsp를 사용 하지 않는데, jsp로 프로젝트를 하시는 분들도 아마 똑같이 모듈로 불러온 프로젝트가 템플릿을 찾지 못해 고생을 하실 거라는 생각이 드네요.
 
-![image-20211202095404498](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/module-template.assets/image-20211202095404498.png)
+![image-20211202095404498](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/module-template.assets/image-20211202095404498.webp)
 
 정말 이걸 해결해보려고 별에 별 짓을 다 해봤는데 문제 해결이 되지 않았고 구글에 아무리 검색해도 해결 방법을 찾을 수 없었습니다.
 
@@ -64,7 +64,7 @@ Run/Debug Configurations 에서 Working directory를 변경해주면 됩니다.
 
 각 모듈 스스로의 경로는 `$MODULE_DIR$`로 받아 올 수 있습니다.
 
-![image-20211202095638478](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/module-template.assets/image-20211202095638478.png)
+![image-20211202095638478](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/module-template.assets/image-20211202095638478.webp)
 
 모든 서브 모듈들의 Working directory를 변경 해 주니 드디어 정상적으로 템플릿 파일을 찾아 오고, 아무런 문제 없이 프로젝트를 불러 옵니다.
 

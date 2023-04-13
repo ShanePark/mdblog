@@ -95,13 +95,13 @@ family:
 
 그래서 모든 형식과 상위 호환되는 YAM을 사용하면 괜찮지 않을까 생각이 들어 YAML로 테스트를 해 보았습니다.
 
-![image-20211116232053955](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116232053955.png)
+![image-20211116232053955](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116232053955.webp)
 
 > https://yaml.org
 
 YAML 공식 홈페이지에서는 JAVA에서 SnakeYAML 엔진을 사용하길 권장 하고 있습니다. 그럼 해당 라이브러리를 dependency에 추가해야 하지 않을까 하겠지만..
 
-![image-20211116232936985](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116232936985.png)
+![image-20211116232936985](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116232936985.webp)
 
 무려 spring-boot-starter에 기본으로 내장 되어 있습니다!
 
@@ -151,9 +151,9 @@ public class createYamlUsingSnakeYaml {
 
 위와 같이 코드를 작성 한 뒤에 실행을 해 보면..
 
-![image-20211116233341487](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116233341487.png)
+![image-20211116233341487](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116233341487.webp)
 
-![image-20211116233401017](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116233401017.png)
+![image-20211116233401017](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116233401017.webp)
 
 짠! 정말 손쉽게 yaml 파일이 생성 됩니다. 간단하죠. data1과 data2의 순서가 바뀐건 Map의 특성 때문인데요, 모두 아시는 것 처럼 Map이나 Set등은 순서가 없습니다. 다만, LinkedHashSet을 사용한다면 Map에도 순서를 부여 할 수 있습니다.
 
@@ -197,7 +197,7 @@ public class createYamlUsingSnakeYaml {
 
 ```
 
-![image-20211116234606286](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116234606286.png)
+![image-20211116234606286](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/snakeYAML.assets/image-20211116234606286.webp)
 
 > 의도한 순서대로 YAML 파일이 작성 되었습니다.
 

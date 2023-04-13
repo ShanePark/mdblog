@@ -8,7 +8,7 @@ Map에서 특정 key를 가진 EntrySet을 제거하는건 어렵지 않습니�
 map.remove(삭제할key객체)
 ```
 
-![image-20220513134921767](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513134921767.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513134921767.webp width=622 height=101 alt=1>
 
 key로 제거 하는 것 뿐만 아니라, key와 value를 모두 인자로 넘겨서 해당하는 key-value 쌍이 있을때에만 제거하는 방법도 있습니다.
 
@@ -16,7 +16,7 @@ key로 제거 하는 것 뿐만 아니라, key와 value를 모두 인자로 넘�
 
 ## values().remove(Object value)
 
-![image-20220513135116559](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513135116559.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513135116559.webp width=750 height=403 alt=2>
 
 단순 궁금증에 values()로 값들이 들어있는 컬렉션 객체를 불러 온 뒤에, 거기에서 remove 메서드를 호출 해 보았는데 정말 감쪽같이 key, value 쌍이 모두 사라졌습니다.
 
@@ -32,7 +32,7 @@ values는 제거가 될 거라고 생각했지만, keySet은 변화가 있기 �
 
 일단 HashMap은 AbstractMap 을 상속 하고 있습니다.
 
-![image-20220513135513884](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513135513884.png)
+![image-20220513135513884](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513135513884.webp)
 
 AbstractMap의 values() 메서드 부분을 확인 해 보았는데요
 
@@ -48,11 +48,11 @@ AbstractCollection 을 반환 해 주는데, 이 컬렉션의 이터레이터로
 
 이번에는 AbstractCollection 클래스로 넘어가 확인 해 보도록 합니다.
 
-![image-20220513140338183](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513140338183.png)
+![image-20220513140338183](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513140338183.webp)
 
 `remove(Object o)` 메서드를 호출 하면, AbstractCollection 에서는 이터레이터를 계속 순회하며 it.next()로 일치하는 값을 찾습니다. 위에서 미리 확인 했던 것 처럼, 여기에서 it.next()가 확인하는 값은 사실 `entrySet().iterator().next().getValue()` 입니다.
 
-![image-20220513140928087](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513140928087.png)
+![image-20220513140928087](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/map_remove_value.assets/image-20220513140928087.webp)
 
 그러다가 일치하는 값을 찾았을 때에는 `it.remove()`를 호출 하고 return을 반환 하는데요, 여기서의 it.remove()는 사실 `entrySet().iterator().remove()`가 호출 되기 때문에 안전하게 key-value 쌍이 함께 제거 된 것 이었습니다.
 

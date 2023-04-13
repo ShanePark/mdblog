@@ -4,7 +4,7 @@
 
 코틀린은 Intelli IDEA를 개발한 JetBrains 사에서 공개한 오픈 소스 프로그래밍 언어 입니다. JVM 위에서 돌아가며 자바와 유사 하지만 간결한 문법과 다양한 기능 추가로 굉장히 호평을 받고 있습니다. 처음 공개된 2011년 에는 그렇게 큰 관심을 받지 못했지만, 오라클이 Java API 저작권으로 좋지 않은 신호를 계속 보이자 Google에서는 2017년 안드로이드의 공식 언어로 Kotlin을 추가 하였습니다. 
 
-![image-20220329204525109](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220329204525109.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220329204525109.webp width=750 height=401 alt=1>
 
 그 때 부터 비약적인 관심을 받기 시작한 코틀린은 간결한 문법, 예외처리를 강제하지 않음, Null 안정성 등 으로 비약적인 생산성과 코드량 감소로 입소문을 타기 시작하였고, 이제는 흔히 네카라쿠배로 불리는 대기업 IT회사들을 필두로 여러가지 신규 서비스들이 코틀린으로 작성되고 있습니다.
 
@@ -20,7 +20,7 @@ Python을 처음 배웠을 때 그 간결한 문법에 감탄했었고, 알고�
 
 다만 한줄에 여러 명령문을 입력하려면 매번 명령이 끝날 때마다 `;`을 붙여 구분해 주어야 합니다.
 
-![image-20220328213836006](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328213836006.png)
+![image-20220328213836006](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328213836006.webp)
 
 ### 주석
 
@@ -48,7 +48,7 @@ fun main() {
 }
 ```
 
-![image-20220328213556334](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328213556334.png)
+![image-20220328213556334](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328213556334.webp)
 
 > 실행 결과
 
@@ -120,7 +120,7 @@ println("""
     """.trimMargin())
 ```
 
-![image-20220328221154466](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328221154466.png)
+![image-20220328221154466](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328221154466.webp)
 
 ## 자료형
 
@@ -137,7 +137,7 @@ Kotlin에서는 모든 자료형을 객체로 만들어 관리 하기 때문에 
 - 문자: Char(2)
 - 문자열: String
 
-![image-20220328222626307](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328222626307.png)
+![image-20220328222626307](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328222626307.webp)
 
 > val로 선언한 변수에 새로운 값을 할당하려고 하면 에러가 발생합니다.
 
@@ -153,7 +153,7 @@ var notNull: Int = 200
 
 null을 허용 하는 변수일 경우에만 자료형 뒤에 `?`를 붙여 줍니다.
 
-![image-20220328223205119](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328223205119.png)
+![image-20220328223205119](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328223205119.webp)
 
 null을 허용하지 않는 변수라도, null을 허용하는 변수의 끝에 `!!`를 붙여 null을 허용하지 않는 변수의 값으로 변환하여 할당 할 수 있는데요.
 
@@ -172,7 +172,7 @@ notNull = nullable!!
 println("notNull: $notNull")
 ```
 
-![image-20220328224017667](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328224017667.png)
+![image-20220328224017667](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220328224017667.webp)
 
  그럴 경우에는 자바에서는 거의 매일 만나던 NullPointException을 다시 만날 수 있습니다.
 
@@ -180,7 +180,7 @@ println("notNull: $notNull")
 
 JetBrains Academy의 무료 강의 링크 달아두며 글 마치겠습니다.
 
-![image-20220329224412149](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220329224412149.png)
+![image-20220329224412149](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/kotlin/01HelloKotlin.assets/image-20220329224412149.webp)
 
 > https://hyperskill.org/tracks/18
 

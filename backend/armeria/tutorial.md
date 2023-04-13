@@ -2,7 +2,7 @@
 
 ## Intro
 
-![image-20220820102421273](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820102421273.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820102421273.webp width=750 height=381 alt=1>
 
 - Build a reactive microservice at your pace: Armeria는 아주 작고 단순한 형태로부터 시작해 점차 서비스를 키울 수 있게 해줍니다.
 - your go-to microservice framework for any situation: 어떤 상황에서도 마이크로소프트를 만들 수 있는 프레임워크 입니다. gRPC, Thrift, GraphQL 등의 프로토콜도 지원합니다.
@@ -27,7 +27,7 @@
 
 참고로 Armeria의 요구사항은 JDK11+ 입니다. 11 버전 이상으로 골라주세요.
 
-![image-20220819205543386](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819205543386.png)
+![image-20220819205543386](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819205543386.webp)
 
 프로젝트를 생성 한 후에는 build.gradle에 아래의 내용을 추가 해 줍니다.
 
@@ -149,13 +149,13 @@ public class Main {
 
 이제 실행 해 보도록 하겠습니다.
 
-![image-20220819213536120](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819213536120.png)
+![image-20220819213536120](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819213536120.webp)
 
 8080 포트에서 서버가 실행 되었다는 로그가 확인 됩니다.
 
 정말 응답을 처리 해 주는지 확인을 해 보도록 하겠습니다. `localhost:8080`으로 GET 요청을 보내면..
 
-![image-20220819213750811](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819213750811.png)
+![image-20220819213750811](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819213750811.webp)
 
 > Hello, Armeria! 라는 응답을 보내 줍니다.
 
@@ -303,23 +303,23 @@ public class Main {
 
 자 이제 서버를 시작 해서 확인 해 보도록 하겠습니다.
 
-![image-20220819230048812](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819230048812.png)
+![image-20220819230048812](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819230048812.webp)
 
 doc을 확인하기 위해 `localhost:8080/docs` 페이지에 요청을 보내 보았습니다.
 
-![image-20220819222903281](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819222903281.png)
+![image-20220819222903281](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819222903281.webp)
 
 그런데 예상치 못한 `java.lang.UnsupportedOperationException: Unsupported OS and Architecture: Mac OS X, aarch64` 에러가 발생 하더라고요. 그래서 확인을 해 보니 포함된 Broti4j 라이브러리가 Apple Silicon을 아직 지원하지 못한 모양이에요.
 
 제가 추가한 `Armeria 1.18`버전 에서는 `brotli4j v1.7.1`을 사용 하고 있었는데
 
-![image-20220819223234242](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819223234242.png)
+![image-20220819223234242](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819223234242.webp)
 
 마침, 4일전에 추가된 `brotli4j 1.8.0` 버전 부터는 Apple Silicon M1 support 가 가능하다고 되어 있더라고요. 그래서 Broti4j의 버전을 올려서도 진행 해 보았는데, 이번에는 다른 에러(NPE)가 발생 하더라고요.
 
 일단 튜토리얼을 진행 중이고, Broti4j 오류가 발생 해도 docs 확인에는 지장이 없으니 계속해서 진행을 해 보겠습니다.
 
-![image-20220819224739742](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819224739742.png)
+![image-20220819224739742](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819224739742.webp)
 
 > http://localhost:8080/docs/
 
@@ -341,7 +341,7 @@ public class BoardService {
 }
 ```
 
-![image-20220819230502282](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819230502282.png)
+![image-20220819230502282](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220819230502282.webp)
 
 > 이번에는 docs 에서 서비스가 확인 됩니다.
 
@@ -446,11 +446,11 @@ curl --request POST 'localhost:8080/boards' \
 -d '{"title":"My first blog", "content":"Hello Armeria!"}'
 ```
 
-![image-20220820081707604](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820081707604.png)
+![image-20220820081707604](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820081707604.webp)
 
 앗.. 400 에러가 발생했습니다. 에러 내용을 확인 해 보면
 
-![image-20220820081732028](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820081732028.png)
+![image-20220820081732028](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820081732028.webp)
 
 > Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Java 8 date/time type `java.time.LocalDateTime` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: com.tistory.shanepark.domain.Board["createdAt"])
 
@@ -465,7 +465,7 @@ implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3'
 
 이후 다시 서버를 실행 해서 같은 요청을 보내 보면..
 
-![image-20220820082638718](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820082638718.png)
+![image-20220820082638718](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820082638718.webp)
 
 정상적으로 응답을 보내줍니다! 
 
@@ -483,7 +483,7 @@ public class Board {
 
 JSON format이 썩 마음에 들지 않아 어노테이션을 하나 달아주었습니다.
 
-![image-20220820084818249](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820084818249.png)
+![image-20220820084818249](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820084818249.webp)
 
 > 의도한 포맷으로 응답을 받았습니다.
 
@@ -533,7 +533,7 @@ public List<Board> getBoards(@Param @Default("true") boolean descOrder) {
 
 이제 잘 작동하는지 확인 해 보려고 하는데, 빌드가 되지 않습니다.
 
-![image-20220820091638912](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820091638912.png)
+![image-20220820091638912](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820091638912.webp)
 
 > Exception in thread "main" java.lang.IllegalArgumentException: cannot obtain the name of the parameter or field automatically. Please make sure you compiled your code with '-parameters' option. If not, you need to specify parameter and header names with @Param and @Header.
 
@@ -551,7 +551,7 @@ public HttpResponse getBoard(@Param("id") long id) {
 
 그렇지만 저희는 `-parameters`옵션을 이용 해 보도록 하겠습니다. 사실 처음에 `-parameters`에 대한 내용을 봤던게 기억이 나서 Prerequisites 쪽을 다시 확인 해 보니
 
-![image-20220820091930370](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820091930370.png)
+![image-20220820091930370](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820091930370.webp)
 
 > 여기에도 제일 먼저 명시가 되어 있었습니다.
 
@@ -576,11 +576,11 @@ curl --request POST 'localhost:8080/boards' \
 -d '{"title":"My board no 1", "content":"Hello Tutorial!"}'
 ```
 
-![image-20220820092318556](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820092318556.png)
+![image-20220820092318556](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820092318556.webp)
 
 > 조회가 잘 됩니다.
 
-![image-20220820092623756](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820092623756.png)
+![image-20220820092623756](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820092623756.webp)
 
 >  java.lang.IllegalStateException: No response converter exists for a result: java.util.ArrayList
 
@@ -604,7 +604,7 @@ public List<Board> getBoards(@Param @Default("true") boolean descOrder) {
 }
 ```
 
-![image-20220820092855726](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820092855726.png)
+![image-20220820092855726](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820092855726.webp)
 
 > 정상적으로 응답을 해냅니다!
 
@@ -689,13 +689,13 @@ curl --request PUT 'localhost:8080/boards/0' \
 }'
 ```
 
-![image-20220820095019635](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820095019635.png)
+![image-20220820095019635](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820095019635.webp)
 
 > 결과
 
 수정이 잘 이루어진 것 같네요. 전체 조회를 한번 해보겠습니다.
 
-![image-20220820095044062](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820095044062.png)
+![image-20220820095044062](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820095044062.webp)
 
 > id 0번의 정보가 잘 변경 되었네요!
 
@@ -803,7 +803,7 @@ curl --request POST 'localhost:8080/boards' \
 curl --request DELETE 'localhost:8080/boards/0'
 ```
 
-![image-20220820100540392](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820100540392.png)
+![image-20220820100540392](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820100540392.webp)
 
 서비스가 아무것도 리턴하지 않기 떄문에 특별히 응답이 보이지는 않습니다.
 
@@ -813,13 +813,13 @@ curl --request DELETE 'localhost:8080/boards/0'
 curl --request GET 'localhost:8080/boards'
 ```
 
-![image-20220820100956977](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820100956977.png)
+![image-20220820100956977](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820100956977.webp)
 
 0번 데이터가 삭제되어 1번 데이터만 남아있는것이 확인 됩니다.
 
 ## 마치며
 
-![image-20220820102514921](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820102514921.png)
+![image-20220820102514921](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/armeria/tutorial.assets/image-20220820102514921.webp)
 
 지금까지 Armeria 를 이용한 CRUD 를 작성 해 보았습니다.
 

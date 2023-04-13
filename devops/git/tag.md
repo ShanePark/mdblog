@@ -6,11 +6,11 @@
 
 그런데 아무리 새로운 태그를 달아 주어도 이전의 태그명이 나오는 문제가 있었고 약간의 검색을 통해 그 차이가 lightweight 와 annotated 때문이었다는걸 알게 되었습니다.
 
-![image-20220627142025709](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627142025709.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627142025709.webp width=633 height=316 alt=1>
 
 > 분명 `describe --tags` 를 입력 할 때는 4.2 버전이 나오지만
 
-![image-20220627142054144](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627142054144.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627142054144.webp width=633 height=316 alt=2>
 
 > `git describe` 만 입력 했을때는 가장 가까운 3.2 버전으로부터 128 번째 커밋이라는 정보가 나왔습니다.
 
@@ -40,7 +40,7 @@ git tag -a v4.0 -m "version 4.0"
 
 이렇게 생성한 태그는 `git show` 명령을 실행 했을 때, 태그에 관련된 데이터를 확인 할 수 있습니다.
 
-![image-20220627145952739](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627145952739.png)
+![image-20220627145952739](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627145952739.webp)
 
 > `git show v4.0`
 
@@ -70,7 +70,7 @@ git tag v4.0
 git tag -d [삭제할 태그명]
 ```
 
-![image-20220627144411160](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627144411160.png)
+![image-20220627144411160](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627144411160.webp)
 
 > 기존의 v4.0 태그를 제거 했습니다.
 
@@ -85,7 +85,7 @@ git tag -a [태그명] [체크섬]
 # git tag -a v4.0 0163921c -m "Spring Boot 2.x"
 ```
 
-![image-20220627144845223](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627144845223.png)
+![image-20220627144845223](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/tag.assets/image-20220627144845223.webp)
 
 > annotated tag 를 새로 달고 난 뒤에 `git describe` 를 하니 정상적으로 버전이 표시됩니다.
 >

@@ -2,7 +2,7 @@
 
 ## Intro
 
-![image-20220123170650158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123170650158.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123170650158.webp width=750 height=623 alt=1>
 
 > 행정안전부 소프트웨어 개발보안 가이드
 >
@@ -63,7 +63,7 @@ class CapsuleTest {
 
 중간에 `modified`로 캡슐 내부의 데이터를 변경하려고 시도 했는데 과연 우리의 캡슐화는 변경을 잘 막아 냈을까요?
 
-![image-20220123181007361](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123181007361.png)
+![image-20220123181007361](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123181007361.webp)
 
 > 아니요
 
@@ -121,7 +121,7 @@ class CapsuleTest {
 
 과연 List도 Public 접근자를 통해 수정이 가능 했을까요?
 
-![image-20220123182207262](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123182207262.png)
+![image-20220123182207262](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123182207262.webp)
 
 > 캡슐화 실패
 
@@ -182,7 +182,7 @@ class CapsuleTest {
 
 그러고 아까 와 같은 테스트를 다시 한번 실행 해 봅니다.
 
-![image-20220123183203895](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123183203895.png)
+![image-20220123183203895](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123183203895.webp)
 
 > 성공
 
@@ -252,15 +252,15 @@ class CapsuleTest {
 
 그런데 테스트를 실행 하니..
 
-![image-20220123184549770](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123184549770.png)
+![image-20220123184549770](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123184549770.webp)
 
 > UnsupportedOperationException이 발생 하였습니다.
 
-![image-20220123184809532](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123184809532.png)
+![image-20220123184809532](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123184809532.webp)
 
 > 해당 List가 add 메서드를 지원하지 않을 경우에 UnsupportedOperationException을 발생한다고 되어 있는데요
 
-![image-20220123185005692](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123185005692.png)
+![image-20220123185005692](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123185005692.webp)
 
 > 그래서 asList 메서드를 확인 해 보니, Return a `FIXED-SIZE` list 라고 적혀 있었습니다. 해당 메서드를 통해 만든 리스트는 크기가 고정되어 있기 때문에 add 메서드 호출시 예외가 발생 한 것 이었습니다.
 
@@ -272,7 +272,7 @@ Capsule(String... values) {
 }
 ```
 
-![image-20220123185420060](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123185420060.png)
+![image-20220123185420060](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/EncaptulateReference.assets/image-20220123185420060.webp)
 
 > 이제 통과를 합니다.
 

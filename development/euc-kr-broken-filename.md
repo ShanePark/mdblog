@@ -1,6 +1,6 @@
 # 인코딩 깨진 한글 파일 이름 복구하기 
 
-![image-20220104141033328](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104141033328.png) 
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104141033328.webp width=750 height=312 alt=1>
 
 ## Intro
 
@@ -22,7 +22,7 @@ EUC-KR은 대표적인 `한글 완성형 인코딩`입니다. 보통은 `완성�
 
 현대 한글에 사용되는 11,172자의 모든 글자 중에 사용 빈도가 높은 글자들을 추려내어 글자 코드 셋트에 전부 배당 해서 기록하는 방식인데요. 총 2,350자가 기록되어 있습니다.
 
-> ![image-20220104142303084](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104142303084.png)
+> ![image-20220104142303084](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104142303084.webp)
 >
 > https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B8%80_%EC%9D%8C%EC%A0%88
 
@@ -40,13 +40,13 @@ EUC-KR로 디코드 한번 해 주고 다시 알아볼 수 있는 형태로 인�
 
 https://string-functions.com/encodedecode.aspx
 
-![image-20220104144343544](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104144343544.png)
+![image-20220104144343544](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104144343544.webp)
 
 > Encode with를 iso-8859로, Decode with를 euc-kr로 설정하면 원래의 파일 명을 알 수 있습니다.
 
 혹시 단순한 String이 아니고, 텍스트 파일 전체의 인코딩이 깨졌다면 아래의 링크를 참고해주세요.
 
-![image-20220104144127672](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104144127672.png)
+![image-20220104144127672](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/euc-kr-broken-filename.assets/image-20220104144127672.webp)
 
 [Mac) 윈도우에서 작성된 텍스트파일 인코딩 변경하기.](https://shanepark.tistory.com/69)
 

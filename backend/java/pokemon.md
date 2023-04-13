@@ -2,7 +2,7 @@
 
 ## Intro
 
-![](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/DBXICNNXCZFPPE67B66XNNMP5I.jpg)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/DBXICNNXCZFPPE67B66XNNMP5I.webp width=616 height=456 alt=1>
 
 > 출처: 온라인 커뮤니티
 
@@ -38,7 +38,7 @@
 
 `buyPokemon()` 함수를 먼저 구현하는데, 단순하게 0~158 중에 하나의 숫자를 같은 확률로 반환하면 됩니다.
 
-![image-20220320174601275](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320174601275.png)
+![image-20220320174601275](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320174601275.webp)
 
 `Math.random()` 함수는 0보다 크거나 같고, 1보다는 작은 수를 랜덤하게 생성 해 줍니다. 이럴 활용해 코드를 작성하면
 
@@ -81,7 +81,7 @@ void testBuyPokemon() {
 
 그리고  마지막에는 1~159 에 해당하는 숫자만 빠짐없이 나왔는지 확인 하기 위해 arr[0]은 0인지를 확인 하고 원소를 합친 수는 다시 1,000,000이 맞는지 확인 하는 테스트 코드를 작성했습니다.
 
-![image-20220320180431104](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320180431104.png)
+![image-20220320180431104](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320180431104.webp)
 
 > 실행 결과
 
@@ -110,7 +110,7 @@ void test151() {
 }
 ```
 
-![image-20220320181952362](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320181952362.png)
+![image-20220320181952362](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320181952362.webp)
 
 > 실행 결과
 
@@ -143,7 +143,7 @@ void test151() {
 
 ```
 
-![image-20220320182419838](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320182419838.png)
+![image-20220320182419838](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320182419838.webp)
 
 > 실행 결과
 
@@ -181,7 +181,7 @@ void test151() {
 }
 ```
 
-![image-20220320183057065](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320183057065.png)
+![image-20220320183057065](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320183057065.webp)
 
 > 실행 결과
 
@@ -195,7 +195,7 @@ void test151() {
 
 오리지널 스티커와 새로 추가된 일러스트는 엄연히 다릅니다.
 
-![image-20220320184004433](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320184004433.png)![image-20220320184037880](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320184037880.png)
+![image-20220320184004433](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320184004433.webp)![image-20220320184037880](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320184037880.webp)
 
 > 사진 출처: 중고나라 피카츄 판매자
 
@@ -235,7 +235,7 @@ void test159() {
 
 똑같이 100만명이 포켓몬 빵 챌린지에 동참 했습니다.
 
-![image-20220320184500668](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320184500668.png)
+![image-20220320184500668](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320184500668.webp)
 
 > 실행 결과
 
@@ -315,13 +315,13 @@ public void testSpecial() {
 
 100명의 포켓몬 트레이너들이 챌린지에 참여 했습니다. 그 결과
 
-![image-20220320192831158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320192831158.png)
+![image-20220320192831158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320192831158.webp)
 
 가장 운이 나빴던 사람은 무려 8317개의 빵을 구입하고 나서야 도감을 모두 채웠네요. 1500원씩 주고 구입하면 무려 12,475,500 원을 지불해야 합니다. 평균적으로는 3264개씩 구입했네요.
 
 이제 PEOPLE의 수를 1000으로 늘려 확인 해 보면.
 
-![image-20220320193311271](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320193311271.png)
+![image-20220320193311271](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320193311271.webp)
 
 몇번을 실행 해 보았는데 보통 400 번대 후반에서 빵이 다 팔려서 스티커 모으는데 실패했습니다. 실제로는 도전자 뿐만 아니라 재미로 사모으는 사람이 훨씬 많은데다가 빵을 구입하기가 쉽지 않기 때문에 훨씬 힘들겠죠.
 
@@ -369,7 +369,7 @@ public void testSpecial() {
 }
 ```
 
-![image-20220320195608731](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320195608731.png)
+![image-20220320195608731](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/pokemon.assets/image-20220320195608731.webp)
 
 운이 좋지 않은 경우에는 최대 14382개의 포켓몬 빵을 구입해야만 159개의 스티커를 모은 사람도 있었네요.
 

@@ -2,7 +2,7 @@
 
 ## Intro
 
-![blackscreen](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/blackscreen.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/blackscreen.webp width=750 height=472 alt=1>
 
 > 지금은 해결을 했지만 대충 까만색 네모를 그려 재현을 한 모습.
 
@@ -28,7 +28,7 @@ DRM은 Digital Rights Management의 약자로 컨텐츠를 보호하기 위한 �
 
 여러 가지 해결 방안을 찾아 보던 도중 Reddit에서 원하는 해답을 얻어냈다.
 
-![image-20220409202938677](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/image-20220409202938677.png)
+![image-20220409202938677](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/image-20220409202938677.webp)
 
 > https://www.reddit.com/r/discordapp/comments/gz5q6t/streaming_a_chrome_tab_with_netflix_black_screen/
 
@@ -36,13 +36,13 @@ Chrome 브라우저의 하드웨어 가속 기능을 껐더니 아주 잘 되었
 
 해결방법은 단순하게 크롬브라우저의 하드웨어 가속 기능을 끄는건데, DRM의 방어 기술의 동작 과정은 자세히 모르지만 하드웨어 가속 기능을 통한 영상 재생 과정에서 발생하는 GPU의 특정 동작을 잡아 내는 것 같습니다.
 
-![image-20220409203027867](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/image-20220409203027867.png)
+![image-20220409203027867](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/image-20220409203027867.webp)
 
 > Use hardware acceleration을 끈다.
 
 하드웨어 가속 기능을 끄고 나서는 인프런의 강의와 넷플릭스 영상 모두 정상적으로 재생되는 것이 확인된다.
 
-![image-20220409211230761](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/image-20220409211230761.png)
+![image-20220409211230761](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/webBrowser/chrome/blackScreen.assets/image-20220409211230761.webp)
 
 인프런에서 Safari 사용시, 일시 정지 한 상황에서도 내부적으로는 영상이 계속 진행되는 버그가 있어서 굉장히 불편하기 때문에 사파리를 사용 할 수도 없었고 그렇다고 Display Link 기능을 사용 하지 않을 수도 없는 상황이었는데 해결방법을 찾아서 참 다행이다.
 

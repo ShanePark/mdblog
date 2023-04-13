@@ -10,7 +10,7 @@ Homebrew를 사용하기 때문에 Linux 배포판은 어느 것이든 상관 �
 
 > The world’s fastest framework for building websites
 
-![image-20211124105938278](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105938278.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105938278.webp width=750 height=469 alt=1>
 
 > https://jamstack.org/generators/
 
@@ -20,17 +20,17 @@ Hugo는 Go 언어로 작성된 정적 웹사이트 생성기 입니다.
 
 속도가 굉장히 빠르고 유연하기 때문에 인기가 많습니다.
 
-![image-20211124100033364](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100033364.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100033364.webp width=750 height=710 alt=2>
 
 > apt install은 버전이 제법 뒤쳐진다며 권장하지 않는 방법이라고 합니다.
 
-![image-20211124100210366](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100210366.png)
+![image-20211124100210366](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100210366.webp)
 
 > 모든 배포판에서 Snap을 사용 할 수 있다고 합니다.
 
 하지만 개인적으로 snap을 선호하지 않아서 다른 방법을 이용 해 보겠습니다.
 
-![image-20211124100316125](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100316125.png)
+![image-20211124100316125](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100316125.webp)
 
 ### Homebrew?
 
@@ -48,7 +48,7 @@ Homebrew 는 오픈소스 소프트웨어 패키지 매니지먼트 시스템으
 
 자세한 단계별 설치 방법이 위의 링크에 나와 있습니다. 요구 사항을 확인 해 보면 아래와 같습니다.
 
-![image-20211124100951314](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100951314.png)
+![image-20211124100951314](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100951314.webp)
 
 그 외에도 상세한 설치 순서가 안내 되어 있는데요 사실 더 간단한 방법이 있습니다.
 
@@ -56,7 +56,7 @@ Homebrew 는 오픈소스 소프트웨어 패키지 매니지먼트 시스템으
 
 사실 그렇게 복잡하게 다 확인 하며 설치 할 필요가 없습니다. MacOS 를 사용 해 본 분들은 알겠지만 이미 설치를 위한 자세한 script를 작성 해 두었기 때문에 실행만 하면 알아서 해 줍니다.
 
-![image-20211124100718663](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100718663.png)
+![image-20211124100718663](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100718663.webp)
 
 시키는 대로 Terminal을 켜고 아래의 커맨드를 입력 합니다.
 
@@ -64,15 +64,15 @@ Homebrew 는 오픈소스 소프트웨어 패키지 매니지먼트 시스템으
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-![image-20211124100818872](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100818872.png)
+![image-20211124100818872](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100818872.webp)
 
 > 비밀번호를 입력 합니다.
 
-![image-20211124100841540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100841540.png)
+![image-20211124100841540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124100841540.webp)
 
 > 어떤 파일이 설치 될 지 보여주며, 동의하면 엔터 키를 입력 하라고 합니다.
 
-![image-20211124101210708](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124101210708.png)
+![image-20211124101210708](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124101210708.webp)
 
 > 설치가 금방 끝났습니다.
 
@@ -102,7 +102,7 @@ sudo apt-get install build-essential
 brew install gcc
 ```
 
-![image-20211124101845586](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124101845586.png)
+![image-20211124101845586](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124101845586.webp)
 
 > MacOS 에서만 보던 맥주 아이콘을 Ubuntu Terminal에서도 만나니 반갑네요.
 
@@ -116,7 +116,7 @@ brew install gcc
 
 hugo 까지 설치를 다 했다고 해도 제대로 등록이 되지 않았기 때문에 hugo 명령어도 입력이 되지 않는데요.
 
-![image-20211124111337297](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124111337297.png)
+![image-20211124111337297](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124111337297.webp)
 
 brew 를 실행하면 zsh: command not found: brew
 
@@ -134,13 +134,13 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-![image-20211124112010843](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124112010843.png)
+![image-20211124112010843](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124112010843.webp)
 
 > 이제 brew 명령어가 터미널을 껐다 켠다고 해도 잘 작동 합니다.
 
 ### 주의사항
 
-![image-20211124132449151](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124132449151.png)
+![image-20211124132449151](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124132449151.webp)
 
 brew Casks 는 macOS 에서만 됩니다. 다운로드가 되니 설치가 되나 기대 할 수도 있지만, 아쉽게도 Formulae 로 등록된 소프트웨어만 brew를 이용해 설치가 가능합니다.
 
@@ -154,7 +154,7 @@ Brew가 준비 되었으니 바로 설치를 해 보겠습니다.
 brew install hugo
 ```
 
-![image-20211124102041809](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124102041809.png)
+![image-20211124102041809](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124102041809.webp)
 
 설치가 끝났습니다. sudo 권한도 필요 없고, 과정이 복잡하지도 않습니다. Brew의 정말 큰 매력입니다.
 
@@ -162,7 +162,7 @@ brew install hugo
 
 잘 작동하는지 간단하게 테스트를 해 보겠습니다. 대충 원하는 위치에 `hugo new site {사이트이름}` 을 입력하면 바로 사이트가 생성 됩니다.
 
-![image-20211124102414685](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124102414685.png)
+![image-20211124102414685](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124102414685.webp)
 
 사이트를 실행 하기 위해 3가지 스텝이 남았습니다.
 
@@ -170,7 +170,7 @@ brew install hugo
 
 > https://themes.gohugo.io/ 에서 원하는 테마를 고릅니다.
 
-![image-20211124102923143](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124102923143.png)
+![image-20211124102923143](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124102923143.webp)
 
 >  여러가지 테마가 나오는데, 테스트 용이니 그냥 아무거나 골라 봅니다.
 
@@ -182,17 +182,17 @@ git clone https://github.com/adityatelange/hugo-PaperMod.git
 
 ```
 
-![image-20211124104711418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124104711418.png)
+![image-20211124104711418](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124104711418.webp)
 
 > 금방 다운로드 됩니다.
 
 이제는 테마 적용을 위해 config.toml 파일을 편집해야 합니다.
 
-![image-20211124104809957](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124104809957.png)
+![image-20211124104809957](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124104809957.webp)
 
 > vim 으로 편집 합니다.
 
-![image-20211124104828738](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124104828738.png)
+![image-20211124104828738](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124104828738.webp)
 
 > 방금 다운받은 theme의 폴더 명을 theme = 에 작성하고 저장 합니다.
 
@@ -204,7 +204,7 @@ git clone https://github.com/adityatelange/hugo-PaperMod.git
 hugo new home/main.md
 ```
 
-![image-20211124103543832](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124103543832.png)
+![image-20211124103543832](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124103543832.webp)
 
 파일도 금방 생성되었습니다. 생성된 파일을 확인 해 보겠습니다.
 
@@ -212,11 +212,11 @@ hugo new home/main.md
 vi ./content/home/main.md
 ```
 
-![image-20211124103641019](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124103641019.png)
+![image-20211124103641019](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124103641019.webp)
 
 > 뭔가 작성 되어 있네요. 메타 데이터를 저런식으로 관리 하는 듯 합니다.
 
-![image-20211124103833503](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124103833503.png)
+![image-20211124103833503](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124103833503.webp)
 
 > 간단하게 몇 마디 작성 해 봅니다.
 
@@ -230,11 +230,11 @@ vi ./content/home/main.md
 hugo server
 ```
 
-![image-20211124105008195](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105008195.png)
+![image-20211124105008195](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105008195.webp)
 
 서버가 실행 되었습니다. http://localhost:1313/ 로 접속 할 수 있습니다.
 
-![image-20211124105030535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105030535.png)
+![image-20211124105030535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105030535.webp)
 
 서버는 실행 되었는데 아무것도 보이지 않네요. 
 
@@ -242,23 +242,23 @@ hugo server
 
 서버는 그대로 켜 둔 상태로 문서만 편집 합니다.
 
-![image-20211124105105500](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105105500.png)
+![image-20211124105105500](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105105500.webp)
 
 > content 폴더에서 아까 작성한 파일을 찾아 가서
 
-![image-20211124105119375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105119375.png)
+![image-20211124105119375](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105119375.webp)
 
 > draft를 false 로 바꾸고 저장 해 줍니다.
 
 그럼 서버를 다시 켜지 않아도, 웹사이트를 새로 고침 하지 않아도 바로 페이지가 갱신 됩니다.
 
-![image-20211124105235889](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105235889.png)
+![image-20211124105235889](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105235889.webp)
 
 > md파일을 수정해서 저장 하는 순간 바로 생겼습니다.
 
 이제 아까 작성한 Main을 클릭해서 확인 해 봅니다.
 
-![image-20211124105300434](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105300434.png)
+![image-20211124105300434](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/brew-hugo.assets/image-20211124105300434.webp)
 
 > 상세 보기 화면 입니다.
 

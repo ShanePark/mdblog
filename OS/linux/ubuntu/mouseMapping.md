@@ -1,6 +1,6 @@
 # Ubuntu) 마우스 버튼 커스터마이징
 
-![image-20211220124140207](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220124140207.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220124140207.webp width=750 height=378 alt=1>
 
 > https://www.logitech.com/en-us/products/mice/mx-master-3.html
 
@@ -20,7 +20,7 @@ xbindkeys 와 xdotool 등이 필요합니다.
 sudo apt install xautomation xbindkeys xdotool
 ```
 
-![image-20211220112736393](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220112736393.png)
+![image-20211220112736393](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220112736393.webp)
 
 ## 설정
 
@@ -32,7 +32,7 @@ sudo apt install xautomation xbindkeys xdotool
 xinput --list
 ```
 
-![image-20211220112845243](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220112845243.png)
+![image-20211220112845243](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220112845243.webp)
 
 > 사용중인 키보드, 마우스 및 각종 입력장치들이 표기됩니다. `Logitech G304` 마우스를 사용 하고 있는데, id 가 11번이네요.
 
@@ -44,11 +44,11 @@ xinput --list
 xev
 ```
 
-![image-20211220113745173](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220113745173.png)
+![image-20211220113745173](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220113745173.webp)
 
 이제 Event Tester 안에서 각각의 키를 눌러보며 확인합니다.
 
-![image-20211220113947594](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220113947594.png)
+![image-20211220113947594](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220113947594.webp)
 
 > 하나씩 눌러보며 제 마우스에서는 좌클릭은 `button 1`, 우클릭은 `button3`, 중간 버튼은 `button 2` 인 것을 확인 했습니다.
 
@@ -62,7 +62,7 @@ xev
 xbindkeys
 ```
 
-![image-20211220114248358](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220114248358.png)
+![image-20211220114248358](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220114248358.webp)
 
 > xbindkeys를 실행 해 보니 ~/.xbindkeysrc 경로에 기본 설정 파일을 만들어 달라고 합니다.
 
@@ -78,7 +78,7 @@ xbindkeys --defaults > ~/.xbindkeysrc
 vi ~/.xbindkeysrc
 ```
 
-![image-20211220114629106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220114629106.png)
+![image-20211220114629106](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220114629106.webp)
 
 적당한 위치에 필요한 내용을 입력 합니다. 저는 가운데 버튼을 Super키에 맵핑 시키려고 합니다.
 
@@ -90,7 +90,7 @@ vi ~/.xbindkeysrc
 b:2 + Release
 ```
 
-![image-20211220114818089](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220114818089.png)
+![image-20211220114818089](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/mouseMapping.assets/image-20211220114818089.webp)
 
 > 저는 처음에 위의 스샷과 같이 Release를 안넣고 하니 어떨땐 되다 안되다 하는 불편함이 있었습니다. 
 >

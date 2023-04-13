@@ -6,7 +6,7 @@
 
 그러던 중 오랜만에 생각이 나 https://isapplesiliconready.com/ 를 확인 해 보니 M1 Native에 초록 불이 들어와 있었습니다. 그럼에도 atlassian 사이트에는 관련 언급이 따로 없길래 잘못된 정보인가? 하며 
 
-![image-20220319092923565](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319092923565.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319092923565.webp width=750 height=544>
 
 > https://isapplesiliconready.com/app/SourceTree
 
@@ -26,7 +26,7 @@
 
 > https://jira.atlassian.com/browse/SRCTREE-5306 
 
-![image-20220319091216263](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319091216263.png)
+![image-20220319091216263](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319091216263.webp)
 
 Jira Engineering Manager인 Ranjith에 따르면 해당 이슈 해결에만 3개월 타겟을 잡고 진행중일 정도로 CPU 점유 문제가 상당히 스케일이 크다는걸 눈치 챌 수 있었고 M1 Native 까지 지원하려면 아무리 빨라도 반년 내에는 안된다고 생각하고 깔끔하게 기다림을 접었었습니다. 결국 생각보다 오래 걸렸지만 1년만에 Apple Silicon 대응 버전을 내놓기는 했네요. 물론 해당 이슈가 완전 해결되진 않았는지 [M1 Support](https://jira.atlassian.com/browse/SRCTREE-7446) 이슈는 Close가 되었어도 위의 이슈의 STATUS 는 아직 `SHORT TERM BACKLOG` 상태 입니다.
 
@@ -34,19 +34,19 @@ Jira Engineering Manager인 Ranjith에 따르면 해당 이슈 해결에만 3개
 
 ### Sourcetree 4.1.6
 
-![image-20220319092557397](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319092557397.png)
+![image-20220319092557397](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319092557397.webp)
 
 > https://product-downloads.atlassian.com/software/sourcetree/ReleaseNotes/Sourcetree_4.1.6.html
 
 Apple Silicon에 대한 Native Support에 관련된 내용은 Release Note에서만 짧은 한줄로 확인 할 수 있었습니다. 대다수의 소프트웨어들은 다운 받을 때 부터 
 
-![image-20220319092727051](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319092727051.png)
+![image-20220319092727051](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319092727051.webp)
 
 > IntelliJ IDEA 다운로드 페이지
 
 Intel 칩셋과 Apple Silicon 중 선택을 해서 다운 받도록 되어 있는데, SourceTree는 따로 그런 옵션이 없어서 혹시 아직 베타 버전에만 적용 된건가 생각도 했었습니다. 그래서 직접 다운 받아 실행을 해 보았는데 
 
-![image-20220319091737945](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319091737945.png)
+![image-20220319091737945](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319091737945.webp)
 
 Apple Native로 구동되는 것이 확인 되었습니다.
 
@@ -58,7 +58,7 @@ Apple Native로 구동되는 것이 확인 되었습니다.
 
 해당 이슈를 공식적으로 Close 시킨게 아니기 때문에 사소한 문제들이 남아있을 지도 모르겠으나 적어도 예전처럼 못 쓸 정도는 아니라고 판단 됩니다. 예전에는 설치 해 두기만 해도 맥북을 갉아 먹는 모양새였지만 이제는 모니터링을 한번씩 해보긴 해야 확실해지겠지만 마음 놓고 설치해 사용 해도 된다고 판단됩니다.
 
-![image-20220319093730416](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319093730416.png)
+![image-20220319093730416](https://raw.githubusercontent.com/Shane-Park/mdblog/main/news/sourceTreeM1.assets/image-20220319093730416.webp)
 
 > SourceTree가 Github Desktop에 비해 여러가지 장점이 있지만 그중 Branch 들을 그래프로 보기 좋게 정리해주는게 가장 그리웠습니다. 그 외 커밋 옵션 선택 등 보다 강력한 기능들이 꽤 많습니다.
 

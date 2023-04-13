@@ -12,7 +12,7 @@ Docker 네트워크 내에서만 통신하고 외부로는 바인딩도, 포트 
 docker exec -it postgres_container bash
 ```
 
-![image-20230103161516692](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103161516692.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103161516692.webp width=750 height=512 alt=1>
 
 이제 psql을 써볼까나..?
 
@@ -22,7 +22,7 @@ docker exec -it postgres_container bash
 psql -U postgres
 ```
 
-![image-20230103161946492](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103161946492.png)
+![image-20230103161946492](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103161946492.webp)
 
 앗.. postgres 유저가 없다..? 참. 나는 다른 이름으로 유저명을 지정했지
 
@@ -32,7 +32,7 @@ psql -U postgres
 psql -U my_user_name
 ```
 
-![image-20230103162113808](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103162113808.png)
+![image-20230103162113808](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103162113808.webp)
 
 이번에는 또 데이터베이스가 없고 하네. 이건 할 때마다 생각이 안 나는군 정말
 
@@ -42,7 +42,7 @@ psql -U my_user_name
 
 그렇기 때문에 설정이 바뀌어야 할 경우에는 적절 한 값으로 옵션을 직접 부여해서 접속 해 주어야 합니다.
 
-![image-20230103162228035](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103162228035.png)
+![image-20230103162228035](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103162228035.webp)
 
 > root로 시도중
 
@@ -113,7 +113,7 @@ psql -U username databasename
 psql --dbname=my_db_name --host=localhost --port=5432 --username=my_user_name --no-password
 ```
 
-![image-20230103163947367](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103163947367.png)
+![image-20230103163947367](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/db/postgres/psql_help.assets/image-20230103163947367.webp)
 
 앞으로는 postgres 접속이 필요 할 때 시간 낭비를 더 이상 하지 않기 위해 정리 해 보았습니다.
 

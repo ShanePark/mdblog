@@ -4,7 +4,7 @@
 
 ### 메모리 부족
 
-![image-20220531151051588](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531151051588.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531151051588.webp width=750 height=568 alt=1>
 
 Windows 에서는 WSL 위에 도커 컨테이너 몇개 띄우고, 인텔리제이에 브라우저 탭 몇개만 켜면 메모리가 바닥나버리는 바람에 Linux 사용을 시작한지도 어느덧 1년이 다 되어갑니다.
 
@@ -16,7 +16,7 @@ Windows 에서는 WSL 위에 도커 컨테이너 몇개 띄우고, 인텔리제�
 
 ### 적당한 스왑 공간
 
-![image-20220531152017317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531152017317.png)
+![image-20220531152017317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531152017317.webp)
 
 > https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices
 
@@ -36,7 +36,7 @@ Redhat 에서는 8~64GB 사이의 메모리르 사용 하고 있으면 최소 4G
 sudo swapon --show
 ```
 
-![image-20220531153122036](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531153122036.png)
+![image-20220531153122036](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531153122036.webp)
 
 `/swapfile` 이라는 이름으로 2GB 바이트가 할당 되어 있으며 대부분이 사용 되고 있는데요, 여기에서 아무것도 나오지 않는다면, 스왑 공간을 사용하지 않고 있는 것 입니다. 
 
@@ -50,7 +50,7 @@ sudo swapon --show
 sudo fallocate -l 8G /swapfile
 ```
 
-![image-20220531153431540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531153431540.png)
+![image-20220531153431540](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531153431540.webp)
 
 여기에서 스왑 메모리를 늘리는 방법은 크게 두가지가 있는데요
 
@@ -67,7 +67,7 @@ sudo fallocate -l 8G /swapfile
 sudo swapoff -v /swapfile
 ```
 
-![image-20220531155152469](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155152469.png)
+![image-20220531155152469](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155152469.webp)
 
 > Swap 공간이 비활성화 된 상태
 
@@ -79,7 +79,7 @@ sudo swapoff -v /swapfile
 sudo vi fstab
 ```
 
-![image-20220531155749473](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155749473.png)
+![image-20220531155749473](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155749473.webp)
 
 > 12번 라인의 `/swapfile swap swap defaults 0 0` 부분을 제거하거나 주석 해 줍니다.
 
@@ -119,7 +119,7 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 ```
 
-![image-20220531160220765](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160220765.png)
+![image-20220531160220765](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160220765.webp)
 
 4. 이제 아래의 명령어로 Swap file을 활성화 해 줍니다.
 
@@ -129,7 +129,7 @@ sudo swapon /swapfile
 
 이후 `free -h` 명령으로 확인 해 보면 스왑공간을 사용하고 있는걸 확인 할 수 있습니다.
 
-![image-20220531160310424](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160310424.png)
+![image-20220531160310424](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160310424.webp)
 
 > Swap: total 8.0Gi
 
@@ -145,7 +145,7 @@ sudo vi fstab
 /swapfile swap swap defaults 0 0
 ```
 
-![image-20220531160708672](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160708672.png)
+![image-20220531160708672](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160708672.webp)
 
 > 맨 아래줄의 내용이 추가됩니다.
 
@@ -181,11 +181,11 @@ vm.swappiness=10
 
 부하 테스트를 위해 도커컨테이너 및 스프링 부트 프로젝트를 20개가량 띄운 후 IntelliJ IDEA와 그 외 크롬 브라우저도 40개 가량 띄워 보았습니다. 
 
-![image-20220531161638048](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531161638048.png)
+![image-20220531161638048](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531161638048.webp)
 
 > 그 외에도 카카오톡, PostMan, FireFox, 등등 많이 띄워 보았습니다.
 
-![image-20220531161707332](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531161707332.png)
+![image-20220531161707332](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531161707332.webp)
 
 그 결과 예전같았으면 바로 메모리가 가득 차서 컴퓨터가 휘청 거렸을 상황임에도 스왑 메모리를 바짝 당겨 쓰며 아무 문제없이 버텨 내 주었습니다. 스왑메모리 변경의 효과를 확실하게 체감 할 수 있습니다.
 

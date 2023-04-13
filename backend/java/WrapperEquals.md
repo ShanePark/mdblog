@@ -6,7 +6,7 @@
 
 여느 날처럼 문제를 풀고 있었고, 로직상 분명 통과 할 거라고 생각했는데, 생각지도 못한 엉뚱한 곳에서 자꾸 무한 루프가 발생하는 일이 생겼습니다. 그래서 디버깅을 진행 하던 중 눈으로 보고도 믿기 힘든 상황이 발생 했습니다. 
 
-![image-20220410142355887](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410142355887.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410142355887.webp width=750 height=550 alt=1>
 
 디버거의 Variables 를 보면, poll 의 value도 128, peek의 value도 128 이지만, 둘의 동등 비교 결과인 same의 결과가 `false` 로 되어 있습니다. 이 때문에 if 문에서 조건 만족 상황의 블럭에 들어가지 않고 else 구문을 타고 있습니다.
 
@@ -34,7 +34,7 @@ public class IntegerEquals {
 }
 ```
 
-![image-20220410142954317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410142954317.png)
+![image-20220410142954317](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410142954317.webp)
 
 > 실행 결과
 
@@ -44,17 +44,17 @@ public class IntegerEquals {
 
 일단 처음에 `i1 = Integer.valueOf(i)` 부터 시작 하기 때문에 valueOf 메서드를 먼저 확인 해 보도록 합니다.
 
-![image-20220410143338461](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410143338461.png)
+![image-20220410143338461](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410143338461.webp)
 
 단순하게 new Integer 를 하지 않고, 일단 IntegerCache의 low 와 high 사이에 있는지 먼저 확인을 한 뒤에, 캐시하는 사이즈 내에 있으면 캐시 해 둔 Integer를 반환 하고 그렇지 않으면 `new Integer()` 생성자를 호출 하도록 작성 되어 있습니다.
 
 그러면 이제 IntegerCache 클래스를 확인 해 보아야 겠습니다.
 
-![image-20220410143538923](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410143538923.png)
+![image-20220410143538923](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410143538923.webp)
 
 확인해보니 IntegerCache는 Integer 클래스에 내부 클래스로 담겨 있었습니다. low는 -128로 고정 되어 있고, high는 JVM의 설정 값을 불러오도록 되어 있네요. 설정된 값이 따로 존재 하지 않으면 기본적으로 high의 값은 127 입니다.
 
-![image-20220410143858523](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410143858523.png)
+![image-20220410143858523](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410143858523.webp)
 
 그 후에는 archivedCache 라는 Integer 배열에 low 부터 high 사이의 모든 값들을 캐싱 해 두고 사용 하도록 되어 있네요.
 
@@ -76,11 +76,11 @@ public static void main(String[] args) {
 
 그래서 이번에는 애초에 new Integer()를 하도록 해서 같은 테스트를 진행 해 보았습니다. 그 결과
 
-![image-20220410144643994](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410144643994.png)
+![image-20220410144643994](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410144643994.webp)
 
 `i=0` 일 때 부터 이미 동등 연산자의 결과가 false가 나오는 것을 확인 할 수 있었습니다.
 
-![image-20220410144750508](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410144750508.png)
+![image-20220410144750508](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410144750508.webp)
 
 > 참고로 new Integer()는 java9 버전 부터 Deprecated 되었는데요. 그이 이유가 valueOf의 경우가 메모리 공간이나 성능적으로 훨씬 효율적이기 때문이라고 써 있습니다. 아까 확인 한 것 처럼 자주 사용하는 값은 캐싱을 해 두기 때문입니다. 
 
@@ -104,7 +104,7 @@ public static void main(String[] args) {
 
 Integer 값에 int 값을 넣으며 오토 박싱이 되는 상황입니다. 실행 결과는
 
-![image-20220410145340067](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410145340067.png)
+![image-20220410145340067](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410145340067.webp)
 
 > 실행 결과
 
@@ -138,17 +138,17 @@ public static void main(String[] args) {
 
 한번은 동등연산, 한번은 compare 메서드를 통해 비교를 해 보았는데요. 그 결과는
 
-![image-20220410150146037](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410150146037.png)
+![image-20220410150146037](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410150146037.webp)
 
 > 실행 결과
 
 동등 연산은 128부터 역시 캐시 범위를 벗어나며 false를 표시 하지만, Integer.compare 메서드의 경우에는 문제 없이 비교를 해 내기 시작 했습니다.
 
-![image-20220410150230248](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410150230248.png)
+![image-20220410150230248](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410150230248.webp)
 
 인텔리제이에서는 Integer.compare 의 결과를 0과 비교하는 코드를 동등 연산으로 바꾸라고 유혹 하며 회색 글자로 표현 하지만.. 저 유혹에 넘어 가면 안됩니다. 꼭꼭 숨겨져 있어 찾아 내기도 쉽지 않은 버그를 양산하게 됩니다. 절대적으로 잘못된 안내이기 때문에 JetBrains 사에 곧바로 이슈 리포트도 해 두었습니다.
 
-![image-20220410151313781](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410151313781.png)
+![image-20220410151313781](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/WrapperEquals.assets/image-20220410151313781.webp)
 
 > https://youtrack.jetbrains.com/issue/IDEA-291826
 

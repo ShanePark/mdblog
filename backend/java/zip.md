@@ -8,13 +8,13 @@ java에서도 파일을 압축 하고 압축을 해제 할 수 있습니다. 심
 
 ### 사전준비
 
-![image-20211111221742519](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111221742519.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111221742519.webp width=750 height=506 alt=1>
 
 사실 준비라고 할 것도 없고, 그냥 압축 할 파일을 몇개 준비시켜 둡니다.
 
 <br><br>
 
-![image-20211111221928162](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111221928162.png)
+![image-20211111221928162](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111221928162.webp)
 
 Terminal 을 켜서 파일들의 경로도 미리 확인을 해 둡니다.
 
@@ -77,11 +77,11 @@ public class CreateZipFile {
 
 이제 코드를 실행 합니다.
 
-![image-20211111223108925](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111223108925.png)
+![image-20211111223108925](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111223108925.webp)
 
 > 생성 성공
 
-![image-20211111223130616](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111223130616.png)
+![image-20211111223130616](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111223130616.webp)
 
 > 해당 폴더를 확인해보면 압축파일.zip 파일이 생성 되었으며, 세개의 텍스트 파일이 잘 들어가 있습니다.
 
@@ -93,7 +93,7 @@ public class CreateZipFile {
 
 ### 사전준비
 
-![image-20211111224436906](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111224436906.png)
+![image-20211111224436906](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111224436906.webp)
 
 기존 압축 파일에 추가할 새로운 new.txt 파일을 만들어 줍니다.
 
@@ -187,11 +187,11 @@ public class AddFileToZip {
 
 이러한 로직으로 기존의 압축 파일에 새로운 파일을 추가하는 파일을 생성 합니다.
 
-<br><br> ![image-20211111225032095](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111225032095.png)
+<br><br> ![image-20211111225032095](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111225032095.webp)
 
 > 실행을 하니 오류 없이 잘 추가가 됩니다.
 
-![image-20211111225107379](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111225107379.png)
+![image-20211111225107379](https://raw.githubusercontent.com/Shane-Park/mdblog/main/backend/java/zip.assets/image-20211111225107379.webp)
 
 새로 생긴 압축 파일에는 기존의 파일들에 new.txt 파일이 추가 된 것이 확인 됩니다.
 
@@ -205,7 +205,7 @@ public class AddFileToZip {
 
 파일 구조는 이렇게 준비 해 보았습니다.
 
-![image-20230223125520111](https://raw.githubusercontent.com/ShanePark/mdblog/main/backend/java/zip.assets/image-20230223125520111.png)
+![image-20230223125520111](https://raw.githubusercontent.com/ShanePark/mdblog/main/backend/java/zip.assets/image-20230223125520111.webp)
 
 새로 작성한 코드는 아래와 같습니다.
 

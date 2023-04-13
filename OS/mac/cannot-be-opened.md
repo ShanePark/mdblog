@@ -6,11 +6,11 @@
 
 바로 The application can't be opened 인데요. 
 
-![image-20220917211515992](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211515992.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211515992.webp width=328 height=264 alt=1>
 
 보통은 간단하게 해결 되지만 그렇지 않은 경우도 있기 때문에 한번 다루어 볼 까 합니다.
 
-![image-20220917211552354](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211552354.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211552354.webp width=374 height=418 alt=2>
 
 보통은 동시에 위와 같은 경고가 뜨게 되는데요. Apple이 악의적인 프로그램인지를 체크 할 수가 없으니 맥북이 스스로 방어를 해 내는 것 입니다. 
 
@@ -22,15 +22,15 @@
 
 보통은 Open Anyway 에서 대부분 해결 됩니다. System Preferences 를 띄우고 
 
-![image-20220917211613551](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211613551.png)
+![image-20220917211613551](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211613551.webp)
 
 그다음에 Security & Privacy 에 들어 갑니다
 
-![image-20220917211632187](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211632187.png)
+![image-20220917211632187](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211632187.webp)
 
 "Mac Mouse Fix" 를 설치하고 있으니, 앱 이름을 확인 한 후에 Open Anyway 버튼 클릭 합니다.
 
-![image-20220917211647471](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211647471.png)
+![image-20220917211647471](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211647471.webp)
 
 악의적인 프로그램 일 수 있다고 경고 합니다. 신뢰 할 수 있는 개발자 혹은 단체로부터 다운로드 받았다면 Open 으로 실행 해 주시면 됩니다.
 
@@ -38,11 +38,11 @@
 
 하지만 이번처럼 Open Anyway를 해도 해결되지 않는 경우가 있습니다.
 
-![image-20220917211724031](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211724031.png)
+![image-20220917211724031](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211724031.webp)
 
 환경 설정의 Security & Privacy 에도 더이상 아무것도 뜨지 않는데 여전히 실행이 되지 않습니다.
 
-![image-20220917211806115](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211806115.png)
+![image-20220917211806115](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211806115.webp)
 
 그래서 Allow apps downloaded from 을 Anywhere로 변경 해 보려고 합니다.
 
@@ -62,11 +62,11 @@ Anywhere로 변경 하고 싶은데, 메뉴가 없습니다. 이 때는 게이�
 sudo spctl --master-disable
 ```
 
-![image-20220917211935575](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211935575.png)
+![image-20220917211935575](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917211935575.webp)
 
 비밀번호를 입력 하고 나서 확인 해 보면
 
-![image-20220917212005698](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917212005698.png)
+![image-20220917212005698](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/cannot-be-opened.assets/image-20220917212005698.webp)
 
 이제 Allow apps downloaded from: Anywhere 이 추가 되었고, 선택까지 되어 있습니다.
 

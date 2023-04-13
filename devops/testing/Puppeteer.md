@@ -1,6 +1,6 @@
 # Puppeteer 활용 브라우저 테스트 자동화
 
-![Puppeteer Logo](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/puppeteer.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/puppeteer.webp width=290 height=422 alt=1>
 
 > https://developers.google.com/web/tools/puppeteer
 
@@ -42,7 +42,7 @@ Broswer에서 여러분이 수동으로 하는 대부분의 일들을 Puppeteer�
 
 혹시 npm이 아직 없다면 먼저 `brew install npm` 혹은 `sudo apt install npm`을 해 줍니다.
 
-![image-20211130093755211](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130093755211.png)
+![image-20211130093755211](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130093755211.webp)
 
 > brew 로 `brew install npm`을 하면 node를 비롯해 관련된 패키지를 알아서 다 설치 해 줍니다.
 
@@ -53,7 +53,7 @@ npm i puppeteer
 # or "yarn add puppeteer"
 ```
 
-![image-20211130094028491](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130094028491.png)
+![image-20211130094028491](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130094028491.webp)
 
 - 만약 기본 브라우저가 포함되지 않은 가벼운 버전의 Puppeteer를 원한다면 core만 설치 하세요.
 
@@ -83,7 +83,7 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://shanepark.tistory.com');
-  await page.screenshot({ path: '/home/shane/Downloads/example.png' });
+  await page.screenshot({ path: '/home/shane/Downloads/example.webp' });
 
   await browser.close();
 })();
@@ -96,13 +96,13 @@ const puppeteer = require('puppeteer');
 node example.js
 ```
 
-![image-20211130094819722](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130094819722.png)
+![image-20211130094819722](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130094819722.webp)
 
-지정한 폴더에 example.png 파일이 생성 되었습니다. 파일을 열어 확인 해 보겠습니다
+지정한 폴더에 example.webp 파일이 생성 되었습니다. 파일을 열어 확인 해 보겠습니다
 
-![image-20211130094934652](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130094934652.png)
+![image-20211130094934652](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130094934652.webp)
 
-> example.png
+> example.webp
 
 800 x 600 사이즈의 스크린샷이 저장 되었습니다. Puppeteer의 기본 설정이며, `Page.setViewport()` 함수로 스크린샷 사이즈를 지정 할 수 있습니다.
 
@@ -132,13 +132,13 @@ const puppeteer = require('puppeteer');
 node hn.js
 ```
 
-![image-20211130095326966](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130095326966.png)
+![image-20211130095326966](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130095326966.webp)
 
 > hn.pdf 파일이 생성 되었습니다.
 
 파일을 열어서 확인 해 보니 PDF 파일이 잘 생성 되었습니다.
 
-![image-20211130095350186](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130095350186.png)
+![image-20211130095350186](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130095350186.webp)
 
 ### Page Context의 viewport 확인
 
@@ -168,7 +168,7 @@ const puppeteer = require('puppeteer');
 
 ```
 
-![image-20211130095819008](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130095819008.png)
+![image-20211130095819008](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130095819008.webp)
 
 ## 기본 런타임 설정값
 
@@ -249,22 +249,22 @@ let count = 0;
 
 function path(fileName) {
   let numStr = (++count).toString().padStart(3, "0");
-  return './test-result/'+numStr+"-"+fileName+'.png';
+  return './test-result/'+numStr+"-"+fileName+'.webp';
 }
 
 ```
 
 > node로 위의 코드를 실행 하면 테스트 진행 사항을 눈으로 확인 할 수 있으며
 
-![image-20211130120014748](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130120014748.png)
+![image-20211130120014748](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130120014748.webp)
 
 > 테스트를 마친 후에는 모든 테스트 기록이 저장됩니다.
 
-![image-20211130115700226](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130115700226.png)
+![image-20211130115700226](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130115700226.webp)
 
 > IntelliJ IDEA에 Node.js 와 NPM 설정을 해주고 프로젝트로 불러온다면
 
-![image-20211130115841635](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130115841635.png)
+![image-20211130115841635](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/testing/Puppeteer.assets/image-20211130115841635.webp)
 
 > Code assistance 도 받을 수 있습니다
 
