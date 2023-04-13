@@ -24,7 +24,7 @@ Colima는 무거운 Docker Desktop을 대신해 간단한 CLI 환경에서 도�
 
 > https://github.com/abiosoft/colima
 
-brew 를 활용해서 손쉽게 설치합니다. brew가 없다면 [링크](https://shanepark.tistory.com/45)를 참고해서 먼저 설치 해 주세요.
+brew 를 활용해서 손쉽게 설치합니다. brew가 없다면 [Mac 에 brew 설치하기](https://shanepark.tistory.com/45)를 참고해서 먼저 설치 해 주세요.
 
 ```bash
 brew install colima
