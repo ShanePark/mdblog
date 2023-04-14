@@ -8,7 +8,7 @@ a 링크를 통한 파일 다운로드를 제공 하고 있었는데, 개선이 
 
 그래서 파일 다운로드 과정을 AJAX를 이용해 비동기로 요청하고, 요청을 기다리는 동안 waitMe 를 이용해 로딩바를 보여주는 식으로 개선을 하기로 했습니다. 
 
-<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/xhr_download.assets/gif.webp width=411 height=457 alt=1>
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/xhr_download.assets/gif.webp width=411 height=357 alt=1>
 
 > https://github.com/vadimsva/waitMe
 
