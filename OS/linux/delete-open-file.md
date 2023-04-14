@@ -8,7 +8,7 @@
 
 지금의 구조를 간략하게 보면
 
-![image-20220613211303109](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613211303109.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613211303109.webp width=750 height=414 alt=1>
 
 > 대략적으로 데이터 파일 저장에 관련된 부분만 보았을 때 이런 식으로 이루어 져 있습니다.
 
@@ -20,7 +20,7 @@
 
 특히 파일용량이 5GB 정도를 넘어 갈 경우에는, 사실 1번 과정은 금방 끝나는데 (100Mbps 속도로도 10분 이내) 이후의 과정에서 응답에 너무 지연되다 보니 타임아웃도 빈번하게 일어나고 있었습니다.
 
-![image-20220613212130417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613212130417.png)
+![image-20220613212130417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613212130417.webp)
 
 이 문제 해결을 위해, 서버1과 서버2 양쪽에서 접근할 수 있는 폴더에 임시 파일을 떨어뜨려 놓은 후에 꼭 필요한 과정까지만 시행해 응답을 해 내고, 시간이 상당히 소모되는 4번 과정의 경우에는 별도의 쓰레드에서 작업을 하도록 코드를 변경 해 보았습니다.
 
@@ -104,7 +104,7 @@ public class FileInputStreamTest {
 
 코드는 간단합니다. 진행 과정을 차근 차근 살펴보면
 
-![image-20220613214434276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613214434276.png)
+![image-20220613214434276](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613214434276.webp)
 
 일단 실행 전에 `~/downloads` 경로에 test.jpeg 파일을 하나 준비 해 두어야 합니다.
 
@@ -142,7 +142,7 @@ Files.copy(inputStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING
 
 그럼 코드 실행 결과를 살펴보면..
 
-![giphy](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/giphy.gif)
+![giphy](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/giphy.webp)
 
 > 코드 실행과 함께 원본 파일이 삭제 되고, 10초의 카운팅 후에는 targetFile 이라는 이름으로 같은 내용의 파일을 작성 하고, 마지막에는 rename으로 감쪽같이 원상 복귀 해 냅니다.
 
@@ -154,13 +154,13 @@ Files.copy(inputStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING
 
 이 현상에 대해 InputStream 의 특이 동작인가 싶어 stackoverflow.com에 해당 코드와 함께 질문을 올렸고, 고맙게도 금방 답변을 받을 수 있었습니다.
 
-![image-20220613215704118](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613215704118.png)
+![image-20220613215704118](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613215704118.webp)
 
 Linux나 MacOS와 같은 Unix 시스템에서는 사용중인 파일을 삭제하거나 이동 할 수 없다고 하는데요. 윈도우에서는 이렇게 동작 하지 않는다고 합니다.
 
 분명 파일이 삭제가 되었고, 폴더에서도 사라졌는데 삭제가 안된다니!
 
-![image-20220613215917158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613215917158.png)
+![image-20220613215917158](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613215917158.webp)
 
 > https://stackoverflow.com/questions/2028874/what-happens-to-an-open-file-handle-on-linux-if-the-pointed-file-gets-moved-or-d
 
@@ -176,7 +176,7 @@ Unix 시스템에서는 사실 삭제라는 개념은 없고 `unlink` 만이 있
 
 맨 처음으로 돌아가
 
-![image-20220613212130417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613212130417.png)
+![image-20220613212130417](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/delete-open-file.assets/image-20220613212130417.webp)
 
 이 상황에서 mounted 폴더의 임시 파일을 서버2가 삭제 시켜 버렸다고 해도, 유저가 해당 임시 파일을 다운받는 중 이었다면 여전히 문제 없이 요청에 대한 응답을 해낼 수 있을 거라고 기대할 수 있습니다.
 

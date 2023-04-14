@@ -10,13 +10,13 @@ LeetCode 의 코딩 문제들을 풀다보면 자주 나오는 Node 계열 클�
 
 - TreeNode 예제 문제
 
-![image-20220220132941746](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220132941746.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220132941746.webp width=750 height=347 alt=1>
 
 > https://leetcode.com/problems/range-sum-of-bst/
 
 - ListNode 예제 문제
 
-![image-20220220133056070](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220133056070.png)
+![image-20220220133056070](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220133056070.webp)
 
 > https://leetcode.com/problems/merge-nodes-in-between-zeros/
 
@@ -26,7 +26,7 @@ LeetCode 의 코딩 문제들을 풀다보면 자주 나오는 Node 계열 클�
 
 > 첫 참여에 3개의 문제를 풀어서 개인적으로 어느정도는 만족스러웠는데 후에 Leaderboard를 확인 하니 10분만에 다 풀고 나간 사람들이 보여 참 씁쓸했습니다.
 >
-> ![image-20220220142722895](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220142722895.png)
+> ![image-20220220142722895](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220142722895.webp)
 
 사실 처음 코드확장을 생각했을때는 정말 간단할 줄 알았는데, 작성하다 보니 BFS, DFS, traversal, stack, queue 등 지금까지 코딩 문제들을 풀어보며 접했던 대부분의 알고리즘들의 종합 선물 세트 같은 느낌이라 마냥 쉽지도 않았고 시간도 제법 걸렸기 때문에 이걸 공유하면 다른 분들에게도 도움이 되겠다는 생각이 들어 포스팅 하게 되었습니다.
 
@@ -58,7 +58,7 @@ LeetCode에서 제공해주는 TreeNode 클래스는 다음과 같습니다.
 
 사실 이게 가장 큰 문제가 뭐냐면, 문제를 제공 해 줄 때는 완성된 TreeNode 클래스를 제공 해 주는게 아닌 배열 형태로 root를 제공해 줍니다.
 
-![image-20220220134634942](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220134634942.png)
+![image-20220220134634942](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220134634942.webp)
 
 이렇게 되면, 10을 루트로 하는 TreeNode를 작성하기 위해서는 
 
@@ -456,7 +456,7 @@ class TreeNodeTest {
 
 하지만 후에 더 확장을 하고, 다른 프로젝트에서도 참조할 수 있게 하기 위해 Maven Repository에 등록을 해 두었는데요
 
-![image-20220220145049795](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220145049795.png)
+![image-20220220145049795](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220145049795.webp)
 
 > https://github.com/Shane-Park/shaneutils
 
@@ -502,7 +502,7 @@ dependencies {
 
 의존성을 추가 한 후에는 com.tistory.shanepark.leetcode 에 있는 `확장된` TreeNode 클래스를 사용 하실 수 있습니다.
 
-![image-20220220145701928](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220145701928.png)
+![image-20220220145701928](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220145701928.webp)
 
 그럼 이제 불러온 코드를 활용 해 간단하게 테스트 코드를 작성 할 수 있습니다.
 
@@ -538,7 +538,7 @@ public class Q938RangeSumofBST {
 }
 ```
 
-![image-20220220151242653](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220151242653.png)
+![image-20220220151242653](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/TreeNode.assets/image-20220220151242653.webp)
 
 LeetCode 문제 풀이를 취미로 하시는 분들이라면 꼭 사용해보시길 추천드립니다!
 

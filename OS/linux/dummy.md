@@ -4,7 +4,7 @@
 
 10GB가 넘는 대용량의 파일 업로드 처리에서 문제가 있었습니다. 해당 파일을 제공받아 테스트를 진행 해 보았는데 이후에 다양한 파일 용량별로 처리 여부와 핸들링에 걸리는 시간을 확인해보려고 하는데, 적당한 파일을 구할 방법이 생각나지 않았습니다.
 
-![image-20220525172611947](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525172611947.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525172611947.webp width=750 height=436 alt=1>
 
 > https://testfiledownload.com/
 
@@ -26,7 +26,7 @@
 dd if=/dev/zero of=1g_file bs=1 count=0 seek=1G
 ```
 
-![image-20220525174215929](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525174215929.png)
+![image-20220525174215929](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525174215929.webp)
 
 **dd** 명령어를 사용 할 때, `if=/dev/urandom` 옵션을 준다면 파일을 모두 0이 아닌 랜덤 값으로 채울 수 있다는 장점이 있습니다. 파일을 압축하는등의 가공이 필요한 경우에는 해당 옵션이 필요할 수 있습니다.
 
@@ -38,7 +38,7 @@ dd if=/dev/zero of=1g_file bs=1 count=0 seek=1G
 dd if=/dev/zero of=1g_file bs=100M count=10
 ```
 
-![image-20220525174424733](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525174424733.png)
+![image-20220525174424733](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525174424733.webp)
 
 ### fallocate
 
@@ -50,7 +50,7 @@ dd if=/dev/zero of=1g_file bs=100M count=10
 fallocate -l 10GB 10G.file
 ```
 
-![image-20220525173657767](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525173657767.png)
+![image-20220525173657767](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525173657767.webp)
 
 > GB와 GiB 모두 입력 해 보았는데 각각 구분 해서 파일의 용량이 생성 되었습니다.
 >
@@ -64,7 +64,7 @@ fallocate -l 10GB 10G.file
 truncate -s 500MB half-giga.file
 ```
 
-![image-20220525174624001](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525174624001.png)
+![image-20220525174624001](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/dummy.assets/image-20220525174624001.webp)
 
 세가지 명령어 모두 입력 하자 마자 순식간에 파일을 생성 해 주기 때문에 평소에는 사용법이 간단한 fallocate나 truncate를 이용하고, 특별한 옵션이 필요 할 때는 dd를 사용 하면 되겠습니다.
 

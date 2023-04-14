@@ -8,7 +8,7 @@ a 링크를 통한 파일 다운로드를 제공 하고 있었는데, 개선이 
 
 그래서 파일 다운로드 과정을 AJAX를 이용해 비동기로 요청하고, 요청을 기다리는 동안 waitMe 를 이용해 로딩바를 보여주는 식으로 개선을 하기로 했습니다. 
 
-![gif](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/xhr_download.assets/gif.gif)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/xhr_download.assets/gif.webp width=411 height=457 alt=1>
 
 > https://github.com/vadimsva/waitMe
 
@@ -54,7 +54,7 @@ XMLHttpRequest 를 통해 Binary 데이터를 보내거나 받을 수 있다고 
 
 ```javascript
 const req = new XMLHttpRequest();
-req.open("GET", "/이미지파일주소.png", true);
+req.open("GET", "/이미지파일주소.webp", true);
 req.responseType = "blob";
 
 req.onload = (event) => {
@@ -100,7 +100,7 @@ $('#export_project').on('click', function () {
 
 XMLHttpRequest 호환성은 아래와 같습니다. 드디어 IE가 호환성 목록에서도 사라졌네요
 
-![image-20220823174132612](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/xhr_download.assets/image-20220823174132612.png)
+![image-20220823174132612](https://raw.githubusercontent.com/Shane-Park/mdblog/main/frontend/xhr_download.assets/image-20220823174132612.webp)
 
 > https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 

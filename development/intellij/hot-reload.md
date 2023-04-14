@@ -4,7 +4,7 @@
 >
 > 혹시 버전이 바뀌어 메뉴가 또 일치하지 않는 경우가 있다면 댓글로 달아주시면 바로 반영 하도록 하겠습니다. 
 
-![image-20220101115042638](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101115042638.png)
+<img src=https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101115042638.webp width=750 height=366 alt=1>
 
 > 아래의 문서를 참고 했습니다.
 >
@@ -24,7 +24,7 @@ Devtools를 활용 하면 굳이 서버를 껐다 켜지 않고도 정적 자원
 
 Preferences 에서 Compirer에 Build Project automatically 를 체크해줍니다.
 
-![image-20220101104536861](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101104536861.png) 
+![image-20220101104536861](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101104536861.webp) 
 
 > 애플리케이션 실행 도중이어도 자동으로 재시작 할 수 있도록 해주는 설정 입니다.
 
@@ -34,41 +34,41 @@ Preferences 에서 Compirer에 Build Project automatically 를 체크해줍니�
 
 > 구글에 검색 했을 때에는 registry에 가서 **compiler.automake.allow.when.app.running** 를 체크하라는 검색 결과가 상당히 많았는데, 지금의 최신 버전에서는 registry에 해당 내용은 없습니다. 아래의 경로로 변경되었습니다.
 
-![image-20210825221549377](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20210825221549377.png) 
+![image-20210825221549377](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20210825221549377.webp) 
 
 ### 3. Run/Debug 설정
 
 우측 상단에 있는 드롭박스 메뉴를 클릭하고 Edit Configurations 로 들어갑니다.
 
-![image-20210825222055250](https://raw.githubusercontent.com/Shane-Park/markdownBlog/master/backend/spring/devtools.assets/image-20210825222055250.png)
+![image-20210825222055250](https://raw.githubusercontent.com/Shane-Park/markdownBlog/master/backend/spring/devtools.assets/image-20210825222055250.webp)
 
  
 
 그다음에 해당 Application을 선택 하고, Running Application Update Policies를 변경해줍니다.
 
-![image-20220101104828624](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101104828624.png)
+![image-20220101104828624](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101104828624.webp)
 
 >  언제부턴가 위치가 변경되었습니다. 우측의 Modify options를 클릭 해 줍니다.
 
-![image-20220101105014494](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105014494.png)
+![image-20220101105014494](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105014494.webp)
 
 > On 'Update' action 을 클릭 합니다.
 
-![image-20220101105051584](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105051584.png)
+![image-20220101105051584](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105051584.webp)
 
 Do nothing 으로 되어 있습니다. Update Classes and Resources로 변경 해 줍니다. 
 
 이어서 On frame deactivation 설정도 변경 해 줍니다.
 
-![image-20220101105910894](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105910894.png)
+![image-20220101105910894](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105910894.webp)
 
 > On 'Update' action 바로 아래 칸에 있습니다.
 
-![image-20220101105958192](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105958192.png)
+![image-20220101105958192](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101105958192.webp)
 
 > 설정이 완료되면 빨간색 표시한 부분이 추가 됩니다.
 
-![image-20220101113413535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101113413535.png)
+![image-20220101113413535](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101113413535.webp)
 
 > 사실 정적 파일만 Hot Reload를 시키려면 Update resources로만 해도 충분 합니다.
 
@@ -96,7 +96,7 @@ dependencies {
 }
 ```
 
-![image-20220101123908078](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101123908078.png)
+![image-20220101123908078](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101123908078.webp)
 
 의존성 변경 후에는 반드시 업데이트 해 주어야 합니다. 
 
@@ -130,7 +130,7 @@ Spring-boot-devtools 모듈은 LiveReload 서버를 내장 하고 있는데요. 
 
 그래서 사실 live reload 기능도 시도를 해보았는데요.. 어째 아무리 매뉴얼 대로 해도 안되길래 플러그인 리뷰를 확인 해 보니
 
-![image-20220101125805772](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101125805772.png)
+![image-20220101125805772](https://raw.githubusercontent.com/Shane-Park/mdblog/main/development/intellij/hot-reload.assets/image-20220101125805772.webp)
 
 > 현재로서는 안되고 있는게 맞나 봅니다. 저처럼 다른분들도 시간 낭비 하는 일 없었으면 해서 내용을 공유 해 드립니다.
 
