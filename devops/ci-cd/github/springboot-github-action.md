@@ -428,7 +428,7 @@ ssh -i ~/Downloads/ci-key/ci-key shane@192.168.0.10 "sudo nohup /home/shane/.sdk
 
 build.gradle 파일에 한줄을 추가해주면 됩니다.
 
-${file:build.gradle}
+${code:build.gradle}
 
 ```groovy
 jar.enabled = false
