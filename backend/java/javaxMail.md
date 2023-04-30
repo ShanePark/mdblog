@@ -97,7 +97,7 @@ public class VerifyEmail {
 1. 저는 이용자에 따라 달라지는 변수인 수신자와, 난수로 설정할 값을 코드 제일 위에 선언했습니다.
 
 ```java
-String recipient = "psh40963@naver.com";
+String recipient = "???@naver.com";
 String code = "abc";
 ```
 

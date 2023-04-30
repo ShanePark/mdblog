@@ -457,7 +457,7 @@ ext {
     PUBLISH_LICENSE_URL = 'https://github.com/ShanePark/psh/blob/master/LICENSE'
     PUBLISH_DEVELOPER_ID = 'shanepark'
     PUBLISH_DEVELOPER_NAME = 'Shane Park'
-    PUBLISH_DEVELOPER_EMAIL = 'psh40963@naver.com'
+    PUBLISH_DEVELOPER_EMAIL = '???@naver.com'
     PUBLISH_SCM_CONNECTION = 'scm:git:github.com/ShanePark/psh.git'
     PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/ShanePark/psh.git'
     PUBLISH_SCM_URL = 'https://github.com/ShanePark/psh'
