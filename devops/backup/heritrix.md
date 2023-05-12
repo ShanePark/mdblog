@@ -29,6 +29,8 @@ docker run --init -d -p 8443:8443 \
 
 명령어를 실행 하고 컨테이너가 잘 작동하는 것을 확인 합니다.
 
+기본 메모리 limit은 256MB 인데, 더 늘리고 싶다면 `-e "JAVA_OPTS=-Xmx1024m"` 처럼 메모리 옵션을 줄 수도 있습니다.
+
 ![image-20230427140200047](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/backup/heritrix.assets/1.webp)
 
 > 컨테이너가 동작중
