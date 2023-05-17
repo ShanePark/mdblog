@@ -236,6 +236,20 @@ class ActuatorConfig(
 
 인터셉터를 고집하며 WebMvcEndpointManagementContextConfiguration 를 확장한  **[jnizet](https://github.com/jnizet)**도 결국 필터를 사용하는 쪽으로 리팩터링했다. 인터셉터를 옹호하며 몇몇 주장을 냈지만, 다른 사용자들의 "필터써", "response에서 401 status 바로 내면 되지" 와 같은 답변에 그도 납득을 할 수 밖에 없던 모양. 스프링 측에서도 공식적으로 Filter 사용을 권고한다.
 
+다만, Filter로 변경했을 때 한가지 문제가 있었는데, mockMvc를 통해 API 테스트를 하는 경우 의도한 서블릿 필터를 거치지 않기 때문에 테스트가 깨지는 현상이 발생했다.
+
+이때는 아래 보이는 것 처럼, mockMvc에 적용할 필터를 수동으로 추가해주니 테스트에 통과했다.
+
+```kotlin
+    fun setUp(webApplicationContext: WebApplicationContext, restDocumentation: RestDocumentationContextProvider) {
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
+            .apply<DefaultMockMvcBuilder>(MockMvcRestDocumentation.documentationConfiguration(restDocumentation))
+            .addFilters<DefaultMockMvcBuilder>(jwtAuthFilter)
+            .addFilters<DefaultMockMvcBuilder>(AdminAuthFilter())
+            .build()
+    }
+```
+
 끝. 
 
 **References**
