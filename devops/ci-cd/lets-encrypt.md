@@ -95,7 +95,73 @@ sudo openssl pkcs12 -export -in /etc/letsencrypt/live/dutypark.o-r.kr/fullchain.
 
 단순하게 `keystore.p12` 파일만 바꿔치기 후 서버를 새로 띄우니 정말 손쉽게 인증서가 갱신되었다. 
 
-앞으로는 `sudo certbot renew` 로 손쉽게 갱신하거나 아니면 그것마저 cron job으로 등록하면 되니 그 얼마나 편리한가. 
+앞으로는 `sudo certbot renew` 로 손쉽게 갱신하거나 그것마저 cron job으로 자동화하면 되니 그 얼마나 편리한가. 
+
+## 재발급
+
+드디어 3개월이 지났다. 재발급이 가능할 때가 되니 lets encrypt에서 자동으로 이메일도 보내준다. 얼마나 간단한지 한번 인증서 재발급을 받아보자.
+
+`sudo certbot renew`를 실행 한다.
+
+![fail](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ci-cd/lets-encrypt.assets/9.webp)
+
+아쉽게도 한번에 하는건 실패했는데, 이를 해결하기 위해서는 certbot의 **standalone** 동작 방식에 대한 이해가 필요하다.
+
+**standalone** 방식은 기존의 사이트 작동을 잠시 멈추고 80 포트로 가상의 인증서버를 띄워 확인하도록 되어 있는데, 이때 인증에 실패한것이다. 여러가지 원인을 의심 할 수 있겠지만 나의 경우에는 iptables 방화벽에서 443 포트만 열어두도록 설정해두었던게 문제였다. 80포트도 허용을 해 주어야 한다.
+
+아래와 같이 입력해 포트 허용 및 설정값을 persist 했다.
+
+```bash
+# 80 포트 허용
+sudo iptables -I INPUT 6 -p tcp --dport 80 -j ACCEPT
+
+# iptables 설정값 저장
+sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+```
+
+이후 다시 시도하여 성공 하였다.
+
+![success](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ci-cd/lets-encrypt.assets/12.webp)
+
+> 인증서 재발급 설공
+
+하지만 아쉽게도 여기에서 끝은 아니다. 위에서 한번 해 봤던 것 처럼 인증서 포맷 변경이 필요하다. `renew`만 한 상태에서 여전히 예전의 `keystore.p12` 를 사용하고 있다면 인증서 유효기간은 예전 그대로다.
+
+일단 아래의 명령어를 참고해 `.pem` 파일이 있는 장소에 `keystore.p12` 파일을 생성해준다.
+
+```bash
+sudo openssl pkcs12 -export -in /etc/letsencrypt/live/dutypark.o-r.kr/fullchain.pem -inkey /etc/letsencrypt/live/dutypark.o-r.kr/privkey.pem -out /etc/letsencrypt/live/dutypark.o-r.kr/keystore.p12 -name tomcat -CAfile /etc/letsencrypt/live/dutypark.o-r.kr/chain.pem -caname root
+```
+
+그러고 나서는 `key-store` 경로를 방금 생성한 키 파일 위치로 지정해준다. 원래는 `classpath:keystore.p12` 로 지정하고 secret repository에서 pull을 하도록 CI/CD 를 구성해두었었는데, 그러면 인증서를 갱신 할 때마다 커밋도 새로 해야하기 때문에 그럴필요가 없도록 파일경로로 지정해두었다.
+
+물론 인증서가 갱신되었을 때 어플리케이션을 재시작하는건 필요하다.
+
+${code:application.yml}
+
+```yaml
+server:
+  ssl:
+    key-store: /etc/letsencrypt/live/dutypark.o-r.kr/keystore.p12
+```
+
+이제 변경사항을 Merge 해서 새로운 인증서가 적용되었는지 확인 해 본다.
+
+![image-20230729190322519](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ci-cd/lets-encrypt.assets/10.webp)
+
+> Github Action이 수행되었다.
+
+사이트에 접속해서 인증서 정보를 확인 해본다.
+
+![image-20230729190413137](https://raw.githubusercontent.com/ShanePark/mdblog/main/devops/ci-cd/lets-encrypt.assets/11.webp)
+
+인증서가 정상적으로 갱신되어 유효 기간이 늘어났다. 확실히 certbot을 사용하는 방법이 간편하다.
+
+ 3개월에 한번 하는 것도 귀찮고 모든 작업을 자동화하고 싶다면, cronjob으로 아래의 세가지 작업을 연달아 하는 쉘스크립트를 작성해 등록해주면 되겠다.
+
+- certbot renew
+- keystore.p12 파일 생성
+- 어플리케이션 재시작
 
 **References**
 
