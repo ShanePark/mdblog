@@ -244,6 +244,13 @@ sudo iptables-save > /etc/iptables/rules.v4
 sudo ip6tables-save > /etc/iptables/rules.v6
 ```
 
+그런데 이 경우에는 iptables 규칙을 출력하는 `iptables-save` 명령만 sudo 권한으로 실행되고 파일 작성에는 적용이 되지 않아 권한 문제가 발생 할 수 있습니다. 이럴때는 아래처럼 실행해줍니다.
+
+```bash
+sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+sudo sh -c "iptables-save > /etc/iptables/rules.v6"
+```
+
 이제 다시 재부팅을 한 후에 확인을 해 봅니다.
 
 ```bash
