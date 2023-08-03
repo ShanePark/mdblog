@@ -1,4 +1,14 @@
-# INFCON 2022 후기
+# INFCON 2023 시간표 공유 및 인프콘 2022 후기
+
+안녕하세요. 2023 인프콘을 기대하며 세션 시간표를 작성 해 보았습니다.
+
+[https://www.inflearn.com/infcon-2023/schedule/share?id=907252&hash=shane%409626f5a3&name=shanePark](https://www.inflearn.com/infcon-2023/schedule/share?id=907252&hash=shane%409626f5a3&name=shanePark)
+
+이번에도 참여하고 싶은 세션들이 너무 많아서 꼭 참여하고 싶었습니다.
+
+아쉽게도 추첨에 실패해 2023 인프콘 참여는 어렵게 되었지만 작년에 참여했던 즐거웠던 경험을 나누어보려고 합니다.
+
+> 인프콘 시간표 공유 이벤트 덕분에 인프콘 2023에도 참여할 수 있게 되었습니다!
 
 <img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/infcon2022_review.assets/A592AF81-5F16-4C2E-B859-A152D878AB86_1_105_c.jpeg" width=750 height=560 alt=infcon>
 
