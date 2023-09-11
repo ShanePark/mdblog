@@ -6,12 +6,17 @@
 </head>
 <body>
 <h2>Zip stream</h2>
-<button onclick="download()">Download Zip</button>
+<button onclick="downloadZip()">Download Zip</button>
+<button onclick="downloadXlsx()">Download XLSX</button>
 </body>
 </html>
 
 <script>
-  function download() {
+  function downloadZip() {
     window.location.href = "/zip";
+  }
+
+  function downloadXlsx() {
+    window.location.href = "/excel";
   }
 </script>

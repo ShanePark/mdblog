@@ -1,8 +1,12 @@
 package com.example.zipstream.controller;
 
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,6 +45,29 @@ public class FileController {
                     zos.closeEntry();
                 }
             }
+        }
+    }
+
+    @GetMapping("excel")
+    public void excel(HttpServletResponse response) throws IOException {
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition", "attachment; filename=sample.xlsx");
+        response.setHeader("Content-Transfer-Encoding", "binary");
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("sheet1");
+
+        try (ServletOutputStream outputStream = response.getOutputStream()) {
+            for (int i = 0; i < 100_000; i++) {
+                sheet.createRow(i).createCell(0).setCellValue("hello world" + i);
+                if (i % 1000 == 0) {
+                    workbook.write(outputStream);
+                    outputStream.flush();
+                }
+            }
+            workbook.write(outputStream);
+            outputStream.flush();
+            workbook.close();
         }
     }
 
