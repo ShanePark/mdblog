@@ -52,7 +52,6 @@ public class FileController {
     public void excel(HttpServletResponse response) throws IOException {
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-Disposition", "attachment; filename=sample.xlsx");
-        response.setHeader("Content-Transfer-Encoding", "binary");
 
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("sheet1");
