@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div>
+  <h1>Simple Websocket Sample</h1>
+  Name: <input type="text">
+  <button onclick="sendName()">Send</button>
+  <p>Response from Server</p>
+  <textarea rows="8" cols="50" id="response" readonly="readonly"></textarea>
+</div>
+
+<script>
+  const websocket = new WebSocket('ws://localhost:8080/websocket');
+
+  function sendName() {
+    const name = document.querySelector('input[type="text"]').value;
+
+    if (name) {
+      websocket.send(name);
+    }
+  }
+
+  websocket.onmessage = (e) => {
+    const response = document.getElementById('response');
+    response.value += `${e.data}\n`;
+  }
+</script>
+</body>
+</html>
