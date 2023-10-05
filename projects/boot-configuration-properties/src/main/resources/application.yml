@@ -1,0 +1,16 @@
+car:
+  name: Tesla Model Y RWD
+  range: 350
+  battery: 56.88
+  price: 56_990_000
+
+company:
+  name: Tesla
+  location:
+    city: Palo Alto
+    country: USA
+  employees:
+    - name: Shane
+      position: Developer
+    - name: Elon
+      position: Manager
