@@ -1,8 +1,10 @@
 package com.example.bootconfigurationproperties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
 @ConfigurationProperties(prefix = "car")
+@ConstructorBinding
 public class Car {
 
     public Car(String name, int range, double battery, int price) {
