@@ -1,20 +1,22 @@
 package io.shanepark.github.postgresarrayjpa;
 
 import io.hypersistence.utils.hibernate.type.array.StringArrayType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
 @Table(name = "sample")
 @NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
 @Getter
+@TypeDef(name = "string-array", typeClass = StringArrayType.class)
 public class Sample {
 
     @Id
@@ -23,7 +25,7 @@ public class Sample {
     @Column(name = "name")
     private String name;
 
-    @Type(value = StringArrayType.class)
+    @Type(type = "string-array")
     @Column(name = "memo", columnDefinition = "text[]")
     private String[] memo = new String[0];
 
