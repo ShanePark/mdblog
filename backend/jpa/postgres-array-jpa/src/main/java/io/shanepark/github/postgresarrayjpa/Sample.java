@@ -1,5 +1,6 @@
 package io.shanepark.github.postgresarrayjpa;
 
+import io.hypersistence.utils.hibernate.type.array.StringArrayType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
