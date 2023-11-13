@@ -89,6 +89,12 @@ Theme 설정, 폰트사이즈, Vim 혹은 Emacs 키 바인딩 등등 뿐만 아�
 
 ## LeetHub
 
+### @Deprecated
+
+2023년부터 새로운 UI로 변경되어 leethub이 예전처럼 동작하지 않습니다. `Revert to old version` 버튼을 눌러 UI를 다시 예전 버전으로 돌린다면 작동하기는 하지만 개인적으로 Leethub은 더이상 유지보수가 되지 않으며, 커밋 횟수 부풀림 등의 문제가 있어 더이상 추천하지 않습니다.
+
+### 소개
+
 > https://github.com/QasimWani/LeetHub
 
 한문제 풀 때마다 Github에 코드를 저장 하고 하는데요. 아무래도 커밋 할 때 작성할 게 제법 많습니다.

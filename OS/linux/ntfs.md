@@ -207,7 +207,7 @@ sudo vi /etc/fstab
 
 아래의 몇가지 샘플을 참고하여 등록하면 된다.
 
-${file:/etc/fstab}
+${code:/etc/fstab}
 
 ```
 /dev/sda1       /mnt0   ext4    defaults        0       0

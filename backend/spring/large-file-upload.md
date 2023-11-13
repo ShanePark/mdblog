@@ -442,7 +442,7 @@ TusFileUploadService가 request와 response를 직접 핸들링 하기 때문에
 - new Uppy() 할 때 `locale: Uppy.locales.ko_KR` 설정 해 주면 한국어로 표시할 수 있습니다. Ko_KR.min.js 파일을 추가 해 주어야 합니다.
 - Tus 옵션에 endpoint를 정확히 입력 해 주어야 합니다.
 - Tus 옵션에 `overridePatchMethod: true`로 설정 해 주면 PATCH 메서드가 막힌 서버에서도 POST 요청으로 대신 보낼 수 있습니다.
-- delete 메서드는 오버라이드 하는 옵션이 따로 없는데, 제가 필요해서 추가 해 두었습니다. delete 요청을 방화벽에서 막아둔 상황이라면 https://github.com/ShanePark/tus-upload-sample 에 올려둔 js 파일을 사용하시고, `overrideDeleteMethod: true` 옵션을 주시면 됩니다.
+- delete 메서드는 오버라이드 하는 옵션이 따로 없는데, 제가 필요해서 추가 해 두었습니다. delete 요청을 방화벽에서 막아둔 상황이라면 제가 https://github.com/ShanePark/uppy-override-delete 에 올려둔 js 파일을 사용하시고, `overrideDeleteMethod: true` 옵션을 주시면 됩니다.
 - 전체 샘플 코드는 https://github.com/Shane-Park/tus-upload-sample 에서 확인 해 주세요.
 
 테스트를 해 보면
