@@ -76,7 +76,7 @@ sudo swapoff -v /swapfile
 이 과정은 나중에 Swap File 생성에서 다시 그대로 살리기 때문에 지금 스왑 파일 용량 변경만을 진행하시는 중이라면 굳이 12번 라인을 제거 하지 않으셔도 됩니다. 스왑 공간 제거가 목적이라면 지워주시면 됩니다. (주석처리만 해 두어도 됨)
 
 ```bash
-sudo vi fstab
+sudo vi /etc/fstab
 ```
 
 ![image-20220531155749473](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531155749473.webp)
@@ -127,6 +127,8 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 ```
 
+> 만약 swapon이 안되면서 `swapon: /swapfile: swapon failed: Invalid argument` 에러가 발생한다면 `/swapfile`을 지우고 fallocate 대신 `sudo dd if=/dev/zero of=/swapfile bs=1G count=8` 로 스왑 파일을 다시 생성해주세요. 우분투에서는 fallocate로 문제없이 생성이 되었었는데 CentOS에서는 안되더라고요.
+
 이후 `free -h` 명령으로 확인 해 보면 스왑공간을 사용하고 있는걸 확인 할 수 있습니다.
 
 ![image-20220531160310424](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/swap-memory.assets/image-20220531160310424.webp)
@@ -136,7 +138,7 @@ sudo swapon /swapfile
 이제 재부팅 후에도 메모리 스왑이 자동으로 설정 되도록 `/etc/fstab` 파일을 수정 해 줍니다.
 
 ```bash
-sudo vi fstab
+sudo vi /etc/fstab
 ```
 
 제일 아래에 아래의 내용을 작성 해 줍니다. 아까 Swap File 제거 부분에서 해당 내용을 제거 하지 않으셨다면 그대로 두거나 주석만 풀어주시면 됩니다.

@@ -42,7 +42,7 @@ find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --work-tree=
 
 ```bash
 function pull {
-  find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --wo    rk-tree=$PWD/{}/.. pull \;
+  find . -type d -name .git -print 2>/dev/null -exec git --git-dir={} --work-tree=$PWD/{}/.. pull \;
  }
 ```
 

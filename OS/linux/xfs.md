@@ -1,4 +1,4 @@
-# [Linux] 디스크 xfs로 포맷하기
+# [Linux] 디스크 xfs 파일시스템으로 포맷하기
 
 ## Intro
 
