@@ -117,6 +117,8 @@ ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
 
 이렇게 하니 모든 인코딩 문제가 깔끔하게 해결되었다.
 
+다만, FTP 서버의 캐릭터셋에 따라 `utf-8`이 아닌 `euc-kr` 등 으로 설정해야 할 수가 있으니, 인코딩 값은 하드코딩 해두지 않고 한글이 제대로 나오는 인코딩으로 그때그때 설정할 수 있도록 하자.
+
 **References**
 
 - https://commons.apache.org/proper/commons-net/apidocs/org/apache/commons/net/ftp/FTPClient.html
