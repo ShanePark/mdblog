@@ -45,7 +45,7 @@ localhost 에서 개발할때는 느끼지 못했는데, 새로 배포하고 보
 
 아래의 코드는 모두 스프링 3.2 버전을 기준으로 작성되었으며, Kotlin 언어로 작성되었지만 java와 거의 차이가 없다.
 
-아래의 코드는 외부 라이브러리들을 모아둔 `resources/lib` 내의 모든 자원들에 대해 1년동안 캐시하도록 설정한 모습니다.
+아래의 코드는 외부 라이브러리들을 모아둔 `resources/lib` 내의 모든 자원들에 대해 1년간 캐시하도록 설정한 모습이다.
 
 ${code:WebMvcConfigurer.kt}
 
@@ -105,7 +105,7 @@ spring:
 
 아까 인터셉터를 적용했을때는 `lib` 경로만을 대상으로 했었는데, 이번에는 resources handler에 의해 다루어지는 모든 정적자원이 대상이 되었다. 
 
-다루어지는 경로들의 목록은 아래와 같다.
+대상 경로들은 아래와 같다.
 
 ![6](https://raw.githubusercontent.com/ShanePark/mdblog/main/backend/spring/cache-static-resource.assets/6.webp)
 
