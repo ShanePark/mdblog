@@ -410,7 +410,7 @@ jobs:
           ssh -v ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "sudo nohup /home/shane/.sdkman/candidates/java/current/bin/java -jar ~/cicd/*.jar  > ~/cicd/nohup.log 2>&1 &"
 ```
 
-`sudo nohup java` 명령이 문제없이 궁금해 작동할지 미리 호스트에서 테스트를 해 보았습니다.
+`sudo nohup java` 명령이 문제없이 작동할지 궁금해서 미리 호스트에서 테스트를 해 보았습니다.
 
 ```bash
 ssh -i ~/Downloads/ci-key/ci-key shane@192.168.0.10 "sudo nohup /home/shane/.sdkman/candidates/java/current/bin/java --version"
