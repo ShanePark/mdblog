@@ -1,56 +1,139 @@
 <html>
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 1.5em;
+    }
+
+    .container {
+        background-color: #1e1e1e;
+        padding: 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        width: 800px;
+        text-align: center;
+        overflow: hidden;
+        /* 타이틀바와 .container가 딱 붙도록 */
+    }
+
+    /* 타이틀바 */
+    .title-bar {
+        background-color: #333;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .title-bar .dots {
+        position: absolute;
+        left: 10px;
+        display: flex;
+        gap: 6px;
+    }
+
+    .title-bar .dot {
+        width: 12px;
+        height: 12px;
+        background-color: #ff5f56;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .title-bar .dot:nth-child(2) {
+        background-color: #ffbd2e;
+    }
+
+    .title-bar .dot:nth-child(3) {
+        background-color: #27c93f;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: #4CAF50;
+    }
+
     input {
         display: block;
-        margin: 10px;
+        margin: 10px auto;
         padding: 10px;
-        width: 300px;
+        width: 80%;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: #333;
+        color: #e0e0e0;
     }
 
-    #i18n-result {
-        background-color: #f0f0f0;
+    /* 구분선 */
+    .divider {
+        border-top: 1px solid #444;
+        margin: 20px 0;
     }
 
-    div {
-        margin: 20px;
+    /* 구분선 상단에 여백을 줌 */
+    #clipboard-content {
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 40px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .regex-box {
-        background-color: #f0f0f0;
+        background-color: #2e7d32;
         padding: 10px;
         border-radius: 5px;
         cursor: pointer;
+        display: inline-block;
+        margin-top: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        color: #e0e0e0;
     }
 
-    .alert {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        color: #333;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-size: 3em;
-        /* make it looks like .card*/
-        background-color: #fff;
-        border: 1px solid #f0f0f0;
-
-    }
-
-    #i18n-result {
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
+    p {
+        margin: 10px 0;
     }
 </style>
-<div class="i18n">
-    <p>i18n result will be coppied to clipboard right after you type</p>
-    <input id="i18n-input" type="text">
-    <p id="i18n-result"></p>
-</div>
-<div class="regex">
-    <h3>Korean regex</h3>
+
+<div class="container">
+    <!-- 타이틀바 시작 -->
+    <div class="title-bar">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <span>i18n Tool</span>
+    </div>
+    <!-- 타이틀바 끝 -->
+
+    <h3>i18n Tool</h3>
+    <p>Type in the field below to generate i18n result:</p>
+    <input id="i18n-input" type="text" placeholder="Enter text...">
+    <p id="i18n-result">i18n result will appear here</p>
+
+    <!-- 구분선 추가 -->
+    <div class="divider"></div>
+
+    <h3>Korean Regex</h3>
     <p class="regex-box" id="korean-regex">[가-힣]+</p>
+
+    <!-- 구분선 추가 -->
+    <div class="divider"></div>
+
+    <h3>Clipboard Content</h3>
+    <p id="clipboard-content">Clipboard content will appear here</p>
 </div>
 
 </html>
@@ -64,33 +147,33 @@
                 document.getElementById('i18n-result').innerText = i18nResult;
                 copyToClipboard(i18nResult);
             });
+
+            document.getElementById('i18n-result').addEventListener('click', function () {
+                const i18nResult = document.getElementById('i18n-result').innerText;
+                copyToClipboard(i18nResult);
+            });
+
+            document.getElementById('korean-regex').addEventListener('click', function () {
+                const koreanRegex = document.getElementById('korean-regex').innerText;
+                copyToClipboard(koreanRegex);
+            });
         }
-        // on click i18n-result, copy to clipboard
-        document.getElementById('i18n-result').addEventListener('click', function () {
-            const i18nResult = document.getElementById('i18n-result').innerText;
-            copyToClipboard(i18nResult);
-        });
-        // on click korean-regex, copy to clipboard
-        document.getElementById('korean-regex').addEventListener('click', function () {
-            const koreanRegex = document.getElementById('korean-regex').innerText;
-            copyToClipboard(koreanRegex);
-        });
     };
+
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(function () {
-            copyAlert();
-        }, function (err) {
-            console.error('Async: Could not copy text: ', err);
+            updateClipboardContent();
         });
     }
-    function copyAlert() {
-        // when copy happens, alert shortly on right top corner
-        var alert = document.createElement('div');
-        alert.classList.add('alert');
-        alert.innerText = 'Copied!';
-        document.body.appendChild(alert);
-        setTimeout(() => {
-            alert.remove();
-        }, 200);
+
+    async function updateClipboardContent() {
+        try {
+            const text = await navigator.clipboard.readText();
+            document.getElementById('clipboard-content').innerText = text ? text : "Clipboard is empty";
+        } catch (err) {
+            console.error('Failed to read clipboard contents: ', err);
+        }
     }
 </script>
+
+</html>
