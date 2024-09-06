@@ -1,0 +1,96 @@
+<html>
+<style>
+    input {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+    }
+
+    #i18n-result {
+        background-color: #f0f0f0;
+    }
+
+    div {
+        margin: 20px;
+    }
+
+    .regex-box {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .alert {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        color: #333;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-size: 3em;
+        /* make it looks like .card*/
+        background-color: #fff;
+        border: 1px solid #f0f0f0;
+
+    }
+
+    #i18n-result {
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<div class="i18n">
+    <p>i18n result will be coppied to clipboard right after you type</p>
+    <input id="i18n-input" type="text">
+    <p id="i18n-result"></p>
+</div>
+<div class="regex">
+    <h3>Korean regex</h3>
+    <p class="regex-box" id="korean-regex">[가-힣]+</p>
+</div>
+
+</html>
+
+<script>
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            var i18nInput = document.getElementById('i18n-input');
+            i18nInput.addEventListener('input', function () {
+                const i18nResult = `{{ i18n(\"messages\", \"${i18nInput.value}\") }}`;
+                document.getElementById('i18n-result').innerText = i18nResult;
+                copyToClipboard(i18nResult);
+            });
+        }
+        // on click i18n-result, copy to clipboard
+        document.getElementById('i18n-result').addEventListener('click', function () {
+            const i18nResult = document.getElementById('i18n-result').innerText;
+            copyToClipboard(i18nResult);
+        });
+        // on click korean-regex, copy to clipboard
+        document.getElementById('korean-regex').addEventListener('click', function () {
+            const koreanRegex = document.getElementById('korean-regex').innerText;
+            copyToClipboard(koreanRegex);
+        });
+    };
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function () {
+            copyAlert();
+        }, function (err) {
+            console.error('Async: Could not copy text: ', err);
+        });
+    }
+    function copyAlert() {
+        // when copy happens, alert shortly on right top corner
+        var alert = document.createElement('div');
+        alert.classList.add('alert');
+        alert.innerText = 'Copied!';
+        document.body.appendChild(alert);
+        setTimeout(() => {
+            alert.remove();
+        }, 200);
+    }
+</script>
