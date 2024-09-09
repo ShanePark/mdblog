@@ -90,7 +90,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .regex-box {
+    .useful-box {
         background-color: #2e7d32;
         padding: 10px;
         border-radius: 5px;
@@ -126,8 +126,9 @@
     <!-- 구분선 추가 -->
     <div class="divider"></div>
 
-    <h3>Korean Regex</h3>
-    <p class="regex-box" id="korean-regex">[가-힣]+</p>
+    <h3>Useful keywords</h3>
+    <p class="useful-box">[가-힣]+</p>
+    <p class="useful-box">\u0020</p>
 
     <!-- 구분선 추가 -->
     <div class="divider"></div>
@@ -153,9 +154,10 @@
                 copyToClipboard(i18nResult);
             });
 
-            document.getElementById('korean-regex').addEventListener('click', function () {
-                const koreanRegex = document.getElementById('korean-regex').innerText;
-                copyToClipboard(koreanRegex);
+            document.querySelectorAll('.useful-box').forEach(function (paragraph) {
+                paragraph.addEventListener('click', function () {
+                    copyToClipboard(this.textContent);
+                });
             });
         }
     };
