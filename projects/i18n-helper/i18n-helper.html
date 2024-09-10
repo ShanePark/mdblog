@@ -152,7 +152,11 @@
         if (document.readyState === 'complete') {
             var i18nInput = document.getElementById('i18n-input');
             i18nInput.addEventListener('input', function () {
-                const i18nResult = `{{ i18n(\"messages\", \"${i18nInput.value}\") }}`;
+                let inputVal = i18nInput.value;
+                if (inputVal.includes('=')) {
+                    inputVal = inputVal.split('=')[0].trim();
+                }
+                const i18nResult = `{{ i18n(\"messages\", \"${inputVal}\") }}`;
                 document.getElementById('i18n-result').innerText = i18nResult;
                 copyToClipboard(i18nResult);
             });
