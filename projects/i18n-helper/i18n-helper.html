@@ -97,7 +97,7 @@
         word-break: break-all;
     }
 
-    .useful-box {
+    .button {
         background-color: #3a3a3c;
         padding: 10px;
         border-radius: 8px;
@@ -108,7 +108,7 @@
         color: #f2f2f7;
     }
 
-    .useful-box:hover {
+    .button:hover {
         background-color: #4a4a4c;
     }
 
@@ -130,13 +130,13 @@
     <p>Type in the field below to generate i18n result:</p>
     <input id="i18n-input" type="text" placeholder="Enter text...">
     <p id="i18n-result">i18n result will appear here</p>
-    <span class="useful-box" id="remove-brackets-btn">Remove Brackets</span>
+    <span class="button" id="remove-brackets-btn">Remove Brackets</span>
 
     <div class="divider"></div>
 
     <h3>Useful keywords</h3>
-    <p class="useful-box">[가-힣]+</p>
-    <p class="useful-box">\u0020</p>
+    <p class="button useful-box">[가-힣]+</p>
+    <p class="button useful-box">\u0020</p>
 
     <div class="divider"></div>
 
@@ -181,13 +181,12 @@
 
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(function () {
-            updateClipboardContent();
+            updateClipboardContent(text);
         });
     }
 
-    async function updateClipboardContent() {
+    async function updateClipboardContent(text) {
         try {
-            const text = await navigator.clipboard.readText();
             document.getElementById('clipboard-content').querySelector('span').innerText = text ? text : "Clipboard is empty";
         } catch (err) {
             console.error('Failed to read clipboard contents: ', err);
