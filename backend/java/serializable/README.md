@@ -453,9 +453,9 @@ private static void performanceTest(Phone phone) throws IOException {
 
 > JSON이 약 4배 가량 더 많은 시간이 걸렸다.
 
-대부분 당연히 Jackson의 직렬화가 Java보다 빠를거라고 생각했을테고 결과도 그리 말해주니 예상한 결과라고 생각할것이다.
+대부분 당연히 Jackson의 직렬화보다 Java보다 빠를거라고 생각했을테고 결과도 그리 말해주니 예상한 결과라고 생각할것이다.
 
-하지만, 사실 이 테스트는 잘못되었다. 
+하지만, 사실 **이 테스트는 잘못되었다.** 
 
 **ObjectMapper** 를 생성하는 비용이 훨씬 크기 때문이다. 특히 GC의 압박때문으로 보이는데, 테스트 카운트가 크게 늘어날수록 소요되는 시간은 훨씬 더 오래 걸렸다.
 
@@ -505,7 +505,7 @@ private static void performanceTest(Phone phone) throws IOException {
 
 그럼 그 결과는 어땠을까? 
 
-놀랍게도 Java 소요시간은 차이가 거의 없지만, Jackson의 JSON 변환은 눈에 띄게 빨라져서 심지어 Java의 직렬화보다도 훨씬 빨랐다.
+ Java 소요시간은 차이가 거의 없지만, 놀랍게도 Jackson의 JSON 변환은 눈에 띄게 빨라져서 심지어 Java의 직렬화보다도 훨씬 빨랐다.
 
 ![image-20231108141755531](https://raw.githubusercontent.com/ShanePark/mdblog/main/backend/java/serializable/serializable.assets/18.webp)
 
@@ -517,7 +517,9 @@ private static void performanceTest(Phone phone) throws IOException {
 
 이러한 직렬화는 특히 자바 기반의 시스템 내에서 객체의 저장, 전송, 캐싱이 필요할 때 특히 유용하다. 이러한 장점들 때문에 Java 기본 직렬화는 여전히 분산 시스템, RMI, 세션, 캐싱 등에서 중요한 역할을 하고있다.
 
-하지만 완벽한 해결책은 아니므로 목적에 따라 다양한 직렬화 방법 중 상황에 맞는 방법을 잘 선택하도록 하자. `이펙티브 자바`에서도 자바 직렬화에 많은 문제가 있으니 대안을 찾으라고 하며 차라리 JSON이나 프로토콜 버퍼를 쓰라고 한다.
+하지만 현대에는 실무에서 더 이상 객체 직렬화를 사용할 일이 없다. 더 나은 직렬화 방법들이 너무나도 많다.
+
+목적에 따라 다양한 직렬화 방법 중 상황에 맞는 방법을 잘 선택하도록 하자. `이펙티브 자바`에서도 자바 직렬화에 많은 문제가 있으니 대안을 찾으라고 하며 차라리 JSON이나 프로토콜 버퍼를 쓰라고 한다.
 
 위에서 작성한 샘플 코드는 아래의 Github 저장소에서 확인할 수 있다.
 
