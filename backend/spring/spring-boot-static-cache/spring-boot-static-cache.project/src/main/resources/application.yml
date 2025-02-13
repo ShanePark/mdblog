@@ -1,0 +1,10 @@
+spring:
+  web:
+    resources:
+      cache:
+        period: PT720H
+      chain:
+        strategy:
+          content:
+            enabled: true
+            paths: /**
