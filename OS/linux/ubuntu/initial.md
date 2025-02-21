@@ -1,7 +1,5 @@
 # 개발자를 위한 Ubuntu 필수 설치와 설정
 
-<img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/initial.assets/Install-Ubuntu-Linux.webp" width=640 height=400 alt=ubuntu>
-
 > 꾸준히 최신 정보로 업데이트 되는 글 입니다.
 
 ## 들어가기전에 
@@ -522,6 +520,12 @@ sudo apt install gnome-shell-extension-autohidetopbar
 가장 위에 있는 Show Panel when mouse approaches edge of the screen 옵션을 켜주고 가장 아래의 Intellihide 에 있는 두개의 옵션을 꺼주면 됩니다.
 
 ### 창 분할 - ShellTile
+
+> Ubuntu 22.04 부터는 ShellTile 이 작동하지 않기 때문에 그땐 tiling assitant 추천
+>
+> https://github.com/Leleat/Tiling-Assistant
+>
+> https://extensions.gnome.org/extension/3733/tiling-assistant/
 
 Gnome의 기본 창 분할도 사용하는데 꽤나 만족스러웠습니다만, 피벗 모니터에서 상/하로 창을 분할하지 못하는게 가장 큰 약점이었습니다. ShellTile Extention을 설치 하면 창분할을 굉장히 직관적이고 편하게 할 수 있습니다.
 
