@@ -19,7 +19,7 @@ class TimeExtractionServiceIntegrationTest {
 
     @Test
     void extractTime() {
-        TimeExtractionRequest request = new TimeExtractionRequest(LocalDate.now(), "친구들과 밤 11시에 만나기");
+        TimeExtractionRequest request = new TimeExtractionRequest(LocalDate.of(2025, 2, 28), "친구들과 밤 11시에 만나기");
         TimeExtractionResponse response = timeExtractionService.extractTime(request);
 
         Assertions.assertThat(response.result()).isTrue();

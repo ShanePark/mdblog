@@ -2,7 +2,7 @@
 
 ## Intro
 
-Deepseek를 테스트 해보고  리소스 대비 대단한 성능에 감탄을 했고, 그 이후로 항상 개인적으로 진행 중인 프로젝트에서도 하나씩 LLM을 연동한 기능을 추가하려고 생각해왔다. LLM을 적용해 가치를 만들어낼 수 있는 분야는 너무나도 다양하다.
+Deepseek를 테스트 해보고 리소스 대비 대단한 성능에 감탄을 했고, 그 이후로 항상 개인적으로 진행 중인 프로젝트에서도 하나씩 LLM을 연동한 기능을 추가하려고 생각해왔다. LLM을 적용해 가치를 만들어낼 수 있는 분야는 너무나도 다양하다.
 
 튜토리얼 수준으로 진행할 예정이기에 원래는 로컬에서 DeepSeek R-1의 8B 정도의 모델을 돌려서 처리하려 했지만, 아쉽게도 몇 번의 테스트 결과 해결되지 않는 한글 처리 이슈가 있었다. 응답이 오래 걸리는건 스케줄러로 처리하도록 하면 어느정도는 해결 가능하지만, 정확도는 타협할 수 없는 부분이다. 32B 이상 모델은 사용해야 한글도 원활하게 소화해내는걸로 보이는데 집에서 열심히 돌아가고 있는 서버 노트북 스펙은 그 정도를 감당할 수준이 아니다.
 
@@ -23,7 +23,7 @@ Gemini 2.0 Flash는 Free Tier에서 RPM(분당 최대 요청)이 15이고 Flash-
 ### 프로젝트 개요
 
 이번 프로젝트에서는 LLM을 활용해 사용자가 입력한 본인의 스케쥴에서 시간 데이터를 따로 추출하는 기능을 구현할 것이다.
- 예를 들어 `"친구들과 밤 11시에 만나기"`라는 문장이 들어오면, "밤 11시"라는 시간을 추출하여 `"2025-02-28T23:00:00"`과 같은 형식으로 반환하고 시간에 관련된 데이터가 제외된 텍스트인 `친구들과 만나기`를 따로 분리해내는 것이다.
+예를 들어 `"친구들과 밤 11시에 만나기"`라는 문장이 들어오면, "밤 11시"라는 시간을 추출하여 `"2025-02-28T23:00:00"`과 같은 형식으로 반환하고 시간에 관련된 데이터가 제외된 텍스트인 `친구들과 만나기`를 따로 분리해내는 것이다.
 
 > 개인 스케줄을 입력하는 사이드 프로젝트를 만들었는데, 약속 시간을 입력하는 UX는 언제나 번거롭기 때문에 사용자들은 그냥 내용을 입력할 때 시간도 텍스트로 기입하는 쪽을 선호한다. 정형화되지 않은 시간데이터는 활용도가 떨어지는데 LLM이 해결하기 좋은 문제라고 생각했다.
 >
@@ -148,7 +148,7 @@ class TimeExtractionServiceUnitTest {
                 .build();
 
         TimeExtractionService service = new TimeExtractionService(chatModel);
-        TimeExtractionRequest request = new TimeExtractionRequest(LocalDate.now(), "친구들과 밤 11시에 만나기");
+        TimeExtractionRequest request = new TimeExtractionRequest(LocalDate.of(2025, 2, 28), "친구들과 밤 11시에 만나기");
         TimeExtractionResponse response = service.extractTime(request);
 
         Assertions.assertThat(response.result()).isTrue();
@@ -161,7 +161,7 @@ class TimeExtractionServiceUnitTest {
 ```
 
 > `temperature`는 답변의 일관성이 중요한 경우 **0에 가깝게** 설정하는 것이 좋다.
->  창의성과 다양성이 필요한 경우에는 **1 이상으로 올려야 한다.** (범위: 0~2)
+> 창의성과 다양성이 필요한 경우에는 **1 이상으로 올려야 한다.** (범위: 0~2)
 
 잘 작동한다면 이제 통합 테스트를 통해 Spring 설정이 정상적으로 반영되는지도 확인한다.
 
@@ -175,7 +175,7 @@ class TimeExtractionServiceIntegrationTest {
 
     @Test
     void extractTime() {
-        TimeExtractionRequest request = new TimeExtractionRequest(LocalDate.now(), "친구들과 밤 11시에 만나기");
+        TimeExtractionRequest request = new TimeExtractionRequest(LocalDate.of(2025, 2, 28), "친구들과 밤 11시에 만나기");
         TimeExtractionResponse response = timeExtractionService.extractTime(request);
 
         Assertions.assertThat(response.result()).isTrue();
@@ -267,26 +267,26 @@ public class TimeExtractionService {
     private String generatePrompt(TimeExtractionRequest request) {
         return String.format("""
                  Task: Extract time from the text and return a JSON response.
-                
+
                  - Identify time and convert it to ISO 8601 (YYYY-MM-DDTHH:MM:SS).
                  - Remove the identified time from the text. The remaining text becomes `content`.
                  - If no time is found, return:
                    { "result": true, "hasTime": false}
                  - If multiple time exists, return:
                    { "result": false }
-                
+
                  Respond in JSON format only, with the following fields:
                  - result
                  - hasTime
                  - datetime
                  - content
-                
+
                  No explanations.
-                
+
                  ===
-                
+
                  input:
-                
+
                  {
                      "date": "%s",
                      "content": "%s"
@@ -322,11 +322,11 @@ public class TimeExtractionService {
 
 ```json
 {
-    "error": {
-        "code": 429,
-        "message": "Resource has been exhausted (e.g. check quota).",
-        "status": "RESOURCE_EXHAUSTED"
-    }
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
 }
 ```
 
