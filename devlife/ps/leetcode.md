@@ -1,14 +1,14 @@
-# Leetcode 1년, 드디어 릿코드 티셔츠
+# Leetcode 1년, 드디어 리트코드 티셔츠
 
 <img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/leetcode2.png" width=500 height=500 alt=tshirt>
 
-> 릿코드에서는 6,000 릿코드 코인을 모으면 티셔츠를 줍니다.
+> 리트코드에서는 6,000 리트코드 코인을 모으면 티셔츠를 줍니다.
 
 ## Leetcode
 
 모든 분들이 이미 잘 알고 계신 leetcode.com 에서는 간편하게 코딩 문제를 풀이 해 볼 수 있습니다. 
 
-릿코드를 시작하게 된 계기는 단순했습니다. 심심할 때 마다 게임하는 기분으로 프로그래머스에서 코딩 문제풀이를 하곤 했었는데, 지금은 프로그래머스에 제법 새로운 문제가 많이 추가 되었지만 제가 릿코드를 시작한 22년 1월에는 지금처럼 문제가 많지는 않았습니다.
+리트코드를 시작하게 된 계기는 단순했습니다. 심심할 때 마다 게임하는 기분으로 프로그래머스에서 코딩 문제풀이를 하곤 했었는데, 지금은 프로그래머스에 제법 새로운 문제가 많이 추가 되었지만 제가 리트코드를 시작한 22년 1월에는 지금처럼 문제가 많지는 않았습니다.
 
 <img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208211550515.png" width=375 height=170 alt=programmers>
 
@@ -16,7 +16,7 @@
 
 물론 코딩테스트 실력을 늘리려면 무작정 많이 푸는것 보다 분야별로 난이도별로 전략적으로 접근하는편이 좋다고는 하지만, 저는 그냥 잠깐잠깐 심심함을 느낄 때 마다 들어가서 재미로 무작정 푸는거다 보니 난이도보다는 그냥 다양하고 재밌는 문제가 많은 편이 더 좋았습니다.
 
-그러던 중 Leetcode를 알게 되었고, 심지어 Daily Quest 도 있고 꾸준히 문제를 풀면 릿코드 코인이라는 것도 주기 때문에 너무 재밌었고 그대로 1년을 하루도 빼먹지 않고 문제풀이를 하였습니다.
+그러던 중 Leetcode를 알게 되었고, 심지어 Daily Quest 도 있고 꾸준히 문제를 풀면 리트코드 코인이라는 것도 주기 때문에 너무 재밌었고 그대로 1년을 하루도 빼먹지 않고 문제풀이를 하였습니다.
 
 <img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208212124656.png" width=750 height=350>
 
@@ -30,7 +30,7 @@
 
 > Leetcode를 시작 할 때만 해도, 계산상으로는 1년정도가 걸릴 것 같긴 하지만 이걸 모으는 날이 정말 올 수 있을까 의심이 많았습니다.
 
-포인트를 모으는 내내 릿코드 티셔츠를 받은 다른 후기가 혹시 있을까 싶고 호기심에 여기 저기 검색해 봤었는데, Reddit에서 찾은 글 [1개](https://www.reddit.com/r/leetcode/comments/wdb28k/finally/) 외에는 찾을 수가 없었습니다. 그래서 정말 한국에도 안전하게 배송이 잘 오는지, 온다면 오는데 얼마나 걸리는지 등등 궁금한게 참 많았습니다.
+포인트를 모으는 내내 리트코드 티셔츠를 받은 다른 후기가 혹시 있을까 싶고 호기심에 여기 저기 검색해 봤었는데, Reddit에서 찾은 글 [1개](https://www.reddit.com/r/leetcode/comments/wdb28k/finally/) 외에는 찾을 수가 없었습니다. 그래서 정말 한국에도 안전하게 배송이 잘 오는지, 온다면 오는데 얼마나 걸리는지 등등 궁금한게 참 많았습니다.
 
 ### Order
 
@@ -68,7 +68,7 @@
 
 특히 배송을 한 후 발송 된 이메일이 인상적이었는데요.
 
->  티셔츠 및 배송에 대해 릿코드측에서 이미 모든 비용을 지불 했기 때문에 혹시 배송과정에 어떤 종류의 요금이라도 요구를 한다면 거절 하고 파기하라고 한 후 저희에게 연락을 주세요.
+>  티셔츠 및 배송에 대해 리트코드측에서 이미 모든 비용을 지불 했기 때문에 혹시 배송과정에 어떤 종류의 요금이라도 요구를 한다면 거절 하고 파기하라고 한 후 저희에게 연락을 주세요.
 
 라고 했습니다. 저는 1년 이상 Leetcode를 이용하면서 돈을 1센트도 지불하지 않았음에도 불구하고 이렇게 까지 해주는 점에서 마음속에 Leetcode를 향한 제법 loyalty가 생겨났습니다.
 
@@ -82,7 +82,7 @@
 
 ### T-Shirt
 
-티셔츠에 릿코드 스티커가 추가로 들어 있었습니다.
+티셔츠에 리트코드 스티커가 추가로 들어 있었습니다.
 
 ![s](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/s.jpeg)
 
@@ -98,13 +98,13 @@
 
 ## 마치며
 
-재미로 시작한 릿코드였는데 이렇게 티셔츠도 받았고 나름 코딩 문제를 꾸준히 풀다 보니 실력도 늘었습니다. 고등학교를 졸업한지 15년이 되어 수학적 사고능력이 하락했을거라 걱정했는데 어쨌든 하면 늘기는 하는 것 같습니다.
+재미로 시작한 리트코드였는데 이렇게 티셔츠도 받았고 나름 코딩 문제를 꾸준히 풀다 보니 실력도 늘었습니다. 고등학교를 졸업한지 15년이 되어 수학적 사고능력이 하락했을거라 걱정했는데 어쨌든 하면 늘기는 하는 것 같습니다.
 
 ![image-20230208215645155](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/image-20230208215645155.png)
 
 > 높은 랭킹은 아니지만, 조금씩은 오르는 추세의 Rating
 
-릿코드에서의 Weekly Contest 랭킹도 제법 올랐고
+리트코드에서의 Weekly Contest 랭킹도 제법 올랐고
 
 ![IMG_0288](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devlife/ps/leetcode.assets/IMG_0288.PNG)
 
