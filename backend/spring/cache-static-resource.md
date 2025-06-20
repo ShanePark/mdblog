@@ -121,6 +121,8 @@ spring:
 
 끝
 
+> `?v=` 방식도 귀찮다면 이제 [[Spring Boot] 정적 파일 캐싱 및 자동 버전 관리 설정](https://shanepark.tistory.com/536) 글을 참고해서 적용하면 된다.
+
 **References**
 
 - https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/static-resources.html
