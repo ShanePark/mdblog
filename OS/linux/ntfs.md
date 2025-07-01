@@ -133,6 +133,9 @@ sudo apt install ntfs-3g
 
 # rhel
 sudo yum install ntfs-3g
+
+# 예전의 RHEL/CentOS 배포판에서는 mkntfs가 이 패키지에 들어 있었음.
+sudo yum install ntfsprogs
 ```
 
 ### 포맷
