@@ -1,5 +1,25 @@
 # Ubuntu 22.04 Chrome 135 한글 입력 문제
 
+> UPDATE: 2025년 8월 5일 릴리즈 된 Chrome 139 버전으로 업데이트 후 문제 해결됨.
+>
+> https://developer.chrome.com/release-notes/139
+>
+> ```
+> # APT 저장소 최신 Chrome 버전 및 Candidate 확인. 139버전이 릴리즈 되어있어야함.
+> apt policy google-chrome-stable
+> 
+> # 기존의 134버전에 홀드 mark 했던 것 풀기
+> sudo apt-mark unhold google-chrome-stable
+> 
+> sudo apt update
+> sudo apt install google-chrome-stable
+> 
+> # 새로 설치된 버전 확인 후 Chrome 브라우저 종료 후 재시작
+> google-chrome --version
+> ```
+>
+> 
+
 ## Intro
 
 우분투에서 크롬을 135 버전으로 올린 이후 일주일째 한글 입력할 때 마다 스트레스를 받고있다.
