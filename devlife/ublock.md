@@ -2,6 +2,18 @@
 
 ## Intro
 
+> **2025.09.03 추가**
+>
+> Chrome 139 버전까지는 설정 바꿔가면서 어떻게든 썼지만 140부터는 설정변경으로도 활성화가 안된다.
+>
+> 이제는 어쩔 수 없이 크롬에서는 Ublock Origin Lite를 사용해야 한다.
+>
+> https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh
+>
+> 다만 강력했던 이전의 광고차단 기능이 다소 꺾였으니, 필요한 상황에서는 Firefox 등을 대안으로 사용해야 한다.
+
+...
+
 Chrome 에서 uBlock을 완전 멈춰세웠다.
 
 > This extension is no longer available because it doesn't follow best practices for Chrome extensions
