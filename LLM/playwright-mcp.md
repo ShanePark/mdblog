@@ -108,5 +108,5 @@ Playwright MCP 의 도입으로 가장 큰 장점은 반복적인 확인 작업�
 ```bash
 # Context7
 claude mcp add --transport http context7 --scope user -- https://mcp.context7.com/mcp
+codex mcp add context7 -- npx -y @upstash/context7-mcp
 ```
-
