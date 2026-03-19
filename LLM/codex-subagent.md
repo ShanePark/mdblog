@@ -34,6 +34,43 @@
 
 > codex 에도 서브에이전트가 들어온 감격적인 순간
 
+다만 클로드코드에서 주로 했던 방법과 동일하게 `AGENTS.md`에 서브에이전트 활용 원칙을 넣어두니, 대화에서 매번 "서브에이전트를 써라"고 직접 지시하지 않아도 `codex`가 필요한 시점에 알아서 서브에이전트를 활용하는게 확인되었다. 특히 독립적인 탐색, 검증, 검색처럼 병렬로 돌릴 수 있는 작업에서 효과가 좋아서 컨텍스트 파일에 서브에이전트 활용 관련해서는 꼭 적어두는걸 추천한다.
+
+예를 들어 아래처럼 적어두고 테스트 해 보았는데 원하는대로 잘 동작했다
+
+```md
+## 6. Sub-Agent Use
+
+- Consider sub-agent use on every non-trivial task.
+- Use sub-agents proactively when independent research, search, verification, or disjoint implementation work can run in parallel within the current checklist item and clearly help.
+- Do not use sub-agents for sequential steps, overlapping file edits, or tightly coupled refactors.
+- When spawning sub-agents, use the same model as the main agent. Do not override the sub-agent model unless the user explicitly asks for a different one.
+- The main agent remains responsible for planning, integration, final verification, and user communication.
+```
+
+이런 식으로 규칙을 미리 적어두면 메인 에이전트가 계획과 통합을 맡고, 독립적인 조사나 검증만 서브에이전트에 위임하는 패턴이 자연스럽게 자리잡는다. 서브에이전트를 무조건 많이 만드는 것이 아니라, 병렬화 이점이 분명한 경우에만 쓰도록 제한하는 점도 중요하다.
+
+스스로 생성한 서브에이전트는 `gpt-5.4-mini`를 호출하는걸 확인했는데, 성능이 Sonnet 4.6과 거의 동일하기때문에 충분히 쓸만하다.
+
+![1](https://raw.githubusercontent.com/ShanePark/mdblog/main/LLM/codex-subagent.assets/3.webp)
+
+> Uses GPT-5.2-Mini
+
+하지만 사용량도 넉넉하게 남은 편이고 왠만하면 더 나은 모델을 사용하고 싶어서 한 줄을 추가했다.
+
+```
+ When spawning sub-agents, use the same model as the main agent. Do not override the sub-agent model unless the user explicitly asks for a different one.
+```
+
+![2](https://raw.githubusercontent.com/ShanePark/mdblog/main/LLM/codex-subagent.assets/4.webp)
+
+> same model 사용에 대한 지침을 넣으니 Uses 까지만 써있고 사용중인 모델이 별도로 표시되지 않음.
+>
+> 물론 GPT-5.4를 사용하라고 명시할 수 있으나 추후에 새로운 모델이 나와서 바꿨을때도 알아서 사용하려면, 메인 에이전트의 모델을 그대로 사용하라는 지침을 작성하는 편이 낫다.
+
+모델 품질 차이에 민감한 작업이라면 이 한 줄도 꽤 유용하다.
+
+
 ## 마치며
 
 `Claude Code`에서만 쓰던 서브에이전트가 `codex`에도 들어왔다. 카카오 대란으로 확보한 Pro 플랜 덕분에 당분간은 모든 모델을 넉넉하게 쓸 수 있어 더욱 반가운 소식이다. 두 도구가 서로의 장점을 빠르게 흡수하며 경쟁하는 구도가 되니, 사용자 입장에서는 더없이 반가운 상황이다. 
