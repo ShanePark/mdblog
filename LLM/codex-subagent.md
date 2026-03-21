@@ -68,6 +68,10 @@
 >
 > 물론 GPT-5.4를 사용하라고 명시할 수 있으나 추후에 새로운 모델이 나와서 바꿨을때도 알아서 사용하려면, 메인 에이전트의 모델을 그대로 사용하라는 지침을 작성하는 편이 낫다.
 
+![5](https://raw.githubusercontent.com/ShanePark/mdblog/main/LLM/codex-subagent.assets/5.webp)
+
+> Codex Version 26.318.11754 (1100) 에서는 이제 same model 지침을 두어도 모델명이 정확히 표시되는게 확인된다. 역시 사용중인 모델이 별도로 표시되지 않았던건 버그였던 모양이다.
+
 모델 품질 차이에 민감한 작업이라면 이 한 줄도 꽤 유용하다.
 
 
