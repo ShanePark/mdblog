@@ -185,6 +185,34 @@ Use this structure unless the topic strongly calls for something else.
 - Favor a flow like `background -> real example -> verification -> caveat`.
 - Each section should usually carry one main point.
 
+### Heading Hierarchy Rules
+
+- Treat `#`, `##`, and `###` as different abstraction levels.
+- `#` is the single search-friendly post title. It should expose the technology, action, problem, or result.
+- `##` is a high-level section heading. Keep it short and functional, usually 1 to 4 words such as `문제`, `해결`, `설치`, `설정`, `테스트`, `사용 후기`, `결론`, `마치며`.
+- Do not use long sentence-like `##` headings that already explain the body content. Avoid headings like `왜 SearXNG를 찾게 되었나`, `설치와 현재 테스트 설정`, `지금 단계에서 느낀 장점과 주의점`.
+- `###` is where concrete items should go: comparison points, actual steps, config files, causes, cautions, decision criteria, or measured results.
+- If one `##` section contains multiple concrete points, split them into `###` subsections instead of making the `##` itself overly specific.
+- A short or simple post does not have to use `###`. If the flow is simple, `##` plus compact paragraphs can be enough.
+- Keep heading abstraction consistent within the same post: upper levels should stay broad, lower levels should carry the details.
+- When possible, prefer section labels that already appear often in this repository over inventing new abstract nouns. Common patterns include `문제`, `해결`, `설치`, `설정`, `테스트`, `사용 후기`, `비교해본 서비스들`, `결론`, `마치며`.
+
+Example:
+
+```md
+## 문제
+### Brave Search가 아쉬웠던 이유
+### Playwright로는 부족했던 이유
+
+## 설정
+### compose.yaml
+### settings.yml
+
+## 사용 후기
+### 좋았던 점
+### 주의사항
+```
+
 #### Default Flow: Problem-Solving Post
 
 - `문제`
