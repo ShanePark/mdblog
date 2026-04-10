@@ -192,6 +192,8 @@ Use this structure unless the topic strongly calls for something else.
 - `##` is a high-level section heading. Keep it short and functional, usually 1 to 4 words such as `문제`, `해결`, `설치`, `설정`, `테스트`, `사용 후기`, `결론`, `마치며`.
 - Do not use long sentence-like `##` headings that already explain the body content. Avoid headings like `왜 SearXNG를 찾게 되었나`, `설치와 현재 테스트 설정`, `지금 단계에서 느낀 장점과 주의점`.
 - `###` is where concrete items should go: comparison points, actual steps, config files, causes, cautions, decision criteria, or measured results.
+- Keep `###` short too. In recent posts, these are usually concise labels such as `Rate Limit`, `Ollama`, `원인`, `리소스 생성`, `API 연동`, `결과`, `compose.yaml`, `settings.yml`.
+- Avoid sentence-like `###` headings when a shorter label will do. Prefer `Brave`, `Playwright`, `버전`, `JSON`, `Naver` over headings such as `Brave Search가 아쉬웠던 이유`, `SearXNG를 찾게 된 이유`, `OpenClaw 연동 전에 볼 것`.
 - If one `##` section contains multiple concrete points, split them into `###` subsections instead of making the `##` itself overly specific.
 - A short or simple post does not have to use `###`. If the flow is simple, `##` plus compact paragraphs can be enough.
 - Keep heading abstraction consistent within the same post: upper levels should stay broad, lower levels should carry the details.
@@ -201,15 +203,15 @@ Example:
 
 ```md
 ## 문제
-### Brave Search가 아쉬웠던 이유
-### Playwright로는 부족했던 이유
+### Brave
+### Playwright
 
 ## 설정
 ### compose.yaml
 ### settings.yml
 
 ## 사용 후기
-### 좋았던 점
+### 장점
 ### 주의사항
 ```
 
