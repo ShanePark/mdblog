@@ -253,9 +253,13 @@ Example:
 - Always explain code blocks before and/or after them.
 - Do not drop code without interpretation.
 - Prefer before/after comparisons, minimal reproductions, and real config snippets.
-- Wrap tool names, commands, versions, prices, config keys, and model names in backticks when practical.
+- Wrap exact commands, filenames, paths, config keys, env vars, model IDs, and other literal strings in backticks when practical.
 - Favor practical snippets that readers can reuse immediately.
 - More code blocks are not automatically better. Keep only what supports the post's core point.
+- Inline backtick guidance is about `like this`, not fenced code blocks.
+- Use inline backticks only for exact strings the reader may need to copy, type, search, or match: commands, filenames, paths, config keys, env vars, model IDs, UI labels, or literal values.
+- Leave product names, repeated tool names, general technical terms, metrics, and ordinary explanation as plain text unless exact matching really matters. If emphasis alone is enough, prefer `**bold**`.
+- In a dense sentence, mark only the one or two tokens that matter most.
 
 ### Images
 
@@ -320,6 +324,7 @@ If information is time-sensitive, verify it again at the time of writing.
 - Does the direction or conclusion appear early?
 - Is the body organized into functional sections?
 - Are code and commands reusable and properly explained?
+- Could any inline backtick be removed without losing exactness?
 - Does the post include limitations and caveats, not only strengths?
 - Are concrete details such as versions, prices, dates, or limits included where needed?
 - Does the closing contain a judgment or recommendation?
@@ -334,6 +339,7 @@ If information is time-sensitive, verify it again at the time of writing.
 - Do not overuse excitement or hype.
 - Do not drag out abstract explanation without concrete application.
 - Do not let the post become a pile of code blocks and screenshots with no narrative.
+- Do not wrap ordinary product names or technical terms in inline backticks just because they look technical.
 - Do not end vaguely.
 
 ## 12. Final Writing Procedure
