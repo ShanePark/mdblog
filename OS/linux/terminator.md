@@ -2,7 +2,7 @@
 
 ## Intro
 
-Terminator는 자바로 작성된 오픈소스 터미널 에뮬레이터 입니다. Windows, MacOS, Linux 및 기타 Unix 시스템에서 모두 사용이 가능 합니다.
+Terminator는 Python으로 작성된 오픈소스 터미널 에뮬레이터 입니다. Windows, MacOS, Linux 및 기타 Unix 시스템에서 모두 사용이 가능 합니다.
 
 보통 맥북에서는 iTerm2를 사용하는데요, 우분투 기본 터미널이 좋긴 한데 창 분할에서 불편함을 느껴 설치했습니다.
 
