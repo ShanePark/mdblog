@@ -19,24 +19,28 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install git curl build-essential -y
 ```
 
-Node 설치 (v22.16.0 이상 필요, Node 24 권장)
+Node 설치
+
+OpenClaw는 Node 22.22.3+, 24.15+, 25.9+를 지원하며 Node 26을 기본 권장한다. 직접 Node 버전을 관리할 이유가 없다면 공식 설치 스크립트가 필요한 버전까지 준비해준다.
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.bashrc
-nvm install 24 # Node.js 24 버전 설치
-node -v # 설치된 버전 확인 (v24.x.x가 나와야 함)
+nvm install 26
+node -v
 ```
 
-OpenClaw 설치
+OpenClaw 설치. npm 12 또는 npm 11.16 이상에서는 lifecycle script를 명시적으로 허용해야 한다.
 
 ```bash
-npm install -g openclaw@latest
-# or: pnpm add -g openclaw@latest
+npm install -g openclaw@latest --allow-scripts=openclaw
+# or: pnpm add -g --allow-build=openclaw openclaw@latest
 
 #설치 잘 된 것 확인
 openclaw --version # OpenClaw 2026.3.23-2 (7ffe7e4)
 ```
+
+> npm 11.15 이하에서는 `--allow-scripts` 옵션 없이 설치한다.
 
 데몬 설치
 

@@ -10,9 +10,11 @@
 
 https://ubuntu.com/download/desktop 링크에 접속해 원하는 버전의 우분투를 다운 받습니다.
 
+새로 설치한다면 현재 LTS인 Ubuntu 26.04 이미지를 받는 편이 좋습니다. 설치할 PC의 아키텍처에 맞는 ISO인지도 함께 확인합니다.
+
 <img src="https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/linux/ubuntu/boot-drive.assets/image-20221229100830293.png" width=750 height=600 alt=down> 
 
-저는 Ubuntu 22.04.1 LTS Desktop 버전을 다운 받았습니다.
+아래 화면에서는 Ubuntu 22.04.1 LTS Desktop 이미지를 사용했지만 Startup Disk Creator의 사용 방법은 같습니다.
 
 서버용도로 사용할 게 아니라면 Desktop 버전을 다운 받으면 됩니다.
 

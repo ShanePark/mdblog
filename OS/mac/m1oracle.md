@@ -2,17 +2,15 @@
 
 ## 시작하기 앞서
 
-> 꾸준히 최신 정보로 수정 중입니다. 최근 수정일자를 확인해주세요.
-
 이미 SQL Developer 를 실행하는건 성공을 했는데 데이터베이스 구축을 하는 방법을 찾고 있는 분은 ~~두 가지 방법이 있습니다.~~ 이제 Apple Silicon 환경에서도 도커를 활용해 오라클 DB를 띄우는 방법이 생겼습니다.
 
-0. **2022년 8월 추가**  : Docker 로 로컬에 DB 구축
+0. **Docker로 로컬 DB 구축**
 
 > 이제는 [[MacOS] M1 맥북 도커로 ORACLE DB 실행하기](https://shanepark.tistory.com/400) 를 참고 해서 로컬에서 오라클 DB를 띄우실 수 있습니다. 
 
-1. Docker를 이용한 가상 환경에 DB 구축 ( 2021년 8월 기준)
+1. Docker를 이용한 가상 환경에 DB 구축
 
-> 현재 (2021. 08. 14) m1 맥북에서 Oracle 데이터베이스를 가동할 수 있는 방법은 전혀 없습니다. 수많은 해외 포럼도 찾아봤지만 그 누구도 Apple Silicon에서 OracleDB 구동한 사람은 아직 없습니다. arm64 방식으로 칩셋이 전혀 다르기 때문에 Docker를 사용해도 불가능합니다. 저도 여러가지 방법을 다 해봤는데 불가능 했습니다. 
+> 2021년 당시에는 Apple Silicon에서 Oracle Database를 구동할 공식 ARM64 이미지가 없어 Docker로도 실행할 수 없었습니다. 현재는 Oracle Database 19c Enterprise Edition과 26ai Free Edition이 ARM64를 지원하므로 이 제약은 사라졌습니다.
 
 2. 외부 서버에 DB 구축
 
@@ -54,9 +52,11 @@ SQL Developer는 Java로 구동되기 때문에 어떤 플랫폼에서든 문제
 
 ### SQL Developer 다운로드 
 
-[www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
+[Oracle SQL Developer 다운로드](https://www.oracle.com/database/sqldeveloper/technologies/download/)
 
-일단 SqlDeveloper를 다운 받습니다. 최신 버전을 다운 받으면 됩니다.
+현재 다운로드 페이지에는 Apple Silicon용 `macOS ARM64` 패키지가 따로 제공되며 JDK 17도 포함되어 있습니다. M1 이후 맥에서는 이 패키지를 받아 압축을 풀고 애플리케이션을 실행하면 됩니다.
+
+아래 내용은 별도 JDK를 요구하던 구형 macOS 패키지를 계속 사용해야 할 때만 참고해주세요.
 
 <br><br>
 
@@ -74,7 +74,7 @@ SQL Developer는 Java로 구동되기 때문에 어떤 플랫폼에서든 문제
 
 <br><br>
 
-### 실행방법1
+### 구버전 실행방법1
 
 그냥 다운받아 실행해도 문제 없이 실행 되는 분들은 상관 없지만, m1 환경에서 자주 SQL developer가 튕기거나 하는 분들은 새로운 실행 방법을 추천드리겠습니다.
 
@@ -126,7 +126,7 @@ Applications 폴더에 넣어줍니다.
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/m1oracle.assets/img-20211111203540351.png)
 
-### 실행방법2
+### 구버전 실행방법2
 
 > 자바가 있어도 저런 에러가 뜬다거나, 혹은  SQL developer가 너무 많이 튕긴다면 사용 해 볼수 있는 방법입니다.
 

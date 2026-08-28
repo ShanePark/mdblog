@@ -10,7 +10,7 @@
 
 최근 출시한 M5 맥북 프로의 경우에는 CPU가 무려 15코어부터 시작하는데 서브에이전트 6개 제한은 많이 아쉽다.
 
-이 경우 수치를 늘리고싶다면 `config.toml`에서 직접 조정할 수 있다.
+이 글을 작성할 때는 기본 상한이 6개였지만, 현재 공식 문서에서는 설정이 없으면 Codex가 실행 환경에 맞는 기본값을 선택한다고 안내한다. 상한을 직접 지정하려면 `config.toml`을 수정하면 된다.
 
 ## 설정 방법
 
@@ -18,10 +18,10 @@
 
 ```toml
 [agents]
-max_threads = 25   # 동시에 열 수 있는 에이전트 스레드 상한 (기본값: 6)
-max_depth = 1      # 에이전트 중첩 깊이 (기본값: 1)
-# job_max_runtime_seconds 는 서브에이전트의 타임아웃이고 기본값은 1800초
+max_concurrent_threads_per_session = 25
 ```
+
+`max_threads`는 지금도 하위 호환 별칭으로 인식되지만 새 설정에는 정식 키인 `max_concurrent_threads_per_session`을 사용하면 된다. 반면 `max_depth`와 `job_max_runtime_seconds`는 현재 공식 설정 항목이 아니므로 함께 넣지 않는다.
 
 파일이 없다면 새로 만들면 되는데 내 경우는 이미 파일이 있었다.
 
@@ -33,8 +33,6 @@ vi ~/.codex/config.toml
 프로젝트마다 다른 설정을 적용하고 싶다면 레포 루트의 `.codex/config.toml`에 동일하게 작성하면 된다. 프로젝트 설정이 글로벌 설정보다 우선한다.
 
 Codex cli 와 Codex App 모두 동일한 `~/.codex/config.toml`을 공유한다. macOS 앱 공식 문서에도 "앱의 에이전트는 CLI 및 IDE 익스텐션과 동일한 설정을 상속한다"고 명시되어 있다. 즉, `config.toml`을 한 번만 수정하면 CLI와 앱 모두에 적용된다.
-
-`max_depth`는 에이전트가 또 다른 에이전트를 낳을 수 있는 중첩 깊이를 제한한다. 기본값 1은 메인 에이전트가 자식을 스폰하되, 그 자식은 다시 에이전트를 낳지 못하도록 막는 설정이다. 이 값을 높이면 재귀적인 위임이 가능해지지만, 토큰 소비와 예측 불가능한 fan-out이 급격히 늘어날 수 있어 특별한 이유가 없다면 기본값을 유지하는 편이 낫다
 
 ![1](https://raw.githubusercontent.com/ShanePark/mdblog/main/LLM/codex-subagents-max.assets/1.webp)
 
@@ -49,5 +47,4 @@ Codex Pro 플랜에서는 10시간씩 중단 없이 밤새 작업을 시켜도 �
 **References**
 
 - https://developers.openai.com/codex/subagents
-- https://developers.openai.com/codex/config-sample
-- https://developers.openai.com/codex/app/settings
+- https://developers.openai.com/codex/config-reference

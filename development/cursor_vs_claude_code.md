@@ -10,11 +10,13 @@
 
 Claude Code를 만족하며 썼지만, $20짜리 Pro 플랜은 업무용으로 쓰기엔 리밋에 너무 자주 걸렸다. MAX 플랜은 금액이 부담스러운 상황에서, 마침 Cursor CLI가 출시되기도 해서 한 번 써보기로 했다. 회사에서 지원해주는 Cursor Team Plan($40)에 참여한 것도 그 계기였다.
 
+현재 Cursor Teams Standard는 여전히 사용자당 월 $40이지만, 당시의 월 500회 고정 요청 방식은 사라졌다. 각 플랜에는 모델 사용량이 포함되고, 이를 소진한 뒤에는 on-demand 사용량을 별도로 결제하는 구조다. 따라서 아래의 요청 횟수와 비용 평가는 이 글을 작성했을 당시의 경험이다.
+
 ## Cursor CLI
 
 Cursor 사용을 시작할 때만 해도 Cursor CLI만 사용할 예정이었지만 CLI는 후술할 여러가지 이유로 거의 사용하지 못했다. 
 
-Team Plan에서는 월 총 500회 사용량 제한이 있다. 그런데 버그인지 Cursor CLI를 쓰면 토큰 수에 비해 사용량이 터무니없이 빠르게 소모됐다.
+당시 Team Plan에서는 월 총 500회 사용량 제한이 있었다. 그런데 버그인지 Cursor CLI를 쓰면 토큰 수에 비해 사용량이 터무니없이 빠르게 소모됐다.
 
 ![1](https://raw.githubusercontent.com/ShanePark/mdblog/main/development/cursor_vs_claude_code.assets/1.webp)
 
@@ -70,9 +72,9 @@ Cursor에서의 claude-4-sonnet 모델은 Claude Code에서의 Sonnet4와 비교
 
 다행히도 근본적으로 해결되지 못하는 문제들은 차치하더라도 Thinking 모델을 붙여놓고 쓰면 그래도 Claude Code 쓰던 경험의 80% 이상은 커버가 되었다. 쓸만 하는 이야기다.
 
-다만 여전히 토큰 사이즈와 무관하게 월 요청 횟수 제한 기반으로 과금되는 시스템이라, 어떻게든 응답을 한 번에 뱉으려는 경향이 있다. 잔걸음으로 코딩하기는 힘들고 아깝다. Cursor에서는 한 번에 최대한 충분한 컨텍스트를 밀어넣고 작업이 잘 되기를 바라는 '기도 메타'가 주류인 이유다.
+당시에는 토큰 사이즈와 무관하게 월 요청 횟수 제한 기반으로 과금되는 시스템이라, 어떻게든 응답을 한 번에 뱉으려는 경향이 있었다. 현재는 모델 사용량 기반으로 바뀌었지만, 고가 모델과 긴 컨텍스트를 자주 사용하면 포함 사용량이 빠르게 줄어드는 점은 같다.
 
-AI와의 협업에서 짧은 호흡으로 목표를 Align하며 차근차근 쌓아가고, 잦은 커밋으로 안정적으로 진행하는 내 스타일로는 사용량이 x2인 Thinking 모델을 쓰면 일주일 만에 리퀘스트를 다 소모한다.
+AI와의 협업에서 짧은 호흡으로 목표를 Align하며 차근차근 쌓아가고, 잦은 커밋으로 안정적으로 진행하는 내 스타일로는 당시 사용량이 x2인 Thinking 모델을 쓰면 일주일 만에 리퀘스트를 다 소모했다.
 
 ### 다중 모델 지원
 
@@ -137,3 +139,4 @@ Claude는 필요할 때 스스로 서브 에이전트를 생성해 병렬 작업
 - https://www.reddit.com/r/ChatGPTCoding/comments/1l8w2h4/difference_between_using_cursor_and_claude_code/
 - https://blog.naver.com/khjkhj2804/223927854451
 - https://news.hada.io/topic?id=22375
+- https://cursor.com/pricing

@@ -45,9 +45,20 @@ Git worktree는 하나의 저장소에서 여러 개의 작업 디렉토리를 �
 
 각 worktree는 `.git` 파일을 통해 메인 저장소의 `.git` 디렉토리를 참조한다. 전체 저장소를 다시 clone 받으면 Git 히스토리까지 모두 복사되지만, worktree는 작업 파일만 체크아웃하고 Git 데이터는 공유한다. 덕분에 clone 대비 상당한 디스크 공간을 절약할 수 있다.
 
-### Worktree 생성
+### Claude Code에서 바로 생성
 
-Worktree를 생성할 때는 보통 새로운 브랜치도 함께 생성한다. `-b` 옵션을 사용하면 브랜치 생성과 worktree 추가를 한 번에 할 수 있다
+Claude Code는 Worktree 생성을 직접 지원한다. 경로와 브랜치를 세밀하게 지정할 필요가 없다면 다음 명령으로 격리된 세션을 바로 시작하는 편이 간단하다.
+
+```bash
+claude --worktree feature-auth
+# 짧게는 claude -w feature-auth
+```
+
+기본 위치는 `.claude/worktrees/`다. `.env`처럼 Git에서 제외한 파일도 새 Worktree에 복사해야 한다면 `.worktreeinclude`에 경로를 추가하면 된다.
+
+### 직접 Worktree 생성
+
+경로와 브랜치를 직접 관리하고 싶다면 Git 명령을 사용한다. Worktree를 생성할 때는 보통 새로운 브랜치도 함께 생성하며, `-b` 옵션을 사용하면 브랜치 생성과 Worktree 추가를 한 번에 할 수 있다.
 
 ```bash
 # 새 브랜치와 함께 worktree 생성 (권장)
@@ -163,3 +174,8 @@ git worktree add ../another-dir main
 ## 마치며
 
 Git worktree를 활용하면 물리적으로 분리된 환경에서 여러 Claude Code를 동시에 실행할 수 있고, 이는 개발 속도를 획기적으로 향상시킨다. 특히 모노레포 환경이나 독립적인 모듈을 동시에 개발해야 하는 상황에서 상당한 시간 절약을 할 수 있다. 토큰보다는 개발자의 시간이 훨씬 비싸다.
+
+**References**
+
+- https://code.claude.com/docs/en/worktrees
+- https://git-scm.com/docs/git-worktree

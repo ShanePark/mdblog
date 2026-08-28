@@ -29,10 +29,12 @@ Netdata는 아래와 같은 특징들을 가지고 있습니다.
 
 대부분의 Linux 환경에서 쉽게 설치 할 수 있는 script를 공식 제공 하고 있습니다.
 
+현재 공식 설치 스크립트의 주소는 `get.netdata.cloud`로 변경되었습니다.
+
 ![image-20220727160401846](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/monitoring/netdata.assets/image-20220727160401846.png)
 
 ```bash
-wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh
+wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
 ```
 
 스크립트를 실행 하면 이것 저것 필요한 패키지들을 알아서 설치 합니다.
@@ -46,6 +48,8 @@ wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/
 > 설치 완료
 
 오래 걸리지 않고 설치가 완료 되었습니다.
+
+Netdata v2부터 대시보드는 Netdata Cloud 인증을 사용합니다. 19999 포트의 Agent API는 그대로 사용할 수 있지만, 새로 설치한 환경에서 대시보드를 보려면 설치한 노드를 Netdata Cloud에 연결해야 합니다.
 
 NetData는 19999 포트를 통해 접근 할 수 있는데요, 외부에서 보통 방화벽 때문에 접근이 안될 수 있으니 먼저 telnet으로 방화벽 여부를 확인 해 줍니다.
 
@@ -207,11 +211,6 @@ https://editor.swagger.io/?url=https://raw.githubusercontent.com/netdata/netdata
 예를 들어 아래와 같은 HTML 문서를 작성 한다면
 
 ```html
-<script>
-    var netdataNoBootstrap = true;
-</script>
-<script src="https://london.my-netdata.io/dashboard.js"/>
-
 <a href="#">
  <img src="http://localhost:19999/api/v1/badge.svg?chart=system.cpu"/>
 </a>

@@ -12,7 +12,7 @@ Deepseek를 테스트 해보고 리소스 대비 대단한 성능에 감탄을 �
 
 > https://ai.google.dev/gemini-api/docs
 
-Gemini 2.0 Flash는 Free Tier에서 RPM(분당 최대 요청)이 15이고 Flash-Lite는 30으로 제법 넉넉하며, RPD(일 최대 요청)도 1500건으로 충분하다. 하지만 본 글에서는 어떤 LLM을 선택하는지 자체는 크게 중요하지 않으므로 각자 상황에 맞는 모델을 사용하면 된다. 나중에 교체도 쉽다.
+Google은 현재 Free Tier의 RPM·TPM·RPD를 공개된 고정값으로 안내하지 않는다. 모델과 사용 등급, 프로젝트 상태에 따라 활성 한도가 달라지고 그 값은 AI Studio에 표시된다. 따라서 이 글을 작성할 때의 Gemini 2.0 Flash 15 RPM, Flash-Lite 30 RPM, 1,500 RPD를 현재의 공통 한도로 적용할 수는 없다. 본 글에서는 어떤 LLM을 선택하는지 자체는 크게 중요하지 않으므로 각자 상황에 맞는 모델을 사용하면 된다. 나중에 교체도 쉽다.
 
 지금부터 최대한 심플하게 코드를 작성하면서 프로젝트 생성부터 테스트까지 진행해볼 예정이다. 혹시 gemini 를 선택한다면 아래의 링크에서 미리 apiKey 를 생성해두자.
 
@@ -56,7 +56,7 @@ Google Gemini API도 쓰려면 Spring AI에서 기본 지원하지 않기에, [V
 ```groovy
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+    implementation 'org.springframework.ai:spring-ai-starter-model-openai'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -64,7 +64,7 @@ dependencies {
 }
 
 ext {
-    set('springAiVersion', "1.0.0-M6")
+    set('springAiVersion', "1.1.8")
 }
 
 dependencyManagement {
@@ -73,6 +73,8 @@ dependencyManagement {
     }
 }
 ```
+
+이 예제는 Spring Boot 3와 호환되는 Spring AI 1.1.x를 사용한다. Spring Boot 4.0 또는 4.1 프로젝트라면 Spring AI 2.0.1을 선택하면 된다. 버전 조합은 [Spring AI 공식 Getting Started](https://docs.spring.io/spring-ai/reference/getting-started.html)에서 확인할 수 있다.
 
 ## 코드 작성
 
@@ -340,13 +342,13 @@ public class TimeExtractionService {
 }
 ```
 
-OpenAI 호환 API에서는 여러 차례 요청해도 제한에 걸리지 않았다. OpenAI 호환 API는 별도의 RPM 제한을 두지 않거나 훨씬 관대한 정책을 적용하고 있을 것으로 추측된다.
+테스트에서는 OpenAI 호환 API로 여러 차례 요청해도 바로 제한에 걸리지 않았다. 다만 호환 API라고 해서 별도의 무료 한도가 생기는 것은 아니며 같은 프로젝트의 Gemini API 쿼터가 적용된다. 일시적인 테스트 결과만 보고 제한이 없다고 판단해서는 안 된다.
 
 ### Spring AI
 
 Spring AI를 사용하면 LLM과의 연동이 훨씬 단순해지고, 유지보수성이 높아진다. 다양한 LLM API와 호환되는 공통 인터페이스를 제공하기 때문에 특정 벤더에 종속되지 않고, 설정만 변경하면 손쉽게 모델을 교체할 수 있다. 또한 API 호출을 직접 다루는 번거로움을 줄이고, 프롬프트 체이닝을 활용해 더 정교한 요청을 설계할 수 있다. 로깅과 테스트 지원이 강력해서 디버깅이 수월하고, Mocking을 활용하면 네트워크 없이도 안정적인 테스트가 가능하다. 결과적으로, Spring Boot 애플리케이션에서 LLM을 활용할 때 좋은 선택이 될 것이다.
 
-아직 정식출시 되지는 않았지만 [v1.0.0-M6](https://github.com/spring-projects/spring-ai/releases/tag/v1.0.0-M6) 까지 나와있으니 미리 익혀두자.
+Spring AI는 정식 버전이 출시되어 Spring Boot 버전에 맞는 안정 버전을 선택할 수 있다. 이 글처럼 Spring Boot 3을 사용한다면 1.1.x를, Spring Boot 4를 사용한다면 2.0.x를 선택하면 된다.
 
 본 글에서 생성한 프로젝트의 전체 코드는 https://github.com/ShanePark/mdblog/tree/main/backend/spring/spring-ai/springAi 에서 확인 할 수 있다.
 

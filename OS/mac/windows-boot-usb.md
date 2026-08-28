@@ -14,6 +14,8 @@
 
 https://www.microsoft.com/software-download/windows11 에서 적당한 ISO 파일을 다운 받습니다.
 
+Microsoft는 Windows 11의 x64와 Arm64 ISO를 따로 제공합니다. USB를 만드는 Mac의 CPU가 아니라 **Windows를 설치할 대상 PC의 아키텍처**에 맞는 파일을 받아야 합니다. 일반적인 Intel·AMD PC라면 x64 ISO를 선택합니다.
+
 ![image-20220727193325339](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/windows-boot-usb.assets/image-20220727193325339.png)
 
 > Windows 11 을 선택 하고, 언어는 한국어를 선택 한 뒤에 64-bit Download 를 클릭 해 다운받아 줍니다.

@@ -34,6 +34,8 @@ deepseek-r1 모델을 다운로드 한다. ollama 홈페이지의 library 에서
 
 > https://ollama.com/library/deepseek-r1
 
+`deepseek-r1:latest`는 현재 R1-0528 계열을 가리키기 때문에 초기 R1과 응답이 다를 수 있다. 결과를 재현해야 한다면 모델 페이지에서 크기와 태그를 확인해 명시적으로 고정하는 편이 좋다.
+
 ![7](https://raw.githubusercontent.com/ShanePark/mdblog/main/LLM/deepseek.assets/7.webp)
 
 다양한 모델이 보이는데, 무턱대고 큰 모델을 띄웠다가는 곤란할 수 있으니 적당한 모델을 선택한다.

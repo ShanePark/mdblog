@@ -39,6 +39,8 @@ git remote add origin https://github.com/Shane-Park/playddit.git
 git remote add origin git@github.com:Shane-Park/playddit.git
 ```
 
+GitHub의 HTTPS 주소를 사용할 때는 계정 비밀번호로 인증할 수 없습니다. 비밀번호 입력 창에는 Personal Access Token을 사용하거나 Git Credential Manager를 설정해야 합니다. 장기간 사용할 개발 환경이라면 SSH 키를 등록하는 방법도 편리합니다.
+
 이후 기존의 원격 저장소가 없어서 원격 저장소가 추가가 되었다면 아래와 같이 commit 및 push를 진행 해 주면 됩니다.
 
 ```bash
@@ -144,5 +146,10 @@ git fetch --unshallow old
 ![image-20211125103534899](https://raw.githubusercontent.com/Shane-Park/mdblog/main/devops/git/remote-add.assets/image-20211125103534899.webp)
 
 > 모든 작업을 마치고 Everything up-todate 상태가 되었습니다.
+
+**References**
+
+- https://git-scm.com/docs/git-remote
+- https://docs.github.com/get-started/git-basics/why-is-git-always-asking-for-my-password
 
 이상입니다.

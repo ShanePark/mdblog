@@ -86,47 +86,19 @@ source "/Users/shane/.sdkman/bin/sdkman-init.sh"
 
 개인적으로는 SDKMAN으로 자바 버전 관리하는 것을 추천합니다. 그래도 SDKMAN을 꼭 설치해야하는건 아닙니다.
 
-저는 openjdk를 설치하겠습니다. oracle java를 설치 하고 싶은 분은 oracle 공식 홈페이지에서 다운 받아서 하시면 됩니다. 
+Homebrew만 사용한다면 Eclipse Temurin JDK를 설치하는 방법이 간단합니다.
 
 ```bash
-brew tap AdoptOpenJDK/openjdk
+brew install --cask temurin
 ```
 
-일단 brew해서 tap 을 먼저 해줘야 합니다.
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056849.webp)
-
-이제 `brew search openjdk` 를 입력 하면 , 많은 버전의 openjdk를 보여줍니다. 
-
-여기에서는 14를 설치하겠습니다.
-
-```bash
-brew install adoptopenjdk14
-```
-
-​	
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056887.webp)
-
-왠만하면 설치가 될 텐데, 저는 m1 맥북인데 아직 Rosetta 2 를 설치하지 않아서 에러가 발생했습니다. 혹시 Rosetta 2가 설치되어 있지 않다면 에러 메시지를 보시고 그대로 설치 하셔도 되고, 위에 있는 Rosetta 2 설치하기 를 참고해주세요.
-
-​			
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img.webp)
-
-자바도 간단하게 설치 완료했습니다.
-
-설치된 모든 자바 버전을 확인 할려면 Terminal을 켜고
+특정 LTS 버전이 필요하다면 `brew search temurin`으로 제공되는 버전을 확인한 뒤 `temurin@21`처럼 버전을 지정할 수 있습니다. 설치된 모든 자바 버전은 다음 명령으로 확인합니다.
 
 ```bash
 /usr/libexec/java_home -V
 ```
 
-를 입력 하면 설치된 모든 자바의 버전과 경로가 표시됩니다.
-
-![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-16390941970761.webp)
-
-> 11버전을 설치한 경우
+설치된 모든 자바의 버전과 경로가 표시됩니다.
 
 #### SDKMAN 이용
 
@@ -145,21 +117,19 @@ sdk list java
 q를 눌러 나온 뒤, 
 
 ```bash
-sdk install java 17.0.2-tem
+sdk install java
 ```
 
-으로 저는 Temurin JDK 17을 설치하겠습니다. 이전에는 AdoptOpenJDK 였는데 Temurin으로 리 브랜딩 되었습니다 
+버전을 지정하지 않으면 SDKMAN이 권장하는 안정 버전을 설치합니다. 특정 버전이 필요하다면 `sdk list java`에서 확인한 Identifier를 뒤에 지정하면 됩니다.
 
 ![image-20220324233424318](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/image-20220324233424318.webp)
 
-> 자바 설치도 완료 되었고, 17 버전이 기본 버전으로 설정 되었습니다.
+> 자바 설치가 완료된 모습
 
-여러 가지 버전을 설치했다면 자바 버전을 변경할때는 간단하게 use(이번 shell에서만 변경) 혹은 default(기본값 변경)을 통해 자바 버전을 변경 할 수 있습니다.
-
-기본 자바 버전을 17.0.2-tem 으로 변경하려면 아래의 명령어를 입력 하면 됩니다.
+여러 버전을 설치했다면 `use`로 현재 셸에서만 변경하거나 `default`로 기본 버전을 변경할 수 있습니다. 원하는 Identifier를 아래 명령에 지정합니다.
 
 ```bash
-sdk default java 17.0.2-tem
+sdk default java <identifier>
 ```
 
 ### Rosetta 2
@@ -170,7 +140,7 @@ sdk default java 17.0.2-tem
 sudo softwareupdate --install-rosetta
 ```
 
-m1 맥북 사용하신다면 Rosetta가 필수입니다. 처음 m1 맥북 샀을때는 Apple Silicon 최적화된 프로그램이 거의 없다 싶이 해서 컴퓨터 뭐 설치하면서 금방 설치했었는데, 왠만한 게 다 Apple Silicon 을 지원하는 지금에서는 아직 설치하지 않았다는걸 깨닫는데 한참 걸렸네요.
+Apple Silicon 초기에는 Rosetta가 사실상 필수에 가까웠지만, 현재는 대부분의 개발 도구가 네이티브로 동작합니다. 사용하는 프로그램이나 `amd64` 전용 도구가 요구할 때 설치하면 됩니다.
 
 ![img](https://raw.githubusercontent.com/Shane-Park/mdblog/main/OS/mac/initial.assets/img-20211101231056818.webp)
 
